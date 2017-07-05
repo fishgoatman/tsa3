@@ -1,7 +1,6 @@
 /// @description act based on server data
 //abilities
 if (oneActivate) {
-	instance_create(preciseX, preciseY, objFireballOP);
 	oneActivate = false;
 }
 

@@ -1,7 +1,7 @@
 /// @description create the player
 hero = otherPlayerHero;
 mask_index = object_get_sprite(hero); //necessary because this object checks collisions for input
-opId = instance_create(50, 50, otherPlayerHero);
+opId = instance_create(-50, -50, otherPlayerHero);
 
 if (room != rmCharacterSelect) {
     for (var i = 0; i < heroId.hp; i++) {
