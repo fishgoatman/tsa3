@@ -108,6 +108,8 @@ globalvar PORT_NUM;
 PORT_NUM = 54795;
 globalvar IP_NUM;
 IP_NUM = "10.0.1.2";
+globalvar connectedToServer;
+connectedToServer = false;
 
 //room stuff
 
@@ -118,7 +120,6 @@ signX = room_width / 2;
 signY = room_height / 4;
 NEXT_GAME = 0;
 RESET = 1;
-connectedToServer = false;
 
 ///make it look good
 texture_set_interpolation(false);

@@ -8,7 +8,7 @@ if (socketId == clientSocket) {
 	
 	if (type == "c") {
 		//do nothing
-	} else {
+	} else if (connectedToServer) {
 		buffer_read(receivedBuffer, buffer_u16); //divider
 		
 		if (type == "p") {
