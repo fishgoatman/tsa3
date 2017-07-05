@@ -17,6 +17,7 @@ if (socketId == clientSocket) {
 			buffer_read(receivedBuffer, buffer_string);
 			var newY = buffer_read(receivedBuffer, buffer_u16);
 			show_debug_message("newX = " + string(newX) + " and newY = " + string(newY));
+			show_debug_message("opId = " + string(opId));
 			opId.x = newX;
 			opId.y = newY;
 		}
