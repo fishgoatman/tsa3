@@ -90,6 +90,8 @@ globalvar otherSpriteIndex;
 otherSpriteIndex = sprNone;
 globalvar otherImageIndex;
 otherImageIndex = 0;
+globalvar otherLockedIn;
+otherLockedIn = false;
 
 //other
 globalvar gg;
