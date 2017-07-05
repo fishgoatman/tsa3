@@ -37,4 +37,3 @@ rightButton = vk_right;
 
 ///creation vars
 needToRecharge = false;
-
