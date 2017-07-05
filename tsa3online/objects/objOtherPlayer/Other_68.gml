@@ -5,6 +5,7 @@ if (socketId == clientSocket) {
 	var receivedBuffer = ds_map_find_value(async_load, "buffer");
 	buffer_seek(receivedBuffer, buffer_seek_start, 0);
 	var type = buffer_read(receivedBuffer, buffer_string);
+	show_debug_message("type = " + string(type));
 	buffer_read(receivedBuffer, buffer_u16); //divider
 	
 	if (type == "c") {
