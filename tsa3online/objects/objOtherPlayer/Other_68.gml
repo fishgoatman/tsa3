@@ -23,7 +23,7 @@ if (socketId == clientSocket) {
 			type = buffer_read(receivedBuffer, buffer_string);
 		}
 		
-		if (type == "e") { //end
+		if (type == "e") { //enda
 			//do nothing
 		} else if (type == "s") { //selectHero
 			otherLockedIn = buffer_read(receivedBuffer, buffer_bool);
