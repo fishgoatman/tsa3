@@ -16,6 +16,8 @@ if (fourActivate) {
 	fourActivate = false;
 }
 
+lockedIn = otherLockedIn;
+
 //pos
 x = otherX;
 y = otherY;

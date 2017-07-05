@@ -6,10 +6,10 @@ if (socketId == clientSocket) {
 	buffer_seek(receivedBuffer, buffer_seek_start, 0);
 	var type = buffer_read(receivedBuffer, buffer_string);
 	
-	if (type == "c") {
+	if (type == "c") { //connection
 		//do nothing
 	} else if (connectedToServer) {
-		if (type == "p") {
+		if (type == "p") { //player
 			otherX = buffer_read(receivedBuffer, buffer_u16);
 			oneActivate = buffer_read(receivedBuffer, buffer_bool);
 			otherY = buffer_read(receivedBuffer, buffer_u16);
@@ -21,5 +21,15 @@ if (socketId == clientSocket) {
 			otherSpriteIndex = buffer_read(receivedBuffer, buffer_string);
 			otherImageIndex = buffer_read(receivedBuffer, buffer_u16);
 		}
+		
+		type = buffer_read(receivedBuffer, buffer_string);
+		
+		if (type == "e") { //end
+			//do nothing
+		} else if (type == "s") { //selectHero
+			otherLockedIn = buffer_read(receivedBuffer, buffer_bool);
+		}
+		
+		buffer_delete(receivedBuffer);
 	}
 }
