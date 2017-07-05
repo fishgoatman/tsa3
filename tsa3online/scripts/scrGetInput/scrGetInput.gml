@@ -1,5 +1,9 @@
 /// @description get input
 heroId.state = NONE;
+onePressed = false;
+twoPressed = false;
+threePressed = false;
+fourPressed = false;
 
 if (keyboard_check_direct(vk_right) || keyboard_check_direct(ord("G"))) {
     heroId.direct = RIGHT;
