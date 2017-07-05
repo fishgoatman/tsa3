@@ -79,11 +79,17 @@ threeActivate = false;
 globalvar fourActivate;
 fourActivate = false;
 globalvar otherX;
+otherX = 0;
 globalvar otherY;
+otherY = 0;
 globalvar otherMouseX;
+otherMouseX = 0;
 globalvar otherMouseY;
+otherMouseY = 0;
 globalvar otherSpriteIndex;
+otherSpriteIndex = sprNone;
 globalvar otherImageIndex;
+otherImageIndex = 0;
 
 //other
 globalvar gg;
