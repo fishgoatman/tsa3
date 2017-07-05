@@ -49,20 +49,13 @@ if (!place_meeting(preciseX, preciseY + 1, objBlock)) {
 }
 
 //attacking
-if (attackState == INIT_ATTACK && changeReady) {
-    firingMode *= -1;
-    attackState = NONE;
-    changeReady = false;
-    alarm[CHANGE] = changeCDTime;
-}
-
-if (firingMode == MAGE && mageAttackState == NONE) {
+if (onePressed && attackState == NONE) {
     alarm[PRE_ATTACK] = attackPreTime;
-    mageAttackState = PRE_ATTACK;
+    attackState = PRE_ATTACK;
 }
 
 //ability
-if (abilityState == INIT_ABILITY) {
+if (twoPressed) {
     if (place_meeting(preciseX, preciseY - 1, objBlock)) {
         dy = 0;
     } else {
@@ -129,6 +122,3 @@ if (jumpState == PRE_JUMP) {
 if (hp <= 0) {
     instance_destroy();
 }
-
-/* */
-/*  */

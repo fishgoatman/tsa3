@@ -1,4 +1,3 @@
 /// @description post attack
-mageAttackState = NONE;
+attackState = NONE;
 spd = moveSpd;
-

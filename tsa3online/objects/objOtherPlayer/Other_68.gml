@@ -6,20 +6,21 @@ if (socketId == clientSocket) {
 	buffer_seek(receivedBuffer, buffer_seek_start, 0);
 	var type = buffer_read(receivedBuffer, buffer_string);
 	show_debug_message("type = " + string(type));
-	buffer_read(receivedBuffer, buffer_u16); //divider
 	
 	if (type == "c") {
 		//do nothing
 	} else if (connectedToServer) {
 		if (type == "p") {
-			buffer_read(receivedBuffer, buffer_string);
-			var newX = buffer_read(receivedBuffer, buffer_u16);
-			buffer_read(receivedBuffer, buffer_string);
-			var newY = buffer_read(receivedBuffer, buffer_u16);
-			show_debug_message("newX = " + string(newX) + " and newY = " + string(newY));
-			show_debug_message("opId = " + string(opId));
-			opId.x = newX;
-			opId.y = newY;
+			otherX = buffer_read(receivedBuffer, buffer_u16);
+			oneActivate = buffer_read(receivedBuffer, buffer_bool);
+			otherY = buffer_read(receivedBuffer, buffer_u16);
+			twoActivate = buffer_read(receivedBuffer, buffer_bool);
+			otherMouseX = buffer_read(receivedBuffer, buffer_u16);
+			threeActivate = buffer_read(receivedBuffer, buffer_bool);
+			otherMouseY = buffer_read(receivedBuffer, buffer_u16);
+			fourActivate = buffer_read(receivedBuffer, buffer_bool);
+			otherSpriteIndex = buffer_read(receivedBuffer, buffer_string);
+			otherImageIndex = buffer_read(receivedBuffer, buffer_u16);
 		}
 	}
 }

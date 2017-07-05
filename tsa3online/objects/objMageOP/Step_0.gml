@@ -1,32 +1,14 @@
-/// @description act based on input
-//attacking
-if (attackState == INIT_ATTACK && changeReady) {
-    firingMode *= -1;
-    attackState = NONE;
-    changeReady = false;
-    alarm[CHANGE] = changeCDTime;
+/// @description act based on server data
+//abilities
+if (oneActivate) {
+	instance_create(preciseX, preciseY, objFireballOP);
+	oneActivate = false;
 }
 
-if (firingMode == MAGE && mageAttackState == NONE) {
-    alarm[PRE_ATTACK] = attackPreTime;
-    mageAttackState = PRE_ATTACK;
-}
+//pos
+x = otherX;
+y = otherY;
 
-//ability
-if (abilityState == INIT_ABILITY) {
-    if (place_meeting(preciseX, preciseY - 1, objBlock)) {
-        dy = 0;
-    } else {
-        dy = floatDy;
-    }
-    
-    spd = floatDx;
-} else {
-    spd = moveSpd;
-}
-
-/*if (abilityState == INIT_ABILITY) {
-    allExplode = true;
-} else {
-    allExplode = false;
-}*/
+//sprite and image
+sprite_index = otherSpriteIndex;
+image_index = otherImageIndex;

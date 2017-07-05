@@ -1,15 +1,14 @@
 /// @description creation stuff
+///globalvars
+//constants
 globalvar NONE;
 NONE = 0;
-
 globalvar RIGHT;
 RIGHT = 1;
 globalvar LEFT;
 LEFT = -1;
-
 globalvar MOVE;
 MOVE = 1;
-
 globalvar INIT_ATTACK;
 INIT_ATTACK = -1;
 globalvar INIT_JUMP;
@@ -26,7 +25,6 @@ globalvar INIT_THREE;
 INIT_THREE = 1;
 globalvar INIT_FOUR;
 INIT_FOUR = 1;
-
 globalvar PRE_ATTACK;
 PRE_ATTACK = 1;
 globalvar POST_ATTACK;
@@ -41,38 +39,22 @@ globalvar POST_ABILITY;
 POST_ABILITY = 6;
 globalvar DURING_ATTACK;
 DURING_ATTACK = 7;
-
 globalvar KEYBOARD;
 KEYBOARD = 1;
 globalvar MOUSE;
 MOUSE = 2;
 globalvar TIE;
 TIE = 3;
-
 globalvar IMMUNE;
 IMMUNE = 0;
 globalvar IMMUNE_TIME;
 IMMUNE_TIME = 5;
-
 globalvar FIRE;
 FIRE = 1;
 globalvar ICE;
 ICE = 2;
 globalvar AIR;
 AIR = 3;
-
-///globalvars
-//damage values
-globalvar hpBarOffset;
-hpBarOffset = 10;
-globalvar fireballDamage;
-fireballDamage = 1;
-globalvar knifeDamage;
-knifeDamage = 1;
-globalvar swordDamage;
-swordDamage = 1;
-globalvar icicleDamage;
-icicleDamage = 1;
 
 //player stuff
 globalvar thisPlayerHero;
@@ -84,6 +66,24 @@ globalvar opId;
 globalvar thisHpBar;
 globalvar hpPodSize;
 hpPodSize = 32;
+globalvar onePressed;
+globalvar twoPressed;
+globalvar threePressed;
+globalvar fourPressed;
+globalvar oneActivate;
+oneActivate = false;
+globalvar twoActivate;
+twoActivate = false;
+globalvar threeActivate;
+threeActivate = false;
+globalvar fourActivate;
+fourActivate = false;
+globalvar otherX;
+globalvar otherY;
+globalvar otherMouseX;
+globalvar otherMouseY;
+globalvar otherSpriteIndex;
+globalvar otherImageIndex;
 
 //other
 globalvar gg;

@@ -1,5 +1,4 @@
 /// @description get input
-//CHANGE::::::: make this not take care of checking for jumps, just saying that up was pressed
 heroId.state = NONE;
 
 if (keyboard_check_direct(vk_right) || keyboard_check_direct(ord("G"))) {
@@ -28,20 +27,28 @@ if (keyboard_check_direct(vk_down) || keyboard_check_direct(ord("F"))) {
     heroId.ducking = false;
 }
 
-if (heroId.attackState == NONE && attackKey) {
-    heroId.attackState = INIT_ATTACK;
-}
-
-if (abilityKey) {
-    heroId.abilityState = INIT_ABILITY;
+if (heroId.isSelectHero) {
+	if (mouse_check_button_pressed(mb_left) || keyboard_check_pressed(ord("1"))) {
+		onePressed = true;
+	}
+	
+	if (mouse_check_button_pressed(mb_right) || keyboard_check_pressed(ord("2"))) {
+		twoPressed = true;
+	}
 } else {
-    heroId.abilityState = NONE;
-}
-
-if (keyboard_check_direct(ord("3"))) {
-    heroId.threeState = INIT_THREE;
-}
-    
-if (keyboard_check_direct(ord("4"))) {
-    heroId.fourState = INIT_FOUR;
+	if (mouse_check_button(mb_left) || keyboard_check_direct(ord("1"))) {
+		onePressed = true;
+	}
+	
+	if (mouse_check_button(mb_right) || keyboard_check_direct(ord("2"))) {
+		twoPressed = true;
+	}
+	
+	if (keyboard_check_direct(ord("3"))) {
+		threePressed = true;
+	}
+	
+	if (keyboard_check_direct(ord("4"))) {
+		fourPressed = true;
+	}
 }
