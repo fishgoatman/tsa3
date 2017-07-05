@@ -1,0 +1,679 @@
+Converting GML script : ${project_dir}\scripts\scrMove\scrMove.gml
+Converted description : /// @description scrMove
+
+Converting GML script : ${project_dir}\scripts\scrGetInput\scrGetInput.gml
+Converted description : /// @description get input
+Converted string : line 48 : '3' -> "3"
+Converted string : line 52 : '4' -> "4"
+
+Converting GML script : ${project_dir}\scripts\scrTakeDamage\scrTakeDamage.gml
+Converted description : /// @description scrTakeDamage
+
+Converting GML script : ${project_dir}\scripts\scrKnightTakeDamage\scrKnightTakeDamage.gml
+Converted description : /// @description scrKnightTakeDamage
+
+Converting GML script : ${project_dir}\scripts\scrRound\scrRound.gml
+Converted description : /// @description scrRound
+
+Converting GML script : ${project_dir}\scripts\scrAiMageGetInput\scrAiMageGetInput.gml
+Converted description : /// @description scrAiMageGetInput
+
+Converting GML script : ${project_dir}\scripts\scrCollideWithBlock\scrCollideWithBlock.gml
+Converted description : /// @description get out of block
+
+Converting GML script : ${project_dir}\scripts\scrCreateKnife\scrCreateKnife.gml
+Converted description : /// @description creation stuff
+
+Converting GML script : ${project_dir}\scripts\scrWinStuff\scrWinStuff.gml
+Converted description : /// @description scrWinStuff
+
+Converting GML script : ${project_dir}\scripts\scrRandSign\scrRandSign.gml
+Converted description : /// @description scrRandSign
+
+Converting GML script : ${project_dir}\scripts\scrRandRoom\scrRandRoom.gml
+Converted description : /// @description scrRandRoom
+
+Converting GML script : ${project_dir}\scripts\scrAiMonkGetInput\scrAiMonkGetInput.gml
+Converted description : /// @description scrAiMonkGetInput
+
+Converting GML script : ${project_dir}\objects\objKeyboardPlayer\Create_0.gml
+Converted description : /// @description create the player
+Converted string : line 41 : 'R' -> "R"
+Converted string : line 42 : 'D' -> "D"
+Converted string : line 43 : 'F' -> "F"
+Converted string : line 44 : 'G' -> "G"
+
+Converting GML script : ${project_dir}\objects\objKeyboardPlayer\Step_0.gml
+Converted description : /// @description get input
+Converted string : line 3 : '1' -> "1"
+Converted string : line 4 : '2' -> "2"
+Converted string : line 6 : '1' -> "1"
+Converted string : line 7 : '2' -> "2"
+
+Converting GML script : ${project_dir}\objects\objMousePlayer\Create_0.gml
+Converted description : /// @description create the player
+
+Converting GML script : ${project_dir}\objects\objMousePlayer\Step_0.gml
+Converted description : /// @description get input
+
+Converting GML script : ${project_dir}\objects\objHpPod\Create_0.gml
+Converted description : /// @description creation stuff
+
+Converting GML script : ${project_dir}\objects\objHpPodDeath\Step_0.gml
+Converted description : /// @description destroy
+
+Converting GML script : ${project_dir}\objects\objKnifeMP\Create_0.gml
+Converted description : /// @description creation stuff
+
+Converting GML script : ${project_dir}\objects\objKnifeMP\Alarm_0.gml
+Converted description : /// @description make already thrown
+
+Converting GML script : ${project_dir}\objects\objKnifeMP\Step_0.gml
+Converted description : /// @description move
+
+Converting GML script : ${project_dir}\objects\objKnifeMP\Collision_2c3ec695-62a6-4ead-926f-151510e16f4b.gml
+Converted description : /// @description destroy
+
+Converting GML script : ${project_dir}\objects\objRogue\Create_0.gml
+Converted description : /// @description stats
+
+Converting GML script : ${project_dir}\objects\objRogue\Alarm_3.gml
+Converted description : /// @description pre jump
+
+Converting GML script : ${project_dir}\objects\objRogue\Alarm_2.gml
+Converted description : /// @description post attack
+
+Converting GML script : ${project_dir}\objects\objRogue\Alarm_1.gml
+Converted description : /// @description pre attack
+
+Converting GML script : ${project_dir}\objects\objRogue\Alarm_0.gml
+Converted description : /// @description make not immune
+
+Converting GML script : ${project_dir}\objects\objRogue\Step_0.gml
+Converted description : /// @description act based on input
+
+Converting GML script : ${project_dir}\objects\objRogue\Collision_c52daed4-bef2-41f9-ae57-cd17f19c1e70.gml
+Converted description : /// @description take damage
+
+Converting GML script : ${project_dir}\objects\objRogue\Collision_1997e2e4-b38c-4275-a0d7-37d966674749.gml
+Converted description : /// @description take damage
+
+Converting GML script : ${project_dir}\objects\objRogue\Collision_13ab5893-8034-4372-874b-941f76c4e275.gml
+Converted description : /// @description take damage
+
+Converting GML script : ${project_dir}\objects\objStationaryKnife\Create_0.gml
+Converted description : /// @description set death timer
+
+Converting GML script : ${project_dir}\objects\objStationaryKnife\Alarm_0.gml
+Converted description : /// @description destroy
+
+Converting GML script : ${project_dir}\objects\objKnifeHurtboxMP\Create_0.gml
+Converted description : /// @description creation stuff
+
+Converting GML script : ${project_dir}\objects\objKnifeHurtboxMP\Alarm_0.gml
+Converted description : /// @description destroy
+
+Converting GML script : ${project_dir}\objects\objKnifeHurtboxKP\Create_0.gml
+Converted description : /// @description creation stuff
+
+Converting GML script : ${project_dir}\objects\objKnifeHurtboxKP\Alarm_0.gml
+Converted description : /// @description destroy
+
+Converting GML script : ${project_dir}\objects\objFireballMP\Create_0.gml
+Converted description : /// @description creation stuff
+
+Converting GML script : ${project_dir}\objects\objFireballMP\Step_0.gml
+Converted description : /// @description move
+
+Converting GML script : ${project_dir}\objects\objFireballMP\Collision_f99ff519-4ad1-490c-8fce-791381763d1b.gml
+Converted description : /// @description explode
+
+Converting GML script : ${project_dir}\objects\objKnifeKP\Create_0.gml
+Converted description : /// @description creation stuff
+
+Converting GML script : ${project_dir}\objects\objKnifeKP\Alarm_0.gml
+Converted description : /// @description make already thrown
+
+Converting GML script : ${project_dir}\objects\objKnifeKP\Step_0.gml
+Converted description : /// @description move
+
+Converting GML script : ${project_dir}\objects\objKnifeKP\Collision_1181bb08-049f-40d8-ade9-fa2083180ebf.gml
+Converted description : /// @description destroy
+
+Converting GML script : ${project_dir}\objects\objMage\Create_0.gml
+Converted description : /// @description stats
+
+Converting GML script : ${project_dir}\objects\objMage\Alarm_5.gml
+Converted description : /// @description make change ready
+
+Converting GML script : ${project_dir}\objects\objMage\Alarm_4.gml
+Converted description : /// @description post jump
+
+Converting GML script : ${project_dir}\objects\objMage\Alarm_3.gml
+Converted description : /// @description pre jump
+
+Converting GML script : ${project_dir}\objects\objMage\Alarm_2.gml
+Converted description : /// @description post attack
+
+Converting GML script : ${project_dir}\objects\objMage\Alarm_1.gml
+Converted description : /// @description pre attack
+
+Converting GML script : ${project_dir}\objects\objMage\Alarm_0.gml
+Converted description : /// @description make not immune
+
+Converting GML script : ${project_dir}\objects\objMage\Step_0.gml
+Converted description : /// @description act based on input
+
+Converting GML script : ${project_dir}\objects\objMage\Collision_46fed44c-8802-4794-ad1b-ac2582cbec52.gml
+Converted description : /// @description take damage
+
+Converting GML script : ${project_dir}\objects\objMage\Collision_89960eba-67f9-47dc-ae93-5ad9d30d72e8.gml
+Converted description : /// @description take damage
+
+Converting GML script : ${project_dir}\objects\objMage\Collision_620f5e53-fec1-4717-a1d5-89f192bab72e.gml
+Converted description : /// @description take damage
+
+Converting GML script : ${project_dir}\objects\objFireballKP\Create_0.gml
+Converted description : /// @description creation stuff
+
+Converting GML script : ${project_dir}\objects\objFireballKP\Step_0.gml
+Converted description : /// @description move
+
+Converting GML script : ${project_dir}\objects\objFireballKP\Collision_33360764-b661-42a1-876f-686eac0b50bf.gml
+Converted description : /// @description explode
+
+Converting GML script : ${project_dir}\objects\objFireballExplosionKP\Create_0.gml
+Converted description : /// @description creation stuff
+
+Converting GML script : ${project_dir}\objects\objFireballExplosionKP\Alarm_0.gml
+Converted description : /// @description destroy
+
+Converting GML script : ${project_dir}\objects\objFireblastMP\Create_0.gml
+Converted description : /// @description stats
+
+Converting GML script : ${project_dir}\objects\objFireblastMP\Step_0.gml
+Converted description : /// @description move
+
+Converting GML script : ${project_dir}\objects\objFireblastKP\Create_0.gml
+Converted description : /// @description stats
+
+Converting GML script : ${project_dir}\objects\objFireblastKP\Step_0.gml
+Converted description : /// @description move
+
+Converting GML script : ${project_dir}\objects\objFireballExplosionMP\Create_0.gml
+Converted description : /// @description creation stuff
+
+Converting GML script : ${project_dir}\objects\objFireballExplosionMP\Alarm_0.gml
+Converted description : /// @description destroy
+
+Converting GML script : ${project_dir}\objects\objXiaolongKP\Create_0.gml
+Converted description : /// @description creation stuff
+
+Converting GML script : ${project_dir}\objects\objKnightCore\Create_0.gml
+Converted description : /// @description creation stuff
+
+Converting GML script : ${project_dir}\objects\objXiaolongMP\Create_0.gml
+Converted description : /// @description creation stuff
+
+Converting GML script : ${project_dir}\objects\objXiaolongMP\Alarm_1.gml
+Converted description : /// @description burst attack
+
+Converting GML script : ${project_dir}\objects\objXiaolongMP\Alarm_0.gml
+Converted description : /// @description attack
+
+Converting GML script : ${project_dir}\objects\objXiaolongMP\Step_0.gml
+Converted description : /// @description move and direction
+
+Converting GML script : ${project_dir}\objects\objKnight\Create_0.gml
+Converted description : /// @description stats
+
+Converting GML script : ${project_dir}\objects\objKnight\Alarm_7.gml
+Converted description : /// @description regain shield hp
+
+Converting GML script : ${project_dir}\objects\objKnight\Alarm_6.gml
+Converted description : /// @description remove powerup
+
+Converting GML script : ${project_dir}\objects\objKnight\Alarm_5.gml
+Converted description : /// @description random powerup
+
+Converting GML script : ${project_dir}\objects\objKnight\Alarm_4.gml
+Converted description : /// @description post jump
+
+Converting GML script : ${project_dir}\objects\objKnight\Alarm_3.gml
+Converted description : /// @description pre jump
+
+Converting GML script : ${project_dir}\objects\objKnight\Alarm_2.gml
+Converted description : /// @description post attack
+
+Converting GML script : ${project_dir}\objects\objKnight\Alarm_1.gml
+Converted description : /// @description pre attack
+
+Converting GML script : ${project_dir}\objects\objKnight\Alarm_0.gml
+Converted description : /// @description make not immune
+
+Converting GML script : ${project_dir}\objects\objKnight\Step_0.gml
+Converted description : /// @description act based on input
+
+Converting GML script : ${project_dir}\objects\objKnight\Collision_ed49028d-47ea-4791-9b83-72bfb51e3cca.gml
+Converted description : /// @description get powerup
+
+Converting GML script : ${project_dir}\objects\objKnight\Collision_080fb440-e2dc-4c2d-99fb-379d912d1d45.gml
+Converted description : /// @description get powerup
+
+Converting GML script : ${project_dir}\objects\objSwordKP\Create_0.gml
+Converted description : /// @description creation stuff
+
+Converting GML script : ${project_dir}\objects\objShrineMP\Create_0.gml
+Converted description : /// @description creation stuff
+
+Converting GML script : ${project_dir}\objects\objShrineMP\Step_0.gml
+Converted description : /// @description move
+
+Converting GML script : ${project_dir}\objects\objShrineKP\Create_0.gml
+Converted description : /// @description creation stuff
+
+Converting GML script : ${project_dir}\objects\objShrineKP\Step_0.gml
+Converted description : /// @description move
+
+Converting GML script : ${project_dir}\objects\objSwordMP\Create_0.gml
+Converted description : /// @description creation stuff
+
+Converting GML script : ${project_dir}\objects\objIcicleMP\Create_0.gml
+Converted description : /// @description creation stuff
+
+Converting GML script : ${project_dir}\objects\objIcicleMP\Step_0.gml
+Converted description : /// @description move
+
+Converting GML script : ${project_dir}\objects\objIcicleMP\Collision_72a9baa3-80c0-4d3e-b63a-4e30a2a9c1d9.gml
+Converted description : /// @description destroy
+
+Converting GML script : ${project_dir}\objects\objIcicleKP\Create_0.gml
+Converted description : /// @description creation stuff
+
+Converting GML script : ${project_dir}\objects\objIcicleKP\Step_0.gml
+Converted description : /// @description move
+
+Converting GML script : ${project_dir}\objects\objIcicleKP\Collision_8c43a00e-76f3-4b25-aebf-c12e82503c42.gml
+Converted description : /// @description destroy
+
+Converting GML script : ${project_dir}\objects\objShieldBar\Create_0.gml
+Converted description : /// @description creation stuff
+
+Converting GML script : ${project_dir}\objects\objMonkShadowMP\Create_0.gml
+Converted description : /// @description creation stuff
+
+Converting GML script : ${project_dir}\objects\objMonkShadowMP\Alarm_0.gml
+Converted description : /// @description destroy
+
+Converting GML script : ${project_dir}\objects\objMonkShadowKP\Create_0.gml
+Converted description : /// @description creation stuff
+
+Converting GML script : ${project_dir}\objects\objMonkShadowKP\Alarm_0.gml
+Converted description : /// @description destroy
+
+Converting GML script : ${project_dir}\objects\objMonkKickShadowMP\Create_0.gml
+Converted description : /// @description creation stuff
+
+Converting GML script : ${project_dir}\objects\objMonkKickShadowMP\Alarm_0.gml
+Converted description : /// @description destroy
+
+Converting GML script : ${project_dir}\objects\objMonkKickShadowKP\Create_0.gml
+Converted description : /// @description creation stuff
+
+Converting GML script : ${project_dir}\objects\objMonkKickShadowKP\Alarm_0.gml
+Converted description : /// @description destroy
+
+Converting GML script : ${project_dir}\objects\objAttackHurtboxMP\Create_0.gml
+Converted description : /// @description creation stuff
+
+Converting GML script : ${project_dir}\objects\objAttackHurtboxMP\Alarm_0.gml
+Converted description : /// @description destroy
+
+Converting GML script : ${project_dir}\objects\objAttackHurtboxKP\Create_0.gml
+Converted description : /// @description creation stuff
+
+Converting GML script : ${project_dir}\objects\objAttackHurtboxKP\Alarm_0.gml
+Converted description : /// @description destroy
+
+Converting GML script : ${project_dir}\objects\objAttackDuckHurtboxMP\Create_0.gml
+Converted description : /// @description creation stuff
+
+Converting GML script : ${project_dir}\objects\objAttackDuckHurtboxMP\Step_0.gml
+Converted description : /// @description destroy
+
+Converting GML script : ${project_dir}\objects\objShieldMP\Step_0.gml
+Converted description : /// @description move to player
+
+Converting GML script : ${project_dir}\objects\objAttackDuckHurtboxKP\Create_0.gml
+Converted description : /// @description creation stuff
+
+Converting GML script : ${project_dir}\objects\objAttackDuckHurtboxKP\Step_0.gml
+Converted description : /// @description destroy
+
+Converting GML script : ${project_dir}\objects\objShieldKP\Step_0.gml
+Converted description : /// @description move to player
+
+Converting GML script : ${project_dir}\objects\objShieldReflect\Create_0.gml
+Converted description : /// @description creation stuff
+
+Converting GML script : ${project_dir}\objects\objShieldReflect\Alarm_0.gml
+Converted description : /// @description destroy
+
+Converting GML script : ${project_dir}\objects\objMonkEnergyBarMP\Create_0.gml
+Converted description : /// @description creation stuff
+
+Converting GML script : ${project_dir}\objects\objMonkEnergyBarMP\Step_0.gml
+Converted description : /// @description change image
+
+Converting GML script : ${project_dir}\objects\objMonkEnergyBarKP\Create_0.gml
+Converted description : /// @description creation stuff
+
+Converting GML script : ${project_dir}\objects\objMonkEnergyBarKP\Step_0.gml
+Converted description : /// @description change image
+
+Converting GML script : ${project_dir}\objects\objMonk\Create_0.gml
+Converted description : /// @description stats
+
+Converting GML script : ${project_dir}\objects\objMonk\Alarm_8.gml
+Converted description : /// @description shield cooldown
+
+Converting GML script : ${project_dir}\objects\objMonk\Alarm_7.gml
+Converted description : /// @description during attack
+
+Converting GML script : ${project_dir}\objects\objMonk\Alarm_6.gml
+Converted description : /// @description disable shield
+
+Converting GML script : ${project_dir}\objects\objMonk\Alarm_5.gml
+Converted description : /// @description make kick blink not prepped
+
+Converting GML script : ${project_dir}\objects\objMonk\Alarm_4.gml
+Converted description : /// @description blink cooldown
+
+Converting GML script : ${project_dir}\objects\objMonk\Alarm_3.gml
+Converted description : /// @description pre jump
+
+Converting GML script : ${project_dir}\objects\objMonk\Alarm_2.gml
+Converted description : /// @description post attack
+
+Converting GML script : ${project_dir}\objects\objMonk\Alarm_1.gml
+Converted description : /// @description pre attack
+
+Converting GML script : ${project_dir}\objects\objMonk\Alarm_0.gml
+Converted description : /// @description make not immune
+
+Converting GML script : ${project_dir}\objects\objMonk\Step_2.gml
+Converted description : /// @description sprite and image
+
+Converting GML script : ${project_dir}\objects\objMonk\Step_0.gml
+Converted description : /// @description act based on input
+
+Converting GML script : ${project_dir}\objects\objMonk\Collision_d82c6bb0-e63e-419a-984c-d2516933dac1.gml
+Converted description : /// @description take damage
+
+Converting GML script : ${project_dir}\objects\objMonk\Collision_759d02a6-bcd2-43d3-813d-6937f63fed4a.gml
+Converted description : /// @description take damage
+
+Converting GML script : ${project_dir}\objects\objMonk\Collision_f4f4b008-66b2-4b57-b19c-48c0cc7bd094.gml
+Converted description : /// @description take damage
+
+Converting GML script : ${project_dir}\objects\objLightning\Create_0.gml
+Converted description : /// @description creation stuff
+
+Converting GML script : ${project_dir}\objects\objLightning\Alarm_0.gml
+Converted description : /// @description destroy
+
+Converting GML script : ${project_dir}\objects\objLightning\Step_0.gml
+Converted description : /// @description make image_speed = 0
+
+Converting GML script : ${project_dir}\objects\objShamanLogic\Create_0.gml
+Converted description : /// @description creation stuff
+
+Converting GML script : ${project_dir}\objects\objShamanLogic\Step_0.gml
+Converted description : /// @description spells
+
+Converting GML script : ${project_dir}\objects\objTotem\Create_0.gml
+Converted description : /// @description creation stuff
+
+Converting GML script : ${project_dir}\objects\objTotem\Step_0.gml
+Converted description : /// @description make built
+
+Converting GML script : ${project_dir}\objects\objTotemCooldown\Create_0.gml
+Converted description : /// @description creation stuff
+
+Converting GML script : ${project_dir}\objects\objTotemCooldown\Step_0.gml
+Converted description : /// @description cooldown
+
+Converting GML script : ${project_dir}\objects\objLightningCooldown\Create_0.gml
+Converted description : /// @description creation stuff
+
+Converting GML script : ${project_dir}\objects\objLightningCooldown\Step_0.gml
+Converted description : /// @description cooldown
+
+Converting GML script : ${project_dir}\objects\objFireCooldown\Create_0.gml
+Converted description : /// @description creation stuff
+
+Converting GML script : ${project_dir}\objects\objFireCooldown\Step_0.gml
+Converted description : /// @description cooldown
+
+Converting GML script : ${project_dir}\objects\objBlock\Create_0.gml
+Converted description : /// @description creation stuff
+
+Converting GML script : ${project_dir}\objects\objWindCooldown\Create_0.gml
+Converted description : /// @description creation stuff
+
+Converting GML script : ${project_dir}\objects\objWindCooldown\Step_0.gml
+Converted description : /// @description cooldown
+
+Converting GML script : ${project_dir}\objects\objMovingWallUD\Create_0.gml
+Converted description : /// @description creation stuff
+
+Converting GML script : ${project_dir}\objects\objMovingWallUD\Step_1.gml
+Converted description : /// @description move
+
+Converting GML script : ${project_dir}\objects\objMovingWallUD\Collision_23c8771f-8ba0-42b5-adbd-0a6bbd68b72c.gml
+Converted description : /// @description move the player
+
+Converting GML script : ${project_dir}\objects\objMediumGrassBlock\Create_0.gml
+Converted description : /// @description creation stuff
+
+Converting GML script : ${project_dir}\objects\objBigGrassBlock\Create_0.gml
+Converted description : /// @description creation stuff
+
+Converting GML script : ${project_dir}\objects\objMediumGrassBlockWithChimes\Create_0.gml
+Converted description : /// @description creation stuff
+
+Converting GML script : ${project_dir}\objects\objWindTunnel\Create_0.gml
+Converted description : /// @description creation stuff
+
+Converting GML script : ${project_dir}\objects\objWindTunnel\Alarm_0.gml
+Converted description : /// @description destroy
+
+Converting GML script : ${project_dir}\objects\objSmallGrass\Create_0.gml
+Converted description : /// @description creation stuff
+
+Converting GML script : ${project_dir}\objects\objSmallGrass\Step_0.gml
+Converted description : /// @description wind
+
+Converting GML script : ${project_dir}\objects\objChimeBoltMP\Create_0.gml
+Converted description : /// @description creation stuff
+
+Converting GML script : ${project_dir}\objects\objChimeBoltMP\Alarm_0.gml
+Converted description : /// @description set movingStraight to true
+
+Converting GML script : ${project_dir}\objects\objChimeBoltMP\Step_0.gml
+Converted description : /// @description move
+
+Converting GML script : ${project_dir}\objects\objChimeCarrier\Create_0.gml
+Converted description : /// @description creation stuff
+
+Converting GML script : ${project_dir}\objects\objChimeCarrier\Step_0.gml
+Converted description : /// @description move
+
+Converting GML script : ${project_dir}\objects\objChimeCarrier\Collision_1d95f42e-0773-4662-8642-cd056200823d.gml
+Converted description : /// @description fly to big chime
+
+Converting GML script : ${project_dir}\objects\objWind\Create_0.gml
+Converted description : /// @description creation stuff
+
+Converting GML script : ${project_dir}\objects\objWind\Step_0.gml
+Converted description : /// @description destroy
+
+Converting GML script : ${project_dir}\objects\objChimeCarrierShadow\Step_0.gml
+Converted description : /// @description destroy
+
+Converting GML script : ${project_dir}\objects\objChime\Create_0.gml
+Converted description : /// @description creation stuff
+
+Converting GML script : ${project_dir}\objects\objChime\Step_0.gml
+Converted description : /// @description sprite and image
+
+Converting GML script : ${project_dir}\objects\objChimeBoltKP\Create_0.gml
+Converted description : /// @description creation stuff
+
+Converting GML script : ${project_dir}\objects\objChimeBoltKP\Alarm_0.gml
+Converted description : /// @description set movingStraight to true
+
+Converting GML script : ${project_dir}\objects\objChimeBoltKP\Step_0.gml
+Converted description : /// @description move
+
+Converting GML script : ${project_dir}\objects\objChimeMarkerMP\Create_0.gml
+Converted description : /// @description creation stuff
+
+Converting GML script : ${project_dir}\objects\objChimeMarkerKP\Create_0.gml
+Converted description : /// @description creation stuff
+
+Converting GML script : ${project_dir}\objects\objBigChime\Create_0.gml
+Converted description : /// @description creation stuff
+
+Converting GML script : ${project_dir}\objects\objBigChime\Alarm_0.gml
+Converted description : /// @description reset
+
+Converting GML script : ${project_dir}\objects\objBigChime\Step_0.gml
+Converted description : /// @description action
+
+Converting GML script : ${project_dir}\objects\objGeneral\Create_0.gml
+Converted description : /// @description constants
+
+Converting GML script : ${project_dir}\objects\objGeneral\Alarm_1.gml
+Converted description : /// @description reset
+
+Converting GML script : ${project_dir}\objects\objGeneral\Alarm_0.gml
+Converted description : /// @description next game
+
+Converting GML script : ${project_dir}\objects\objGeneral\Step_0.gml
+Converted description : /// @description check win
+
+Converting GML script : ${project_dir}\objects\objGeneral\Draw_77.gml
+Converted description : /// @description draw the surface
+
+Converting GML script : ${project_dir}\objects\objServer\Create_0.gml
+Converted description : /// @description creation stuff
+
+Converting GML script : ${project_dir}\objects\objServer\Other_68.gml
+Converted description : /// @description check for connection to server
+
+Converting GML script : ${project_dir}\objects\objSelectHero\Create_0.gml
+Converted description : /// @description stats
+
+Converting GML script : ${project_dir}\objects\objSelectHero\Step_0.gml
+Converted description : /// @description act based on input
+
+Converting GML script : ${project_dir}\objects\objCharacterSelectRoom\Create_0.gml
+Converted description : /// @description creation stuff
+
+Converting GML script : ${project_dir}\objects\objCharacterSelectRoom\Alarm_0.gml
+Converted description : /// @description start game
+
+Converting GML script : ${project_dir}\objects\objCharacterSelectRoom\Step_0.gml
+Converted description : /// @description check to start
+
+Converting GML script : ${project_dir}\objects\objArrowRight\Create_0.gml
+Converted description : /// @description creation stuff
+
+Converting GML script : ${project_dir}\objects\objArrowRight\Alarm_0.gml
+Converted description : /// @description destroy
+
+Converting GML script : ${project_dir}\objects\objArrowRight\Step_0.gml
+Converted description : /// @description move
+
+Converting GML script : ${project_dir}\objects\objArrowLeft\Create_0.gml
+Converted description : /// @description creation stuff
+
+Converting GML script : ${project_dir}\objects\objArrowDown\Create_0.gml
+Converted description : /// @description creation stuff
+
+Converting GML script : ${project_dir}\objects\objWarning\Create_0.gml
+Converted description : /// @description creation stuff
+
+Converting GML script : ${project_dir}\objects\objWarning\Alarm_0.gml
+Converted description : /// @description destroy
+
+Converting GML script : ${project_dir}\objects\objRmArrowRain\Create_0.gml
+Converted description : /// @description globalvars
+
+Converting GML script : ${project_dir}\objects\objRmArrowRain\Alarm_1.gml
+Converted description : /// @description give warning
+
+Converting GML script : ${project_dir}\objects\objRmArrowRain\Alarm_0.gml
+Converted description : /// @description summon arrows
+
+Converting GML script : ${project_dir}\objects\objArrowUp\Create_0.gml
+Converted description : /// @description creation stuff
+
+Converting GML script : ${project_dir}\objects\objRmChimes\Create_0.gml
+Converted description : /// @description globalvars
+
+Converting GML script : ${project_dir}\objects\objRmChimes\Alarm_0.gml
+Converted description : /// @description summon chime carrier
+
+Converting GML script : ${project_dir}\objects\objWindManager\Create_0.gml
+Converted description : /// @description globalvars
+
+Converting GML script : ${project_dir}\objects\objWindManager\Step_0.gml
+Converted description : /// @description create wind
+
+Converting GML script : ${project_dir}\rooms\rmCharacterSelect\RoomCreationCode.gml
+Converted description : /// @description creation stuff
+
+Converting GML script : ${project_dir}\objects\objShaman\Create_0.gml
+Converted description : /// @description stats
+
+Converting GML script : ${project_dir}\objects\objShaman\Alarm_0.gml
+Converted description : /// @description make not immune
+
+Converting GML script : ${project_dir}\objects\objShaman\Step_0.gml
+Converted description : /// @description act based on input
+
+Converting GML script : ${project_dir}\objects\objShaman\Collision_c91890c4-5cb1-45c7-a1e0-c06bf1f1405d.gml
+Converted description : /// @description take damage
+
+Converting GML script : ${project_dir}\objects\objShaman\Collision_0ba5597b-c299-4be0-995e-62f1a277258c.gml
+Converted description : /// @description get blown
+
+Converting GML script : ${project_dir}\objects\objShaman\Collision_2f1b322d-625d-4bad-b69b-92ffe7024f98.gml
+Converted description : /// @description take damage
+
+Converting GML script : ${project_dir}\objects\objShaman\Collision_774999a9-58d3-4ec6-8332-d8204219894b.gml
+Converted description : /// @description take damage
+
+Converting GML script : ${project_dir}\objects\objFireSpiritExplosion\Step_0.gml
+Converted description : /// @description destroy
+
+Converting GML script : ${project_dir}\objects\objFireSpirit\Create_0.gml
+Converted description : /// @description creation stuff
+
+Converting GML script : ${project_dir}\objects\objFireSpirit\Step_0.gml
+Converted description : /// @description move
+
+Converting GML script : ${project_dir}\objects\objFireSpirit\Collision_5ae5046c-528d-45a6-9181-3255c336a611.gml
+Converted description : /// @description explode
+
+Converting GML script : ${project_dir}\objects\objFireSpirit\Collision_9e98f69f-6c76-4b8b-ab6d-f2bdbb30526b.gml
+Converted description : /// @description explode
+
+macOS icon ${options_dir}\mac\icons\icon512.png written out as 32-bit.
+game speed set to 30
+added compatibility script instance/instance_create.gml
+added compatibility script object/object_get_depth.gml
+added compatibility script texture/texture_set_interpolation.gml
+added compatibility script __global_object_depths.gml
