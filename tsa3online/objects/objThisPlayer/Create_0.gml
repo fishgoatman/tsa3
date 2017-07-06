@@ -9,13 +9,12 @@ do {
     spawnY = random(room_height);
 } until (!place_meeting(spawnX, spawnY, objBlock));
 
-heroId = instance_create(spawnX, spawnY, hero);
-tpId = heroId;
+tpId = instance_create(spawnX, spawnY, hero);
 var hpBarOffset = 50;
 var hpPodSize = 32;
 
 if (room != rmCharacterSelect) {
-    for (var i = 0; i < heroId.hp; i++) {
+    for (var i = 0; i < tpId.hp; i++) {
         thisHpBar[i] = instance_create(room_width - hpBarOffset - hpPodSize * (i + 1), hpBarOffset,
         objHpPod);
     }
@@ -31,7 +30,7 @@ if (room != rmCharacterSelect) {
     }
 }
 
-heroId.controlScheme = MOUSE;
+tpId.controlScheme = MOUSE;
 upButton = vk_up;
 leftButton = vk_left;
 downButton = vk_down;

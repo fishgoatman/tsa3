@@ -6,7 +6,7 @@ var hpBarOffset = 50;
 var hpPodSize = 32;
 
 if (room != rmCharacterSelect) {
-    for (var i = 0; i < heroId.hp; i++) {
+    for (var i = 0; i < opId.hp; i++) {
         keyboardHpBar[i] = instance_create(hpBarOffset + hpPodSize * i, hpBarOffset, objHpPod);
     }
     
@@ -22,8 +22,8 @@ if (room != rmCharacterSelect) {
 }
 
 if (hero == objKnight) {
-    heroId.shieldBarId.x = hpBarOffset + heroId.shieldBarId.sprite_width / 2;
-    heroId.shieldBarId.y = hpBarOffset * 2 + heroId.hpBarId.sprite_height + heroId.shieldBarId.sprite_height / 2;
+    opId.shieldBarId.x = hpBarOffset + heroId.shieldBarId.sprite_width / 2;
+    opId.shieldBarId.y = hpBarOffset * 2 + heroId.hpBarId.sprite_height + heroId.shieldBarId.sprite_height / 2;
 }
 
 ///creation vars
