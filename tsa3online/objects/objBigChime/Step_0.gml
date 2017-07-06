@@ -22,9 +22,9 @@ if (chime) {
         var obj;
     
         if (ready == MOUSE) {
-            obj = objChimeBoltMP;
+            obj = objChimeBoltTP;
         } else {
-            obj = objChimeBoltKP;
+            obj = objChimeBoltOP;
         }
         
         instance_create(x - sprite_width / 2 + random(sprite_width), y + sprite_height - 8, obj);

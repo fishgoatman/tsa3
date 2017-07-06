@@ -2,12 +2,12 @@
 var tempId;
 
 if (controlScheme == MOUSE) {
-    if (instance_number(objKnifeMP) < maxKnives) {
-        tempId = instance_create(preciseX, preciseY, objKnifeMP);
+    if (instance_number(objKnifeTP) < maxKnives) {
+        tempId = instance_create(preciseX, preciseY, objKnifeTP);
     }
 } else {
-    if (instance_number(objKnifeKP) < maxKnives) {
-        tempId = instance_create(preciseX, preciseY, objKnifeKP);
+    if (instance_number(objKnifeOP) < maxKnives) {
+        tempId = instance_create(preciseX, preciseY, objKnifeOP);
     }
 }
 

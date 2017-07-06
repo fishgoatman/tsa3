@@ -14,9 +14,9 @@ if (!ducking) {
     var hurtbox;
     
     if (controlScheme == MOUSE) {
-        hurtbox = objAttackHurtboxMP;
+        hurtbox = objAttackHurtboxTP;
     } else {
-        hurtbox = objAttackHurtboxKP;
+        hurtbox = objAttackHurtboxOP;
     }
     
     instance_create(preciseX + direct * attackHurtboxXOffset, preciseY - attackHurtboxYOffset, hurtbox);
@@ -24,9 +24,9 @@ if (!ducking) {
     var hurtbox;
     
     if (controlScheme == MOUSE) {
-        hurtbox = objAttackDuckHurtboxMP;
+        hurtbox = objAttackDuckHurtboxTP;
     } else {
-        hurtbox = objAttackDuckHurtboxKP;
+        hurtbox = objAttackDuckHurtboxOP;
     }
     
     instance_create(preciseX, preciseY, hurtbox);

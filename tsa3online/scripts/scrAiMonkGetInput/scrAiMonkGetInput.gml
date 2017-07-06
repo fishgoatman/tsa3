@@ -35,9 +35,9 @@ if (instance_exists(enemyId)) {
         var attack;
         
         if (heroId.controlScheme == MOUSE) {
-            attack = objAttackKP;
+            attack = objAttackOP;
         } else {
-            attack = objAttackMP;
+            attack = objAttackTP;
         }
     
         if (heroId.canShield && place_meeting(x, y, attack)) {

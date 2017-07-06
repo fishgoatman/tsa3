@@ -3,11 +3,11 @@ var sword;
 var icicle;
 
 if (controlScheme == MOUSE) {
-    sword = objSwordMP;
-    icicle = objIcicleMP;
+    sword = objSwordTP;
+    icicle = objIcicleTP;
 } else {
-    sword = objSwordKP;
-    icicle = objIcicleKP;
+    sword = objSwordOP;
+    icicle = objIcicleOP;
 }
 
 instance_create(x, y, sword);

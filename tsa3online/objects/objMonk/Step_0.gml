@@ -80,9 +80,9 @@ if (abilityState == INIT_ABILITY) {
         
         if (kickBlinkPrepped) {
             if (controlScheme == MOUSE) {
-                shadow = objMonkKickShadowMP;
+                shadow = objMonkKickShadowTP;
             } else {
-                shadow = objMonkKickShadowKP;
+                shadow = objMonkKickShadowOP;
             }
             
             blinkState = KICK_BLINK;
@@ -90,9 +90,9 @@ if (abilityState == INIT_ABILITY) {
             displace = kickBlinkDisplace;
         } else {
             if (controlScheme == MOUSE) {
-                shadow = objMonkShadowMP;
+                shadow = objMonkShadowTP;
             } else {
-                shadow = objMonkShadowKP;
+                shadow = objMonkShadowOP;
             }
             
             blinkState = BLINK;
@@ -122,9 +122,9 @@ if (ducking && canShield && currEnergy >= shieldEnergyCost) {
     currEnergy -= shieldEnergyCost;
     
     if (controlScheme == MOUSE) {
-        shield = instance_create(preciseX, preciseY, objShieldMP);
+        shield = instance_create(preciseX, preciseY, objShieldTP);
     } else {
-        shield = instance_create(preciseX, preciseY, objShieldKP);
+        shield = instance_create(preciseX, preciseY, objShieldOP);
     }
 }
 

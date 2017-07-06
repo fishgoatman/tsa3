@@ -1,6 +1,6 @@
 /// @description creation stuff
 heroId = opId;
-fireball = objFireblastKP;
+fireball = objFireblastOP;
 image_speed = 0.15;
 burstAttackCooldown = 1 / image_speed * 4;
 burstAmount = 1;

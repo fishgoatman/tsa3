@@ -3,11 +3,11 @@ attackState = NONE;
 spd = moveSpd;
 
 if (controlScheme == MOUSE) {
-    with (objSwordMP) {
+    with (objSwordTP) {
         instance_destroy();
     }
 } else {
-    with (objSwordKP) {
+    with (objSwordOP) {
         instance_destroy();
     }
 }

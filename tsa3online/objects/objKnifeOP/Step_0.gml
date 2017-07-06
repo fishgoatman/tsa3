@@ -38,7 +38,7 @@ if (instance_exists(heroId)) {
         }
         
         if (place_meeting(tryX, tryY, objPlayer)) {
-            instance_create(tryX, tryY, objKnifeHurtboxKP);
+            instance_create(tryX, tryY, objKnifeHurtboxOP);
         }
         
         totalDisp++;

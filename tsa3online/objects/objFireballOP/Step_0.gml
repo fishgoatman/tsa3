@@ -15,12 +15,12 @@ if (place_meeting(preciseX + 1, preciseY, objBlock) || place_meeting(preciseX - 
 
 if (bounces > explodeBounces) {
     instance_destroy();
-    instance_create(x, y, objFireballExplosionKP);
+    instance_create(x, y, objFireballExplosionOP);
 }
 
 if (instance_exists(opId) && opId.allExplode) {
     instance_destroy();
-    instance_create(x, y, objFireballExplosionKP);
+    instance_create(x, y, objFireballExplosionOP);
 }
 
 scrMove();

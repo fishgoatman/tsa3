@@ -61,7 +61,7 @@ image_angle = dir + 180;
 ///destroy
 if (place_meeting(x, y, opId)) {
     instance_destroy();
-    instance_create(x, y, objAttackDuckHurtboxMP);
+    instance_create(x, y, objAttackDuckHurtboxTP);
 }
 
 if (x < 0 || y < 0 || x > room_width || y > room_height) {
