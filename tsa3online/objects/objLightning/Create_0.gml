@@ -6,7 +6,6 @@ var ep = opId.logicId.endPlace;
 var a = opId.logicId.a;
 var b = opId.logicId.b
 image_angle = 360 - arctan2(b.y - a.y, b.x - a.x) * 180 / pi;
-show_debug_message(image_angle);
 
 if (sp == "top") {
     if (ep == "top") {

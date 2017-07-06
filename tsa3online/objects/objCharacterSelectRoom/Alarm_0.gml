@@ -1,5 +1,5 @@
 /// @description start game
-if ((mouseAi || tpId.lockedIn) && (keyboardAi || opId.lockedIn)) {
+if (tpId.lockedIn && otherLockedIn) {
     room_goto(scrRandRoom());
 } else {
     alarmStarted = false;
