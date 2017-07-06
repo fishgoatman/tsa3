@@ -13,11 +13,11 @@ if (state == MOVE) {
 
 //dy
 if (upPressed) {
-	if (place_meeting(heroId.preciseX, heroId.preciseY + 1, objBlock)) {
-        heroId.jumpState = INIT_JUMP;
-    } else if (heroId.currAirJumps < heroId.maxAirJumps) {
-        heroId.jumpState = INIT_JUMP;
-        heroId.currAirJumps++;
+	if (place_meeting(tpId.preciseX, tpId.preciseY + 1, objBlock)) {
+        tpId.jumpState = INIT_JUMP;
+    } else if (tpId.currAirJumps < tpId.maxAirJumps) {
+        tpId.jumpState = INIT_JUMP;
+        tpId.currAirJumps++;
     }
 	
 	upPressed = false;

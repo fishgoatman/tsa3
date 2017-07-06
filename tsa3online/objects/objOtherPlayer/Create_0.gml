@@ -22,8 +22,8 @@ if (room != rmCharacterSelect) {
 }
 
 if (hero == objKnight) {
-    opId.shieldBarId.x = hpBarOffset + heroId.shieldBarId.sprite_width / 2;
-    opId.shieldBarId.y = hpBarOffset * 2 + heroId.hpBarId.sprite_height + heroId.shieldBarId.sprite_height / 2;
+    opId.shieldBarId.x = hpBarOffset + tpId.shieldBarId.sprite_width / 2;
+    opId.shieldBarId.y = hpBarOffset * 2 + tpId.hpBarId.sprite_height + tpId.shieldBarId.sprite_height / 2;
 }
 
 ///creation vars

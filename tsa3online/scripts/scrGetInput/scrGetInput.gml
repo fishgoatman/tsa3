@@ -1,4 +1,4 @@
-/// @description get input
+/// @description get input a
 tpId.state = NONE;
 onePressed = false;
 twoPressed = false;
