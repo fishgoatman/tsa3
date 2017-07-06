@@ -1,11 +1,11 @@
 /// @description move
-if (instance_exists(heroId)) {
+if (instance_exists(tpId)) {
     if (slowSpd < maxSlowSpd) {
         slowSpd += dSlowSpd;
     }
     
-    var xDiff = x - heroId.x;
-    var yDiff = y - heroId.y;
+    var xDiff = x - tpId.x;
+    var yDiff = y - tpId.y;
     var hyp = sqrt(xDiff * xDiff + yDiff * yDiff);
     
     if (hyp != 0) {
@@ -21,7 +21,7 @@ if (instance_exists(heroId)) {
     var tempDy = dy / hyp;
     
     while (totalDisp < hyp) {
-        if (place_meeting(tryX + tempDx, tryY - tempDy, heroId) && alreadyThrown) {
+        if (place_meeting(tryX + tempDx, tryY - tempDy, tpId) && alreadyThrown) {
             instance_destroy();
         }
         

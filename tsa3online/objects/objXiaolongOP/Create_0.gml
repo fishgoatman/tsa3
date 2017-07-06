@@ -1,5 +1,5 @@
 /// @description creation stuff
-heroId = opId;
+tpId = opId;
 fireball = objFireblastOP;
 image_speed = 0.15;
 burstAttackCooldown = 1 / image_speed * 4;
@@ -9,6 +9,6 @@ burstInBetweenTime = 0.2 * room_speed;
 COOLDOWN = 0;
 BURST = 1;
 alarm[COOLDOWN] = burstAttackCooldown;
-image_xscale = heroId.image_xscale;
+image_xscale = tpId.image_xscale;
 offset = 10;
 

@@ -1,18 +1,18 @@
 /// @description creation stuff
-heroId = tpId;
+tpId = tpId;
 
-if (instance_exists(heroId)) {
+if (instance_exists(tpId)) {
     preciseX = x;
     preciseY = y;
     xspd = 10 * overallSpd;
     yspd = 10 * overallSpd;
     visible = true;
     
-    if (heroId.ducking) {
-        dx = xspd * heroId.direct;
+    if (tpId.ducking) {
+        dx = xspd * tpId.direct;
         dy = yspd / 2;
     } else {
-        dx = xspd * heroId.direct;
+        dx = xspd * tpId.direct;
         dy = yspd;
     }
     

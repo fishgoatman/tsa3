@@ -1,4 +1,4 @@
 /// @description creation stuff
-heroId = tpId;
+tpId = tpId;
 scrCreateKnife();
 

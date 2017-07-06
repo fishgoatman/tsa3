@@ -1,37 +1,37 @@
 /// @description get input
-heroId.state = NONE;
+tpId.state = NONE;
 onePressed = false;
 twoPressed = false;
 threePressed = false;
 fourPressed = false;
 
 if (keyboard_check_direct(vk_right) || keyboard_check_direct(ord("G"))) {
-    heroId.direct = RIGHT;
-    heroId.state = MOVE;
+    tpId.direct = RIGHT;
+    tpId.state = MOVE;
 } else if (keyboard_check_direct(vk_left) || keyboard_check_direct(ord("D"))) {
-    heroId.direct = LEFT;
-    heroId.state = MOVE;
+    tpId.direct = LEFT;
+    tpId.state = MOVE;
 }
 
 var jumpButton;
 
-if (heroId.isSelectHero) {
+if (tpId.isSelectHero) {
     jumpButton = keyboard_check_direct(vk_up) || keyboard_check_direct(ord("R"));
 } else {
     jumpButton = keyboard_check_pressed(vk_up) || keyboard_check_pressed(ord("R"));
 }
 
 if (jumpButton) {
-	heroId.upPressed = true;
+	tpId.upPressed = true;
 }
 
 if (keyboard_check_direct(vk_down) || keyboard_check_direct(ord("F"))) {
-    heroId.ducking = true;
+    tpId.ducking = true;
 } else {
-    heroId.ducking = false;
+    tpId.ducking = false;
 }
 
-if (heroId.isSelectHero) {
+if (tpId.isSelectHero) {
 	if (mouse_check_button_pressed(mb_left) || keyboard_check_pressed(ord("1"))) {
 		onePressed = true;
 	}

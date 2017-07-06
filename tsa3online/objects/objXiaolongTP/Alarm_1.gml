@@ -1,5 +1,5 @@
 /// @description burst attack
-if (heroId.firingMode == heroId.DRAGON) {
+if (tpId.firingMode == tpId.DRAGON) {
     if (currBurstAmount < burstAmount) {
         currBurstAmount++;
         instance_create(x, y, fireball);

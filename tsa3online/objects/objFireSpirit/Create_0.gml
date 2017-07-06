@@ -1,9 +1,9 @@
 /// @description creation stuff
-heroId = tpId;
+tpId = tpId;
 
-if (instance_exists(heroId)) {
-    var xDiff = -1 * (x - heroId.x);
-    var yDiff = y - heroId.y;
+if (instance_exists(tpId)) {
+    var xDiff = -1 * (x - tpId.x);
+    var yDiff = y - tpId.y;
     var hyp = sqrt(xDiff * xDiff + yDiff * yDiff);
     spd = 14 * overallSpd;
     dx = spd * xDiff / hyp;
