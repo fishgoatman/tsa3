@@ -11,6 +11,8 @@ do {
 
 heroId = instance_create(spawnX, spawnY, hero);
 tpId = heroId;
+var hpBarOffset = 50;
+var hpPodSize = 32;
 
 if (room != rmCharacterSelect) {
     for (var i = 0; i < heroId.hp; i++) {
@@ -24,8 +26,8 @@ if (room != rmCharacterSelect) {
         instance_create(room_width - hpBarOffset - width, hpBarOffset * 2 + objHpPod.sprite_height, objMonkEnergyBarMP);
     }
     
-    if (hero == objMage) {
-        tpId.xiaolongId = instance_create(tpId.x, tpId.y, objXiaolongMP);
+    if (hero == objMageTP) {
+        tpId.xiaolongId = instance_create(tpId.x, tpId.y, objXiaolongTP);
     }
 }
 

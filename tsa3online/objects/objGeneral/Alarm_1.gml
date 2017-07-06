@@ -1,7 +1,6 @@
 /// @description reset
 gg = NONE;
-otherPlayerHero = objSelectHero;
-thisPlayerHero = objSelectHero;
+thisPlayerHero = objSelectHeroTP;
 room_goto(rmCharacterSelect);
 oneActivate = false;
 twoActivate = false;

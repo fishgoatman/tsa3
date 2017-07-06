@@ -2,6 +2,8 @@
 hero = otherPlayerHero;
 mask_index = object_get_sprite(hero); //necessary because this object checks collisions for input
 opId = instance_create(0, 0, otherPlayerHero);
+var hpBarOffset = 50;
+var hpPodSize = 32;
 
 if (room != rmCharacterSelect) {
     for (var i = 0; i < heroId.hp; i++) {
@@ -15,11 +17,7 @@ if (room != rmCharacterSelect) {
     }
     
     if (hero == objMageOP) {
-        opId.xiaolongId = instance_create(opId.x, opId.y, objXiaolongKP);
-    }
-    
-    if (hero == objShaman) {
-        opId.logicId = instance_create(opId.x, opId.y, objShamanLogic);
+        opId.xiaolongId = instance_create(opId.x, opId.y, objXiaolongOP);
     }
 }
 
