@@ -11,16 +11,17 @@ if (socketId == clientSocket) {
 	} else if (connectedToServer) {
 		if (type == "p") { //player
 			otherX = buffer_read(receivedBuffer, buffer_u16);
-			oneActivate = buffer_read(receivedBuffer, buffer_bool);
+			otherOneActivate = buffer_read(receivedBuffer, buffer_bool);
 			otherY = buffer_read(receivedBuffer, buffer_u16);
-			twoActivate = buffer_read(receivedBuffer, buffer_bool);
+			otherTwoActivate = buffer_read(receivedBuffer, buffer_bool);
 			otherMouseX = buffer_read(receivedBuffer, buffer_u16);
-			threeActivate = buffer_read(receivedBuffer, buffer_bool);
+			otherThreeActivate = buffer_read(receivedBuffer, buffer_bool);
 			otherMouseY = buffer_read(receivedBuffer, buffer_u16);
-			fourActivate = buffer_read(receivedBuffer, buffer_bool);
+			otherFourActivate = buffer_read(receivedBuffer, buffer_bool);
 			otherSpriteIndex = buffer_read(receivedBuffer, buffer_string);
 			otherImageIndex = buffer_read(receivedBuffer, buffer_u16);
 			otherHp = buffer_read(receivedBuffer, buffer_u16);
+			otherXScale = buffer_read(receivedBuffer, buffer_u16);
 			type = buffer_read(receivedBuffer, buffer_string);
 		}
 		

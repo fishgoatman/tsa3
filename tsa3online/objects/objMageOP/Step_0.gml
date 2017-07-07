@@ -1,20 +1,24 @@
 /// @description act based on server data
 //abilities
-if (oneActivate) {
+if (otherOneActivate) {
 	instance_create(x, y, objFireballOP);
-	oneActivate = false;
+	otherOneActivate = false;
 }
 
-if (twoActivate) {
-	twoActivate = false;
+if (otherTwoActivate) {
+	otherTwoActivate = false;
 }
 
-if (threeActivate) {
-	threeActivate = false;
+if (otherThreeActivate) {
+	otherThreeActivate = false;
 }
 
-if (fourActivate) {
-	fourActivate = false;
+if (otherFourActivate) {
+	otherFourActivate = false;
+}
+
+if (otherHp != hp) {
+	scrTakeDamage(hp - otherHp);
 }
 
 //pos
@@ -24,3 +28,4 @@ y = otherY;
 //sprite and image
 sprite_index = otherSpriteIndex;
 image_index = otherImageIndex;
+image_xscale = otherXScale;
