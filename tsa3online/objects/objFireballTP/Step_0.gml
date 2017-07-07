@@ -18,10 +18,5 @@ if (bounces > explodeBounces) {
     instance_create(x, y, objFireballExplosionTP);
 }
 
-if (instance_exists(tpId) && tpId.allExplode) {
-    instance_destroy();
-    instance_create(x, y, objFireballExplosionTP);
-}
-
 scrMove();
 
