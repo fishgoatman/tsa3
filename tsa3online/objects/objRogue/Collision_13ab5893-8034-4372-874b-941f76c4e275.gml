@@ -1,5 +1,5 @@
 /// @description take damage
 if (controlScheme == KEYBOARD) {
-    scrTakeDamage(1);
+    scrThisTakeDamage(1);
 }
 

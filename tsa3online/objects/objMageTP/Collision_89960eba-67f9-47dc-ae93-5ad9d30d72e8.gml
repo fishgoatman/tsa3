@@ -1,2 +1,2 @@
 /// @description take damage and tell server
-scrTakeDamage(1);
+scrThisTakeDamage(1);

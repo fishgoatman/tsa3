@@ -6,8 +6,8 @@ Converted description : /// @description get input
 Converted string : line 48 : '3' -> "3"
 Converted string : line 52 : '4' -> "4"
 
-Converting GML script : ${project_dir}\scripts\scrTakeDamage\scrTakeDamage.gml
-Converted description : /// @description scrTakeDamage
+Converting GML script : ${project_dir}\scripts\scrThisTakeDamage\scrThisTakeDamage.gml
+Converted description : /// @description scrThisTakeDamage
 
 Converting GML script : ${project_dir}\scripts\scrKnightTakeDamage\scrKnightTakeDamage.gml
 Converted description : /// @description scrKnightTakeDamage
