@@ -18,7 +18,7 @@ if (otherFourActivate) {
 }
 
 if (otherHp != hp) {
-	scrOtherTakeDamage(hp - otherHp);
+	scrOtherSTakeDamage(hp - otherHp);
 }
 
 //pos

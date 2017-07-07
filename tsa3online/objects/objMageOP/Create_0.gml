@@ -1,3 +1,4 @@
 /// @description creation stuff
-hp = 3;
+maxHp = 3;
+hp = maxHp;
 tempHp = hp;
