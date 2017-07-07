@@ -28,7 +28,7 @@ if (gg == NONE) {
 /// @DnDAction : YoYo Games.Common.Execute_Code
 /// @DnDVersion : 1
 /// @DnDHash : 1E905D73
-/// @DnDArgument : "code" "///@description server stuff$(13_10)if (!connectedToServer) {$(13_10)	buffer_seek(bufferToSend, buffer_seek_start, 0);$(13_10)	buffer_write(bufferToSend, buffer_string, "c"); //connection$(13_10)	network_send_udp(clientSocket, IP_NUM, PORT_NUM, bufferToSend, buffer_tell(bufferToSend));$(13_10)} else {$(13_10)	//constantly send game info$(13_10)	buffer_seek(bufferToSend, buffer_seek_start, 0);$(13_10)	buffer_write(bufferToSend, buffer_string, "g"); //game info$(13_10)	buffer_write(bufferToSend, buffer_u16, rmNumber); //room number$(13_10)}"
+/// @DnDArgument : "code" "///@description server stuff$(13_10)if (!connectedToServer) {$(13_10)	buffer_seek(bufferToSend, buffer_seek_start, 0);$(13_10)	buffer_write(bufferToSend, buffer_string, "c"); //connection$(13_10)	network_send_udp(clientSocket, IP_NUM, PORT_NUM, bufferToSend, buffer_tell(bufferToSend));$(13_10)} else {$(13_10)	//constantly send game info$(13_10)	buffer_seek(bufferToSend, buffer_seek_start, 0);$(13_10)	buffer_write(bufferToSend, buffer_string, "g"); //game info$(13_10)	buffer_write(bufferToSend, buffer_u16, rmNumber); //room number$(13_10)}$(13_10)$(13_10)show_debug_message("rmNumber = " + string(rmNumber));"
 ///@description server stuff
 if (!connectedToServer) {
 	buffer_seek(bufferToSend, buffer_seek_start, 0);
@@ -40,3 +40,5 @@ if (!connectedToServer) {
 	buffer_write(bufferToSend, buffer_string, "g"); //game info
 	buffer_write(bufferToSend, buffer_u16, rmNumber); //room number
 }
+
+show_debug_message("rmNumber = " + string(rmNumber));

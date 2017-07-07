@@ -1,4 +1,4 @@
-/// @description get input
-if (buffer_get_size(inputBuffer) > 1) {
-	//handle the input buffer
+/// @description destroy
+if (otherPlayerHp <= 0) {
+	instance_destroy();
 }

@@ -1,6 +1,6 @@
 /// @description scrWinStuff
 alarm[NEXT_GAME] = victoryTime;
-rmNumber = -1;
+rmNumber = irandom(array_length_1d(rooms) - 1);
 var keyboardObj;
 var mouseObj;
 

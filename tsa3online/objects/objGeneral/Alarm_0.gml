@@ -10,10 +10,6 @@ if (thisWins >= firstTo) {
     alarm[RESET] = matchVictoryTime;
 	instance_create(signX, signY, objKeyboardWin);
 } else {
-	if (rmNumber == -1) {
-		alarm[NEXT_GAME] = 0.5 * room_speed;
-	} else {
-	    room_goto(rooms[rmNumber]);
-	    gg = NONE;
-	}
+	room_goto(rooms[rmNumber]);
+	gg = NONE;
 }

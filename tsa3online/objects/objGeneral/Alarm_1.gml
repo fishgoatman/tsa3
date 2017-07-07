@@ -6,4 +6,3 @@ oneActivate = false;
 twoActivate = false;
 threeActivate = false;
 fourActivate = false;
-rmNumber = -1;
