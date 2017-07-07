@@ -1,11 +1,5 @@
 /// @description act based on server data
-//pos
-x = otherX;
-y = otherY;
-
 //abilities
-show_debug_message("ooa = " + string(otherOneActivate));
-
 if (otherOneActivate) {
 	instance_create(x, y, objFireballOP);
 	otherOneActivate = false;
@@ -26,6 +20,10 @@ if (otherFourActivate) {
 if (otherHp != hp) {
 	scrTakeDamage(hp - otherHp);
 }
+
+//pos
+x = otherX;
+y = otherY;
 
 //sprite and image
 sprite_index = otherSpriteIndex;

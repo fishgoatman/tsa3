@@ -23,7 +23,6 @@ if (socketId == clientSocket) {
 			otherHp = buffer_read(receivedBuffer, buffer_u16);
 			otherXScale = buffer_read(receivedBuffer, buffer_s8);
 			type = buffer_read(receivedBuffer, buffer_string);
-			show_debug_message("otherXScale = " + string(otherXScale));
 		}
 		
 		if (type == "e") { //enda
