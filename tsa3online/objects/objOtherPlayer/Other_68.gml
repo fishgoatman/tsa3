@@ -21,7 +21,7 @@ if (socketId == clientSocket) {
 			otherSpriteIndex = buffer_read(receivedBuffer, buffer_string);
 			otherImageIndex = buffer_read(receivedBuffer, buffer_u16);
 			otherHp = buffer_read(receivedBuffer, buffer_u16);
-			otherXScale = buffer_read(receivedBuffer, buffer_u16);
+			otherXScale = buffer_read(receivedBuffer, buffer_s8);
 			type = buffer_read(receivedBuffer, buffer_string);
 		}
 		
