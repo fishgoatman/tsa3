@@ -19,4 +19,3 @@ if (bounces > explodeBounces) {
 }
 
 scrMove();
-
