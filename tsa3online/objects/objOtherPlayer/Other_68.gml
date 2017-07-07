@@ -2,7 +2,7 @@
 var socketId = ds_map_find_value(async_load, "id");
 
 if (socketId == clientSocket) {
-	var receivedBuffer = ds_map_find_value(async_load, "buffer");
+	receivedBuffer = ds_map_find_value(async_load, "buffer");
 	buffer_seek(receivedBuffer, buffer_seek_start, 0);
 	var type = buffer_read(receivedBuffer, buffer_string);
 	
@@ -12,7 +12,6 @@ if (socketId == clientSocket) {
 		if (type == "p") { //player
 			otherX = buffer_read(receivedBuffer, buffer_u16);
 			otherOneActivate = buffer_read(receivedBuffer, buffer_bool);
-			show_debug_message("ooa = " + string(otherOneActivate));
 			otherY = buffer_read(receivedBuffer, buffer_u16);
 			otherTwoActivate = buffer_read(receivedBuffer, buffer_bool);
 			otherMouseX = buffer_read(receivedBuffer, buffer_u16);
@@ -24,14 +23,14 @@ if (socketId == clientSocket) {
 			otherHp = buffer_read(receivedBuffer, buffer_u16);
 			otherXScale = buffer_read(receivedBuffer, buffer_s8);
 			type = buffer_read(receivedBuffer, buffer_string);
+			show_debug_message("otherXScale = " + string(otherXScale));
 		}
 		
 		if (type == "e") { //enda
 			//do nothing
 		} else if (type == "s") { //selectHero
 			otherLockedIn = buffer_read(receivedBuffer, buffer_bool);
+			otherPlayerHero = buffer_read(receivedBuffer, buffer_string);
 		}
-		
-		buffer_delete(receivedBuffer);
 	}
 }

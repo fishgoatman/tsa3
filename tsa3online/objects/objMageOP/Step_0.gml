@@ -4,6 +4,8 @@ x = otherX;
 y = otherY;
 
 //abilities
+show_debug_message("ooa = " + string(otherOneActivate));
+
 if (otherOneActivate) {
 	instance_create(x, y, objFireballOP);
 	otherOneActivate = false;

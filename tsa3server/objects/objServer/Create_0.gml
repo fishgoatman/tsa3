@@ -12,4 +12,4 @@ ipList = ds_list_create();
 portList = ds_list_create();
 ip = "0.0.0.0";
 port = 0;
-buffer = buffer_create(256, buffer_fixed, 1);
+bufferToSend = buffer_create(256, buffer_fixed, 1);

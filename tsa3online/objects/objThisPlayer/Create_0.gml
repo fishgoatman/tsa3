@@ -38,4 +38,4 @@ rightButton = vk_right;
 
 ///creation vars
 needToRecharge = false;
-bufferToSend = buffer_create(64, buffer_fixed, 1);
+bufferToSend = buffer_create(256, buffer_fixed, 1);

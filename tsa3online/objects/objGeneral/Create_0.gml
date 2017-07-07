@@ -129,7 +129,6 @@ IP_NUM = "10.0.1.2";
 globalvar connectedToServer;
 connectedToServer = false;
 globalvar rmNumber;
-rmNumber = 0;
 
 ///regular vars
 victoryTime = 1.8 * room_speed;

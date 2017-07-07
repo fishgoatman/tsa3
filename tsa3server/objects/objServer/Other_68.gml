@@ -11,20 +11,12 @@ if (type == "c") { //connection
 		show_debug_message("client connected");
 	}
 	
-	var confirmBuffer = buffer_create(64, buffer_fixed, 1);
-	buffer_write(confirmBuffer, buffer_string, "c"); //connection confirm
-	network_send_udp(serverSocket, ip, port, confirmBuffer, buffer_tell(confirmBuffer));
-	buffer_delete(confirmBuffer);
+	buffer_seek(bufferToSend, buffer_seek_start, 0);
+	buffer_write(bufferToSend, buffer_string, "c"); //connection confirm
+	network_send_udp(serverSocket, ip, port, bufferToSend, buffer_tell(bufferToSend));
+	buffer_delete(bufferToSend);
 } else if (type == "g") { //game data
-	if (ds_list_size(ipList) > 1) {
-		var index = ds_list_find_index(ipList, ip);
 	
-		if (index % 2 == 0) {
-			ipToSendTo = ds_list_find_value(ipList, index + 1);
-			portToSendTo = ds_list_find_value(portList, index + 1);
-			network_send_udp(serverSocket, ipToSendTo, portToSendTo, buffer, buffer_get_size(buffer));
-		}
-	}
 } else { //data
 	if (ds_list_size(ipList) > 1) {
 		var index = ds_list_find_index(ipList, ip);
