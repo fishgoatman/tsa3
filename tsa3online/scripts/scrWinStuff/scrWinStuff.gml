@@ -1,25 +1,26 @@
 /// @description scrWinStuff
 alarm[NEXT_GAME] = victoryTime;
+rmNumber = -1;
 var keyboardObj;
 var mouseObj;
 
-if (keyboardWins == 0) {
+if (otherWins == 0) {
     keyboardObj = objZero;
-} else if (keyboardWins == 1) {
+} else if (otherWins == 1) {
     keyboardObj = objOne;
-} else if (keyboardWins == 2) {
+} else if (otherWins == 2) {
     keyboardObj = objTwo;
-} else if (keyboardWins == 3) {
+} else if (otherWins == 3) {
     keyboardObj = objThree;
 }
 
-if (mouseWins == 0) {
+if (thisWins == 0) {
     mouseObj = objZero;
-} else if (mouseWins == 1) {
+} else if (thisWins == 1) {
     mouseObj = objOne;
-} else if (mouseWins == 2) {
+} else if (thisWins == 2) {
     mouseObj = objTwo;
-} else if (mouseWins == 3) {
+} else if (thisWins == 3) {
     mouseObj = objThree;
 }
 

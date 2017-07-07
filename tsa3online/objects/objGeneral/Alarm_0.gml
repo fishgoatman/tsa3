@@ -1,15 +1,19 @@
 /// @description next game
-if (mouseWins >= firstTo) {
-    mouseWins = 0;
-    keyboardWins = 0;
+if (thisWins >= firstTo) {
+    thisWins = 0;
+    otherWins = 0;
     alarm[RESET] = matchVictoryTime;
     instance_create(signX, signY, objMouseWin);
-} else if (keyboardWins >= firstTo) {
-    mouseWins = 0;
-    keyboardWins = 0;
+} else if (otherWins >= firstTo) {
+    thisWins = 0;
+    otherWins = 0;
     alarm[RESET] = matchVictoryTime;
+	instance_create(signX, signY, objKeyboardWin);
 } else {
-    room_goto(scrRandRoom());
-    gg = NONE;
+	if (rmNumber == -1) {
+		alarm[NEXT_GAME] = 0.5 * room_speed;
+	} else {
+	    room_goto(rooms[rmNumber]);
+	    gg = NONE;
+	}
 }
-

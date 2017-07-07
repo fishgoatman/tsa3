@@ -106,10 +106,10 @@ rooms[1] = rm2;
 rooms[2] = rmArrowRain;
 globalvar firstTo;
 firstTo = 3;
-globalvar mouseWins;
-mouseWins = 0;
-globalvar keyboardWins;
-keyboardWins = 0;
+globalvar thisWins;
+thisWins = 0;
+globalvar otherWins;
+otherWins = 0;
 globalvar clientSocket;
 clientSocket = network_create_socket(network_socket_udp);
 globalvar PORT_NUM;
@@ -118,8 +118,8 @@ globalvar IP_NUM;
 IP_NUM = "10.0.1.2";
 globalvar connectedToServer;
 connectedToServer = false;
-
-//room stuff
+globalvar rmNumber;
+rmNumber = 0;
 
 ///regular vars
 victoryTime = 1.8 * room_speed;
@@ -128,6 +128,7 @@ signX = room_width / 2;
 signY = room_height / 4;
 NEXT_GAME = 0;
 RESET = 1;
+bufferToSend = buffer_create(256, buffer_fixed, 1);
 
 ///make it look good
 texture_set_interpolation(false);

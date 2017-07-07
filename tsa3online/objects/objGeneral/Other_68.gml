@@ -6,9 +6,17 @@ if (socketId == clientSocket) {
 	
 	if (buffer_exists(receivedBuffer)) {
 		buffer_seek(receivedBuffer, buffer_seek_start, 0);
+		var type = buffer_read(receivedBuffer, buffer_string);
 	
-		if (buffer_read(receivedBuffer, buffer_string) == "c") {
+		if (type == "c") {
 			connectedToServer = true;
+		} else if (type == "g") {
+			var tRmNumber = buffer_read(receivedBuffer, buffer_string);
+			
+			if (tRmNumber != rmNumber) {
+				rmNumber = tRmNumber;
+				room_goto(rooms[rmNumber]);
+			}
 		}
 	}
 }

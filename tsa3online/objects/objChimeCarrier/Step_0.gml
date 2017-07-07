@@ -46,4 +46,3 @@ image_angle = 270 - (90 - dir) / imageAngleConst + windSpdConst * windSpd;
 if (y < 0) {
     instance_destroy();
 }
-
