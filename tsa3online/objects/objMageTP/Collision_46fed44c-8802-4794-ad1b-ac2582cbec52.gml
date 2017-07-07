@@ -1,2 +1,2 @@
 /// @description take damage
-scrTakeDamage(1);
+scrThisTakeDamage(1);

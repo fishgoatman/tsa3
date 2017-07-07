@@ -64,6 +64,7 @@ otherPlayerHero = objSelectHeroOP;
 globalvar tpId;
 globalvar opId;
 globalvar thisHpBar;
+globalvar otherHpBar;
 globalvar hpPodSize;
 hpPodSize = 32;
 globalvar onePressed;

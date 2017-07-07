@@ -7,7 +7,7 @@ var hpPodSize = 32;
 
 if (room != rmCharacterSelect) {
     for (var i = 0; i < opId.hp; i++) {
-        keyboardHpBar[i] = instance_create(hpBarOffset + hpPodSize * i, hpBarOffset, objHpPod);
+        otherHpBar[i] = instance_create(hpBarOffset + hpPodSize * i, hpBarOffset, objHpPod);
     }
     
     if (hero == objMonk) {
