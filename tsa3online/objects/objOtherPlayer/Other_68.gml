@@ -12,6 +12,7 @@ if (socketId == clientSocket) {
 		if (type == "p") { //player
 			otherX = buffer_read(receivedBuffer, buffer_u16);
 			otherOneActivate = buffer_read(receivedBuffer, buffer_bool);
+			show_debug_message("ooa = " + string(otherOneActivate));
 			otherY = buffer_read(receivedBuffer, buffer_u16);
 			otherTwoActivate = buffer_read(receivedBuffer, buffer_bool);
 			otherMouseX = buffer_read(receivedBuffer, buffer_u16);

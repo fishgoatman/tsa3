@@ -1,19 +1,19 @@
 /// @description act based on server data
 //abilities
-if (oneActivate) {
-	oneActivate = false;
+if (otherOneActivate) {
+	otherOneActivate = false;
 }
 
-if (twoActivate) {
-	twoActivate = false;
+if (otherTwoActivate) {
+	otherTwoActivate = false;
 }
 
-if (threeActivate) {
-	threeActivate = false;
+if (otherThreeActivate) {
+	otherThreeActivate = false;
 }
 
-if (fourActivate) {
-	fourActivate = false;
+if (otherFourActivate) {
+	otherFourActivate = false;
 }
 
 lockedIn = otherLockedIn;
