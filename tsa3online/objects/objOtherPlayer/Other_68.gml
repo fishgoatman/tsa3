@@ -20,6 +20,7 @@ if (socketId == clientSocket) {
 			fourActivate = buffer_read(receivedBuffer, buffer_bool);
 			otherSpriteIndex = buffer_read(receivedBuffer, buffer_string);
 			otherImageIndex = buffer_read(receivedBuffer, buffer_u16);
+			otherHp = buffer_read(receivedBuffer, buffer_u16);
 			type = buffer_read(receivedBuffer, buffer_string);
 		}
 		

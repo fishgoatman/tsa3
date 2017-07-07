@@ -92,6 +92,7 @@ globalvar otherImageIndex;
 otherImageIndex = 0;
 globalvar otherLockedIn;
 otherLockedIn = false;
+globalvar otherHp;
 
 //other
 globalvar gg;
