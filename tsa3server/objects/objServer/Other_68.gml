@@ -29,6 +29,7 @@ if (type == "c") { //connection
 	if (ds_list_size(ipList) > 1) {
 		var index = ds_list_find_index(ipList, ip);
 		var ipToSendTo;
+		
 		var portToSendTo;
 	
 		if (index % 2 == 0) {
