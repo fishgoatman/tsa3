@@ -11,11 +11,10 @@ if (socketId == clientSocket) {
 		if (type == "c") {
 			connectedToServer = true;
 		} else if (type == "g") {
-			var tRmNumber = buffer_read(receivedBuffer, buffer_string);
+			var tRmNumber = buffer_read(receivedBuffer, buffer_u16);
 			
 			if (tRmNumber != rmNumber) {
 				rmNumber = tRmNumber;
-				room_goto(rooms[rmNumber]);
 			}
 		}
 	}
