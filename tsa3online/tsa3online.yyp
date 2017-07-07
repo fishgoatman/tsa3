@@ -2826,7 +2826,7 @@
             "Key": "fdfca427-46a8-4270-b28a-d7bb23e52eec",
             "Value": {
                 "id": "55422767-1db0-4e86-bbea-4b1de51f751b",
-                "resourcePath": "objects\\objPlayer\\objPlayer.yy",
+                "resourcePath": "objects\\objPlayerTP\\objPlayerTP.yy",
                 "resourceType": "GMObject"
             }
         },
