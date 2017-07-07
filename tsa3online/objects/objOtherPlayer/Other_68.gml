@@ -22,6 +22,7 @@ if (socketId == clientSocket) {
 			otherImageIndex = buffer_read(receivedBuffer, buffer_u16);
 			otherHp = buffer_read(receivedBuffer, buffer_u16);
 			otherXScale = buffer_read(receivedBuffer, buffer_s8);
+			otherDucking = buffer_read(receivedBuffer, buffer_bool);
 			type = buffer_read(receivedBuffer, buffer_string);
 		}
 		

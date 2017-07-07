@@ -1,14 +1,12 @@
 /// @description creation stuff
-tpId = opId;
-
-if (instance_exists(tpId)) {
+if (instance_exists(opId)) {
     preciseX = x;
     preciseY = y;
     xspd = 10 * overallSpd;
     yspd = 10 * overallSpd;
     visible = true;
     
-    if (tpId.ducking) {
+    if (otherDucking) {
         dx = xspd * tpId.direct;
         dy = yspd / 2;
     } else {
@@ -22,4 +20,3 @@ if (instance_exists(tpId)) {
     explodeBounces = 1;
     idSet = true;
 }
-

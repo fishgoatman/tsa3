@@ -102,6 +102,7 @@ globalvar otherLockedIn;
 otherLockedIn = false;
 globalvar otherHp;
 globalvar otherXScale;
+globalvar otherDucking;
 
 //other
 globalvar gg;

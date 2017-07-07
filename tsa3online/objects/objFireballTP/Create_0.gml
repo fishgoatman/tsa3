@@ -1,6 +1,4 @@
 /// @description creation stuff
-tpId = tpId;
-
 if (instance_exists(tpId)) {
     preciseX = x;
     preciseY = y;
