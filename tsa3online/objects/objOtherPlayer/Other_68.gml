@@ -29,8 +29,13 @@ if (socketId == clientSocket) {
 		if (type == "e") { //enda
 			//do nothing
 		} else if (type == "k") {
-			objKnifeOP.newX = buffer_read(receivedBuffer, buffer_f32);
-			objKnifeOP.newY = buffer_read(receivedBuffer, buffer_f32);
+			var tx = buffer_read(receivedBuffer, buffer_f32);
+			var ty = buffer_read(receivedBuffer, buffer_f32);
+		
+			if (instance_number(objKnifeOP) == 1) {
+				objKnifeOP.newX = tx;
+				objKnifeOP.newY = ty;
+			}
 		} else if (type == "s") { //selectHero
 			otherLockedIn = buffer_read(receivedBuffer, buffer_bool);
 			otherPlayerHero = buffer_read(receivedBuffer, buffer_string);
