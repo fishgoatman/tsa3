@@ -50,14 +50,15 @@ if (jumpState == INIT_JUMP && currAirJumps >= 1) {
 }
 
 //attacking
-if (attackState == INIT_ATTACK) {
+if (onePressed) {
     spd = attackSpd;
     attackState = PRE_ATTACK;
     alarm[PRE_ATTACK] = attackPreTime;
+	onePressed = false;
 }
 
 //ability
-if (abilityState == INIT_ABILITY) {
+if (twoPressed) {
     if (place_meeting(preciseX + 1, preciseY, objBlock) || place_meeting(preciseX - 1, preciseY, objBlock)) {
         dy = climbSpd;
         currAirJumps = maxAirJumps - 1;
@@ -65,8 +66,18 @@ if (abilityState == INIT_ABILITY) {
     } else {
         climbing = false;
     }
+	
+	twoPressed = false;
 } else {
     climbing = false;
+}
+
+if (threePressed) {
+	threePressed = false;
+}
+
+if (fourPressed) {
+	fourPressed = false;
 }
 
 scrMove();

@@ -5,3 +5,4 @@ if (instance_number(objKnifeTP) < maxKnives) {
 
 attackState = POST_ATTACK;
 alarm[POST_ATTACK] = attackPostTime;
+oneActivate = true;

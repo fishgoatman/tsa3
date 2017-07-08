@@ -67,11 +67,13 @@ if (twoPressed) {
     spd = moveSpd;
 }
 
-/*if (abilityState == INIT_ABILITY) {
-    allExplode = true;
-} else {
-    allExplode = false;
-}*/
+if (threePressed) {
+	threePressed = false;
+}
+
+if (fourPressed) {
+	fourPressed = false;
+}
 
 scrMove();
 
