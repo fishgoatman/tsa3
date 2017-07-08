@@ -16,7 +16,7 @@ floorHeight = 49 + wallWidth;
 warningOffset = 40;
 timeLeftForArrows = delay;
 warningCreated = false;
-bufferToSend = buffer_create(2, buffer_fixed, 1);
+bufferToSend = buffer_create(16, buffer_fixed, 1);
 
 //tile the background
 var tileSize = 64;

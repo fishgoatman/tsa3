@@ -25,6 +25,7 @@ if (type == "c") { //connection
 			
 			var bt = buffer_tell(buffer);
 			var size = buffer_get_size(buffer);
+			show_debug_message("bt = " + string(bt) + " and size = " + string(size));
 			var tBuffer = buffer_create(size - bt, buffer_fixed, 1);
 			buffer_copy(buffer, bt, size - bt, tBuffer, 0);
 			network_send_udp(serverSocket, ipToSendTo, portToSendTo, tBuffer, buffer_get_size(tBuffer));
@@ -44,6 +45,8 @@ if (type == "c") { //connection
 			portToSendTo = ds_list_find_value(portList, index - 1);
 		}
 		
-		network_send_udp(serverSocket, ipToSendTo, portToSendTo, buffer, buffer_get_size(buffer));
+		if (ipToSendTo != undefined && portToSendTo != undefined) {
+			network_send_udp(serverSocket, ipToSendTo, portToSendTo, buffer, buffer_get_size(buffer));
+		}
 	}
 }
