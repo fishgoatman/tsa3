@@ -2,7 +2,7 @@
     "id": "9e4f6ac6-e370-4b6e-9ec2-24cd29ccf2c1",
     "modelName": "GMObject",
     "mvc": "1.0",
-    "name": "objKnifeHurtboxMP",
+    "name": "objKnifeHurtboxTP",
     "eventList": [
         {
             "id": "641738d8-8aef-4793-bb4a-d2097a9f6fb7",

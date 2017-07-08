@@ -12,6 +12,17 @@ if (state == MOVE) {
 }
 
 //dy
+if (upPressed) {
+	if (place_meeting(preciseX, preciseY + 1, objBlock)) {
+        jumpState = INIT_JUMP;
+    } else if (tpId.currAirJumps < maxAirJumps) {
+        jumpState = INIT_JUMP;
+        currAirJumps++;
+    }
+	
+	upPressed = false;
+}
+
 if (jumpState == INIT_JUMP && currAirJumps >= 1) {
     jumpState = NONE;
     dy = jumpDy;

@@ -14,7 +14,7 @@ mask_index = object_get_sprite(hero);
 /// @DnDAction : YoYo Games.Common.Execute_Code
 /// @DnDVersion : 1
 /// @DnDHash : 0314E518
-/// @DnDArgument : "code" "/// @description send data to server$(13_10)if (connectedToServer && instance_exists(tpId)) {$(13_10)	buffer_seek(bufferToSend, buffer_seek_start, 0);$(13_10)	buffer_write(bufferToSend, buffer_string, "p"); //stands for player data$(13_10)	buffer_write(bufferToSend, buffer_f32, tpId.preciseX);$(13_10)	buffer_write(bufferToSend, buffer_bool, oneActivate);$(13_10)	buffer_write(bufferToSend, buffer_f32, tpId.preciseY);$(13_10)	buffer_write(bufferToSend, buffer_bool, twoActivate);$(13_10)	buffer_write(bufferToSend, buffer_f32, mouse_x);$(13_10)	buffer_write(bufferToSend, buffer_bool, threeActivate);$(13_10)	buffer_write(bufferToSend, buffer_f32, mouse_y);$(13_10)	buffer_write(bufferToSend, buffer_bool, fourActivate);$(13_10)	buffer_write(bufferToSend, buffer_string, string(tpId.sprite_index));$(13_10)	buffer_write(bufferToSend, buffer_u16, tpId.image_index);$(13_10)	buffer_write(bufferToSend, buffer_u16, tpId.hp);$(13_10)	buffer_write(bufferToSend, buffer_s8, tpId.image_xscale);$(13_10)	buffer_write(bufferToSend, buffer_bool, tpId.ducking);$(13_10)	$(13_10)	if (room == rmCharacterSelect) {$(13_10)		buffer_write(bufferToSend, buffer_string, "s");$(13_10)		buffer_write(bufferToSend, buffer_bool, tpId.lockedIn);$(13_10)		var heroToSend;$(13_10)		$(13_10)		if (thisPlayerHero == objMageTP) {$(13_10)			heroToSend = objMageOP;$(13_10)		} else if (thisPlayerHero == objSelectHeroTP) {$(13_10)			heroToSend = objSelectHeroOP;$(13_10)		}$(13_10)		$(13_10)		buffer_write(bufferToSend, buffer_string, string(heroToSend));$(13_10)	} else {$(13_10)		buffer_write(bufferToSend, buffer_string, "e");$(13_10)	}$(13_10)	$(13_10)	network_send_udp(clientSocket, IP_NUM, PORT_NUM, bufferToSend, buffer_tell(bufferToSend));$(13_10)	oneActivate = false;$(13_10)	twoActivate = false;$(13_10)	threeActivate = false;$(13_10)	fourActivate = false;$(13_10)}"
+/// @DnDArgument : "code" "/// @description send data to server$(13_10)if (connectedToServer && instance_exists(tpId)) {$(13_10)	buffer_seek(bufferToSend, buffer_seek_start, 0);$(13_10)	buffer_write(bufferToSend, buffer_string, "p"); //stands for player data$(13_10)	buffer_write(bufferToSend, buffer_f32, tpId.preciseX);$(13_10)	buffer_write(bufferToSend, buffer_bool, oneActivate);$(13_10)	buffer_write(bufferToSend, buffer_f32, tpId.preciseY);$(13_10)	buffer_write(bufferToSend, buffer_bool, twoActivate);$(13_10)	buffer_write(bufferToSend, buffer_f32, mouse_x);$(13_10)	buffer_write(bufferToSend, buffer_bool, threeActivate);$(13_10)	buffer_write(bufferToSend, buffer_f32, mouse_y);$(13_10)	buffer_write(bufferToSend, buffer_bool, fourActivate);$(13_10)	buffer_write(bufferToSend, buffer_string, string(tpId.sprite_index));$(13_10)	buffer_write(bufferToSend, buffer_u16, tpId.image_index);$(13_10)	buffer_write(bufferToSend, buffer_u16, tpId.hp);$(13_10)	buffer_write(bufferToSend, buffer_s8, tpId.image_xscale);$(13_10)	buffer_write(bufferToSend, buffer_bool, tpId.ducking);$(13_10)	$(13_10)	if (room == rmCharacterSelect) {$(13_10)		buffer_write(bufferToSend, buffer_string, "s");$(13_10)		buffer_write(bufferToSend, buffer_bool, tpId.lockedIn);$(13_10)		var heroToSend;$(13_10)		$(13_10)		if (thisPlayerHero == objMageTP) {$(13_10)			heroToSend = objMageOP;$(13_10)		} else if (thisPlayerHero == objRogueTP) {$(13_10)			heroToSend = objRogueOP;$(13_10)		} else if (thisPlayerHero == objSelectHeroTP) {$(13_10)			heroToSend = objSelectHeroOP;$(13_10)		}$(13_10)		$(13_10)		buffer_write(bufferToSend, buffer_string, string(heroToSend));$(13_10)	} else if (thisPlayerHero == objRogueTP) {$(13_10)		buffer_write(bufferToSend, buffer_string, "k"); //knife$(13_10)			$(13_10)		if (instance_number(objKnifeTP) == 1) {$(13_10)			buffer_write(bufferToSend, buffer_f32, objKnifeTP.preciseX);$(13_10)			buffer_write(bufferToSend, buffer_f32, objKnifeTP.preciseY);$(13_10)		} else {$(13_10)			buffer_write(bufferToSend, buffer_f32, -1);$(13_10)			buffer_write(bufferToSend, buffer_f32, -1);$(13_10)		}$(13_10)	} else {$(13_10)		buffer_write(bufferToSend, buffer_string, "e");$(13_10)	}$(13_10)	$(13_10)	network_send_udp(clientSocket, IP_NUM, PORT_NUM, bufferToSend, buffer_tell(bufferToSend));$(13_10)	oneActivate = false;$(13_10)	twoActivate = false;$(13_10)	threeActivate = false;$(13_10)	fourActivate = false;$(13_10)}"
 /// @description send data to server
 if (connectedToServer && instance_exists(tpId)) {
 	buffer_seek(bufferToSend, buffer_seek_start, 0);
@@ -40,11 +40,23 @@ if (connectedToServer && instance_exists(tpId)) {
 		
 		if (thisPlayerHero == objMageTP) {
 			heroToSend = objMageOP;
+		} else if (thisPlayerHero == objRogueTP) {
+			heroToSend = objRogueOP;
 		} else if (thisPlayerHero == objSelectHeroTP) {
 			heroToSend = objSelectHeroOP;
 		}
 		
 		buffer_write(bufferToSend, buffer_string, string(heroToSend));
+	} else if (thisPlayerHero == objRogueTP) {
+		buffer_write(bufferToSend, buffer_string, "k"); //knife
+			
+		if (instance_number(objKnifeTP) == 1) {
+			buffer_write(bufferToSend, buffer_f32, objKnifeTP.preciseX);
+			buffer_write(bufferToSend, buffer_f32, objKnifeTP.preciseY);
+		} else {
+			buffer_write(bufferToSend, buffer_f32, -1);
+			buffer_write(bufferToSend, buffer_f32, -1);
+		}
 	} else {
 		buffer_write(bufferToSend, buffer_string, "e");
 	}

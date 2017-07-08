@@ -1,4 +1,5 @@
 /// @description creation stuff
-tpId = opId;
-scrCreateKnife();
-
+preciseX = x;
+preciseY = y;
+newX = x;
+newY = y;
