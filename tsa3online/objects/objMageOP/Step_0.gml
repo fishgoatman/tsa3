@@ -29,3 +29,8 @@ y = otherY;
 sprite_index = otherSpriteIndex;
 image_index = otherImageIndex;
 image_xscale = otherXScale;
+
+///die
+if (hp <= 0) {
+	instance_destroy();
+}
