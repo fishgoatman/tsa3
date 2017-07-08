@@ -14,7 +14,7 @@ if (instance_exists(opId)) {
         dy = yspd;
     }
     
-    ddy = 0.8;
+    ddy = 1.1;
     damp = 0.45;
     bounces = 0;
     explodeBounces = 1;
