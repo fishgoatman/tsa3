@@ -11,7 +11,6 @@ do {
 
 tpId = instance_create(spawnX, spawnY, hero);
 var hpBarOffset = 50;
-var hpPodSize = 32;
 
 if (room != rmCharacterSelect) {
     for (var i = 0; i < tpId.hp; i++) {
