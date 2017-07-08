@@ -67,8 +67,10 @@ if (twoPressed) {
         climbing = false;
     }
 	
+	abilityState = INIT_ABILITY;
 	twoPressed = false;
 } else {
+	abilityState = NONE;
     climbing = false;
 }
 
