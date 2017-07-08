@@ -3,20 +3,18 @@ globalvar chimeWindSpdConstMin;
 chimeWindSpdConstMin = 20;
 globalvar chimeWindSpdConstMax;
 chimeWindSpdConstMax = 40;
-globalvar mpChimes;
-mpChimes[0] = -1;
-globalvar kpChimes;
-kpChimes[0] = -1;
-globalvar mpCompletedChimes;
-mpCompletedChimes = 0;
-globalvar kpCompletedChimes;
-kpCompletedChimes = 0;
+globalvar tpChimes;
+tpChimes[0] = -1;
+globalvar opChimes;
+opChimes[0] = -1;
+globalvar tpCompletedChimes;
+tpCompletedChimes = 0;
 globalvar maxChimes;
 maxChimes = 4;
-globalvar mouseChimesReady;
-mouseChimesReady = false;
-globalvar keyboardChimesReady;
-keyboardChimesReady = false;
+globalvar thisChimesReady;
+thisChimesReady = false;
+globalvar otherChimesReady;
+otherChimesReady = false;
 
 ///creation stuff
 //tile the background

@@ -1,4 +1,4 @@
 /// @description destroy
-if (otherHp <= 0) {
+if (opId.hp <= 0) {
 	instance_destroy();
 }

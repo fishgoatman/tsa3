@@ -7,10 +7,10 @@ if (instance_exists(opId)) {
     visible = true;
     
     if (otherDucking) {
-        dx = xspd * tpId.image_xscale;
+        dx = xspd * opId.image_xscale;
         dy = yspd / 2;
     } else {
-        dx = xspd * tpId.image_xscale;
+        dx = xspd * t=opId.image_xscale;
         dy = yspd;
     }
     

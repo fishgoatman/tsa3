@@ -29,4 +29,3 @@ y = otherY;
 sprite_index = otherSpriteIndex;
 image_index = otherImageIndex;
 image_xscale = otherXScale;
-direct = image_xscale;
