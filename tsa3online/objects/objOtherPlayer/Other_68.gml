@@ -10,13 +10,13 @@ if (socketId == clientSocket) {
 		//do nothing
 	} else if (connectedToServer) {
 		if (type == "p") { //player
-			otherX = buffer_read(receivedBuffer, buffer_u16);
+			otherX = buffer_read(receivedBuffer, buffer_f32);
 			otherOneActivate = buffer_read(receivedBuffer, buffer_bool);
-			otherY = buffer_read(receivedBuffer, buffer_u16);
+			otherY = buffer_read(receivedBuffer, buffer_f32);
 			otherTwoActivate = buffer_read(receivedBuffer, buffer_bool);
-			otherMouseX = buffer_read(receivedBuffer, buffer_u16);
+			otherMouseX = buffer_read(receivedBuffer, buffer_f32);
 			otherThreeActivate = buffer_read(receivedBuffer, buffer_bool);
-			otherMouseY = buffer_read(receivedBuffer, buffer_u16);
+			otherMouseY = buffer_read(receivedBuffer, buffer_f32);
 			otherFourActivate = buffer_read(receivedBuffer, buffer_bool);
 			otherSpriteIndex = buffer_read(receivedBuffer, buffer_string);
 			otherImageIndex = buffer_read(receivedBuffer, buffer_u16);
