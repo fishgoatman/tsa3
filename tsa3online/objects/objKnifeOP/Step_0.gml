@@ -10,10 +10,6 @@ if (newX != -1 || newY != -1) {
 	var tempDy = dy / hyp;
     
 	while (totalDisp < hyp) {
-	    if (place_meeting(tryX + tempDx, tryY - tempDy, tpId) && alreadyThrown) {
-	        instance_destroy();
-	    }
-        
 	    if (!place_meeting(tryX + tempDx, tryY, objBlock)) {
 	        tryX += tempDx;
 	    } else {
