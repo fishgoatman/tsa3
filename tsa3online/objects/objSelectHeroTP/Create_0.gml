@@ -1,7 +1,7 @@
 /// @DnDAction : YoYo Games.Common.Execute_Code
 /// @DnDVersion : 1
 /// @DnDHash : 6C511284
-/// @DnDArgument : "code" "/// @description stats$(13_10)ddy = 1.1;$(13_10)jumpDy = 6;$(13_10)moveSpd = 4.5;$(13_10)jumpDx = 1;$(13_10)jumpPreTime = 1;$(13_10)jumpPostTime = 3;$(13_10)maxAirJumps = 999;$(13_10)hp = 3;"
+/// @DnDArgument : "code" "/// @description stats$(13_10)ddy = 1.1;$(13_10)jumpDy = 6;$(13_10)moveSpd = 4.5;$(13_10)jumpDx = 1;$(13_10)jumpPreTime = 1;$(13_10)jumpPostTime = 3;$(13_10)maxAirJumps = 999;$(13_10)hp = 1;"
 /// @description stats
 ddy = 1.1;
 jumpDy = 6;
@@ -10,7 +10,7 @@ jumpDx = 1;
 jumpPreTime = 1;
 jumpPostTime = 3;
 maxAirJumps = 999;
-hp = 3;
+hp = 1;
 
 /// @DnDAction : YoYo Games.Common.Execute_Code
 /// @DnDVersion : 1

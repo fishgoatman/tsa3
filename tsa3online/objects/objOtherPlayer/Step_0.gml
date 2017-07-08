@@ -1,4 +1,4 @@
 /// @description destroy
-if (otherPlayerHp <= 0) {
+if (otherHp <= 0) {
 	instance_destroy();
 }

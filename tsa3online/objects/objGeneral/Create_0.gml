@@ -102,6 +102,7 @@ otherImageIndex = 0;
 globalvar otherLockedIn;
 otherLockedIn = false;
 globalvar otherHp;
+otherHp = 1;
 globalvar otherXScale;
 globalvar otherDucking;
 

@@ -6,7 +6,7 @@ jumpDx = 1;
 jumpPreTime = 1;
 jumpPostTime = 3;
 maxAirJumps = 999;
-hp = 3;
+hp = 1;
 
 ///necessary vars
 state = NONE;
