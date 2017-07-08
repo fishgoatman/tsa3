@@ -7,3 +7,5 @@ for (var i = hp; i < maxHp; i++) {
         instance_create(otherHpBar[i].x, otherHpBar[i].y, objHpPodDeath);
     }
 }
+
+show_debug_message("took " + string(argument0) + " damage");

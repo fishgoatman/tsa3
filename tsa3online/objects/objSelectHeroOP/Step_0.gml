@@ -25,3 +25,4 @@ y = otherY;
 //sprite and image
 sprite_index = otherSpriteIndex;
 image_index = otherImageIndex;
+image_xscale = otherXScale;
