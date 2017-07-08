@@ -17,6 +17,8 @@ if (type == "c") { //connection
 	buffer_delete(bufferToSend);
 } else if (type == "g") { //game data
 	if (ds_list_size(ipList) > 1) {
+		var index = ds_list_find_index(ipList, ip);
+		
 		if (index % 2 == 0) {
 			ipToSendTo = ds_list_find_value(ipList, index + 1);
 			portToSendTo = ds_list_find_value(portList, index + 1);
