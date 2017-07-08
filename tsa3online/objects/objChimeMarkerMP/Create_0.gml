@@ -1,7 +1,7 @@
 /// @description creation stuff
-if (mpChimes[0] == -1) {
-    mpChimes[0] = id;
+if (tpChimes[0] == -1) {
+    tpChimes[0] = id;
 } else {
-    mpChimes[array_length_1d(mpChimes)] = id;
+    tpChimes[array_length_1d(tpChimes)] = id;
 }
 
