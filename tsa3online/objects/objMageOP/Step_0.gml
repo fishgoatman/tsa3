@@ -1,11 +1,13 @@
 /// @description act based on server data
 //pos
-x = otherX;
-y = otherY;
+preciseX = otherX;
+preciseY = otherY;
+x = scrRound(preciseX);
+y = scrRound(preciseY);
 
 //abilities
 if (otherOneActivate) {
-	instance_create(x, y, objFireballOP);
+	instance_create(preciseX, preciseY, objFireballOP);
 	otherOneActivate = false;
 }
 
