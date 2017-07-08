@@ -16,10 +16,12 @@ if (type == "c") { //connection
 	network_send_udp(serverSocket, ip, port, bufferToSend, buffer_tell(bufferToSend));
 	buffer_delete(bufferToSend);
 } else if (type == "g") { //game data
-	if (index % 2 == 0) {
-		ipToSendTo = ds_list_find_value(ipList, index + 1);
-		portToSendTo = ds_list_find_value(portList, index + 1);
-		network_send_udp(serverSocket, ipToSendTo, portToSendTo, buffer, buffer_get_size(buffer));
+	if (ds_list_size(ipList) > 1) {
+		if (index % 2 == 0) {
+			ipToSendTo = ds_list_find_value(ipList, index + 1);
+			portToSendTo = ds_list_find_value(portList, index + 1);
+			network_send_udp(serverSocket, ipToSendTo, portToSendTo, buffer, buffer_get_size(buffer));
+		}
 	}
 } else { //data
 	if (ds_list_size(ipList) > 1) {

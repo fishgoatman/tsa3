@@ -12,7 +12,6 @@ if (socketId == clientSocket) {
 			connectedToServer = true;
 		} else if (type == "g") {
 			rmNumber = buffer_read(receivedBuffer, buffer_u16);
-			show_debug_message("received");
 		}
 	}
 }
