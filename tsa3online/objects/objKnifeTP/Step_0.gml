@@ -37,7 +37,7 @@ if (instance_exists(tpId)) {
             dy = 0;
         }
         
-        if (place_meeting(tryX, tryY, objPlayer)) {
+        if (place_meeting(tryX, tryY, objPlayerOP)) {
             instance_create(tryX, tryY, objKnifeHurtboxTP);
         }
         

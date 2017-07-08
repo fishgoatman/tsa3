@@ -26,7 +26,7 @@ if (newX != -1 || newY != -1) {
 	        dy = 0;
 	    }
         
-	    if (place_meeting(tryX, tryY, objPlayer)) {
+	    if (place_meeting(tryX, tryY, objPlayerTP)) {
 	        instance_create(tryX, tryY, objKnifeHurtboxOP);
 	    }
         
