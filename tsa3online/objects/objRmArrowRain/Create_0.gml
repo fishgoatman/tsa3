@@ -14,7 +14,7 @@ alarm[0] = delay;
 alarm[1] = delay - warningTime;
 wallWidth = 5;
 floorHeight = 49 + wallWidth;
-warningOffset = 50;
+warningOffset = 40;
 
 //tile the background
 var tileSize = 64;

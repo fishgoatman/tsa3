@@ -1,14 +1,14 @@
 /// @description action
-if (mouseChimesReady) {
+if (thisChimesReady) {
     ready = MOUSE;
-    mouseChimesReady = false;
+    thisChimesReady = false;
     
     with (objChimeCarrier) {
         instance_destroy();
     }
-} else if (keyboardChimesReady) {
+} else if (otherChimesReady) {
     ready = KEYBOARD;
-    keyboardChimesReady = false;
+    otherChimesReady = false;
     
     with (objChimeCarrier) {
         instance_destroy();

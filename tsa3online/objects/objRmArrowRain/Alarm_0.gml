@@ -19,4 +19,3 @@ if (direct % 4 == 0) { //right
 
 direct++;
 alarm[0] = delay;
-

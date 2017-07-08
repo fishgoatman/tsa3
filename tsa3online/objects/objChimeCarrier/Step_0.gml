@@ -26,9 +26,9 @@ if (!tapped) {
         dy = 0;
         
         if (lastMouseChime) {
-            mouseChimesReady = true;
+            thisChimesReady = true;
         } else if (lastKeyboardChime) {
-            keyboardChimesReady = true;
+            otherChimesReady = true;
         }
     }
 }

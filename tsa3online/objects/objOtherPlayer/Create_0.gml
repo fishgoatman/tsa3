@@ -2,6 +2,7 @@
 hero = otherPlayerHero;
 mask_index = object_get_sprite(hero); //necessary because this object checks collisions for input
 opId = instance_create(0, 0, otherPlayerHero);
+show_debug_message(opId.hp);
 var hpBarOffset = 50;
 var hpPodSize = 32;
 

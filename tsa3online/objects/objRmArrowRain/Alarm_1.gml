@@ -10,4 +10,3 @@ if (direct % 4 == 0) { //right
 }
 
 alarm[1] = delay;
-
