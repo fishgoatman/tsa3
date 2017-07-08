@@ -6,7 +6,7 @@ if (timeLeftForArrows % 30 == 0) {
 	buffer_seek(bufferToSend, buffer_seek_start, 0);
 	buffer_write(bufferToSend, buffer_string, "o"); //one player
 	buffer_write(bufferToSend, buffer_string, "a"); //arrows
-	buffer_write(bufferToSend, buffer_u8, timeLeftForArrows);
+	buffer_write(bufferToSend, buffer_u16, timeLeftForArrows);
 	network_send_udp(clientSocket, IP_NUM, PORT_NUM, bufferToSend, buffer_tell(bufferToSend));
 
 	if (timeLeftForArrows == 0) {

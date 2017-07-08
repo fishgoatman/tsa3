@@ -6,6 +6,8 @@ opId = instance_create(0, 0, otherPlayerHero);
 var hpBarOffset = 50;
 
 if (room != rmCharacterSelect) {
+	show_debug_message("opId.hp = " + string(opId.hp));
+
     for (var i = 0; i < opId.hp; i++) {
         otherHpBar[i] = instance_create(hpBarOffset + hpPodSize * i, hpBarOffset, objHpPod);
     }

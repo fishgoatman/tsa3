@@ -10,7 +10,6 @@ if (socketId == clientSocket) {
 	
 		if (type == "a") {
 			timeLeftForArrows = buffer_read(receivedBuffer, buffer_u16);
-			show_debug_message("received");
 		}
 	}
 }
