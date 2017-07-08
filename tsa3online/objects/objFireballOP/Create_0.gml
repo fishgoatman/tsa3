@@ -10,7 +10,7 @@ if (instance_exists(opId)) {
         dx = xspd * opId.image_xscale;
         dy = yspd / 2;
     } else {
-        dx = xspd * t=opId.image_xscale;
+        dx = xspd * opId.image_xscale;
         dy = yspd;
     }
     
