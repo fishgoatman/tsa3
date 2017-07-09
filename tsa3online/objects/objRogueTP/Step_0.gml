@@ -3,7 +3,7 @@
 if (stealth) {
 	dummyId.direct = direct;
 	dummyId.state = state;
-	dummyId.upPressed = upPressed;
+	dummyId.thisUpPressed = upPressed;
 }
 
 //dx

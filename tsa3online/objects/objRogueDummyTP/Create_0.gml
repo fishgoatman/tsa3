@@ -22,7 +22,7 @@ tlptDist = 50;
 /// @DnDAction : YoYo Games.Common.Execute_Code
 /// @DnDVersion : 1
 /// @DnDHash : 059E7D8B
-/// @DnDArgument : "code" "///@desc necessary vars$(13_10)state = NONE;$(13_10)attackState = NONE;$(13_10)jumpState = NONE;$(13_10)abilityState = NONE;$(13_10)direct = RIGHT;$(13_10)ducking = false;$(13_10)spd = moveSpd;$(13_10)dx = 0;$(13_10)dy = 0;$(13_10)preciseX = x;$(13_10)preciseY = y;$(13_10)currAirJumps = 0;$(13_10)climbing = false;$(13_10)immune = false;$(13_10)immuneTime = IMMUNE_TIME;$(13_10)isSelectHero = false;$(13_10)hp = maxHp;$(13_10)upPressed = false;"
+/// @DnDArgument : "code" "///@desc necessary vars$(13_10)state = NONE;$(13_10)attackState = NONE;$(13_10)jumpState = NONE;$(13_10)abilityState = NONE;$(13_10)direct = RIGHT;$(13_10)ducking = false;$(13_10)spd = moveSpd;$(13_10)dx = 0;$(13_10)dy = 0;$(13_10)preciseX = x;$(13_10)preciseY = y;$(13_10)currAirJumps = 0;$(13_10)climbing = false;$(13_10)immune = false;$(13_10)immuneTime = IMMUNE_TIME;$(13_10)isSelectHero = false;$(13_10)hp = maxHp;$(13_10)thisUpPressed = false;"
 ///@desc necessary vars
 state = NONE;
 attackState = NONE;
@@ -41,4 +41,4 @@ immune = false;
 immuneTime = IMMUNE_TIME;
 isSelectHero = false;
 hp = maxHp;
-upPressed = false;
+thisUpPressed = false;
