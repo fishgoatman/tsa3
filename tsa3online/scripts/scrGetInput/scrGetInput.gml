@@ -13,15 +13,11 @@ if (keyboard_check_direct(vk_right) || keyboard_check_direct(ord("G"))) {
     tpId.state = MOVE;
 }
 
-var jumpButton;
-
-if (tpId.isSelectHero) {
-    jumpButton = keyboard_check_direct(vk_up) || keyboard_check_direct(ord("R"));
-} else {
-    jumpButton = keyboard_check_pressed(vk_up) || keyboard_check_pressed(ord("R"));
+if (keyboard_check_direct(vk_up) || keyboard_check_direct(ord("R"))) {
+	tpId.upHeld = true;
 }
 
-if (jumpButton) {
+if (keyboard_check_pressed(vk_up) || keyboard_check_pressed(ord("R"))) {
 	tpId.upPressed = true;
 }
 

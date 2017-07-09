@@ -1,7 +1,7 @@
 /// @DnDAction : YoYo Games.Common.Execute_Code
 /// @DnDVersion : 1
 /// @DnDHash : 1C7A0639
-/// @DnDArgument : "code" "/// @description act based on input$(13_10)dy -= ddy;$(13_10)    $(13_10)if (dy > 0 && place_meeting(preciseX, preciseY - 1, objBlock) || dy < 0 && place_meeting(preciseX$(13_10)    , preciseY + 1, objBlock)) {$(13_10)    dy = 0;$(13_10)}$(13_10)$(13_10)if (!ai) {$(13_10)    //dx$(13_10)    if (state == MOVE) {$(13_10)        if (direct == RIGHT && !place_meeting(preciseX + 1, preciseY, objBlock) || direct == LEFT$(13_10)        && !place_meeting(preciseX - 1, preciseY, objBlock)) {$(13_10)            dx = direct * spd;$(13_10)        } else {$(13_10)            dx = 0;$(13_10)        }$(13_10)    } else {$(13_10)        dx = 0;$(13_10)    }$(13_10)    $(13_10)    //dy$(13_10)	if (upPressed) {$(13_10)		jumpState = INIT_JUMP;$(13_10)		upPressed = false;$(13_10)	}$(13_10)	$(13_10)    if (jumpState == INIT_JUMP) {$(13_10)        dy = jumpDy;$(13_10)        jumpState = NONE;$(13_10)    }$(13_10)    $(13_10)    //select$(13_10)    if (onePressed) {$(13_10)        if (place_meeting(x, y, objMageSelection)) {$(13_10)            thisPlayerHero = objMageTP;$(13_10)        } else if (place_meeting(x, y, objRogueSelection)) {$(13_10)            thisPlayerHero = objRogueTP;$(13_10)        } else if (place_meeting(x, y, objMonkSelection)) {$(13_10)            thisPlayerHero = objMonk;$(13_10)        } else if (place_meeting(x, y, objShamanSelection)) {$(13_10)            thisPlayerHero = objShaman;$(13_10)        }$(13_10)    }$(13_10)} else {$(13_10)    lockedIn = true;$(13_10)}$(13_10)$(13_10)if (lockedIn) {$(13_10)    dx = 0;$(13_10)}$(13_10)$(13_10)//lock-in$(13_10)if (twoPressed) {$(13_10)    if (thisPlayerHero != objSelectHeroTP) {$(13_10)        lockedIn = !lockedIn;$(13_10)    }$(13_10)}$(13_10)$(13_10)scrMove();"
+/// @DnDArgument : "code" "/// @description act based on input$(13_10)dy -= ddy;$(13_10)    $(13_10)if (dy > 0 && place_meeting(preciseX, preciseY - 1, objBlock) || dy < 0 && place_meeting(preciseX$(13_10)    , preciseY + 1, objBlock)) {$(13_10)    dy = 0;$(13_10)}$(13_10)$(13_10)if (!ai) {$(13_10)    //dx$(13_10)    if (state == MOVE) {$(13_10)        if (direct == RIGHT && !place_meeting(preciseX + 1, preciseY, objBlock) || direct == LEFT$(13_10)        && !place_meeting(preciseX - 1, preciseY, objBlock)) {$(13_10)            dx = direct * spd;$(13_10)        } else {$(13_10)            dx = 0;$(13_10)        }$(13_10)    } else {$(13_10)        dx = 0;$(13_10)    }$(13_10)    $(13_10)    //dy$(13_10)	if (upHeld) {$(13_10)		jumpState = INIT_JUMP;$(13_10)		upHeld = false;$(13_10)	}$(13_10)	$(13_10)    if (jumpState == INIT_JUMP) {$(13_10)        dy = jumpDy;$(13_10)        jumpState = NONE;$(13_10)    }$(13_10)    $(13_10)    //select$(13_10)    if (onePressed) {$(13_10)        if (place_meeting(x, y, objMageSelection)) {$(13_10)            thisPlayerHero = objMageTP;$(13_10)        } else if (place_meeting(x, y, objRogueSelection)) {$(13_10)            thisPlayerHero = objRogueTP;$(13_10)        } else if (place_meeting(x, y, objMonkSelection)) {$(13_10)            thisPlayerHero = objMonk;$(13_10)        } else if (place_meeting(x, y, objShamanSelection)) {$(13_10)            thisPlayerHero = objShaman;$(13_10)        }$(13_10)    }$(13_10)} else {$(13_10)    lockedIn = true;$(13_10)}$(13_10)$(13_10)if (lockedIn) {$(13_10)    dx = 0;$(13_10)}$(13_10)$(13_10)//lock-in$(13_10)if (twoPressed) {$(13_10)    if (thisPlayerHero != objSelectHeroTP) {$(13_10)        lockedIn = !lockedIn;$(13_10)    }$(13_10)}$(13_10)$(13_10)scrMove();"
 /// @description act based on input
 dy -= ddy;
     
@@ -24,9 +24,9 @@ if (!ai) {
     }
     
     //dy
-	if (upPressed) {
+	if (upHeld) {
 		jumpState = INIT_JUMP;
-		upPressed = false;
+		upHeld = false;
 	}
 	
     if (jumpState == INIT_JUMP) {

@@ -87,6 +87,14 @@
             }
         },
         {
+            "Key": "04febce7-dcb7-4b5c-acba-9df4f5e2c2b5",
+            "Value": {
+                "id": "c81f5b18-2d20-4be4-bcff-bd0b2cfac021",
+                "resourcePath": "sprites\\sprRogueDash\\sprRogueDash.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
             "Key": "05087dfa-06b0-4f27-8d19-068d20fc7ad2",
             "Value": {
                 "id": "abea7b6b-6525-4d56-9da6-63846d81dd33",
@@ -2263,6 +2271,14 @@
             }
         },
         {
+            "Key": "c94ae6e9-29b6-47cc-acf2-4e684eb0daf2",
+            "Value": {
+                "id": "4da62256-b17c-42f2-9681-5bec1a64cfbd",
+                "resourcePath": "objects\\objBoltTP\\objBoltTP.yy",
+                "resourceType": "GMObject"
+            }
+        },
+        {
             "Key": "ca6401b5-d5fd-42c6-8c68-9f853a6baaec",
             "Value": {
                 "id": "20d4d19c-97c0-45f7-a354-81d5d5573008",
@@ -2410,7 +2426,7 @@
             "Key": "d3f0d335-198f-42fe-8a7e-06ff865d0cf6",
             "Value": {
                 "id": "ba92a216-8f11-44b0-9a42-2892aa243b02",
-                "resourcePath": "sprites\\sprKnifeStill\\sprKnifeStill.yy",
+                "resourcePath": "sprites\\sprBolt\\sprBolt.yy",
                 "resourceType": "GMSprite"
             }
         },

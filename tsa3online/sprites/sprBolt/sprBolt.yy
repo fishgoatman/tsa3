@@ -2,7 +2,7 @@
     "id": "d3f0d335-198f-42fe-8a7e-06ff865d0cf6",
     "modelName": "GMSprite",
     "mvc": "1.12",
-    "name": "sprKnifeStill",
+    "name": "sprBolt",
     "For3D": false,
     "HTile": false,
     "VTile": false,
@@ -39,7 +39,7 @@
     ],
     "gridX": 0,
     "gridY": 0,
-    "height": 10,
+    "height": 9,
     "layers": [
         {
             "id": "7b005c96-59a5-4aea-86f7-fa54af2b356a",
@@ -53,7 +53,7 @@
             "visible": true
         }
     ],
-    "origin": 0,
+    "origin": 9,
     "playbackSpeed": 1,
     "playbackSpeedType": 1,
     "sepmasks": false,
@@ -61,7 +61,7 @@
     "swfPrecision": 2.525,
     "textureGroupId": "1225f6b0-ac20-43bd-a82e-be73fa0b6f4f",
     "type": 0,
-    "width": 10,
-    "xorig": 4,
-    "yorig": 4
+    "width": 3,
+    "xorig": 1,
+    "yorig": 1
 }

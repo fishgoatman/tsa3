@@ -1,6 +1,2 @@
-/// @desc stealth
-stealth = false;
-
-with (dummyId) {
-	instance_destroy();
-}
+/// @desc dash
+dashing = false;

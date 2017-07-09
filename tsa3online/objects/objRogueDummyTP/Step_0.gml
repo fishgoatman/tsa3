@@ -3,7 +3,7 @@
 if (state == MOVE) {
     if (direct == RIGHT && !place_meeting(preciseX + 1, preciseY, objBlock) || direct == LEFT
     && !place_meeting(preciseX - 1, preciseY, objBlock)) {
-        dx = tpId.direct * spd;
+        dx = direct * spd;
     } else {
         dx = 0;
     }
