@@ -7,11 +7,7 @@ y = scrRound(preciseY);
 
 //abilities
 if (otherOneActivate) {
-	with (objKnifeOP) {
-		instance_destroy();
-	}
-	
-	instance_create(preciseX, preciseY, objKnifeOP);
+	instance_create(preciseX, preciseY, objFireballOP);
 	otherOneActivate = false;
 }
 

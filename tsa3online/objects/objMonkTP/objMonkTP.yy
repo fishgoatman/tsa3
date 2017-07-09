@@ -2,7 +2,7 @@
     "id": "3bfe626f-9c7a-4646-ab17-d2a5142e02a4",
     "modelName": "GMObject",
     "mvc": "1.0",
-    "name": "objMonk",
+    "name": "objMonkTP",
     "eventList": [
         {
             "id": "da615ba8-d09e-4fcd-8fb0-88e3ff940cbf",

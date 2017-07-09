@@ -1,16 +1,9 @@
 /// @description act based on input
-//dummy
-if (stealth) {
-	dummyId.direct = direct;
-	dummyId.state = state;
-	dummyId.upPressed = upPressed;
-}
-
 //dx
 if (state == MOVE) {
     if (direct == RIGHT && !place_meeting(preciseX + 1, preciseY, objBlock) || direct == LEFT
     && !place_meeting(preciseX - 1, preciseY, objBlock)) {
-        dx = direct * spd;
+        dx = tpId.direct * spd;
     } else {
         dx = 0;
     }
@@ -19,7 +12,7 @@ if (state == MOVE) {
 }
 
 //dy
-if (upPressed) {
+if (thisUpPressed) {
 	if (place_meeting(preciseX + 1, preciseY, objBlock) || place_meeting(preciseX - 1, preciseY, objBlock)) {
         dy = climbSpd;
         currAirJumps = maxAirJumps - 1;
@@ -64,38 +57,6 @@ if (jumpState == INIT_JUMP && currAirJumps >= 1) {
             dy = jumpDy;
         }
     }
-}
-
-//attacking
-if (onePressed) {
-    spd = attackSpd;
-    attackState = PRE_ATTACK;
-    alarm[PRE_ATTACK] = attackPreTime;
-	onePressed = false;
-}
-
-//ability
-if (twoPressed) {
-	dummyId = instance_create(x, y, objRogueDummyTP);
-	var diffX = mouse_x - x;
-	var diffY = y - mouse_y;
-	var hyp = sqrt(diffX * diffX + diffY * diffY);
-	x += diffX * tlptDist / hyp;
-	y -= diffY * tlptDist / hyp;
-	stealth = true;
-	alarm[STEALTH] = stealthTime;
-	abilityState = INIT_ABILITY;
-	twoPressed = false;
-} else {
-	abilityState = NONE;
-}
-
-if (threePressed) {
-	threePressed = false;
-}
-
-if (fourPressed) {
-	fourPressed = false;
 }
 
 scrMove();

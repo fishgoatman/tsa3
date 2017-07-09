@@ -13,7 +13,7 @@ jumpDx = 1 * overallSpd;
 jumpPreTime = 1 / overallSpd;
 jumpPostTime = 3 / overallSpd;
 maxAirJumps = 1;
-maxHp = 2;
+maxHp = 3;
 blinkCooldownTime = 6 / overallSpd;
 kickBlinkTime = 4;
 shieldTime = 0.2 * room_speed;
@@ -57,4 +57,3 @@ SHIELD = 6;
 SHIELD_COOLDOWN = 8;
 canShield = true;
 currEnergy = maxEnergy;
-

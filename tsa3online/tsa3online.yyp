@@ -754,7 +754,7 @@
             "Key": "3bfe626f-9c7a-4646-ab17-d2a5142e02a4",
             "Value": {
                 "id": "f0c77e6a-a9f1-4cbc-82bf-7b03a56abb38",
-                "resourcePath": "objects\\objMonk\\objMonk.yy",
+                "resourcePath": "objects\\objMonkTP\\objMonkTP.yy",
                 "resourceType": "GMObject"
             }
         },
@@ -1636,6 +1636,14 @@
                 "id": "8ed1dfad-0724-4922-bbbd-53d526e55d3e",
                 "resourcePath": "sprites\\sprLightningBM1\\sprLightningBM1.yy",
                 "resourceType": "GMSprite"
+            }
+        },
+        {
+            "Key": "8fc15acc-61d6-47e6-b44a-026cc4fbb4e3",
+            "Value": {
+                "id": "f28ba7c1-5cb5-4bff-a9f8-3a1da2dfa727",
+                "resourcePath": "objects\\objRogueDummyTP\\objRogueDummyTP.yy",
+                "resourceType": "GMObject"
             }
         },
         {
@@ -2668,6 +2676,14 @@
                 "id": "893c3bd5-20a7-485c-87a7-18a950f2a302",
                 "resourcePath": "scripts\\@object_get_depth\\object_get_depth.yy",
                 "resourceType": "GMScript"
+            }
+        },
+        {
+            "Key": "f1c1678d-5c2c-4b0e-a7c5-92aed881765e",
+            "Value": {
+                "id": "84c58d9b-a3ad-49e0-9a9d-6efd2be5d937",
+                "resourcePath": "objects\\objMonkOP\\objMonkOP.yy",
+                "resourceType": "GMObject"
             }
         },
         {

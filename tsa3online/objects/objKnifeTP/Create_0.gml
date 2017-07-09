@@ -4,19 +4,26 @@ stopped = false;
 alarm[0] = 3;
 preciseX = x;
 preciseY = y;
-xspd = 45 * overallSpd;
-yspd = -45 * overallSpd;
+spd = 55;
+var diffX = mouse_x - x;
+var diffY = y - mouse_y;
 
-if (tpId.ducking) {
-    dy = 0;
-    dx = xspd * tpId.direct;
+if (diffY > 0) {
+	if (diffX > 0) {
+		dx = spd;
+		dy = 0;
+	} else {
+		dx = -spd;
+		dy = 0;
+	}
 } else {
-    dy = yspd * sqrt(2) / 2;
-    dx = xspd * tpId.direct * sqrt(2) / 2;
+	var hyp = sqrt(diffX * diffX + diffY * diffY);
+	dx = diffX * spd / hyp;
+	dy = diffY * spd / hyp;
 }
 
 image_xscale = tpId.direct;
 image_angle = tpId.direct * 90 + 180 / pi * arctan(dy / dx);
 slowSpd = 1.2 * overallSpd;
-dSlowSpd = 0.07 * overallSpd;
-maxSlowSpd = 3.4 * overallSpd;
+dSlowSpd = 0.08 * overallSpd;
+maxSlowSpd = 3.5 * overallSpd;

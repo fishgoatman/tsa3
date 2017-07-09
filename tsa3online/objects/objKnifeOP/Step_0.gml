@@ -10,23 +10,23 @@ if (newX != -1 || newY != -1) {
 	var tempDy = dy / hyp;
     
 	while (totalDisp < hyp) {
-	    if (!place_meeting(tryX + tempDx, tryY, objBlock)) {
-	        tryX += tempDx;
-	    } else {
-	        dx = 0;
-	    }
+		if (!place_meeting(tryX + tempDx, tryY, objBlock)) {
+		    tryX += tempDx;
+		} else {
+		    dx = 0;
+		}
         
-	    if (!place_meeting(tryX, tryY - tempDy, objBlock)) {
-	        tryY -= tempDy;
-	    } else {
-	        dy = 0;
-	    }
+		if (!place_meeting(tryX, tryY - tempDy, objBlock)) {
+		    tryY -= tempDy;
+		} else {
+		    dy = 0;
+		}
         
-	    if (place_meeting(tryX, tryY, objPlayerTP)) {
-	        instance_create(tryX, tryY, objKnifeHurtboxOP);
-	    }
+		if (place_meeting(tryX, tryY, objPlayerTP)) {
+		    instance_create(tryX, tryY, objKnifeHurtboxOP);
+		}
         
-	    totalDisp++;
+		totalDisp++;
 	}
     
 	preciseX = tryX;
