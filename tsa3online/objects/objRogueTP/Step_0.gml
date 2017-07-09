@@ -76,15 +76,18 @@ if (onePressed) {
 
 //ability
 if (twoPressed) {
-	dummyId = instance_create(x, y, objRogueDummyTP);
-	var diffX = mouse_x - x;
-	var diffY = y - mouse_y;
-	var hyp = sqrt(diffX * diffX + diffY * diffY);
-	x += diffX * tlptDist / hyp;
-	y -= diffY * tlptDist / hyp;
-	stealth = true;
-	alarm[STEALTH] = stealthTime;
-	abilityState = INIT_ABILITY;
+	if (!stealth) {
+		dummyId = instance_create(x, y, objRogueDummyTP);
+		var diffX = mouse_x - x;
+		var diffY = y - mouse_y;
+		var hyp = sqrt(diffX * diffX + diffY * diffY);
+		preciseX += tlptDist * diffX / hyp;
+		preciseY -= tlptDist * diffY / hyp;
+		stealth = true;
+		alarm[STEALTH] = stealthTime;
+		abilityState = INIT_ABILITY;
+	}
+	
 	twoPressed = false;
 } else {
 	abilityState = NONE;
