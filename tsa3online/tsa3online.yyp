@@ -2415,6 +2415,14 @@
             }
         },
         {
+            "Key": "d1a42809-2b5c-41c2-8ef2-11017fc414de",
+            "Value": {
+                "id": "8b34bc38-efd6-48f5-92be-82ea5bab46ce",
+                "resourcePath": "objects\\objBoltHurtboxOP\\objBoltHurtboxOP.yy",
+                "resourceType": "GMObject"
+            }
+        },
+        {
             "Key": "d2db675f-14cd-4e45-92f8-85479976756b",
             "Value": {
                 "id": "8d94f8a9-8423-40de-8a31-4eb561979967",
@@ -2572,6 +2580,14 @@
                 "id": "e0669b39-639a-45bc-87f7-1c02e6befc36",
                 "resourcePath": "views\\df4bf441-9112-41f7-9f1b-3604cd4bb9f3.yy",
                 "resourceType": "GMFolder"
+            }
+        },
+        {
+            "Key": "e2d2ffa5-c9f2-4eda-a77f-224a93383314",
+            "Value": {
+                "id": "7b59e916-9b4b-4c74-b418-ddae656353ea",
+                "resourcePath": "objects\\objBoltOP\\objBoltOP.yy",
+                "resourceType": "GMObject"
             }
         },
         {

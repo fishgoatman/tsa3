@@ -16,6 +16,17 @@ if (otherOneActivate) {
 }
 
 if (otherTwoActivate) {
+	var diffX = mouse_x - x;
+	var diffY = y - mouse_y;
+	var hyp = sqrt(diffX * diffX + diffY * diffY);
+	dx = dashSpd * diffX / hyp;
+	dy = dashSpd * diffY / hyp;
+			
+	for (var i = 0; i < boltAmount; i++) {
+		boltAngle = boltSpread * i / (boltAmount - 1) - boltSpread / 2;
+		instance_create(preciseX, preciseY, objBoltOP);
+	}
+
 	otherTwoActivate = false;
 }
 

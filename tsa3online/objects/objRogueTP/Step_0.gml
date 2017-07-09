@@ -89,6 +89,8 @@ if (dashing) {
 				boltAngle = boltSpread * i / (boltAmount - 1) - boltSpread / 2;
 				instance_create(preciseX, preciseY, objBoltTP);
 			}
+			
+			twoActivate = true;
 		}
 		
 		twoPressed = false;

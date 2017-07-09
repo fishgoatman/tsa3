@@ -14,8 +14,8 @@ while (totalDisp < hyp) {
 		break;
     }
 	   
-    if (place_meeting(tryX, tryY, objPlayerOP)) {
-        instance_create(tryX, tryY, objBoltHurtboxTP);
+    if (place_meeting(tryX, tryY, objPlayerTP)) {
+        instance_create(tryX, tryY, objBoltHurtboxOP);
     }
     
 	tryX += tempDx;
