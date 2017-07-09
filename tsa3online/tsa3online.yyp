@@ -1167,6 +1167,14 @@
             }
         },
         {
+            "Key": "65ba3295-f243-4a18-9f6c-f08baba94e7b",
+            "Value": {
+                "id": "75c9e052-4117-4eab-9a98-3216afd4b411",
+                "resourcePath": "sprites\\sprBoltHurtbox\\sprBoltHurtbox.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
             "Key": "66e5a4ae-21be-4771-ad07-58fcddef929f",
             "Value": {
                 "id": "2fcd2853-88ab-40be-bbf2-fa571bcf9c3b",
@@ -1811,6 +1819,14 @@
             "Value": {
                 "id": "a0e6e112-7189-4663-b73a-0222d7af1206",
                 "resourcePath": "objects\\objFireballTP\\objFireballTP.yy",
+                "resourceType": "GMObject"
+            }
+        },
+        {
+            "Key": "9a6a9aed-96c3-4aca-bcd4-7ad82d422a8f",
+            "Value": {
+                "id": "c8976507-5db2-4e77-930a-54c1299183a3",
+                "resourcePath": "objects\\objBoltHurtboxTP\\objBoltHurtboxTP.yy",
                 "resourceType": "GMObject"
             }
         },

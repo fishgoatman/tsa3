@@ -1,7 +1,7 @@
 /// @description act based on input
 if (dashing) {
 	sprite_index = sprRogueDash;
-	image_angle = darctan2(dy, dx);
+	image_angle = darctan2(dy, dx) - 90;
 } else {
 	//dx
 	if (state == MOVE) {
@@ -74,13 +74,23 @@ if (dashing) {
 
 	//ability
 	if (twoPressed) {
-		var diffX = mouse_x - x;
-		var diffY = y - mouse_y;
-		var hyp = sqrt(diffX * diffX + diffY * diffY);
-		dx = dashSpd * diffX / hyp;
-		dy = dashSpd * diffY / hyp;
-		dashing = true;
-		alarm[DASH] = dashTime;
+		if (dashReady) {
+			var diffX = mouse_x - x;
+			var diffY = y - mouse_y;
+			var hyp = sqrt(diffX * diffX + diffY * diffY);
+			dx = dashSpd * diffX / hyp;
+			dy = dashSpd * diffY / hyp;
+			dashing = true;
+			dashReady = false;
+			alarm[DASH] = dashTime;
+			alarm[DASH_COOLDOWN] = dashCooldownTime;
+			
+			for (var i = 0; i < boltAmount; i++) {
+				boltAngle = boltSpread * i / (boltAmount - 1) - boltSpread / 2;
+				instance_create(preciseX, preciseY, objBoltTP);
+			}
+		}
+		
 		twoPressed = false;
 	}
 
