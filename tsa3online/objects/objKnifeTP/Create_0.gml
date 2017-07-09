@@ -7,14 +7,17 @@ preciseY = y;
 spd = 55;
 var diffX = mouse_x - x;
 var diffY = y - mouse_y;
+var angle = darctan2(diffY, diffX);
+var rightBorder = 270 + tpId.currAngle / 2;
+var leftBorder = 270 - tpId.currAngle / 2;
 
-if (diffY > 0) {
+if (angle > rightBorder || angle < leftBorder) {
 	if (diffX > 0) {
-		dx = spd;
-		dy = 0;
+		dx = dcos(rightBorder);
+		dy = dsin(rightBorder);
 	} else {
-		dx = -spd;
-		dy = 0;
+		dx = dcos(leftBorder);
+		dy = dsin(leftBorder);
 	}
 } else {
 	var hyp = sqrt(diffX * diffX + diffY * diffY);

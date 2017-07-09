@@ -66,10 +66,37 @@ if (dashing) {
 
 	//attacking
 	if (onePressed) {
-	    spd = attackSpd;
+		if (!charging) {
+			instance_create(preciseX, preciseY, objRogueKnifeIndicatorL);
+			instance_create(preciseX, preciseY, objRogueKnifeIndicatorR);
+		}
+		
+		currAngle += dAngle;
+		
+		if (currAngle > maxAngle) {
+			currAngle = maxAngle;
+		}
+		
+		charging = true;
+	    onePressed = false;
+	}
+	
+	if (oneReleased) {
+		charging = false;
+		currAngle = startAngle;
+		spd = attackSpd;
 	    attackState = PRE_ATTACK;
 	    alarm[PRE_ATTACK] = attackPreTime;
-		onePressed = false;
+		
+		with (objRogueKnifeIndicatorL) {
+			instance_destroy();
+		}
+		
+		with (objRogueKnifeIndicatorR) {
+			instance_destroy();
+		}
+		
+		oneReleased = false;
 	}
 
 	//ability
@@ -84,6 +111,10 @@ if (dashing) {
 			dashReady = false;
 			alarm[DASH] = dashTime;
 			alarm[DASH_COOLDOWN] = dashCooldownTime;
+			
+			with (objRogueDashIndicator) {
+				instance_destroy();
+			}
 			
 			for (var i = 0; i < boltAmount; i++) {
 				boltAngle = boltSpread * i / (boltAmount - 1) - boltSpread / 2;

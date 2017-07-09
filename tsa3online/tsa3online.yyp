@@ -39,6 +39,14 @@
             }
         },
         {
+            "Key": "01e3e00c-da34-46bb-9dc8-918b5944e4c8",
+            "Value": {
+                "id": "88104fbe-c38e-46af-bdee-2702283e34f5",
+                "resourcePath": "objects\\objRogueKnifeIndicatorR\\objRogueKnifeIndicatorR.yy",
+                "resourceType": "GMObject"
+            }
+        },
+        {
             "Key": "02a844f6-404a-4980-bea5-5574fb04d865",
             "Value": {
                 "id": "e2cc780c-4620-437f-bf57-8d6f1f36f295",
@@ -260,6 +268,14 @@
                 "id": "1505e0a5-f4d1-4c01-96b7-9ca93d033ba4",
                 "resourcePath": "scripts\\scrRound\\scrRound.yy",
                 "resourceType": "GMScript"
+            }
+        },
+        {
+            "Key": "149ea4e5-8b51-4d1d-a496-aa675c702df1",
+            "Value": {
+                "id": "2a9cebfb-1ad7-4dd5-922e-9eabb20edbfb",
+                "resourcePath": "objects\\objRogueDashIndicator\\objRogueDashIndicator.yy",
+                "resourceType": "GMObject"
             }
         },
         {
@@ -659,6 +675,14 @@
             "Value": {
                 "id": "13037895-6e73-4034-a8fc-44adf32d3ef0",
                 "resourcePath": "sprites\\sprSmallGrass\\sprSmallGrass.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
+            "Key": "2f65ebbb-aa8b-416e-a3da-f7132e3cdc71",
+            "Value": {
+                "id": "f6a556f6-1bb8-41fc-b3b8-cb8b53bdcd4b",
+                "resourcePath": "sprites\\sprRogueDashIndicator\\sprRogueDashIndicator.yy",
                 "resourceType": "GMSprite"
             }
         },
@@ -1879,6 +1903,14 @@
             }
         },
         {
+            "Key": "a1059fd0-41a2-4f4a-a570-882c8251d9e7",
+            "Value": {
+                "id": "5dc44b95-bf16-45fa-bdc0-5a57c3a483a9",
+                "resourcePath": "sprites\\sprRogueKnifeIndicator\\sprRogueKnifeIndicator.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
             "Key": "a1d3d978-dd6a-45f0-959a-c1ccc412145a",
             "Value": {
                 "id": "fd4e092a-fefc-483f-9c54-731aae10df9e",
@@ -2092,6 +2124,14 @@
                 "id": "7ba525e4-9ea5-4984-a63d-5737ac92a983",
                 "resourcePath": "views\\b54da600-6061-47e9-9ca6-2e23775b0900.yy",
                 "resourceType": "GMFolder"
+            }
+        },
+        {
+            "Key": "b6151520-4d0f-4c42-b9bc-2fba3824c5ce",
+            "Value": {
+                "id": "7f30f879-c06d-4c15-84e8-30eb417088fe",
+                "resourcePath": "objects\\objRogueKnifeIndicatorL\\objRogueKnifeIndicatorL.yy",
+                "resourceType": "GMObject"
             }
         },
         {
