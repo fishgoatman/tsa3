@@ -12,7 +12,7 @@ if (room != rmCharacterSelect) {
         otherHpBar[i] = instance_create(hpBarOffset + hpPodSize * i, hpBarOffset, objHpPod);
     }
     
-    if (hero == objMonk) {
+    if (hero == objMonkOP) {
         var width = 64;
         var height = 8;
         instance_create(hpBarOffset, hpBarOffset * 2 + objHpPod.sprite_height, objMonkEnergyBarOP);
