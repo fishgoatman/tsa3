@@ -16,8 +16,8 @@ if (otherOneActivate) {
 }
 
 if (otherTwoActivate) {
-	var diffX = mouse_x - x;
-	var diffY = y - mouse_y;
+	var diffX = otherMouseX - x;
+	var diffY = y - otherMouseY;
 	var hyp = sqrt(diffX * diffX + diffY * diffY);
 	dx = diffX / hyp;
 	dy = diffY / hyp;
