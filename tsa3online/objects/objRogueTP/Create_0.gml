@@ -1,7 +1,7 @@
 /// @DnDAction : YoYo Games.Common.Execute_Code
 /// @DnDVersion : 1
 /// @DnDHash : 7D2B14B0
-/// @DnDArgument : "code" "///@desc stats$(13_10)ddy = 1.3 * overallSpd;$(13_10)jumpDy = 17 * overallSpd;$(13_10)moveSpd = 8 * overallSpd;$(13_10)attackPreTime = 2 / overallSpd;$(13_10)attackPostTime = 15 / overallSpd;$(13_10)climbSpd = 12 * overallSpd;$(13_10)attackSpd = moveSpd;$(13_10)jumpDx = 3 * overallSpd;$(13_10)jumpPreTime = 2 / overallSpd;$(13_10)jumpPostTime = 4 / overallSpd;$(13_10)maxAirJumps = 1;$(13_10)maxHp = 3;$(13_10)maxKnives = 1;$(13_10)dashSpd = 22;$(13_10)dashTime = 4;$(13_10)dashCooldownTime = 3 * room_speed / overallSpd;$(13_10)dashBoltAmount = 10;$(13_10)dashBoltSpread = 30;$(13_10)dashBoltSpd = 20;$(13_10)startAngle = 100;$(13_10)endAngle = 8;$(13_10)dAngle = -10;$(13_10)daggerAmount = 10;$(13_10)daggerSpd = 50;"
+/// @DnDArgument : "code" "///@desc stats$(13_10)ddy = 1.3 * overallSpd;$(13_10)jumpDy = 17 * overallSpd;$(13_10)moveSpd = 8 * overallSpd;$(13_10)attackPreTime = 2 / overallSpd;$(13_10)attackPostTime = 15 / overallSpd;$(13_10)climbSpd = 12 * overallSpd;$(13_10)attackSpd = moveSpd;$(13_10)jumpDx = 3 * overallSpd;$(13_10)jumpPreTime = 2 / overallSpd;$(13_10)jumpPostTime = 4 / overallSpd;$(13_10)maxAirJumps = 1;$(13_10)maxHp = rogueHp;$(13_10)maxKnives = 1;$(13_10)dashSpd = 22;$(13_10)dashTime = 4;$(13_10)dashCooldownTime = 2.2 * room_speed / overallSpd;$(13_10)boltAmount = 10;$(13_10)boltSpread = 30;$(13_10)boltSpd = 20;$(13_10)startAngle = 100;$(13_10)endAngle = 8;$(13_10)dAngle = -10;$(13_10)daggerAmount = 10;$(13_10)daggerSpd = 50;"
 ///@desc stats
 ddy = 1.3 * overallSpd;
 jumpDy = 17 * overallSpd;
@@ -14,14 +14,14 @@ jumpDx = 3 * overallSpd;
 jumpPreTime = 2 / overallSpd;
 jumpPostTime = 4 / overallSpd;
 maxAirJumps = 1;
-maxHp = 3;
+maxHp = rogueHp;
 maxKnives = 1;
 dashSpd = 22;
 dashTime = 4;
-dashCooldownTime = 3 * room_speed / overallSpd;
-dashBoltAmount = 10;
-dashBoltSpread = 30;
-dashBoltSpd = 20;
+dashCooldownTime = 2.2 * room_speed / overallSpd;
+boltAmount = 10;
+boltSpread = 30;
+boltSpd = 20;
 startAngle = 100;
 endAngle = 8;
 dAngle = -10;

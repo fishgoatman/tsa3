@@ -12,7 +12,7 @@ do {
 tpId = instance_create(spawnX, spawnY, hero);
 
 if (room != rmCharacterSelect) {
-	var hpPerGap = gapInterval * hpBarWidth / tpId.maxHp;
+	var hpPerGap = floor(gapInterval * hpBarWidth / tpId.maxHp);
 
     for (var i = 0; i < hpBarWidth; i++) {
         if (i % hpPerGap != 0) {
@@ -31,6 +31,8 @@ if (room != rmCharacterSelect) {
     if (hero == objMageTP) {
         tpId.xiaolongId = instance_create(tpId.x, tpId.y, objXiaolongTP);
     }
+	
+	lastPodLost = array_length_1d(thisHpBar);
 }
 
 tpId.controlScheme = MOUSE;
@@ -42,4 +44,3 @@ rightButton = vk_right;
 ///creation vars
 needToRecharge = false;
 bufferToSend = buffer_create(256, buffer_fixed, 1);
-lastPodLost = array_length_1d(thisHpBar);

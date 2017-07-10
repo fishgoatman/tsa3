@@ -78,11 +78,11 @@ globalvar opId;
 globalvar thisHpBar;
 globalvar otherHpBar;
 globalvar hpBarWidth;
-hpBarWidth = 85;
+hpBarWidth = 140;
 globalvar hpBarOffset;
-hpBarOffset = 50;
+hpBarOffset = 30;
 globalvar gapInterval;
-gapInterval = 18;
+gapInterval = 35;
 globalvar onePressed;
 globalvar oneReleased;
 globalvar twoPressed;
@@ -150,6 +150,8 @@ IP_NUM = "10.0.1.2";
 globalvar connectedToServer;
 connectedToServer = false;
 globalvar rmNumber;
+globalvar testingMode;
+testingMode = true;
 
 ///regular vars
 victoryTime = 1.8 * room_speed;

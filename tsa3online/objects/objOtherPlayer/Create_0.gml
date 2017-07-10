@@ -25,6 +25,8 @@ if (room != rmCharacterSelect) {
     if (hero == objMageOP) {
         tpId.xiaolongId = instance_create(tpId.x, tpId.y, objXiaolongTP);
     }
+	
+	lastPodLost = array_length_1d(otherHpBar);
 }
 
 if (hero == objKnight) {
@@ -35,4 +37,3 @@ if (hero == objKnight) {
 ///creation vars
 needToRecharge = false;
 inputBuffer = buffer_create(1, buffer_fixed, 1);
-lastPodLost = array_length_1d(otherHpBar);
