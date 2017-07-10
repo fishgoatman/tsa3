@@ -1,4 +1,4 @@
 /// @description creation stuff
-maxHp = 3;
+maxHp = mageHp;
 hp = maxHp;
 otherHp = hp;

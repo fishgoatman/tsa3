@@ -3,6 +3,8 @@ if (dashing) {
 	sprite_index = sprRogueDash;
 	image_angle = darctan2(dy, dx) - 90;
 } else {
+	mouseAngle = darctan2(y - mouse_y, mouse_x - x);
+
 	//dx
 	if (state == MOVE) {
 	    if (direct == RIGHT && !place_meeting(preciseX + 1, preciseY, objBlock) || direct == LEFT
@@ -69,14 +71,14 @@ if (dashing) {
 	//attacking
 	if (onePressed) {
 		if (!charging) {
-			instance_create(preciseX, preciseY, objRogueKnifeIndicatorL);
-			instance_create(preciseX, preciseY, objRogueKnifeIndicatorR);
+			instance_create(preciseX, preciseY, objRogueKnifeIndicatorCW);
+			instance_create(preciseX, preciseY, objRogueKnifeIndicatorCCW);
 		}
 		
 		currAngle += dAngle;
 		
-		if (currAngle > maxAngle) {
-			currAngle = maxAngle;
+		if (currAngle < endAngle) {
+			currAngle = endAngle;
 		}
 		
 		charging = true;
@@ -86,14 +88,21 @@ if (dashing) {
 	if (oneReleased) {
 		charging = false;
 		spd = attackSpd;
-	    attackState = PRE_ATTACK;
-	    alarm[PRE_ATTACK] = attackPreTime;
+	    for (var i = 0; i < daggerAmount; i++) {
+			boltAngle = currAngle * i / (daggerAmount - 1) - currAngle / 2;
+			instance_create(preciseX, preciseY, objDaggerTP);
+		}
+
+		attackState = POST_ATTACK;
+		alarm[POST_ATTACK] = attackPostTime;
+		oneActivate = true;
+		currAngle = startAngle;
 		
-		with (objRogueKnifeIndicatorL) {
+		with (objRogueKnifeIndicatorCW) {
 			instance_destroy();
 		}
 		
-		with (objRogueKnifeIndicatorR) {
+		with (objRogueKnifeIndicatorCCW) {
 			instance_destroy();
 		}
 		

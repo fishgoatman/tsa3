@@ -6,20 +6,24 @@ opId = instance_create(0, 0, otherPlayerHero);
 var hpBarOffset = 50;
 
 if (room != rmCharacterSelect) {
-	show_debug_message("opId.hp = " + string(opId.hp));
+	var hpPerGap = gapInterval * hpBarWidth / opId.maxHp;
 
-    for (var i = 0; i < opId.hp; i++) {
-        otherHpBar[i] = instance_create(hpBarOffset + hpPodSize * i, hpBarOffset, objHpPod);
+    for (var i = 0; i < hpBarWidth; i++) {
+        if (i % hpPerGap != 0) {
+			otherHpBar[i] = instance_create(room_width - hpBarOffset - hpBarWidth + i, hpBarOffset, objHpPod);
+		} else {
+			otherHpBar[i] = -1;
+		}
     }
     
     if (hero == objMonkOP) {
         var width = 64;
         var height = 8;
-        instance_create(hpBarOffset, hpBarOffset * 2 + objHpPod.sprite_height, objMonkEnergyBarOP);
+        instance_create(room_width - hpBarOffset - width, hpBarOffset * 2 + objHpPod.sprite_height, objMonkEnergyBarTP);
     }
     
     if (hero == objMageOP) {
-        opId.xiaolongId = instance_create(opId.x, opId.y, objXiaolongOP);
+        tpId.xiaolongId = instance_create(tpId.x, tpId.y, objXiaolongTP);
     }
 }
 
@@ -31,3 +35,4 @@ if (hero == objKnight) {
 ///creation vars
 needToRecharge = false;
 inputBuffer = buffer_create(1, buffer_fixed, 1);
+lastPodLost = array_length_1d(otherHpBar);

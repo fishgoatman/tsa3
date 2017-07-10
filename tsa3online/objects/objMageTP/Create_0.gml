@@ -12,7 +12,7 @@ jumpDx = 1 * overallSpd;
 jumpPreTime = 1 / overallSpd;
 jumpPostTime = 3 / overallSpd;
 maxAirJumps = 0;
-maxHp = 3;
+maxHp = mageHp;
 
 //necessary vars
 state = NONE;

@@ -2,6 +2,6 @@
 if (instance_exists(tpId)) {
 	x = tpId.preciseX;
 	y = tpId.preciseY;
-	image_angle = 270 + tpId.currAngle / 2;
+	image_angle = tpId.mouseAngle + tpId.currAngle / 2;
 	visible = true;
 }

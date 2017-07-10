@@ -1,20 +1,13 @@
 /// @description scrOtherTakeDamage
 hp -= argument0;
+var podsToLoseTo = hpBarWidth * hp / maxHp;
 
-if (argument0 > 0) {
-	for (var i = hp; i < maxHp; i++) {
-	    if (instance_exists(otherHpBar[i]) && otherHpBar[i].visible) {
-	        otherHpBar[i].visible = false;
-	        instance_create(otherHpBar[i].x, otherHpBar[i].y, objHpPodDeath);
-	    }
-	}
-} else {
-	for (var i = hp + argument0; i < hp; i++) {
-		if (instance_exists(otherHpBar[i]) && !otherHpBar[i].visible) {
-	        otherHpBar[i].visible = true;
-	        instance_create(otherHpBar[i].x, otherHpBar[i].y, objHpPodDeath);
-	    }
+for (var i = objOtherPlayer.lastPodLost; i > podsToLoseTo; i++) {
+	if (i < array_length_1d(otherHpBar) && otherHpBar[i] != -1) {
+		otherHpBar[i].image_speed = 1;
 	}
 }
+
+objOtherPlayer.lastPodLost = podsToLoseTo;
 
 //need better fix for hp problem

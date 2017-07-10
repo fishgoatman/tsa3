@@ -1,13 +1,11 @@
 /// @description scrThisTakeDamage
-if (!immune) {
-    hp -= argument0;
-    immune = true;
-    alarm[IMMUNE] = immuneTime;
-    
-    for (var i = hp; i < maxHp; i++) {
-        if (thisHpBar[i].visible) {
-            thisHpBar[i].visible = false;
-            instance_create(thisHpBar[i].x, thisHpBar[i].y, objHpPodDeath);
-        }
-    }
+hp -= argument0;
+var podsToLoseTo = hpBarWidth * hp / maxHp;
+
+for (var i = objThisPlayer.lastPodLost; i > podsToLoseTo; i++) {
+	if (i < array_length_1d(thisHpBar) && thisHpBar[i] != -1) {
+		thisHpBar[i].image_speed = 1;
+	}
 }
+
+objThisPlayer.lastPodLost = podsToLoseTo;

@@ -2,7 +2,7 @@
     "id": "01e3e00c-da34-46bb-9dc8-918b5944e4c8",
     "modelName": "GMObject",
     "mvc": "1.0",
-    "name": "objRogueKnifeIndicatorR",
+    "name": "objRogueKnifeIndicatorCCW",
     "eventList": [
         {
             "id": "44b1d54b-f094-4c39-8898-8799ccab48a8",

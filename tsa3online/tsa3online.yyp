@@ -42,7 +42,7 @@
             "Key": "01e3e00c-da34-46bb-9dc8-918b5944e4c8",
             "Value": {
                 "id": "88104fbe-c38e-46af-bdee-2702283e34f5",
-                "resourcePath": "objects\\objRogueKnifeIndicatorR\\objRogueKnifeIndicatorR.yy",
+                "resourcePath": "objects\\objRogueKnifeIndicatorCCW\\objRogueKnifeIndicatorCCW.yy",
                 "resourceType": "GMObject"
             }
         },
@@ -1919,6 +1919,14 @@
             }
         },
         {
+            "Key": "a233b124-86d5-49b2-93f6-9a58a59fad63",
+            "Value": {
+                "id": "fafc5e03-7653-41aa-870a-7d1943f1ae64",
+                "resourcePath": "sprites\\sprDagger\\sprDagger.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
             "Key": "a2530ec7-8ebd-4339-a1bc-9a292cad9b90",
             "Value": {
                 "id": "511c64c0-c878-48ba-ab39-1b6506c08b1c",
@@ -2130,7 +2138,7 @@
             "Key": "b6151520-4d0f-4c42-b9bc-2fba3824c5ce",
             "Value": {
                 "id": "7f30f879-c06d-4c15-84e8-30eb417088fe",
-                "resourcePath": "objects\\objRogueKnifeIndicatorL\\objRogueKnifeIndicatorL.yy",
+                "resourcePath": "objects\\objRogueKnifeIndicatorCW\\objRogueKnifeIndicatorCW.yy",
                 "resourceType": "GMObject"
             }
         },
@@ -2196,6 +2204,14 @@
                 "id": "4b5975d7-43f6-48b7-ad84-42fdc529926f",
                 "resourcePath": "sprites\\sprMonkLockedIn\\sprMonkLockedIn.yy",
                 "resourceType": "GMSprite"
+            }
+        },
+        {
+            "Key": "bbc14384-c138-4617-9b87-df34a64407c1",
+            "Value": {
+                "id": "fab94b6b-dee0-48d9-b33a-7121c564e0f0",
+                "resourcePath": "objects\\objDaggerTP\\objDaggerTP.yy",
+                "resourceType": "GMObject"
             }
         },
         {
@@ -3002,6 +3018,7 @@
         "7cf1b283-ef38-4be8-ab26-24aa93bcb6da",
         "14554996-2f33-45f2-a657-10e776fcf667",
         "30cceb1a-dd18-4b0a-b110-02aa4f2fa54b",
+        "2e4d3a83-6e82-4a57-9938-5429cbfaf26c",
         "a564c443-2b7e-45e3-a246-6c5be7bbb8d9",
         "da7d3bc5-2b11-4cc5-be94-9de8409fda68",
         "440ed407-87db-40b2-8450-adde3d64d1ea",
@@ -3010,7 +3027,6 @@
         "ef503f02-88ae-415b-988d-2f2266ea0af5",
         "d4d95c64-c4a5-4a38-b4eb-1ce93d2bff12",
         "865ff34e-9b90-43ba-9a10-050d5ad74b34",
-        "2e4d3a83-6e82-4a57-9938-5429cbfaf26c",
         "bfd19822-a2ed-465e-8766-c3f5fe89829f"
     ],
     "tutorial": ""

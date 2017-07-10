@@ -1,7 +1,7 @@
 /// @desc creation stuff
-angle = 180 + tpId.boltAngle + tpId.mouseAngle;
-dx = tpId.boltSpd * dcos(angle);
-dy = tpId.boltSpd * dsin(angle);
+angle = tpId.mouseAngle + tpId.boltAngle;
+dx = tpId.daggerSpd * dcos(angle);
+dy = tpId.daggerSpd * dsin(angle);
 preciseX = x;
 preciseY = y;
 image_angle = angle + 90;

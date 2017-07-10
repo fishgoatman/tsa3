@@ -1,13 +1,13 @@
 /// @DnDAction : YoYo Games.Common.Execute_Code
 /// @DnDVersion : 1
 /// @DnDHash : 7D2B14B0
-/// @DnDArgument : "code" "///@desc stats$(13_10)ddy = 1.3 * overallSpd;$(13_10)jumpDy = 17 * overallSpd;$(13_10)moveSpd = 8 * overallSpd;$(13_10)attackPreTime = 2 / overallSpd;$(13_10)attackPostTime = 5 / overallSpd;$(13_10)climbSpd = 12 * overallSpd;$(13_10)attackSpd = moveSpd;$(13_10)jumpDx = 3 * overallSpd;$(13_10)jumpPreTime = 2 / overallSpd;$(13_10)jumpPostTime = 4 / overallSpd;$(13_10)maxAirJumps = 1;$(13_10)maxHp = 3;$(13_10)maxKnives = 1;$(13_10)dashSpd = 22;$(13_10)dashTime = 4;$(13_10)dashCooldownTime = 3 * room_speed / overallSpd;$(13_10)boltAmount = 8;$(13_10)boltSpread = 35;$(13_10)boltSpd = 20;$(13_10)startAngle = 0;$(13_10)maxAngle = 160;$(13_10)dAngle = 9;"
+/// @DnDArgument : "code" "///@desc stats$(13_10)ddy = 1.3 * overallSpd;$(13_10)jumpDy = 17 * overallSpd;$(13_10)moveSpd = 8 * overallSpd;$(13_10)attackPreTime = 2 / overallSpd;$(13_10)attackPostTime = 15 / overallSpd;$(13_10)climbSpd = 12 * overallSpd;$(13_10)attackSpd = moveSpd;$(13_10)jumpDx = 3 * overallSpd;$(13_10)jumpPreTime = 2 / overallSpd;$(13_10)jumpPostTime = 4 / overallSpd;$(13_10)maxAirJumps = 1;$(13_10)maxHp = 3;$(13_10)maxKnives = 1;$(13_10)dashSpd = 22;$(13_10)dashTime = 4;$(13_10)dashCooldownTime = 3 * room_speed / overallSpd;$(13_10)dashBoltAmount = 10;$(13_10)dashBoltSpread = 30;$(13_10)dashBoltSpd = 20;$(13_10)startAngle = 100;$(13_10)endAngle = 8;$(13_10)dAngle = -10;$(13_10)daggerAmount = 10;$(13_10)daggerSpd = 50;"
 ///@desc stats
 ddy = 1.3 * overallSpd;
 jumpDy = 17 * overallSpd;
 moveSpd = 8 * overallSpd;
 attackPreTime = 2 / overallSpd;
-attackPostTime = 5 / overallSpd;
+attackPostTime = 15 / overallSpd;
 climbSpd = 12 * overallSpd;
 attackSpd = moveSpd;
 jumpDx = 3 * overallSpd;
@@ -19,12 +19,14 @@ maxKnives = 1;
 dashSpd = 22;
 dashTime = 4;
 dashCooldownTime = 3 * room_speed / overallSpd;
-boltAmount = 8;
-boltSpread = 35;
-boltSpd = 20;
-startAngle = 0;
-maxAngle = 160;
-dAngle = 9;
+dashBoltAmount = 10;
+dashBoltSpread = 30;
+dashBoltSpd = 20;
+startAngle = 100;
+endAngle = 8;
+dAngle = -10;
+daggerAmount = 10;
+daggerSpd = 50;
 
 /// @DnDAction : YoYo Games.Common.Execute_Code
 /// @DnDVersion : 1

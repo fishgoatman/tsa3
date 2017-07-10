@@ -1,2 +1,2 @@
 /// @description take damage
-scrThisTakeDamage(1);
+scrThisTakeDamage(other.dmg);

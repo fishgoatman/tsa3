@@ -1,5 +1,17 @@
 /// @description creation stuff
 ///globalvars
+//stats
+globalvar mageHp;
+mageHp = 160;
+globalvar rogueHp;
+rogueHp = 120;
+globalvar fireballDmg;
+fireballDmg = 25;
+globalvar daggerDmg;
+daggerDmg = 5;
+globalvar boltDmg;
+boltDmg = 12;
+
 //constants
 globalvar NONE;
 NONE = 0;
@@ -65,8 +77,12 @@ globalvar tpId;
 globalvar opId;
 globalvar thisHpBar;
 globalvar otherHpBar;
-globalvar hpPodSize;
-hpPodSize = 32;
+globalvar hpBarWidth;
+hpBarWidth = 85;
+globalvar hpBarOffset;
+hpBarOffset = 50;
+globalvar gapInterval;
+gapInterval = 18;
 globalvar onePressed;
 globalvar oneReleased;
 globalvar twoPressed;

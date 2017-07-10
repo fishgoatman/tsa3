@@ -1,2 +1,2 @@
 /// @description take damage and tell server
-scrThisTakeDamage(1);
+scrThisTakeDamage(other.dmg);
