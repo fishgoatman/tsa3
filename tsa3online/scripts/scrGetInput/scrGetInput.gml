@@ -1,6 +1,7 @@
 /// @description get input a
 tpId.state = NONE;
 onePressed = false;
+oneReleased = false;
 twoPressed = false;
 threePressed = false;
 fourPressed = false;
@@ -38,6 +39,10 @@ if (tpId.isSelectHero) {
 } else {
 	if (mouse_check_button(mb_left) || keyboard_check_direct(ord("1"))) {
 		onePressed = true;
+	}
+	
+	if (mouse_check_button_released(mb_left) || keyboard_check_released(ord("1"))) {
+		oneReleased = true;
 	}
 	
 	if (mouse_check_button(mb_right) || keyboard_check_direct(ord("2"))) {

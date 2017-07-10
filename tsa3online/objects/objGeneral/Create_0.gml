@@ -68,6 +68,7 @@ globalvar otherHpBar;
 globalvar hpPodSize;
 hpPodSize = 32;
 globalvar onePressed;
+globalvar oneReleased;
 globalvar twoPressed;
 globalvar threePressed;
 globalvar fourPressed;

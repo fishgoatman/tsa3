@@ -7,22 +7,23 @@ preciseY = y;
 spd = 55;
 var diffX = mouse_x - x;
 var diffY = y - mouse_y;
-var angle = darctan2(diffY, diffX);
+var angle = scrArcTan(diffY, diffX);
 var rightBorder = 270 + tpId.currAngle / 2;
 var leftBorder = 270 - tpId.currAngle / 2;
+show_debug_message("angle = " + string(angle));
 
 if (angle > rightBorder || angle < leftBorder) {
 	if (diffX > 0) {
-		dx = dcos(rightBorder);
-		dy = dsin(rightBorder);
+		dx = spd * dcos(rightBorder);
+		dy = spd * dsin(rightBorder);
 	} else {
-		dx = dcos(leftBorder);
-		dy = dsin(leftBorder);
+		dx = spd * dcos(leftBorder);
+		dy = spd * dsin(leftBorder);
 	}
 } else {
 	var hyp = sqrt(diffX * diffX + diffY * diffY);
-	dx = diffX * spd / hyp;
-	dy = diffY * spd / hyp;
+	dx = spd * diffX / hyp;
+	dy = spd * diffY / hyp;
 }
 
 image_xscale = tpId.direct;

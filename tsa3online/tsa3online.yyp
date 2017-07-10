@@ -2215,6 +2215,14 @@
             }
         },
         {
+            "Key": "bfd19822-a2ed-465e-8766-c3f5fe89829f",
+            "Value": {
+                "id": "a616abbc-6159-4a60-aeff-2f3c9da92a1f",
+                "resourcePath": "scripts\\scrArcTan\\scrArcTan.yy",
+                "resourceType": "GMScript"
+            }
+        },
+        {
             "Key": "bfff7da4-025a-4a53-ad65-869497a7f0ff",
             "Value": {
                 "id": "fc80cc27-2c7c-409b-b692-4519a48264b9",
@@ -3002,7 +3010,8 @@
         "ef503f02-88ae-415b-988d-2f2266ea0af5",
         "d4d95c64-c4a5-4a38-b4eb-1ce93d2bff12",
         "865ff34e-9b90-43ba-9a10-050d5ad74b34",
-        "2e4d3a83-6e82-4a57-9938-5429cbfaf26c"
+        "2e4d3a83-6e82-4a57-9938-5429cbfaf26c",
+        "bfd19822-a2ed-465e-8766-c3f5fe89829f"
     ],
     "tutorial": ""
 }

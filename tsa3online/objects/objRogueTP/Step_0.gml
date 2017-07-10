@@ -21,7 +21,9 @@ if (dashing) {
 	        dy = climbSpd;
 	        currAirJumps = maxAirJumps - 1;
 	        climbing = true;
-	    }
+	    } else {
+			climbing = false;
+		}
 	
 		upHeld = false;
 	} else if (upPressed) {
@@ -83,7 +85,6 @@ if (dashing) {
 	
 	if (oneReleased) {
 		charging = false;
-		currAngle = startAngle;
 		spd = attackSpd;
 	    attackState = PRE_ATTACK;
 	    alarm[PRE_ATTACK] = attackPreTime;
