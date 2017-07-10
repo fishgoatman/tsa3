@@ -10,7 +10,7 @@ if (room != rmCharacterSelect) {
 
     for (var i = 0; i < hpBarWidth; i++) {
         if (i % hpPerGap != 0) {
-			otherHpBar[i] = instance_create(room_width - hpBarOffset - hpBarWidth + i, hpBarOffset, objHpPod);
+			otherHpBar[i] = instance_create(hpBarOffset + i, hpBarOffset, objHpPod);
 		} else {
 			otherHpBar[i] = -1;
 		}

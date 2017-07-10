@@ -151,7 +151,7 @@ globalvar connectedToServer;
 connectedToServer = false;
 globalvar rmNumber;
 globalvar testingMode;
-testingMode = true;
+testingMode = false;
 
 ///regular vars
 victoryTime = 1.8 * room_speed;
