@@ -10,8 +10,7 @@
         "cc83b55f-2e55-4807-a433-584df98df669",
         "12d20d3a-5de0-4a8b-95ba-2440709dd987",
         "da95e77c-5c4e-4163-950d-c128734939a0",
-        "4202f907-4be6-4a06-9add-bca7628208bc",
-        "6e447aba-daf6-4820-b95f-fb9e455e0d96"
+        "4202f907-4be6-4a06-9add-bca7628208bc"
     ],
     "filterType": "GMObject",
     "folderName": "playerGeneralStuff",

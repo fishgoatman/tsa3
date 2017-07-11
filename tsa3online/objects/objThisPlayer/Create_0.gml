@@ -12,13 +12,15 @@ do {
 tpId = instance_create(spawnX, spawnY, hero);
 
 if (room != rmCharacterSelect) {
-	var hpPerGap = floor(gapInterval * hpBarWidth / tpId.maxHp);
+	var hpPerGap = hpPerLine * hpBarWidth / tpId.maxHp;
+	var lastGap = 0;
 
     for (var i = 0; i < hpBarWidth; i++) {
-        if (i % hpPerGap != 0) {
+        if (i - lastGap < hpPerGap) {
 			thisHpBar[i] = instance_create(room_width - hpBarOffset - hpBarWidth + i, hpBarOffset, objHpPod);
 		} else {
 			thisHpBar[i] = -1;
+			lastGap = i;
 		}
     }
     
@@ -43,4 +45,4 @@ rightButton = vk_right;
 
 ///creation vars
 needToRecharge = false;
-bufferToSend = buffer_create(256, buffer_fixed, 1);
+bufferToSend = buffer_create(512, buffer_fixed, 1);

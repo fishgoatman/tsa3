@@ -23,6 +23,8 @@ if (otherFourActivate) {
 	otherFourActivate = false;
 }
 
+show_debug_message("otherHp = " + string(otherHp) + " and hp = " + string(hp));
+
 if (otherHp != hp) {
 	scrOtherTakeDamage(hp - otherHp);
 }

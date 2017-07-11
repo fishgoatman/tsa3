@@ -119,8 +119,10 @@ if (jumpState == PRE_JUMP) {
     }
 }
 
-/* */
 ///die
 if (hp <= 0) {
     instance_destroy();
 }
+
+///other
+ds_list_clear(immuneTo);

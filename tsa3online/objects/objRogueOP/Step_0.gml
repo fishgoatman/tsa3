@@ -7,12 +7,10 @@ y = scrRound(preciseY);
 
 //abilities
 if (otherOneActivate) {
-	with (objKnifeOP) {
-		instance_destroy();
+	for (var i = 0; i < daggerAmount; i++) {
+		daggerAngle = currAngle * i / (daggerAmount - 1) - currAngle / 2;
+		instance_create(preciseX, preciseY, objDaggerOP);
 	}
-	
-	instance_create(preciseX, preciseY, objKnifeOP);
-	otherOneActivate = false;
 }
 
 if (otherTwoActivate) {

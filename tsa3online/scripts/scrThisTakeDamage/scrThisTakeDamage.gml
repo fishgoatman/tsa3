@@ -1,10 +1,19 @@
 /// @description scrThisTakeDamage
 hp -= argument0;
 var podsToLoseTo = hpBarWidth * hp / maxHp;
+var lpl = objThisPlayer.lastPodLost;
 
-for (var i = objThisPlayer.lastPodLost; i > podsToLoseTo; i++) {
-	if (i < array_length_1d(thisHpBar) && thisHpBar[i] != -1) {
-		thisHpBar[i].image_speed = 1;
+if (podsToLoseTo < lpl) {
+	for (var i = lpl; i > podsToLoseTo; i--) {
+		if (i < array_length_1d(thisHpBar) && thisHpBar[i] != -1) {
+			thisHpBar[i].image_speed = 1;
+		}
+	}
+} else {
+	for (var i = lpl; i < podsToLoseTo; i++) {
+		if (i < array_length_1d(thisHpBar) && thisHpBar[i] != -1) {
+			thisHpBar[i].image_speed = 1;
+		}
 	}
 }
 

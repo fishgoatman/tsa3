@@ -23,19 +23,14 @@ if (socketId == clientSocket) {
 			otherHp = buffer_read(receivedBuffer, buffer_u16);
 			otherXScale = buffer_read(receivedBuffer, buffer_s8);
 			otherDucking = buffer_read(receivedBuffer, buffer_bool);
-			type = buffer_read(receivedBuffer, buffer_string);
 		}
 		
-		if (type == "e") { //enda
-			//do nothing
-		} else if (type == "k") {
-			var tx = buffer_read(receivedBuffer, buffer_f32);
-			var ty = buffer_read(receivedBuffer, buffer_f32);
+		type = buffer_read(receivedBuffer, buffer_string);
 		
-			if (instance_number(objKnifeOP) == 1) {
-				objKnifeOP.newX = tx;
-				objKnifeOP.newY = ty;
-			}
+		if (type == "e") { //end
+			//do nothing
+		} else if (type == "r") {
+			opId.currAngle = buffer_read(receivedBuffer, buffer_f32);
 		} else if (type == "s") { //selectHero
 			otherLockedIn = buffer_read(receivedBuffer, buffer_bool);
 			otherPlayerHero = buffer_read(receivedBuffer, buffer_string);

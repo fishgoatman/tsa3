@@ -15,7 +15,8 @@ while (totalDisp < hyp) {
     }
 	   
     if (place_meeting(tryX, tryY, objPlayerTP)) {
-        instance_create(tryX, tryY, objBoltHurtboxOP);
+        var hbId = instance_create(tryX, tryY, objBoltHurtboxOP);
+		hbId.projId = id;
     }
     
 	tryX += tempDx;

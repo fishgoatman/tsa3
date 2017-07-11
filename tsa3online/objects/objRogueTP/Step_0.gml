@@ -70,40 +70,45 @@ if (dashing) {
 
 	//attacking
 	if (onePressed) {
-		if (!charging) {
-			instance_create(preciseX, preciseY, objRogueKnifeIndicatorCW);
-			instance_create(preciseX, preciseY, objRogueKnifeIndicatorCCW);
+		if (attackState == NONE) {
+			if (!charging) {
+				instance_create(preciseX, preciseY, objRogueKnifeIndicatorCW);
+				instance_create(preciseX, preciseY, objRogueKnifeIndicatorCCW);
+			}
+		
+			currAngle += dAngle;
+		
+			if (currAngle < endAngle) {
+				currAngle = endAngle;
+			}
+		
+			charging = true;
 		}
 		
-		currAngle += dAngle;
-		
-		if (currAngle < endAngle) {
-			currAngle = endAngle;
-		}
-		
-		charging = true;
 	    onePressed = false;
 	}
 	
 	if (oneReleased) {
-		charging = false;
-		spd = attackSpd;
-	    for (var i = 0; i < daggerAmount; i++) {
-			boltAngle = currAngle * i / (daggerAmount - 1) - currAngle / 2;
-			instance_create(preciseX, preciseY, objDaggerTP);
-		}
+		if (attackState == NONE) {
+			charging = false;
+			spd = attackSpd;
+		
+			for (var i = 0; i < daggerAmount; i++) {
+				daggerAngle = currAngle * i / (daggerAmount - 1) - currAngle / 2;
+				instance_create(preciseX, preciseY, objDaggerTP);
+			}
 
-		attackState = POST_ATTACK;
-		alarm[POST_ATTACK] = attackPostTime;
-		oneActivate = true;
-		currAngle = startAngle;
+			attackState = POST_ATTACK;
+			alarm[POST_ATTACK] = attackPostTime;
+			oneActivate = true;
 		
-		with (objRogueKnifeIndicatorCW) {
-			instance_destroy();
-		}
+			with (objRogueKnifeIndicatorCW) {
+				instance_destroy();
+			}
 		
-		with (objRogueKnifeIndicatorCCW) {
-			instance_destroy();
+			with (objRogueKnifeIndicatorCCW) {
+				instance_destroy();
+			}
 		}
 		
 		oneReleased = false;
@@ -194,3 +199,6 @@ scrMove();
 if (hp <= 0) {
     instance_destroy();
 }
+
+///other
+ds_list_clear(immuneTo);

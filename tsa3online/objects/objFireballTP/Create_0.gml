@@ -20,4 +20,3 @@ if (instance_exists(tpId)) {
     explodeBounces = 1;
     idSet = true;
 }
-

@@ -40,3 +40,4 @@ changeReady = true;
 CHANGE = 5;
 changeCDTime = 30;
 upPressed = false;
+immuneTo = ds_list_create();

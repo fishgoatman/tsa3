@@ -1,5 +1,5 @@
 /// @description creation stuff
-maxHp = 3;
+maxHp = rogueHp;
 hp = maxHp;
 otherHp = hp;
 boltAmount = 8;

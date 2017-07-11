@@ -3,27 +3,27 @@ hero = otherPlayerHero;
 mask_index = object_get_sprite(hero); //necessary because this object checks collisions for input
 opId = instance_create(0, 0, otherPlayerHero);
 
-var hpBarOffset = 50;
-
 if (room != rmCharacterSelect) {
-	var hpPerGap = gapInterval * hpBarWidth / opId.maxHp;
+	var hpPerGap = hpPerLine * hpBarWidth / tpId.maxHp;
+	var lastGap = 0;
 
     for (var i = 0; i < hpBarWidth; i++) {
-        if (i % hpPerGap != 0) {
+        if (i - lastGap < hpPerGap) {
 			otherHpBar[i] = instance_create(hpBarOffset + i, hpBarOffset, objHpPod);
 		} else {
 			otherHpBar[i] = -1;
+			lastGap = i;
 		}
     }
     
     if (hero == objMonkOP) {
         var width = 64;
         var height = 8;
-        instance_create(room_width - hpBarOffset - width, hpBarOffset * 2 + objHpPod.sprite_height, objMonkEnergyBarTP);
+        instance_create(hpBarOffset, hpBarOffset * 2 + objHpPod.sprite_height, objMonkEnergyBarOP);
     }
     
     if (hero == objMageOP) {
-        tpId.xiaolongId = instance_create(tpId.x, tpId.y, objXiaolongTP);
+        opId.xiaolongId = instance_create(opId.x, opId.y, objXiaolongOP);
     }
 	
 	lastPodLost = array_length_1d(otherHpBar);

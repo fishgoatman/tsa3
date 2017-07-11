@@ -10,11 +10,13 @@ while (totalDisp < hyp) {
     if (place_meeting(tryX, tryY, objBlock)) {
         dx = 0;
 		dy = 0;
+		alarm[0] = stickTime;
 		break;
     }
 	   
     if (place_meeting(tryX, tryY, objPlayerOP)) {
-        instance_create(tryX, tryY, objBoltHurtboxTP);
+        var hbId = instance_create(tryX, tryY, objBoltHurtboxTP);
+		hbId.projId = id;
     }
     
 	tryX += tempDx;
