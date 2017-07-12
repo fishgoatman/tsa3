@@ -1,13 +1,13 @@
 /// @DnDAction : YoYo Games.Common.Execute_Code
 /// @DnDVersion : 1
 /// @DnDHash : 7D2B14B0
-/// @DnDArgument : "code" "///@desc stats$(13_10)ddy = 1.3 * overallSpd;$(13_10)jumpDy = 17 * overallSpd;$(13_10)moveSpd = 8 * overallSpd;$(13_10)attackPreTime = 2 / overallSpd;$(13_10)attackPostTime = 15 / overallSpd;$(13_10)climbSpd = 12 * overallSpd;$(13_10)attackSpd = moveSpd;$(13_10)jumpDx = 3 * overallSpd;$(13_10)jumpPreTime = 2 / overallSpd;$(13_10)jumpPostTime = 4 / overallSpd;$(13_10)maxAirJumps = 1;$(13_10)maxHp = rogueHp;$(13_10)maxKnives = 1;$(13_10)dashSpd = 22;$(13_10)dashTime = 4;$(13_10)dashCooldownTime = 3 * room_speed / overallSpd;$(13_10)frictionDx = 1.5;"
+/// @DnDArgument : "code" "///@desc stats$(13_10)ddy = 1.3 * overallSpd;$(13_10)jumpDy = 17 * overallSpd;$(13_10)moveSpd = 8 * overallSpd;$(13_10)attackPreTime = 2 / overallSpd;$(13_10)attackPostTime = 12 / overallSpd;$(13_10)climbSpd = 12 * overallSpd;$(13_10)attackSpd = moveSpd;$(13_10)jumpDx = 3 * overallSpd;$(13_10)jumpPreTime = 2 / overallSpd;$(13_10)jumpPostTime = 4 / overallSpd;$(13_10)maxAirJumps = 1;$(13_10)maxHp = rogueHp;$(13_10)maxKnives = 1;$(13_10)dashSpd = 22;$(13_10)dashTime = 4;$(13_10)dashCooldownTime = 3 * room_speed / overallSpd;$(13_10)frictionDx = 1.5;"
 ///@desc stats
 ddy = 1.3 * overallSpd;
 jumpDy = 17 * overallSpd;
 moveSpd = 8 * overallSpd;
 attackPreTime = 2 / overallSpd;
-attackPostTime = 15 / overallSpd;
+attackPostTime = 12 / overallSpd;
 climbSpd = 12 * overallSpd;
 attackSpd = moveSpd;
 jumpDx = 3 * overallSpd;
