@@ -5,10 +5,15 @@ preciseY = otherY;
 x = scrRound(preciseX);
 y = scrRound(preciseY);
 
+//sprite and image
+sprite_index = otherSpriteIndex;
+image_index = otherImageIndex;
+image_xscale = otherXScale;
+
 //abilities
 if (otherOneActivate) {
 	for (var i = 0; i < fireShotAmount; i++) {
-		fireShotAngle = 90 - direct * 90 + fireShotSpread * i / (fireShotAmount - 1) - fireShotSpread / 2;
+		fireShotAngle = 90 - image_xscale * 90 + fireShotSpread * i / (fireShotAmount - 1) - fireShotSpread / 2;
 		instance_create(preciseX, preciseY, objFireShotOP);
 	}
 	
@@ -30,11 +35,6 @@ if (otherFourActivate) {
 if (otherHp != hp) {
 	scrOtherTakeDamage(hp - otherHp);
 }
-
-//sprite and image
-sprite_index = otherSpriteIndex;
-image_index = otherImageIndex;
-image_xscale = otherXScale;
 
 ///die
 if (hp <= 0) {
