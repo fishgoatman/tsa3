@@ -1,4 +1,5 @@
 /// @description explode
 instance_destroy();
-var explosion = instance_create(x, y, objFireShotExplosionOP);
-explosion.image_xscale = image_xscale;
+var hbId = instance_create(x, y, objFirebombExplosionOP);
+hbId.image_xscale = image_xscale;
+hbId.projId = id;
