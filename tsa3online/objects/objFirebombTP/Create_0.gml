@@ -4,7 +4,7 @@ if (instance_exists(tpId)) {
     preciseY = y;
 	dx = 0;
     dy = firebombSpd * overallSpd;
-    ddy = 1.1;
+    ddy = firebombDDy;
     damp = 0.45;
     bounces = 0;
     explodeBounces = 0;

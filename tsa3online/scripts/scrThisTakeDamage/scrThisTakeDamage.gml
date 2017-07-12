@@ -1,6 +1,6 @@
 /// @description scrThisTakeDamage
 hp -= argument0;
-var podsToLoseTo = hpBarWidth * hp / maxHp;
+var podsToLoseTo = floor(hpBarWidth * hp / maxHp);
 var lpl = objThisPlayer.lastPodLost;
 
 if (podsToLoseTo < lpl) {

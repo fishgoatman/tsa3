@@ -1,7 +1,7 @@
 /// @description scrThisTakeDamage
 if (room != rmCharacterSelect) {
 	hp -= argument0;
-	var podsToLoseTo = hpBarWidth * hp / maxHp;
+	var podsToLoseTo = floor(hpBarWidth * hp / maxHp);
 	var lpl = objOtherPlayer.lastPodLost;
 
 	if (podsToLoseTo < lpl) {
