@@ -188,7 +188,7 @@ randomize();
 /// @DnDAction : YoYo Games.Common.Execute_Code
 /// @DnDVersion : 1
 /// @DnDHash : 11315275
-/// @DnDArgument : "code" "/// @desc stats$(13_10)//mage$(13_10)globalvar mageHp;$(13_10)mageHp = 160;$(13_10)globalvar fireballDmg;$(13_10)fireballDmg = 6;$(13_10)globalvar fireShotSpd;$(13_10)fireShotSpd = 18;$(13_10)globalvar fireShotSpread;$(13_10)fireShotSpread = 55;$(13_10)globalvar fireShotAmount;$(13_10)fireShotAmount = 10;$(13_10)globalvar fireShotTime;$(13_10)fireShotTime = 12;$(13_10)$(13_10)//rogue$(13_10)globalvar rogueHp;$(13_10)rogueHp = 120;$(13_10)globalvar boltDmg;$(13_10)boltDmg = 2;$(13_10)globalvar daggerDmg;$(13_10)daggerDmg = 3.5;$(13_10)globalvar boltAmount;$(13_10)boltAmount = 12;$(13_10)globalvar boltSpread;$(13_10)boltSpread = 40;$(13_10)globalvar boltSpd;$(13_10)boltSpd = 30;$(13_10)globalvar startAngle;$(13_10)startAngle = 120;$(13_10)globalvar endAngle;$(13_10)endAngle = 8;$(13_10)globalvar dAngle;$(13_10)dAngle = -11;$(13_10)globalvar daggerAmount;$(13_10)daggerAmount = 15;$(13_10)globalvar daggerSpd;$(13_10)daggerSpd = 55;"
+/// @DnDArgument : "code" "/// @desc stats$(13_10)//mage$(13_10)globalvar mageHp;$(13_10)mageHp = 160;$(13_10)globalvar fireballDmg;$(13_10)fireballDmg = 6;$(13_10)globalvar fireShotSpd;$(13_10)fireShotSpd = 18;$(13_10)globalvar fireShotSpread;$(13_10)fireShotSpread = 55;$(13_10)globalvar fireShotAmount;$(13_10)fireShotAmount = 10;$(13_10)globalvar fireShotTime;$(13_10)fireShotTime = 12;$(13_10)$(13_10)//rogue$(13_10)globalvar rogueHp;$(13_10)rogueHp = 120;$(13_10)globalvar boltDmg;$(13_10)boltDmg = 6;$(13_10)globalvar daggerDmg;$(13_10)daggerDmg = 3;$(13_10)globalvar boltAmount;$(13_10)boltAmount = 12;$(13_10)globalvar boltSpread;$(13_10)boltSpread = 40;$(13_10)globalvar boltSpd;$(13_10)boltSpd = 30;$(13_10)globalvar startAngle;$(13_10)startAngle = 120;$(13_10)globalvar endAngle;$(13_10)endAngle = 8;$(13_10)globalvar dAngle;$(13_10)dAngle = -11;$(13_10)globalvar daggerAmount;$(13_10)daggerAmount = 15;$(13_10)globalvar daggerSpd;$(13_10)daggerSpd = 55;"
 /// @desc stats
 //mage
 globalvar mageHp;
@@ -208,9 +208,9 @@ fireShotTime = 12;
 globalvar rogueHp;
 rogueHp = 120;
 globalvar boltDmg;
-boltDmg = 2;
+boltDmg = 6;
 globalvar daggerDmg;
-daggerDmg = 3.5;
+daggerDmg = 3;
 globalvar boltAmount;
 boltAmount = 12;
 globalvar boltSpread;
