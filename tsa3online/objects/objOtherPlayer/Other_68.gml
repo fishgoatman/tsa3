@@ -30,7 +30,9 @@ if (socketId == clientSocket) {
 		if (type == "e") { //end
 			//do nothing
 		} else if (type == "r") {
-			opId.currAngle = buffer_read(receivedBuffer, buffer_f32);
+			if (instance_exists(opId)) {
+				opId.currAngle = buffer_read(receivedBuffer, buffer_f32);
+			}
 		} else if (type == "s") { //selectHero
 			otherLockedIn = buffer_read(receivedBuffer, buffer_bool);
 			otherPlayerHero = buffer_read(receivedBuffer, buffer_string);
