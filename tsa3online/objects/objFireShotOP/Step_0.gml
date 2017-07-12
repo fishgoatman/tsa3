@@ -10,7 +10,8 @@ var dev = 8;
 while (totalDisp < hyp) {
     if (place_meeting(tryX, tryY, objPlayerTP) || place_meeting(tryX, tryY, objBlock)) {
         instance_destroy();
-		instance_create(tryX, tryY, objFireballExplosionOP);
+		var hbId = instance_create(tryX, tryY, objFireballExplosionOP);
+		hbId.projId = id;
 		break;
     }
     
