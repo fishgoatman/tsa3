@@ -3,7 +3,7 @@ if (instance_exists(opId)) {
     preciseX = x;
     preciseY = y;
 	dx = 0;
-    dy = 10 * overallSpd;
+    dy = firebombSpd * overallSpd;
     ddy = 1.1;
     damp = 0.45;
     bounces = 0;
