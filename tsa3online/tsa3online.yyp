@@ -386,7 +386,7 @@
             "Key": "1c6b0be5-3831-4e80-bfef-97f29d7fd004",
             "Value": {
                 "id": "3ded6f21-3322-49af-b115-f87951aaa2b4",
-                "resourcePath": "objects\\objFireblastTP\\objFireblastTP.yy",
+                "resourcePath": "objects\\objFireballTP\\objFireballTP.yy",
                 "resourceType": "GMObject"
             }
         },
@@ -770,7 +770,7 @@
             "Key": "3a34274c-e063-48f0-8745-50cc21faa3af",
             "Value": {
                 "id": "3d95268b-9ada-4742-a16e-77145ceb1166",
-                "resourcePath": "objects\\objFireballOP\\objFireballOP.yy",
+                "resourcePath": "objects\\objFirebombOP\\objFirebombOP.yy",
                 "resourceType": "GMObject"
             }
         },
@@ -1090,7 +1090,7 @@
             "Key": "56b5a457-765d-4073-81f2-d5c96e4fadce",
             "Value": {
                 "id": "b8a3bd97-84b8-4524-b4c7-e2a3b1d6780c",
-                "resourcePath": "objects\\objFireballExplosionTP\\objFireballExplosionTP.yy",
+                "resourcePath": "objects\\objFireShotExplosionTP\\objFireShotExplosionTP.yy",
                 "resourceType": "GMObject"
             }
         },
@@ -1115,6 +1115,14 @@
             "Value": {
                 "id": "4dfc2f1a-198b-4516-be31-716e46c4baa0",
                 "resourcePath": "objects\\objChimeBoltKP\\objChimeBoltKP.yy",
+                "resourceType": "GMObject"
+            }
+        },
+        {
+            "Key": "5bd2b035-128b-45da-9f23-24c84b3f0479",
+            "Value": {
+                "id": "856b8c18-0f54-4bd0-ab00-eda68a6dc062",
+                "resourcePath": "objects\\objFireballExplosionOP\\objFireballExplosionOP.yy",
                 "resourceType": "GMObject"
             }
         },
@@ -1226,7 +1234,15 @@
             "Key": "687caa2f-f440-4701-8752-a9a58a165b5c",
             "Value": {
                 "id": "aeba9760-b833-4fb1-8565-63734bf89cc4",
-                "resourcePath": "objects\\objFireblastOP\\objFireblastOP.yy",
+                "resourcePath": "objects\\objFireballOP\\objFireballOP.yy",
+                "resourceType": "GMObject"
+            }
+        },
+        {
+            "Key": "693aacac-75ce-4d4c-b33c-71f4f81adb86",
+            "Value": {
+                "id": "8671205c-d7a8-4b2c-adbc-b9b8c3356a2a",
+                "resourcePath": "objects\\objFireballExplosionTP\\objFireballExplosionTP.yy",
                 "resourceType": "GMObject"
             }
         },
@@ -1858,7 +1874,7 @@
             "Key": "95ca96eb-c7f9-4616-a290-cba0b09d2dd7",
             "Value": {
                 "id": "a0e6e112-7189-4663-b73a-0222d7af1206",
-                "resourcePath": "objects\\objFireballTP\\objFireballTP.yy",
+                "resourcePath": "objects\\objFirebombTP\\objFirebombTP.yy",
                 "resourceType": "GMObject"
             }
         },
@@ -2247,6 +2263,14 @@
             }
         },
         {
+            "Key": "bebfacef-746d-41c5-9e99-512c2b21126f",
+            "Value": {
+                "id": "baf5acbb-cbb5-4046-80e4-aa35560f1b64",
+                "resourcePath": "objects\\objFirebombExplosionOP\\objFirebombExplosionOP.yy",
+                "resourceType": "GMObject"
+            }
+        },
+        {
             "Key": "bf368d07-15c4-43fe-8fdd-42efb992fce9",
             "Value": {
                 "id": "b2d09fbf-7799-4c15-907b-7e6750569bed",
@@ -2426,7 +2450,7 @@
             "Key": "cc0536ea-f98d-41d1-a11d-eb0003761901",
             "Value": {
                 "id": "e4259a45-5c7a-4382-b581-2f2c368344a3",
-                "resourcePath": "objects\\objFireballExplosionOP\\objFireballExplosionOP.yy",
+                "resourcePath": "objects\\objFireShotExplosionOP\\objFireShotExplosionOP.yy",
                 "resourceType": "GMObject"
             }
         },
@@ -2531,6 +2555,14 @@
             "Value": {
                 "id": "8b34bc38-efd6-48f5-92be-82ea5bab46ce",
                 "resourcePath": "objects\\objBoltHurtboxOP\\objBoltHurtboxOP.yy",
+                "resourceType": "GMObject"
+            }
+        },
+        {
+            "Key": "d27d88fe-3fc2-4be6-a576-caa2eacee4b8",
+            "Value": {
+                "id": "6ca72cdc-6cf0-4f3f-8d3a-c9cc8757d040",
+                "resourcePath": "objects\\objFirebombExplosionTP\\objFirebombExplosionTP.yy",
                 "resourceType": "GMObject"
             }
         },
@@ -2923,6 +2955,14 @@
             "Value": {
                 "id": "33386c4c-0903-48b5-a014-59af324c20bd",
                 "resourcePath": "sprites\\sprKnightMove\\sprKnightMove.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
+            "Key": "f64c2c9d-7ec4-4080-8dc2-64ca8ae90c65",
+            "Value": {
+                "id": "72245474-2a2f-4fa5-8e9c-a0a04ed094a6",
+                "resourcePath": "sprites\\sprMageFly\\sprMageFly.yy",
                 "resourceType": "GMSprite"
             }
         },

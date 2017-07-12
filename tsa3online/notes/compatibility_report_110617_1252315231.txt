@@ -182,10 +182,10 @@ Converted description : /// @description move
 Converting GML script : ${project_dir}\objects\objFireballOP\Collision_33360764-b661-42a1-876f-686eac0b50bf.gml
 Converted description : /// @description explode
 
-Converting GML script : ${project_dir}\objects\objFireballExplosionOP\Create_0.gml
+Converting GML script : ${project_dir}\objects\objFireShotExplosionOP\Create_0.gml
 Converted description : /// @description creation stuff
 
-Converting GML script : ${project_dir}\objects\objFireballExplosionOP\Alarm_0.gml
+Converting GML script : ${project_dir}\objects\objFireShotExplosionOP\Alarm_0.gml
 Converted description : /// @description destroy
 
 Converting GML script : ${project_dir}\objects\objFireblastTP\Create_0.gml
@@ -200,10 +200,10 @@ Converted description : /// @description stats
 Converting GML script : ${project_dir}\objects\objFireblastOP\Step_0.gml
 Converted description : /// @description move
 
-Converting GML script : ${project_dir}\objects\objFireballExplosionTP\Create_0.gml
+Converting GML script : ${project_dir}\objects\objFireShotExplosionTP\Create_0.gml
 Converted description : /// @description creation stuff
 
-Converting GML script : ${project_dir}\objects\objFireballExplosionTP\Alarm_0.gml
+Converting GML script : ${project_dir}\objects\objFireShotExplosionTP\Alarm_0.gml
 Converted description : /// @description destroy
 
 Converting GML script : ${project_dir}\objects\objXiaolongOP\Create_0.gml

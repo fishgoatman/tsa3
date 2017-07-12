@@ -2,18 +2,25 @@
 //stats
 ddy = 1.2 * overallSpd;
 jumpDy = 15 * overallSpd;
-floatDy = 3.5 * overallSpd;
-floatDx = 3.8 * overallSpd;
+flyDx = 4.1 * overallSpd;
+flyDy = flyDx;
+boostedDx = 9.5 * overallSpd;
+boostedDy = boostedDx;
+boostedWalkingSpd = 8.1;
 moveSpd = 5.4 * overallSpd;
 attackPreTime = 10 / overallSpd;
 attackPostTime = 4 / overallSpd;
+fireballPreTime = 3 / overallSpd;
+fireballPostTime = 7 / overallSpd;
 attackSpd = 1 * overallSpd;
 jumpDx = 1 * overallSpd;
 jumpPreTime = 1 / overallSpd;
 jumpPostTime = 3 / overallSpd;
 maxAirJumps = 0;
 maxHp = mageHp;
-oneRecoil = 6;
+fireblastRecoil = 6;
+boostDuration = 2.5 * room_speed;
+boostCDTime = 3 * room_speed;
 
 //necessary vars
 state = NONE;
@@ -40,7 +47,16 @@ MAGE = 1;
 DRAGON = -1;
 firingMode = MAGE;
 changeReady = true;
-CHANGE = 5;
-changeCDTime = 30;
+FLY_CD = 5;
+BOOST_DURATION = 6;
+BOOST_CD = 7;
+FIREBALL_PRE = 8;
+FIREBALL_POST = 9;
+flyCDTime = 10;
+boosted = false;
 upPressed = false;
+upHeld = false;
+flyReady = true;
+boostReady = true;
+fireballState = NONE;
 immuneTo = ds_list_create();

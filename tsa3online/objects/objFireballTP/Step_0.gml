@@ -1,21 +1,7 @@
 /// @description move
-dy -= ddy;
+scrMove();
 
-if (place_meeting(preciseX, preciseY + 1, objBlock) || place_meeting(preciseX, preciseY - 1, objBlock)) {
-    dy *= -1;
-    dy *= damp;
-    bounces++;
-}
-
-if (place_meeting(preciseX + 1, preciseY, objBlock) || place_meeting(preciseX - 1, preciseY, objBlock)) {
-    dx *= -1;
-    dx *= damp;
-    bounces++;
-}
-
-if (bounces > explodeBounces) {
+if (place_meeting(x, y, objPlayerOP) || place_meeting(x + image_xscale, y, objBlock)) {
     instance_destroy();
     instance_create(x, y, objFireballExplosionTP);
 }
-
-scrMove();

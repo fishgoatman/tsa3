@@ -12,15 +12,21 @@ image_xscale = otherXScale;
 
 //abilities
 if (otherOneActivate) {
+	if (flying) {
+		instance_create(preciseX, preciseY, objFirebombOP);
+	} else {
+		instance_create(preciseX, preciseY, objFireballOP);
+	}
+
+	otherOneActivate = false;
+}
+
+if (otherTwoActivate) {
 	for (var i = 0; i < fireShotAmount; i++) {
 		fireShotAngle = 90 - image_xscale * 90 + fireShotSpread * i / (fireShotAmount - 1) - fireShotSpread / 2;
 		instance_create(preciseX, preciseY, objFireShotOP);
 	}
 	
-	otherOneActivate = false;
-}
-
-if (otherTwoActivate) {
 	otherTwoActivate = false;
 }
 

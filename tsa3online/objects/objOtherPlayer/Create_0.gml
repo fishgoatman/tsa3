@@ -21,10 +21,6 @@ if (room != rmCharacterSelect) {
         var height = 8;
         instance_create(hpBarOffset, hpBarOffset * 2 + objHpPod.sprite_height, objMonkEnergyBarOP);
     }
-    
-    if (hero == objMageOP) {
-        opId.xiaolongId = instance_create(opId.x, opId.y, objXiaolongOP);
-    }
 	
 	lastPodLost = array_length_1d(otherHpBar);
 }

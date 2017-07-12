@@ -1,22 +1,7 @@
-/// @description creation stuff
-if (instance_exists(opId)) {
-    preciseX = x;
-    preciseY = y;
-    xspd = 10 * overallSpd;
-    yspd = 10 * overallSpd;
-    visible = true;
-    
-    if (otherDucking) {
-        dx = xspd * opId.image_xscale;
-        dy = yspd / 2;
-    } else {
-        dx = xspd * opId.image_xscale;
-        dy = yspd;
-    }
-    
-    ddy = 1.1;
-    damp = 0.45;
-    bounces = 0;
-    explodeBounces = 1;
-    idSet = true;
-}
+/// @description stats
+image_speed = 0.5;
+image_xscale = otherXScale;
+dx = image_xscale * fireballSpd * overallSpd;
+dy = 0;
+preciseX = x;
+preciseY = y;

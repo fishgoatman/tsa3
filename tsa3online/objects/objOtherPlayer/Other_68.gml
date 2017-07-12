@@ -29,9 +29,13 @@ if (socketId == clientSocket) {
 		
 		if (type == "e") { //end
 			//do nothing
-		} else if (type == "r") {
+		} else if (type == "r") { //rogue
 			if (instance_exists(opId)) {
 				opId.currAngle = buffer_read(receivedBuffer, buffer_f32);
+			}
+		} else if (type == "m") {
+			if (instance_exists(opId)) {
+				opId.flying = buffer_read(receivedBuffer, buffer_bool);
 			}
 		} else if (type == "s") { //selectHero
 			otherLockedIn = buffer_read(receivedBuffer, buffer_bool);

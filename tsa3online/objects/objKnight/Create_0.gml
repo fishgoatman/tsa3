@@ -2,8 +2,8 @@
 oddy = 1.5;
 airDdy = 1.2;
 jumpDy = 13.5;
-floatDy = 1.5;
-floatDx = 1.5;
+flyDy = 1.5;
+flyDx = 1.5;
 origMoveSpd = 2.7;
 fireSpd = 6.4;
 attackPreTime = 2;

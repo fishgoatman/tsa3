@@ -1,8 +1,8 @@
 /// @description stats
 ddy = 1.5 * overallSpd;
 jumpDy = 18 * overallSpd;
-floatDy = 3 * overallSpd;
-floatDx = 3 * overallSpd;
+flyDy = 3 * overallSpd;
+flyDx = 3 * overallSpd;
 moveSpd = 5.5 * overallSpd;
 attackPreTime = 4 / overallSpd;
 attackPostTime = 16 / overallSpd;

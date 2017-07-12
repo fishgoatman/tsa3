@@ -8,5 +8,5 @@ attackState = POST_ATTACK;
 alarm[POST_ATTACK] = attackPostTime;
 oneActivate = true;
 image_index = 0;
-recoilValue = oneRecoil * -direct;
+recoilValue = fireblastRecoil * -direct;
 naturalDx += recoilValue;

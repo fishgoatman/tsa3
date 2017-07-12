@@ -10,7 +10,7 @@ var dev = 8;
 while (totalDisp < hyp) {
     if (place_meeting(tryX, tryY, objPlayerOP) || place_meeting(tryX, tryY, objBlock)) {
         instance_destroy();
-		instance_create(tryX, tryY, objFireballExplosionTP);
+		instance_create(tryX, tryY, objFireShotExplosionTP);
 		break;
     }
     
