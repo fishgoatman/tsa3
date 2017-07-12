@@ -6,7 +6,7 @@ for (var i = 0; i < fireShotAmount; i++) {
 
 attackState = POST_ATTACK;
 alarm[POST_ATTACK] = attackPostTime;
-oneActivate = true;
+twoActivate = true;
 image_index = 0;
 recoilValue = fireblastRecoil * -direct;
 naturalDx += recoilValue;
