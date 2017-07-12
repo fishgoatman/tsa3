@@ -3,5 +3,6 @@ scrMove();
 
 if (place_meeting(x, y, objPlayerOP) || place_meeting(x + image_xscale, y, objBlock)) {
     instance_destroy();
-    instance_create(x, y, objFireballExplosionTP);
+    var hbId = instance_create(x, y, objFireballExplosionTP);
+	hbId.projId = id;
 }

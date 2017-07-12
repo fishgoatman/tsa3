@@ -15,7 +15,8 @@ if (place_meeting(preciseX + 1, preciseY, objBlock) || place_meeting(preciseX - 
 
 if (bounces > explodeBounces) {
     instance_destroy();
-    instance_create(x, y, objFirebombExplosionOP);
+    var hbId = instance_create(x, y, objFirebombExplosionOP);
+	hbId.projId = id;
 }
 
 scrMove();
