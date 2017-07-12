@@ -186,7 +186,7 @@ randomize();
 /// @DnDAction : YoYo Games.Common.Execute_Code
 /// @DnDVersion : 1
 /// @DnDHash : 11315275
-/// @DnDArgument : "code" "/// @desc stats$(13_10)//mage$(13_10)globalvar mageHp;$(13_10)mageHp = 160;$(13_10)globalvar fireballDmg;$(13_10)fireballDmg = 22;$(13_10)$(13_10)//rogue$(13_10)globalvar rogueHp;$(13_10)rogueHp = 120;$(13_10)globalvar boltDmg;$(13_10)boltDmg = 3;$(13_10)globalvar daggerDmg;$(13_10)daggerDmg = 5;$(13_10)globalvar boltAmount;$(13_10)boltAmount = 8;$(13_10)globalvar boltSpread;$(13_10)boltSpread = 35;$(13_10)globalvar boltSpd;$(13_10)boltSpd = 20;$(13_10)globalvar startAngle;$(13_10)startAngle = 120;$(13_10)globalvar endAngle;$(13_10)endAngle = 8;$(13_10)globalvar dAngle;$(13_10)dAngle = -11;$(13_10)globalvar daggerAmount;$(13_10)daggerAmount = 9;$(13_10)globalvar daggerSpd;$(13_10)daggerSpd = 50;"
+/// @DnDArgument : "code" "/// @desc stats$(13_10)//mage$(13_10)globalvar mageHp;$(13_10)mageHp = 160;$(13_10)globalvar fireballDmg;$(13_10)fireballDmg = 22;$(13_10)$(13_10)//rogue$(13_10)globalvar rogueHp;$(13_10)rogueHp = 120;$(13_10)globalvar boltDmg;$(13_10)boltDmg = 2;$(13_10)globalvar daggerDmg;$(13_10)daggerDmg = 3.5;$(13_10)globalvar boltAmount;$(13_10)boltAmount = 12;$(13_10)globalvar boltSpread;$(13_10)boltSpread = 40;$(13_10)globalvar boltSpd;$(13_10)boltSpd = 30;$(13_10)globalvar startAngle;$(13_10)startAngle = 120;$(13_10)globalvar endAngle;$(13_10)endAngle = 8;$(13_10)globalvar dAngle;$(13_10)dAngle = -11;$(13_10)globalvar daggerAmount;$(13_10)daggerAmount = 15;$(13_10)globalvar daggerSpd;$(13_10)daggerSpd = 55;"
 /// @desc stats
 //mage
 globalvar mageHp;
@@ -198,15 +198,15 @@ fireballDmg = 22;
 globalvar rogueHp;
 rogueHp = 120;
 globalvar boltDmg;
-boltDmg = 3;
+boltDmg = 2;
 globalvar daggerDmg;
-daggerDmg = 5;
+daggerDmg = 3.5;
 globalvar boltAmount;
-boltAmount = 8;
+boltAmount = 12;
 globalvar boltSpread;
-boltSpread = 35;
+boltSpread = 40;
 globalvar boltSpd;
-boltSpd = 20;
+boltSpd = 30;
 globalvar startAngle;
 startAngle = 120;
 globalvar endAngle;
@@ -214,6 +214,6 @@ endAngle = 8;
 globalvar dAngle;
 dAngle = -11;
 globalvar daggerAmount;
-daggerAmount = 9;
+daggerAmount = 15;
 globalvar daggerSpd;
-daggerSpd = 50;
+daggerSpd = 55;
