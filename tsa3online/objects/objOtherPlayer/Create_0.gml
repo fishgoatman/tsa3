@@ -4,7 +4,7 @@ mask_index = object_get_sprite(hero); //necessary because this object checks col
 opId = instance_create(0, 0, otherPlayerHero);
 
 if (room != rmCharacterSelect) {
-	var hpPerGap = hpPerLine * hpBarWidth / tpId.maxHp;
+	var hpPerGap = hpPerLine * hpBarWidth / opId.maxHp;
 	var lastGap = 0;
 
     for (var i = 0; i < hpBarWidth; i++) {
