@@ -9,12 +9,26 @@ if (dashing) {
 	if (state == MOVE) {
 	    if (direct == RIGHT && !place_meeting(preciseX + 1, preciseY, objBlock) || direct == LEFT
 	    && !place_meeting(preciseX - 1, preciseY, objBlock)) {
-	        dx = direct * spd;
+	        moveDx = direct * spd;
 	    } else {
-	        dx = 0;
+	        moveDx = 0;
 	    }
 	} else {
-	    dx = 0;
+	    moveDx = 0;
+	}
+	
+	if (moveDx != 0 && sign(moveDx) != sign(naturalDx)) {
+		if (abs(naturalDx) < abs(moveDx)) {
+			naturalDx = 0;
+		} else {
+			naturalDx += moveDx;
+		}
+	}
+	
+	if (abs(naturalDx) > frictionDx) {
+		naturalDx -= frictionDx * sign(naturalDx);
+	} else {
+		naturalDx = 0;
 	}
 
 	//dy
@@ -120,7 +134,7 @@ if (dashing) {
 			var diffX = mouse_x - x;
 			var diffY = y - mouse_y;
 			var hyp = sqrt(diffX * diffX + diffY * diffY);
-			dx = dashSpd * diffX / hyp;
+			naturalDx = dashSpd * diffX / hyp;
 			dy = dashSpd * diffY / hyp;
 			dashing = true;
 			dashReady = false;
@@ -193,6 +207,7 @@ if (dashing) {
 	}
 }
 
+dx = moveDx + naturalDx;
 scrMove();
 
 ///die

@@ -1,5 +1,5 @@
 /// @desc creation stuff
-angle = 180 + tpId.boltAngle + darctan2(tpId.dy, tpId.dx);
+angle = 180 + tpId.boltAngle + darctan2(tpId.dy, tpId.naturalDx);
 dx = boltSpd * dcos(angle);
 dy = boltSpd * dsin(angle);
 preciseX = x;

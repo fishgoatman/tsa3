@@ -5,14 +5,15 @@ jumpDy = 15 * overallSpd;
 floatDy = 3.5 * overallSpd;
 floatDx = 3.8 * overallSpd;
 moveSpd = 5.4 * overallSpd;
-attackPreTime = 2 / overallSpd;
-attackPostTime = 12 / overallSpd;
+attackPreTime = 11 / overallSpd;
+attackPostTime = 4 / overallSpd;
 attackSpd = 1 * overallSpd;
 jumpDx = 1 * overallSpd;
 jumpPreTime = 1 / overallSpd;
 jumpPostTime = 3 / overallSpd;
 maxAirJumps = 0;
 maxHp = mageHp;
+oneRecoil = 6;
 
 //necessary vars
 state = NONE;
@@ -23,6 +24,8 @@ abilityState = NONE;
 direct = RIGHT;
 ducking = false;
 spd = moveSpd;
+moveDx = 0;
+naturalDx = 0;
 dx = 0;
 dy = 0;
 preciseX = x;

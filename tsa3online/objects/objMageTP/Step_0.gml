@@ -1,15 +1,25 @@
 /// @description act based on input
 //dx
-if (state == MOVE) {
+if (attackState == NONE && state == MOVE) {
     if (direct == RIGHT && !place_meeting(preciseX + 1, preciseY, objBlock) || direct == LEFT
     && !place_meeting(preciseX - 1, preciseY, objBlock)) {
-        dx = direct * spd;
+        moveDx = direct * spd;
     } else {
-        dx = 0;
+        moveDx = 0;
     }
 } else {
-    dx = 0;
+    moveDx = 0;
 }
+
+if (moveDx != 0 && sign(moveDx) != sign(naturalDx)) {
+	if (abs(naturalDx) < abs(moveDx)) {
+		naturalDx = 0;
+	} else {
+		naturalDx += moveDx;
+	}
+}
+
+dx = moveDx + naturalDx;
 
 //dy
 if (upPressed) {
@@ -23,7 +33,9 @@ if (upPressed) {
 	upPressed = false;
 }
 
-if (!place_meeting(preciseX, preciseY + 1, objBlock)) {
+if (attackState == PRE_ATTACK) {
+	dy = 0;
+} else if (!place_meeting(preciseX, preciseY + 1, objBlock)) {
     dy -= ddy;
     
     if (dy > 0 && place_meeting(preciseX, preciseY - 1, objBlock)) {
@@ -91,13 +103,13 @@ if (jumpState == PRE_JUMP) {
     if (ducking) {
         sprite_index = sprMagePreAttackDuck;
     } else {
-        sprite_index = sprMagePreAttack;
+        sprite_index = sprMagePreOne;
     }
 } else if (attackState == POST_ATTACK) {
     if (ducking) {
         sprite_index = sprMagePostAttackDuck;
     } else {
-        sprite_index = sprMagePostAttack;
+        sprite_index = sprMagePostOne;
     }
 } else {
     if (!place_meeting(preciseX, preciseY + 1, objBlock)) {

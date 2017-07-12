@@ -7,7 +7,11 @@ y = scrRound(preciseY);
 
 //abilities
 if (otherOneActivate) {
-	instance_create(preciseX, preciseY, objFireballOP);
+	for (var i = 0; i < fireShotAmount; i++) {
+		fireShotAngle = 90 - direct * 90 + fireShotSpread * i / (fireShotAmount - 1) - fireShotSpread / 2;
+		instance_create(preciseX, preciseY, objFireShotOP);
+	}
+	
 	otherOneActivate = false;
 }
 
@@ -22,8 +26,6 @@ if (otherThreeActivate) {
 if (otherFourActivate) {
 	otherFourActivate = false;
 }
-
-show_debug_message("otherHp = " + string(otherHp) + " and hp = " + string(hp));
 
 if (otherHp != hp) {
 	scrOtherTakeDamage(hp - otherHp);
