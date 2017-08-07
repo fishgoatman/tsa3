@@ -1,5 +1,6 @@
 /// @description act based on server data
 //pos
+dx = otherX - preciseX;
 preciseX = otherX;
 preciseY = otherY;
 x = scrRound(preciseX);

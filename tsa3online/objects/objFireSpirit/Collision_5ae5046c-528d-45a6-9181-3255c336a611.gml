@@ -1,4 +1,4 @@
 /// @description explode
 instance_destroy();
-instance_create(x, y, objFireSpiritExplosion);
-
+var hbId = instance_create(x, y, objFireSpiritExplosion);
+hbId.projId = id;

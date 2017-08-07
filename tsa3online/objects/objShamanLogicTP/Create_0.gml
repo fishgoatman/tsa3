@@ -1,0 +1,24 @@
+/// @description creation stuff
+currLightningDx = 1;
+currLightningDy = 0;
+totemHeight = 20;
+lightningWidth = sprite_get_width(sprLightningStraight);
+lightningHeight = sprite_get_height(sprLightningStraight);
+lightningTime = 3;
+windHeight = 12;
+numTotems = 0;
+maxTotems = 3;
+summonTotem = false;
+summonLightning = false;
+summonWind = false;
+summonFire = false;
+cdHeight = 35;
+nearestTotem = -1;
+lightingOn = false;
+controlScheme = objShamanTP.controlScheme;
+scrHeroId();
+var size = 32;
+ttCdId = instance_create(hpBarOffset + size / 2, hpBarOffset * 2 + size + cdHeight / 2, objTotemCooldown);
+wdCdId = instance_create(hpBarOffset + size * 3 / 2, hpBarOffset * 2 + size + cdHeight / 2, objWindCooldown);
+ltCdId = instance_create(hpBarOffset + size * 5 / 2, hpBarOffset * 2 + size + cdHeight / 2, objLightningCooldown);
+frCdId = instance_create(hpBarOffset + size * 7 / 2, hpBarOffset * 2 + size + cdHeight / 2, objFireCooldown);

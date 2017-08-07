@@ -1,5 +1,14 @@
 /// @description check to start
-if (!alarmStarted && (tpId.lockedIn && testingMode || tpId.lockedIn && otherLockedIn)) {
-    alarm[0] = 1 * room_speed;
-    alarmStarted = true;
+if (!alarmStarted) {
+	if (mode == "online") {
+		if (tpId.lockedIn && otherLockedIn) {
+		    alarm[0] = afterSelectTime;
+			alarmStarted = true;
+		}
+	} else if (mode == "offline") {
+		if (mpId.lockedIn && kpId.lockedIn) {
+		    alarm[0] = afterSelectTime;
+			alarmStarted = true;
+		}
+	}
 }

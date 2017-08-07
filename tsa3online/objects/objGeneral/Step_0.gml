@@ -1,28 +1,49 @@
 /// @DnDAction : YoYo Games.Common.Execute_Code
 /// @DnDVersion : 1
 /// @DnDHash : 46FD5384
-/// @DnDArgument : "code" "/// @description check win$(13_10)//check win$(13_10)if (gg == NONE) {$(13_10)    if (!instance_exists(tpId) && !instance_exists(opId)) {$(13_10)        gg = TIE;$(13_10)        scrWinStuff();$(13_10)    } else if (!instance_exists(tpId)) {$(13_10)        gg = KEYBOARD;$(13_10)        otherWins++;$(13_10)        scrWinStuff();$(13_10)    } else if (!instance_exists(opId)) {$(13_10)        gg = MOUSE;$(13_10)        thisWins++;$(13_10)        scrWinStuff();$(13_10)    }$(13_10)    $(13_10)    if (thisWins >= firstTo) {$(13_10)        instance_create(signX, signY, objMouseWin);$(13_10)    } else if (otherWins >= firstTo) {$(13_10)        instance_create(signX, signY, objKeyboardWin);$(13_10)    }$(13_10)}"
+/// @DnDArgument : "code" "/// @description check win$(13_10)//check win$(13_10)if (gg == NONE) {$(13_10)	if (mode == "online") {$(13_10)	    if (!instance_exists(tpId) && !instance_exists(opId)) {$(13_10)	        gg = TIE;$(13_10)	        scrWinStuff();$(13_10)	    } else if (!instance_exists(tpId)) {$(13_10)	        gg = KEYBOARD;$(13_10)	        otherWins++;$(13_10)	        scrWinStuff();$(13_10)	    } else if (!instance_exists(opId)) {$(13_10)	        gg = MOUSE;$(13_10)	        thisWins++;$(13_10)	        scrWinStuff();$(13_10)	    }$(13_10)    $(13_10)	    if (thisWins >= firstTo) {$(13_10)	        instance_create(signX, signY, objMouseWin);$(13_10)	    } else if (otherWins >= firstTo) {$(13_10)	        instance_create(signX, signY, objKeyboardWin);$(13_10)	    }$(13_10)	} else if (mode == "offline") {$(13_10)		if (!instance_exists(mpId) && !instance_exists(kpId)) {$(13_10)	        gg = TIE;$(13_10)	        scrWinStuff();$(13_10)	    } else if (!instance_exists(mpId)) {$(13_10)	        gg = KEYBOARD;$(13_10)	        keyboardWins++;$(13_10)	        scrWinStuff();$(13_10)	    } else if (!instance_exists(kpId)) {$(13_10)	        gg = MOUSE;$(13_10)	        mouseWins++;$(13_10)	        scrWinStuff();$(13_10)	    }$(13_10)    $(13_10)	    if (mouseWins >= firstTo) {$(13_10)	        instance_create(signX, signY, objMouseWin);$(13_10)	    } else if (keyboardWins >= firstTo) {$(13_10)	        instance_create(signX, signY, objKeyboardWin);$(13_10)	    }$(13_10)	}$(13_10)}"
 /// @description check win
 //check win
 if (gg == NONE) {
-    if (!instance_exists(tpId) && !instance_exists(opId)) {
-        gg = TIE;
-        scrWinStuff();
-    } else if (!instance_exists(tpId)) {
-        gg = KEYBOARD;
-        otherWins++;
-        scrWinStuff();
-    } else if (!instance_exists(opId)) {
-        gg = MOUSE;
-        thisWins++;
-        scrWinStuff();
-    }
+	if (mode == "online") {
+	    if (!instance_exists(tpId) && !instance_exists(opId)) {
+	        gg = TIE;
+	        scrWinStuff();
+	    } else if (!instance_exists(tpId)) {
+	        gg = KEYBOARD;
+	        otherWins++;
+	        scrWinStuff();
+	    } else if (!instance_exists(opId)) {
+	        gg = MOUSE;
+	        thisWins++;
+	        scrWinStuff();
+	    }
     
-    if (thisWins >= firstTo) {
-        instance_create(signX, signY, objMouseWin);
-    } else if (otherWins >= firstTo) {
-        instance_create(signX, signY, objKeyboardWin);
-    }
+	    if (thisWins >= firstTo) {
+	        instance_create(signX, signY, objMouseWin);
+	    } else if (otherWins >= firstTo) {
+	        instance_create(signX, signY, objKeyboardWin);
+	    }
+	} else if (mode == "offline") {
+		if (!instance_exists(mpId) && !instance_exists(kpId)) {
+	        gg = TIE;
+	        scrWinStuff();
+	    } else if (!instance_exists(mpId)) {
+	        gg = KEYBOARD;
+	        keyboardWins++;
+	        scrWinStuff();
+	    } else if (!instance_exists(kpId)) {
+	        gg = MOUSE;
+	        mouseWins++;
+	        scrWinStuff();
+	    }
+    
+	    if (mouseWins >= firstTo) {
+	        instance_create(signX, signY, objMouseWin);
+	    } else if (keyboardWins >= firstTo) {
+	        instance_create(signX, signY, objKeyboardWin);
+	    }
+	}
 }
 
 /// @DnDAction : YoYo Games.Common.Execute_Code

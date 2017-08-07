@@ -1,8 +1,11 @@
 /// @description creation stuff
-if (instance_exists(tpId)) {
+controlScheme = mageControlScheme;
+scrHeroId();
+
+if (instance_exists(heroId)) {
     preciseX = x;
     preciseY = y;
-	dx = 0;
+	dx = heroId.dx;
     dy = firebombSpd * overallSpd;
     ddy = firebombDDy;
     damp = 0.45;

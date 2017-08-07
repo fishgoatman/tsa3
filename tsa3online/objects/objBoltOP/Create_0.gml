@@ -1,5 +1,5 @@
 /// @desc creation stuff
-angle = 180 + opId.boltAngle + darctan2(opId.dy, opId.dx);
+angle = 180 + opId.boltAngle + opId.dashAngle;
 dx = boltSpd * dcos(angle);
 dy = boltSpd * dsin(angle);
 preciseX = x;

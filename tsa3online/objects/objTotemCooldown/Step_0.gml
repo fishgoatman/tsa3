@@ -1,10 +1,10 @@
 /// @description cooldown
-if (instance_exists(opId)) {
+if (instance_exists(heroId)) {
     if (image_index >= image_number - 1) {
         image_speed = 0;
-        opId.totemReady = true;
+        heroId.totemReady = true;
     } else {
-        image_speed = 30 / opId.totemCooldown;
+        image_speed = 30 / heroId.totemCooldown;
     }
 } else {
     instance_destroy();

@@ -1,7 +1,10 @@
 /// @description stats
+controlScheme = mageControlScheme;
+scrHeroId();
+
 image_speed = 0.5;
-image_xscale = tpId.image_xscale;
-dx = tpId.direct * fireballSpd * overallSpd;
+image_xscale = heroId.image_xscale;
+dx = heroId.direct * fireballSpd * overallSpd;
 dy = 0;
 preciseX = x;
 preciseY = y;

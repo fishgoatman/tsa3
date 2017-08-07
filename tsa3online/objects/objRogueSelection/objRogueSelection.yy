@@ -4,7 +4,16 @@
     "mvc": "1.0",
     "name": "objRogueSelection",
     "eventList": [
-        
+        {
+            "id": "56d1c162-fc45-49d1-ac96-9c55fa06367d",
+            "modelName": "GMEvent",
+            "mvc": "1.0",
+            "IsDnD": false,
+            "collisionObjectId": "00000000-0000-0000-0000-000000000000",
+            "enumb": 0,
+            "eventtype": 0,
+            "m_owner": "6ce75a0d-224b-42b2-a6da-51a8f13d6547"
+        }
     ],
     "maskSpriteId": "00000000-0000-0000-0000-000000000000",
     "parentObjectId": "00000000-0000-0000-0000-000000000000",

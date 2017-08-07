@@ -1,5 +1,4 @@
-/// @description make image_speed = 0
+/// @description set image_speed to 0
 if (image_index >= image_number - image_speed) {
-    image_speed = 0;
+	image_speed = 0;
 }
-

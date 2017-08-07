@@ -1,10 +1,10 @@
 /// @description creation stuff
-alarm[0] = opId.logicId.lightningTime;
+alarm[0] = tpId.logicId.lightningTime;
 rand = irandom(1);
-var sp = opId.logicId.startPlace;
-var ep = opId.logicId.endPlace;
-var a = opId.logicId.a;
-var b = opId.logicId.b
+var sp = tpId.logicId.startPlace;
+var ep = tpId.logicId.endPlace;
+var a = tpId.logicId.a;
+var b = tpId.logicId.b;
 image_angle = 360 - arctan2(b.y - a.y, b.x - a.x) * 180 / pi;
 
 if (sp == "top") {
@@ -68,4 +68,3 @@ if (sp == "top") {
         }
     }
 }
-

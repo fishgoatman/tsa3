@@ -1,12 +1,12 @@
 /// @description spells
-if (instance_exists(opId)) {
+if (instance_exists(heroId)) {
     //nearest totem
     if (numTotems > 0) {
-        var lowestDist = point_distance(totems[0].x, totems[0].y, opId.x, opId.y);
+        var lowestDist = point_distance(totems[0].x, totems[0].y, heroId.x, heroId.y);
         nearestTotem = totems[0];
         
         for (var i = 1; i < numTotems; i++) {
-            var dist = point_distance(totems[i].x, totems[i].y, opId.x, opId.y);
+            var dist = point_distance(totems[i].x, totems[i].y, heroId.x, heroId.y);
         
             if (dist < lowestDist) {
                 lowestDist = dist;
@@ -19,7 +19,7 @@ if (instance_exists(opId)) {
     if (summonTotem) {
         summonTotem = false;
         ttCdId.image_index = 0;
-        buildingTotem = instance_create(opId.x, opId.y, objTotem); //totem build time has to be shorter than totoem cooldown time otherwise two will be building at once
+        buildingTotem = instance_create(heroId.x, heroId.y, objTotem); //totem build time has to be shorter than totoem cooldown time otherwise two will be building at once
         
         if (numTotems > maxTotems - 1) {
             numTotems--;
@@ -49,7 +49,33 @@ if (instance_exists(opId)) {
         }
     } else if (summonLightning) {
         summonLightning = false;
-        ltCdId.image_index = 0;
+		ltCdId.image_index = 0;
+		lightningOn = true;
+		var tempNumTotems;
+        
+        if (numTotems == 2) {
+            tempNumTotems = 1;
+        } else {
+            tempNumTotems = numTotems;
+        }
+		
+		for (var i = 0; i < tempNumTotems; i++) {
+			a = totems[i];
+            b = totems[(i + 1) % numTotems];
+            var xDiff = b.x - a.x;
+            var yDiff = -1 * (b.y - a.y);
+            var hyp = sqrt(xDiff * xDiff + yDiff * yDiff);
+            currLightningDx = xDiff * lightningWidth / hyp;
+            currLightningDy = yDiff * lightningWidth / hyp;
+			
+			for (var j = 0; j < hyp / lightningWidth; j++) {
+				instance_create(a.x + j * currLightningDx, a.y - j * currLightningDy, objLightningStraight);
+			}
+			
+			instance_create(a.x, a.y, objLightningEffect);
+		}
+		
+        /*ltCdId.image_index = 0;
         var tempNumTotems;
         
         if (numTotems == 2) {
@@ -106,7 +132,7 @@ if (instance_exists(opId)) {
                 
                 instance_create(a.x + j * currLightningDx, a.y - j * currLightningDy, objLightning);
             }
-        }
+        }*/
     } else if (summonFire) {
         summonFire = false;
             

@@ -12,6 +12,11 @@ if (state == MOVE) {
 }
 
 //dy
+if (upPressed) {
+	jumpState = INIT_JUMP;
+	upPressed = false;
+}
+
 if (!place_meeting(preciseX, preciseY + 1, objBlock)) {
     dy -= ddy;
     
@@ -32,43 +37,43 @@ if (!place_meeting(preciseX, preciseY + 1, objBlock)) {
 }
 
 //summon totem
-if (attackState == INIT_ATTACK) {
-    attackState = NONE;
-    
+if (onePressed) {
     if (totemReady) {
         totemReady = false;
         logicId.summonTotem = true;
     }
+	
+	onePressed = false;
 }
 
 //wind
-if (abilityState == INIT_ABILITY) {
-    abilityState = NONE;
-    
+if (twoPressed) {
     if (windReady) {
         windReady = false;
         logicId.summonWind = true;
     }
+	
+	twoPressed = false;
 }
 
 //lightning
-if (threeState == INIT_THREE) {
-    threeState = NONE;
-    
+if (threePressed) {
     if (lightningReady) {
         lightningReady = false;
         logicId.summonLightning = true;
     }
+	
+	threePressed = false;
 }
 
 //fire
-if (fourState == INIT_FOUR) {
-    fourState = NONE;
-    
+if (fourPressed) {
     if (fireReady) {
         fireReady = false;
         logicId.summonFire = true;
     }
+	
+	fourPressed = false;
 }
 
 scrMove();

@@ -1,10 +1,10 @@
-/// @description get input a
+/// @description scrGetInput
 tpId.state = NONE;
-onePressed = false;
-oneReleased = false;
-twoPressed = false;
-threePressed = false;
-fourPressed = false;
+tpId.onePressed = false;
+tpId.oneReleased = false;
+tpId.twoPressed = false;
+tpId.threePressed = false;
+tpId.fourPressed = false;
 
 if (keyboard_check_direct(vk_right) || keyboard_check_direct(ord("G"))) {
     tpId.direct = RIGHT;
@@ -30,30 +30,30 @@ if (keyboard_check_direct(vk_down) || keyboard_check_direct(ord("F"))) {
 
 if (tpId.isSelectHero) {
 	if (mouse_check_button_pressed(mb_left) || keyboard_check_pressed(ord("1"))) {
-		onePressed = true;
+		tpId.onePressed = true;
 	}
 	
 	if (mouse_check_button_pressed(mb_right) || keyboard_check_pressed(ord("2"))) {
-		twoPressed = true;
+		tpId.twoPressed = true;
 	}
 } else {
 	if (mouse_check_button(mb_left) || keyboard_check_direct(ord("1"))) {
-		onePressed = true;
+		tpId.onePressed = true;
 	}
 	
 	if (mouse_check_button_released(mb_left) || keyboard_check_released(ord("1"))) {
-		oneReleased = true;
+		tpId.oneReleased = true;
 	}
 	
 	if (mouse_check_button(mb_right) || keyboard_check_direct(ord("2"))) {
-		twoPressed = true;
+		tpId.twoPressed = true;
 	}
 	
 	if (keyboard_check_direct(ord("3"))) {
-		threePressed = true;
+		tpId.threePressed = true;
 	}
 	
 	if (keyboard_check_direct(ord("4"))) {
-		fourPressed = true;
+		tpId.fourPressed = true;
 	}
 }

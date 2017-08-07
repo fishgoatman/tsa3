@@ -1,3 +1,4 @@
 /// @description creation stuff
-image_speed = 30 / opId.windCooldown;
-
+image_speed = 30 / objShamanTP.windCooldown;
+controlScheme = objShamanTP.controlScheme;
+scrHeroId();

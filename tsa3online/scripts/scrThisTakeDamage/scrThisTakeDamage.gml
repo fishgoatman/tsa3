@@ -4,7 +4,7 @@ var podsToLoseTo = floor(hpBarWidth * hp / maxHp);
 var lpl = objThisPlayer.lastPodLost;
 
 if (podsToLoseTo < lpl) {
-	for (var i = lpl; i > podsToLoseTo; i--) {
+	for (var i = lpl - 1; i >= podsToLoseTo; i--) {
 		if (i < array_length_1d(thisHpBar) && thisHpBar[i] != -1) {
 			thisHpBar[i].image_speed = 1;
 		}

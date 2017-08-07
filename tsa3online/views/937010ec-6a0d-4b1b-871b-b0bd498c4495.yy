@@ -22,7 +22,9 @@
         "4ed29be8-e905-44e9-8b12-9a93533cb9fc",
         "483f35ec-440e-42ce-8969-2591f0d3ea65",
         "d2db675f-14cd-4e45-92f8-85479976756b",
-        "651a9560-4c20-41e1-97e9-0a4d6a75dd55"
+        "651a9560-4c20-41e1-97e9-0a4d6a75dd55",
+        "15c80240-e4aa-457f-8dcc-a4c754310ccb",
+        "80cdee93-f3f5-4d81-a6ac-03a0ee295d41"
     ],
     "filterType": "GMSprite",
     "folderName": "lightning",

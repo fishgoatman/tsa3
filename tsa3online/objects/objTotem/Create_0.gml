@@ -6,4 +6,5 @@ dy = 0;
 ddy = 1.8;
 preciseX = x;
 preciseY = y;
-
+controlScheme = objShamanTP.controlScheme;
+scrHeroId();

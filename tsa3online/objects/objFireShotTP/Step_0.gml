@@ -8,11 +8,22 @@ var tempDy = dy / hyp;
 var dev = 8;
     
 while (totalDisp < hyp) {
-    if (place_meeting(tryX, tryY, objPlayerOP) || place_meeting(tryX, tryY, objBlock)) {
-        instance_destroy();
-		instance_create(tryX, tryY, objFireShotExplosionTP);
-		break;
-    }
+	if (mode == "online") {
+	    if (place_meeting(tryX, tryY, objPlayerOP) || place_meeting(tryX, tryY, objBlock)) {
+	        instance_destroy();
+			instance_create(tryX, tryY, objFireShotExplosionTP);
+			break;
+	    }
+	} else if (mode == "offline") {
+		var collidingObject = instance_place(tryX, tryY, objPlayerTP);
+		
+		if ((instance_exists(collidingObject) && collidingObject.controlScheme != controlScheme) || place_meeting(tryX, tryY, objBlock)) {
+	        instance_destroy();
+			var hbId = instance_create(tryX, tryY, objFireShotExplosionTP);
+			hbId.projId = id;
+			break;
+	    }
+	}
     
 	tryX += tempDx;
 	tryY -= tempDy;

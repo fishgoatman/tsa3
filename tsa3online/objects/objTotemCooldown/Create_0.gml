@@ -1,3 +1,4 @@
 /// @description creation stuff
-image_speed = 30 / opId.totemCooldown;
-
+image_speed = 30 / objShamanTP.totemCooldown;
+controlScheme = objShamanTP.controlScheme;
+scrHeroId();

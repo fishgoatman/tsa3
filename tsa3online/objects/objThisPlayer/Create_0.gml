@@ -33,7 +33,6 @@ if (room != rmCharacterSelect) {
 	lastPodLost = array_length_1d(thisHpBar);
 }
 
-tpId.controlScheme = MOUSE;
 upButton = vk_up;
 leftButton = vk_left;
 downButton = vk_down;

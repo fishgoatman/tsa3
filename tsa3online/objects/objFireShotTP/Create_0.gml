@@ -1,5 +1,8 @@
 ///@desc creation stuff
-angle = tpId.fireShotAngle;
+controlScheme = mageControlScheme;
+scrHeroId();
+
+angle = heroId.fireShotAngle;
 dx = fireShotSpd * dcos(angle);
 dy = fireShotSpd * dsin(angle);
 preciseX = x;

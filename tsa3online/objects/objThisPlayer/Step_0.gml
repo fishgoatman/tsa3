@@ -1,8 +1,8 @@
 /// @DnDAction : YoYo Games.Common.Execute_Code
 /// @DnDVersion : 1
 /// @DnDHash : 4669D4DA
-/// @DnDArgument : "code" "///@description get input$(13_10)if (instance_exists(tpId)) {$(13_10)    scrGetInput();$(13_10)} else {$(13_10)    instance_destroy();$(13_10)}$(13_10)$(13_10)mask_index = object_get_sprite(hero);"
-///@description get input
+/// @DnDArgument : "code" "///@desc get input$(13_10)if (instance_exists(tpId)) {$(13_10)    scrGetInput();$(13_10)} else {$(13_10)    instance_destroy();$(13_10)}$(13_10)$(13_10)mask_index = object_get_sprite(hero);"
+///@desc get input
 if (instance_exists(tpId)) {
     scrGetInput();
 } else {

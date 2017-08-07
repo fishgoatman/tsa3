@@ -1,7 +1,9 @@
 ///@desc move and angle
-if (instance_exists(tpId)) {
-	x = tpId.preciseX;
-	y = tpId.preciseY;
-	image_angle = tpId.mouseAngle - tpId.currAngle / 2;
+if (instance_exists(heroId)) {
+	x = heroId.preciseX;
+	y = heroId.preciseY;
+	image_angle = heroId.mouseAngle - heroId.currAngle / 2;
 	visible = true;
+} else {
+	instance_destroy();
 }

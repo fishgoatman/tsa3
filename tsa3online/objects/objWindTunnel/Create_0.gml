@@ -1,3 +1,4 @@
 /// @description creation stuff
-alarm[0] = opId.windTime;
-
+controlScheme = objShamanTP.controlScheme;
+scrHeroId();
+alarm[0] = heroId.windTime;
