@@ -6,5 +6,6 @@ dy = 0;
 ddy = 1.8;
 preciseX = x;
 preciseY = y;
-controlScheme = objShamanTP.controlScheme;
+controlScheme = shamanControlScheme;
 scrHeroId();
+durationBar = instance_create(x, y, objTotemDurationBar);

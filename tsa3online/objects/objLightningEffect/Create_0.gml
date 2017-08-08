@@ -1,5 +1,5 @@
 /// @desc creation stuff
-frequency = 3;
+frequency = 15;
 step = 0;
 width = 1;
 minAngle = 16;

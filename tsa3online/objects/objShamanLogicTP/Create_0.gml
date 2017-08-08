@@ -16,6 +16,7 @@ cdHeight = 35;
 nearestTotem = -1;
 lightingOn = false;
 controlScheme = objShamanTP.controlScheme;
+totems = ds_list_create();
 scrHeroId();
 var size = 32;
 ttCdId = instance_create(hpBarOffset + size / 2, hpBarOffset * 2 + size + cdHeight / 2, objTotemCooldown);

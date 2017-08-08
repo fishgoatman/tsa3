@@ -1,9 +1,9 @@
 /// @description stats
 ddy = 1.5 * overallSpd;
-jumpDy = 18 * overallSpd;
+jumpDy = 20 * overallSpd;
 flyDy = 3 * overallSpd;
 flyDx = 3 * overallSpd;
-moveSpd = 5.5 * overallSpd;
+moveSpd = 4.8 * overallSpd;
 attackPreTime = 4 / overallSpd;
 attackPostTime = 16 / overallSpd;
 attackSpd = 1 * overallSpd;
@@ -14,10 +14,6 @@ maxAirJumps = 0;
 windDdy = 6;
 maxWindDy = 18;
 windTime = 1 * room_speed / overallSpd;
-totemCooldown = 1.4 * room_speed / overallSpd;
-windCooldown = 2.4 * room_speed / overallSpd;
-lightningCooldown = 4.5 * room_speed / overallSpd;
-fireCooldown = 3.8 * room_speed / overallSpd;
 
 ///necessary vars
 state = NONE;
@@ -27,6 +23,10 @@ abilityState = NONE;
 direct = RIGHT;
 ducking = false;
 spd = moveSpd;
+moveDx = 0;
+naturalDx = 0;
+moveDy = 0;
+naturalDy = 0;
 dx = 0;
 dy = 0;
 preciseX = x;
@@ -37,10 +37,10 @@ immuneTime = IMMUNE_TIME;
 isSelectHero = false;
 maxHp = shamanHp;
 hp = maxHp;
-totemReady = true;
-lightningReady = true;
-windReady = true;
-fireReady = true;
+totemReady = false;
+lightningReady = false;
+windReady = false;
+fireReady = false;
 threeState = NONE;
 fourState = NONE;
 TOTEM = 1;
@@ -52,7 +52,9 @@ fourPressed = false;
 ducking = false;
 upPressed = false;
 upHeld = false;
-controlScheme = "keyboard";
+immuneTo = ds_list_create();
+stunTime = 0;
+controlScheme = shamanControlScheme;
 scrHeroId();
 
 ///creation stuff

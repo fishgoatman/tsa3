@@ -1,9 +1,12 @@
 /// @description get blown
-if (dy < maxWindDy) {
-    dy += windDdy;
-    
-    if (dy > maxWindDy) {
-        dy = maxWindDy;
-    }
+if (place_meeting(preciseX, preciseY + 1, objBlock)) {
+	preciseY--;
 }
 
+if (naturalDy < maxWindDy) {
+    naturalDy += windDdy;
+    
+    if (naturalDy > maxWindDy) {
+        naturalDy = maxWindDy;
+    }
+}

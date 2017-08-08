@@ -2,7 +2,7 @@
 if (instance_exists(opId)) {
     preciseX = x;
     preciseY = y;
-	dx = opId.dx;
+	dx = 0;
     dy = firebombSpd * overallSpd;
     ddy = firebombDDy;
     damp = 0.45;

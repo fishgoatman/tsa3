@@ -5,11 +5,11 @@ scrHeroId();
 if (instance_exists(heroId)) {
     preciseX = x;
     preciseY = y;
-	dx = heroId.dx;
+	dx = x - heroId.x;
     dy = firebombSpd * overallSpd;
-    ddy = firebombDDy;
-    damp = 0.45;
+    ddy = firebombDDy + random_range(-firebombDDyVar, firebombDDyVar);
+    damp = firebombDamp;
+	maxBounces = firebombBounces;
     bounces = 0;
-    explodeBounces = 0;
     idSet = true;
 }

@@ -13,7 +13,7 @@ if (place_meeting(preciseX + 1, preciseY, objBlock) || place_meeting(preciseX - 
     bounces++;
 }
 
-if (bounces > explodeBounces) {
+if (bounces > maxBounces) {
     instance_destroy();
     var hbId = instance_create(preciseX, preciseY, objFirebombExplosionTP);
 	hbId.projId = id;

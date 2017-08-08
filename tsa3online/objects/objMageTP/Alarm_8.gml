@@ -1,6 +1,8 @@
 /// @desc fireball pre attack
 if (abilityState == INIT_ABILITY) {
-	instance_create(preciseX, preciseY, objFirebombTP);
+	for (var i = 0; i < firebombAmount; i++) {
+		instance_create(preciseX + random_range(-firebombXVar, firebombXVar), preciseY, objFirebombTP);
+	}
 } else {
 	instance_create(preciseX, preciseY, objFireballTP);
 }

@@ -1,7 +1,7 @@
 /// @DnDAction : YoYo Games.Common.Execute_Code
 /// @DnDVersion : 1
 /// @DnDHash : 120293BD
-/// @DnDArgument : "code" "/// @desc creation stuff$(13_10)///globalvars$(13_10)//constants$(13_10)globalvar NONE;$(13_10)NONE = 0;$(13_10)globalvar RIGHT;$(13_10)RIGHT = 1;$(13_10)globalvar LEFT;$(13_10)LEFT = -1;$(13_10)globalvar MOVE;$(13_10)MOVE = 1;$(13_10)globalvar INIT_ATTACK;$(13_10)INIT_ATTACK = -1;$(13_10)globalvar INIT_JUMP;$(13_10)INIT_JUMP = -2;$(13_10)globalvar JUMP;$(13_10)JUMP = -3;$(13_10)globalvar INIT_ABILITY;$(13_10)INIT_ABILITY = -4;$(13_10)globalvar PRE_ABILITY;$(13_10)PRE_ABILITY = -5;$(13_10)globalvar ACTIVATE_ABILITY;$(13_10)ACTIVATE_ABILITY = -6;$(13_10)globalvar INIT_THREE;$(13_10)INIT_THREE = 1;$(13_10)globalvar INIT_FOUR;$(13_10)INIT_FOUR = 1;$(13_10)globalvar PRE_ATTACK;$(13_10)PRE_ATTACK = 1;$(13_10)globalvar POST_ATTACK;$(13_10)POST_ATTACK = 2;$(13_10)globalvar PRE_JUMP;$(13_10)PRE_JUMP = 3;$(13_10)globalvar POST_JUMP;$(13_10)POST_JUMP = 4;$(13_10)globalvar PRE_ABILITY;$(13_10)PRE_ABILITY = 5;$(13_10)globalvar POST_ABILITY;$(13_10)POST_ABILITY = 6;$(13_10)globalvar DURING_ATTACK;$(13_10)DURING_ATTACK = 7;$(13_10)globalvar KEYBOARD;$(13_10)KEYBOARD = 1;$(13_10)globalvar MOUSE;$(13_10)MOUSE = 2;$(13_10)globalvar TIE;$(13_10)TIE = 3;$(13_10)globalvar IMMUNE;$(13_10)IMMUNE = 0;$(13_10)globalvar IMMUNE_TIME;$(13_10)IMMUNE_TIME = 5;$(13_10)globalvar FIRE;$(13_10)FIRE = 1;$(13_10)globalvar ICE;$(13_10)ICE = 2;$(13_10)globalvar AIR;$(13_10)AIR = 3;$(13_10)$(13_10)//player stuff$(13_10)globalvar thisPlayerHero;$(13_10)thisPlayerHero = objSelectHeroTP;$(13_10)globalvar otherPlayerHero;$(13_10)otherPlayerHero = objSelectHeroOP;$(13_10)globalvar mousePlayerHero;$(13_10)mousePlayerHero = objSelectHeroTP;$(13_10)globalvar keyboardPlayerHero;$(13_10)keyboardPlayerHero = objSelectHeroTP;$(13_10)globalvar tpId;$(13_10)globalvar opId;$(13_10)globalvar mpId;$(13_10)globalvar kpId;$(13_10)globalvar thisHpBar;$(13_10)globalvar otherHpBar;$(13_10)globalvar mouseHpBar;$(13_10)globalvar keyboardHpBar;$(13_10)globalvar hpPerLine;$(13_10)hpPerLine = 14;$(13_10)globalvar hpBarWidth;$(13_10)hpBarWidth = 165;$(13_10)globalvar hpBarOffset;$(13_10)hpBarOffset = 20;$(13_10)globalvar oneActivate;$(13_10)oneActivate = false;$(13_10)globalvar twoActivate;$(13_10)twoActivate = false;$(13_10)globalvar threeActivate;$(13_10)threeActivate = false;$(13_10)globalvar fourActivate;$(13_10)fourActivate = false;$(13_10)globalvar otherOneActivate;$(13_10)otherOneActivate = false;$(13_10)globalvar otherTwoActivate;$(13_10)otherTwoActivate = false;$(13_10)globalvar otherThreeActivate;$(13_10)otherThreeActivate = false;$(13_10)globalvar otherFourActivate;$(13_10)otherFourActivate = false;$(13_10)globalvar otherX;$(13_10)otherX = 0;$(13_10)globalvar otherY;$(13_10)otherY = 0;$(13_10)globalvar otherMouseX;$(13_10)otherMouseX = 0;$(13_10)globalvar otherMouseY;$(13_10)otherMouseY = 0;$(13_10)globalvar otherSpriteIndex;$(13_10)otherSpriteIndex = sprNone;$(13_10)globalvar otherImageIndex;$(13_10)otherImageIndex = 0;$(13_10)globalvar otherLockedIn;$(13_10)otherLockedIn = false;$(13_10)globalvar otherHp;$(13_10)otherHp = 1;$(13_10)globalvar otherXScale;$(13_10)otherXScale = 1;$(13_10)globalvar otherDucking;$(13_10)$(13_10)//other$(13_10)globalvar gg;$(13_10)gg = NONE;$(13_10)globalvar overallSpd;$(13_10)overallSpd = 0.8;$(13_10)globalvar ai;$(13_10)ai = false;$(13_10)globalvar rooms;$(13_10)rooms[0] = rmChimes;$(13_10)rooms[1] = rm2;$(13_10)rooms[2] = rmArrowRain;$(13_10)globalvar firstTo;$(13_10)firstTo = 3;$(13_10)globalvar thisWins;$(13_10)thisWins = 0;$(13_10)globalvar otherWins;$(13_10)otherWins = 0;$(13_10)globalvar mouseWins;$(13_10)mouseWins = 0;$(13_10)globalvar keyboardWins;$(13_10)keyboardWins = 0;$(13_10)globalvar clientSocket;$(13_10)clientSocket = network_create_socket(network_socket_udp);$(13_10)globalvar PORT_NUM;$(13_10)PORT_NUM = 54795;$(13_10)globalvar IP_NUM;$(13_10)IP_NUM = "10.0.1.2";$(13_10)globalvar connectedToServer;$(13_10)connectedToServer = false;$(13_10)globalvar rmNumber;$(13_10)globalvar mode;$(13_10)mode = "offline";$(13_10)globalvar mageAi;$(13_10)mageAi = true;$(13_10)$(13_10)///regular vars$(13_10)victoryTime = 1.8 * room_speed;$(13_10)matchVictoryTime = 0.7 * room_speed; //in addition to the victoryTime$(13_10)signX = room_width / 2;$(13_10)signY = room_height / 4;$(13_10)NEXT_GAME = 0;$(13_10)RESET = 1;$(13_10)bufferToSend = buffer_create(256, buffer_fixed, 1);$(13_10)$(13_10)///make it look good$(13_10)window_set_fullscreen(true);$(13_10)texture_set_interpolation(false);$(13_10)/*$(13_10)texture_set_interpolation(false);$(13_10)application_surface_draw_enable(false);$(13_10)globalvar dWidth;$(13_10)dWidth = display_get_width();$(13_10)globalvar dHeight;$(13_10)dHeight = display_get_height();$(13_10)globalvar rmRawWidth;$(13_10)rmRawWidth = 528;$(13_10)globalvar rmRawHeight;$(13_10)rmRawHeight = 384;$(13_10)var i = 1;$(13_10)$(13_10)while (rmRawWidth * i <= dWidth && rmRawHeight * i <= dHeight) {$(13_10)    i++;$(13_10)}$(13_10)$(13_10)i--;$(13_10)globalvar rmWidth;$(13_10)rmWidth = rmRawWidth * i;$(13_10)globalvar rmHeight;$(13_10)rmHeight = rmRawHeight * i;$(13_10)surface_resize(application_surface, rmWidth, rmHeight);$(13_10)globalvar xOffset;$(13_10)xOffset = (dHeight * rmRawWidth / rmRawHeight - rmWidth) / 2;$(13_10)globalvar yOffset;$(13_10)yOffset = (dHeight - rmHeight) / 2;$(13_10)*/$(13_10)$(13_10)///creation stuff$(13_10)randomize();"
+/// @DnDArgument : "code" "/// @desc creation stuff$(13_10)///globalvars$(13_10)//constants$(13_10)globalvar NONE;$(13_10)NONE = 0;$(13_10)globalvar RIGHT;$(13_10)RIGHT = 1;$(13_10)globalvar LEFT;$(13_10)LEFT = -1;$(13_10)globalvar MOVE;$(13_10)MOVE = 1;$(13_10)globalvar INIT_ATTACK;$(13_10)INIT_ATTACK = -1;$(13_10)globalvar INIT_JUMP;$(13_10)INIT_JUMP = -2;$(13_10)globalvar JUMP;$(13_10)JUMP = -3;$(13_10)globalvar INIT_ABILITY;$(13_10)INIT_ABILITY = -4;$(13_10)globalvar PRE_ABILITY;$(13_10)PRE_ABILITY = -5;$(13_10)globalvar ACTIVATE_ABILITY;$(13_10)ACTIVATE_ABILITY = -6;$(13_10)globalvar INIT_THREE;$(13_10)INIT_THREE = 1;$(13_10)globalvar INIT_FOUR;$(13_10)INIT_FOUR = 1;$(13_10)globalvar PRE_ATTACK;$(13_10)PRE_ATTACK = 1;$(13_10)globalvar POST_ATTACK;$(13_10)POST_ATTACK = 2;$(13_10)globalvar PRE_JUMP;$(13_10)PRE_JUMP = 3;$(13_10)globalvar POST_JUMP;$(13_10)POST_JUMP = 4;$(13_10)globalvar PRE_ABILITY;$(13_10)PRE_ABILITY = 5;$(13_10)globalvar POST_ABILITY;$(13_10)POST_ABILITY = 6;$(13_10)globalvar DURING_ATTACK;$(13_10)DURING_ATTACK = 7;$(13_10)globalvar KEYBOARD;$(13_10)KEYBOARD = 1;$(13_10)globalvar MOUSE;$(13_10)MOUSE = 2;$(13_10)globalvar TIE;$(13_10)TIE = 3;$(13_10)globalvar IMMUNE;$(13_10)IMMUNE = 0;$(13_10)globalvar IMMUNE_TIME;$(13_10)IMMUNE_TIME = 5;$(13_10)globalvar FIRE;$(13_10)FIRE = 1;$(13_10)globalvar ICE;$(13_10)ICE = 2;$(13_10)globalvar AIR;$(13_10)AIR = 3;$(13_10)$(13_10)//player stuff$(13_10)globalvar thisPlayerHero;$(13_10)thisPlayerHero = objSelectHeroTP;$(13_10)globalvar otherPlayerHero;$(13_10)otherPlayerHero = objSelectHeroOP;$(13_10)globalvar mousePlayerHero;$(13_10)mousePlayerHero = objSelectHeroTP;$(13_10)globalvar keyboardPlayerHero;$(13_10)keyboardPlayerHero = objSelectHeroTP;$(13_10)globalvar tpId;$(13_10)globalvar opId;$(13_10)globalvar mpId;$(13_10)globalvar kpId;$(13_10)globalvar thisHpBar;$(13_10)globalvar otherHpBar;$(13_10)globalvar mouseHpBar;$(13_10)globalvar keyboardHpBar;$(13_10)globalvar hpPerLine;$(13_10)hpPerLine = 14;$(13_10)globalvar hpBarWidth;$(13_10)hpBarWidth = 165;$(13_10)globalvar hpBarOffset;$(13_10)hpBarOffset = 20;$(13_10)globalvar oneActivate;$(13_10)oneActivate = false;$(13_10)globalvar twoActivate;$(13_10)twoActivate = false;$(13_10)globalvar threeActivate;$(13_10)threeActivate = false;$(13_10)globalvar fourActivate;$(13_10)fourActivate = false;$(13_10)globalvar otherOneActivate;$(13_10)otherOneActivate = false;$(13_10)globalvar otherTwoActivate;$(13_10)otherTwoActivate = false;$(13_10)globalvar otherThreeActivate;$(13_10)otherThreeActivate = false;$(13_10)globalvar otherFourActivate;$(13_10)otherFourActivate = false;$(13_10)globalvar otherX;$(13_10)otherX = 0;$(13_10)globalvar otherY;$(13_10)otherY = 0;$(13_10)globalvar otherMouseX;$(13_10)otherMouseX = 0;$(13_10)globalvar otherMouseY;$(13_10)otherMouseY = 0;$(13_10)globalvar otherSpriteIndex;$(13_10)otherSpriteIndex = sprNone;$(13_10)globalvar otherImageIndex;$(13_10)otherImageIndex = 0;$(13_10)globalvar otherLockedIn;$(13_10)otherLockedIn = false;$(13_10)globalvar otherHp;$(13_10)otherHp = 1;$(13_10)globalvar otherXScale;$(13_10)otherXScale = 1;$(13_10)globalvar otherDucking;$(13_10)$(13_10)//other$(13_10)globalvar gg;$(13_10)gg = NONE;$(13_10)globalvar overallSpd;$(13_10)overallSpd = 0.8;$(13_10)globalvar ai;$(13_10)ai = false;$(13_10)globalvar rooms;$(13_10)rooms[0] = rmChimes;$(13_10)rooms[1] = rm2;$(13_10)rooms[2] = rmArrowRain;$(13_10)globalvar firstTo;$(13_10)firstTo = 3;$(13_10)globalvar thisWins;$(13_10)thisWins = 0;$(13_10)globalvar otherWins;$(13_10)otherWins = 0;$(13_10)globalvar mouseWins;$(13_10)mouseWins = 0;$(13_10)globalvar keyboardWins;$(13_10)keyboardWins = 0;$(13_10)globalvar clientSocket;$(13_10)clientSocket = network_create_socket(network_socket_udp);$(13_10)globalvar PORT_NUM;$(13_10)PORT_NUM = 54795;$(13_10)globalvar IP_NUM;$(13_10)IP_NUM = "10.0.1.2";$(13_10)globalvar connectedToServer;$(13_10)connectedToServer = false;$(13_10)globalvar rmNumber;$(13_10)$(13_10)///regular vars$(13_10)victoryTime = 1.8 * room_speed;$(13_10)matchVictoryTime = 0.7 * room_speed; //in addition to the victoryTime$(13_10)signX = room_width / 2;$(13_10)signY = room_height / 4;$(13_10)NEXT_GAME = 0;$(13_10)RESET = 1;$(13_10)bufferToSend = buffer_create(256, buffer_fixed, 1);$(13_10)$(13_10)///make it look good$(13_10)window_set_fullscreen(true);$(13_10)texture_set_interpolation(false);$(13_10)/*$(13_10)texture_set_interpolation(false);$(13_10)application_surface_draw_enable(false);$(13_10)globalvar dWidth;$(13_10)dWidth = display_get_width();$(13_10)globalvar dHeight;$(13_10)dHeight = display_get_height();$(13_10)globalvar rmRawWidth;$(13_10)rmRawWidth = 528;$(13_10)globalvar rmRawHeight;$(13_10)rmRawHeight = 384;$(13_10)var i = 1;$(13_10)$(13_10)while (rmRawWidth * i <= dWidth && rmRawHeight * i <= dHeight) {$(13_10)    i++;$(13_10)}$(13_10)$(13_10)i--;$(13_10)globalvar rmWidth;$(13_10)rmWidth = rmRawWidth * i;$(13_10)globalvar rmHeight;$(13_10)rmHeight = rmRawHeight * i;$(13_10)surface_resize(application_surface, rmWidth, rmHeight);$(13_10)globalvar xOffset;$(13_10)xOffset = (dHeight * rmRawWidth / rmRawHeight - rmWidth) / 2;$(13_10)globalvar yOffset;$(13_10)yOffset = (dHeight - rmHeight) / 2;$(13_10)*/$(13_10)$(13_10)///creation stuff$(13_10)randomize();"
 /// @desc creation stuff
 ///globalvars
 //constants
@@ -149,10 +149,6 @@ IP_NUM = "10.0.1.2";
 globalvar connectedToServer;
 connectedToServer = false;
 globalvar rmNumber;
-globalvar mode;
-mode = "offline";
-globalvar mageAi;
-mageAi = true;
 
 ///regular vars
 victoryTime = 1.8 * room_speed;
@@ -200,8 +196,18 @@ randomize();/**/
 
 /// @DnDAction : YoYo Games.Common.Execute_Code
 /// @DnDVersion : 1
+/// @DnDHash : 13494006
+/// @DnDArgument : "code" "/// @description settings$(13_10)globalvar mode;$(13_10)mode = "offline";$(13_10)globalvar mageAi;$(13_10)mageAi = false;"
+/// @description settings
+globalvar mode;
+mode = "offline";
+globalvar mageAi;
+mageAi = false;
+
+/// @DnDAction : YoYo Games.Common.Execute_Code
+/// @DnDVersion : 1
 /// @DnDHash : 11315275
-/// @DnDArgument : "code" "/// @desc stats$(13_10)//mage$(13_10)globalvar mageControlScheme;$(13_10)mageControlScheme = "keyboard";$(13_10)globalvar mageHp;$(13_10)mageHp = 160;$(13_10)globalvar fireShotDmg;$(13_10)fireShotDmg = 7;$(13_10)globalvar fireShotStunTime;$(13_10)fireShotStunTime = 0.2 * room_speed;$(13_10)globalvar fireShotSpd;$(13_10)fireShotSpd = 18;$(13_10)globalvar fireShotSpread;$(13_10)fireShotSpread = 55;$(13_10)globalvar fireShotAmount;$(13_10)fireShotAmount = 12;$(13_10)globalvar fireShotTime;$(13_10)fireShotTime = 0.3 * room_speed;$(13_10)globalvar firebombDmg;$(13_10)firebombDmg = 16;$(13_10)globalvar firebombStunTime;$(13_10)firebombStunTime = 0.4 * room_speed;$(13_10)globalvar firebombSpd;$(13_10)firebombSpd = 12;$(13_10)globalvar firebombDDy;$(13_10)firebombDDy = 1.3;$(13_10)globalvar fireballDmg;$(13_10)fireballDmg = 12;$(13_10)globalvar fireballStunTime;$(13_10)fireballStunTime = 0.4 * room_speed;$(13_10)globalvar fireballSpd;$(13_10)fireballSpd = 15;$(13_10)$(13_10)//rogue$(13_10)globalvar rogueControlScheme;$(13_10)rogueControlScheme = "mouse";$(13_10)globalvar rogueHp;$(13_10)rogueHp = 110;$(13_10)globalvar boltDmg;$(13_10)boltDmg = 1.5;$(13_10)globalvar boltStunTime;$(13_10)boltStunTime = 0.7 * room_speed;$(13_10)globalvar boltAmount;$(13_10)boltAmount = 12;$(13_10)globalvar boltSpread;$(13_10)boltSpread = 40;$(13_10)globalvar boltSpd;$(13_10)boltSpd = 30;$(13_10)globalvar startAngle;$(13_10)startAngle = 120;$(13_10)globalvar daggerDmg;$(13_10)daggerDmg = 2;$(13_10)globalvar daggerStunTime;$(13_10)daggerStunTime = 0.1 * room_speed;$(13_10)globalvar daggerAmount;$(13_10)daggerAmount = 15;$(13_10)globalvar daggerSpd;$(13_10)daggerSpd = 55;$(13_10)globalvar endAngle;$(13_10)endAngle = 5;$(13_10)globalvar dAngle;$(13_10)dAngle = -9;$(13_10)$(13_10)//monk$(13_10)$(13_10)//shaman$(13_10)globalvar shamanHp;$(13_10)shamanHp = 185;$(13_10)globalvar lightningDmg;$(13_10)lightningDmg = 3$(13_10)globalvar lightningDuration;$(13_10)lightningDuration = 2 * room_speed;$(13_10)globalvar fireSpiritDmg;$(13_10)fireSpiritDmg = 12;$(13_10)globalvar fireSpiritDuration;$(13_10)fireSpiritDuration = 1.5 * room_speed;"
+/// @DnDArgument : "code" "/// @desc stats$(13_10)//mage$(13_10)globalvar mageControlScheme;$(13_10)mageControlScheme = "keyboard";$(13_10)globalvar mageHp;$(13_10)mageHp = 160;$(13_10)globalvar fireShotDmg;$(13_10)fireShotDmg = 5;$(13_10)globalvar fireShotStunTime;$(13_10)fireShotStunTime = 0.4 * room_speed;$(13_10)globalvar fireShotSpd;$(13_10)fireShotSpd = 21;$(13_10)globalvar fireShotSpread;$(13_10)fireShotSpread = 60;$(13_10)globalvar fireShotAmount;$(13_10)fireShotAmount = 12;$(13_10)globalvar fireShotTime;$(13_10)fireShotTime = 0.2 * room_speed;$(13_10)globalvar firebombDmg;$(13_10)firebombDmg = 3;$(13_10)globalvar firebombStunTime;$(13_10)firebombStunTime = 0.15 * room_speed;$(13_10)globalvar firebombSpd;$(13_10)firebombSpd = -5;$(13_10)globalvar firebombDDy;$(13_10)firebombDDy = 1.8;$(13_10)globalvar firebombDDyVar;$(13_10)firebombDDyVar = 0.2;$(13_10)globalvar firebombAmount;$(13_10)firebombAmount = 8;$(13_10)globalvar firebombBounces;$(13_10)firebombBounces = 4;$(13_10)globalvar firebombDamp;$(13_10)firebombDamp = 0.4;$(13_10)globalvar firebombXVar;$(13_10)firebombXVar = 1;$(13_10)globalvar fireballDmg;$(13_10)fireballDmg = 14;$(13_10)globalvar fireballStunTime;$(13_10)fireballStunTime = 0.3 * room_speed;$(13_10)globalvar fireballSpd;$(13_10)fireballSpd = 15;$(13_10)$(13_10)//rogue$(13_10)globalvar rogueControlScheme;$(13_10)rogueControlScheme = "mouse";$(13_10)globalvar rogueHp;$(13_10)rogueHp = 110;$(13_10)globalvar boltDmg;$(13_10)boltDmg = 1.5;$(13_10)globalvar boltStunTime;$(13_10)boltStunTime = 0.7 * room_speed;$(13_10)globalvar boltAmount;$(13_10)boltAmount = 12;$(13_10)globalvar boltSpread;$(13_10)boltSpread = 40;$(13_10)globalvar boltSpd;$(13_10)boltSpd = 30;$(13_10)globalvar startAngle;$(13_10)startAngle = 120;$(13_10)globalvar daggerDmg;$(13_10)daggerDmg = 3.2;$(13_10)globalvar daggerStunTime;$(13_10)daggerStunTime = 0.1 * room_speed;$(13_10)globalvar daggerAmount;$(13_10)daggerAmount = 15;$(13_10)globalvar daggerSpd;$(13_10)daggerSpd = 55;$(13_10)globalvar endAngle;$(13_10)endAngle = 5;$(13_10)globalvar dAngle;$(13_10)dAngle = -9;$(13_10)$(13_10)//monk$(13_10)$(13_10)//shaman$(13_10)globalvar shamanControlScheme;$(13_10)shamanControlScheme = "keyboard";$(13_10)globalvar shamanHp;$(13_10)shamanHp = 125;$(13_10)globalvar totemCooldown;$(13_10)totemCooldown = 0.8 * room_speed / overallSpd;$(13_10)globalvar totemDuration;$(13_10)totemDuration = 20 * room_speed;$(13_10)globalvar windCooldown;$(13_10)windCooldown = 1.4 * room_speed / overallSpd;$(13_10)globalvar lightningCooldown;$(13_10)lightningCooldown = 2.8 * room_speed / overallSpd;$(13_10)globalvar lightningDmg;$(13_10)lightningDmg = 7;$(13_10)globalvar lightningStunTime;$(13_10)lightningStunTime = 0.4 * room_speed;$(13_10)globalvar lightningDuration;$(13_10)lightningDuration = 1.5 * room_speed;$(13_10)globalvar fireCooldown;$(13_10)fireCooldown = 1.8 * room_speed / overallSpd;$(13_10)globalvar fireSpiritDmg;$(13_10)fireSpiritDmg = 18;$(13_10)globalvar fireSpiritStunTime;$(13_10)fireSpiritStunTime = 0.1 * room_speed;$(13_10)globalvar fireSpiritSpd;$(13_10)fireSpiritSpd = 14;$(13_10)globalvar fireSpiritDuration;$(13_10)fireSpiritDuration = 1.5 * room_speed;"
 /// @desc stats
 //mage
 globalvar mageControlScheme;
@@ -209,29 +215,39 @@ mageControlScheme = "keyboard";
 globalvar mageHp;
 mageHp = 160;
 globalvar fireShotDmg;
-fireShotDmg = 7;
+fireShotDmg = 5;
 globalvar fireShotStunTime;
-fireShotStunTime = 0.2 * room_speed;
+fireShotStunTime = 0.4 * room_speed;
 globalvar fireShotSpd;
-fireShotSpd = 18;
+fireShotSpd = 21;
 globalvar fireShotSpread;
-fireShotSpread = 55;
+fireShotSpread = 60;
 globalvar fireShotAmount;
 fireShotAmount = 12;
 globalvar fireShotTime;
-fireShotTime = 0.3 * room_speed;
+fireShotTime = 0.2 * room_speed;
 globalvar firebombDmg;
-firebombDmg = 16;
+firebombDmg = 3;
 globalvar firebombStunTime;
-firebombStunTime = 0.4 * room_speed;
+firebombStunTime = 0.15 * room_speed;
 globalvar firebombSpd;
-firebombSpd = 12;
+firebombSpd = -5;
 globalvar firebombDDy;
-firebombDDy = 1.3;
+firebombDDy = 1.8;
+globalvar firebombDDyVar;
+firebombDDyVar = 0.2;
+globalvar firebombAmount;
+firebombAmount = 8;
+globalvar firebombBounces;
+firebombBounces = 4;
+globalvar firebombDamp;
+firebombDamp = 0.4;
+globalvar firebombXVar;
+firebombXVar = 1;
 globalvar fireballDmg;
-fireballDmg = 12;
+fireballDmg = 14;
 globalvar fireballStunTime;
-fireballStunTime = 0.4 * room_speed;
+fireballStunTime = 0.3 * room_speed;
 globalvar fireballSpd;
 fireballSpd = 15;
 
@@ -253,7 +269,7 @@ boltSpd = 30;
 globalvar startAngle;
 startAngle = 120;
 globalvar daggerDmg;
-daggerDmg = 2;
+daggerDmg = 3.2;
 globalvar daggerStunTime;
 daggerStunTime = 0.1 * room_speed;
 globalvar daggerAmount;
@@ -268,13 +284,31 @@ dAngle = -9;
 //monk
 
 //shaman
+globalvar shamanControlScheme;
+shamanControlScheme = "keyboard";
 globalvar shamanHp;
-shamanHp = 185;
+shamanHp = 125;
+globalvar totemCooldown;
+totemCooldown = 0.8 * room_speed / overallSpd;
+globalvar totemDuration;
+totemDuration = 20 * room_speed;
+globalvar windCooldown;
+windCooldown = 1.4 * room_speed / overallSpd;
+globalvar lightningCooldown;
+lightningCooldown = 2.8 * room_speed / overallSpd;
 globalvar lightningDmg;
-lightningDmg = 3
+lightningDmg = 7;
+globalvar lightningStunTime;
+lightningStunTime = 0.4 * room_speed;
 globalvar lightningDuration;
-lightningDuration = 2 * room_speed;
+lightningDuration = 1.5 * room_speed;
+globalvar fireCooldown;
+fireCooldown = 1.8 * room_speed / overallSpd;
 globalvar fireSpiritDmg;
-fireSpiritDmg = 12;
+fireSpiritDmg = 18;
+globalvar fireSpiritStunTime;
+fireSpiritStunTime = 0.1 * room_speed;
+globalvar fireSpiritSpd;
+fireSpiritSpd = 14;
 globalvar fireSpiritDuration;
 fireSpiritDuration = 1.5 * room_speed;

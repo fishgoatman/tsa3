@@ -37,6 +37,6 @@ if (step % frequency == 0) {
 
 step++;
 
-if (!heroId.logicId.lightningOn) {
+if (!instance_exists(heroId) || !heroId.logicId.lightningOn) {
 	instance_destroy();
 }

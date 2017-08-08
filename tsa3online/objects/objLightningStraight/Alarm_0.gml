@@ -2,6 +2,6 @@
 instance_destroy();
 
 if (instance_exists(heroId)) {
-    heroId.logicId.ltCdId.image_speed = 30 / heroId.lightningCooldown;
+	heroId.logicId.ltCdId.image_speed = objLightningCooldown.image_number / lightningCooldown;
 	heroId.logicId.lightningOn = false;
 }

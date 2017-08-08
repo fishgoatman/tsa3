@@ -1,81 +1,106 @@
 /// @description act based on input
 //dx
-if (state == MOVE) {
-    if (direct == RIGHT && !place_meeting(preciseX + 1, preciseY, objBlock) || direct == LEFT
-    && !place_meeting(preciseX - 1, preciseY, objBlock)) {
-        dx = direct * spd;
-    } else {
-        dx = 0;
-    }
-} else {
-    dx = 0;
-}
-
-//dy
-if (upPressed) {
-	jumpState = INIT_JUMP;
-	upPressed = false;
-}
-
-if (!place_meeting(preciseX, preciseY + 1, objBlock)) {
-    dy -= ddy;
-    
-    if (dy > 0 && place_meeting(preciseX, preciseY - 1, objBlock)) {
-        dy = 0;
-    }
-} else {
-    if (dy < 0) {
-        dy = 0;
-        jumpState = NONE;
-        currJumps = 0;
-    } else {
-        if (jumpState == INIT_JUMP) {
-            jumpState = NONE;
-            dy = jumpDy;
-        }
-    }
-}
-
-//summon totem
-if (onePressed) {
-    if (totemReady) {
-        totemReady = false;
-        logicId.summonTotem = true;
-    }
-	
+if (stunTime > 0) {
+	stunTime--;
 	onePressed = false;
-}
-
-//wind
-if (twoPressed) {
-    if (windReady) {
-        windReady = false;
-        logicId.summonWind = true;
-    }
-	
 	twoPressed = false;
-}
-
-//lightning
-if (threePressed) {
-    if (lightningReady) {
-        lightningReady = false;
-        logicId.summonLightning = true;
-    }
-	
 	threePressed = false;
-}
-
-//fire
-if (fourPressed) {
-    if (fireReady) {
-        fireReady = false;
-        logicId.summonFire = true;
-    }
-	
 	fourPressed = false;
+	ducking = false;
+	upPressed = false;
+	upHeld = false;
+	moveDx = 0;
+	moveDy = 0;
+} else {
+	if (state == MOVE) {
+	    if (direct == RIGHT && !place_meeting(preciseX + 1, preciseY, objBlock) || direct == LEFT
+	    && !place_meeting(preciseX - 1, preciseY, objBlock)) {
+	        moveDx = direct * spd;
+	    } else {
+	        moveDx = 0;
+	    }
+	} else {
+	    moveDx = 0;
+	}
+
+	//dy
+	if (upPressed) {
+		upPressed = false;
+		
+		if (place_meeting(preciseX, preciseY + 1, objBlock)) {
+			jumpState = INIT_JUMP;
+		}
+	}
+
+	if (jumpState == INIT_JUMP) {
+		jumpState = NONE;
+		naturalDy = 0;
+		moveDy = jumpDy;
+		preciseY--;
+	}
+
+	//summon totem
+	if (onePressed) {
+	    if (totemReady) {
+	        totemReady = false;
+	        logicId.summonTotem = true;
+	    }
+	
+		onePressed = false;
+	}
+
+	//wind
+	if (twoPressed) {
+	    if (windReady) {
+	        windReady = false;
+	        logicId.summonWind = true;
+	    }
+	
+		twoPressed = true;
+	}
+
+	//lightning
+	if (threePressed) {
+	    if (lightningReady) {
+	        lightningReady = false;
+	        logicId.summonLightning = true;
+	    }
+	
+		threePressed = false;
+	}
+
+	//fire
+	if (fourPressed) {
+	    if (fireReady) {
+	        fireReady = false;
+	        logicId.summonFire = true;
+	    }
+	
+		fourPressed = false;
+	}
 }
 
+if (place_meeting(preciseX, preciseY + 1, objBlock)) {
+	moveDy = 0;
+	naturalDy = 0;
+	currAirJumps = 0;
+	jumpState = NONE;
+} else if (place_meeting(preciseX, preciseY - 1, objBlock)) {
+	moveDy = 0;
+	naturalDy = 0;
+	preciseY++;
+} else {
+	if (moveDy > ddy) {
+		moveDy -= ddy;
+	} else if (moveDy > 0) {
+		moveDy = 0;
+	} else {
+		naturalDy -= ddy;
+	}
+}
+
+dx = moveDx + naturalDx;
+dy = moveDy + naturalDy;
 scrMove();
 
 ///sprite and image
@@ -109,4 +134,3 @@ if (jumpState == PRE_JUMP) {
 if (hp <= 0) {
     instance_destroy();
 }
-

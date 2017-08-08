@@ -1167,6 +1167,22 @@
             }
         },
         {
+            "Key": "5d16b3e6-43cb-4274-817e-47c8b14af127",
+            "Value": {
+                "id": "13397cde-3774-4f3c-a586-126e7a78c628",
+                "resourcePath": "objects\\objTotemDurationBar\\objTotemDurationBar.yy",
+                "resourceType": "GMObject"
+            }
+        },
+        {
+            "Key": "5d37bbfd-098d-4181-872b-0eb3455f4023",
+            "Value": {
+                "id": "8001a618-eb5a-4656-83c5-5cb6b889da4e",
+                "resourcePath": "sprites\\sprTotemDurationBar\\sprTotemDurationBar.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
             "Key": "5f3975f5-7a80-463a-b1c1-8b053ff97217",
             "Value": {
                 "id": "33910a9a-1989-41f7-94c4-9b79c3f1c411",

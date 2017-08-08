@@ -1,5 +1,5 @@
 /// @description move
-if (instance_exists(heroId)) {
+if (instance_exists(enemyId)) {
     x += dx;
     y -= dy;
 } else {
