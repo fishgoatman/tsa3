@@ -1,3 +1,2 @@
-/// @description make kick blink not prepped
-kickBlinkPrepped = false;
-
+/// @desc blink cooldown
+blinkReady = true;

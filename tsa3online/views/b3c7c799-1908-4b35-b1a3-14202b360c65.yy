@@ -20,7 +20,8 @@
         "cd0dd204-63db-4f03-9c22-dc6951552771",
         "69988f21-3c28-4db5-a26b-2d461a22c17f",
         "b24e7118-f5e7-4604-a472-b2b1a9c40358",
-        "ce4379b1-1752-4bff-833c-56cc986f7ea0"
+        "ce4379b1-1752-4bff-833c-56cc986f7ea0",
+        "37b0b0ab-8f2a-4593-bd06-e53319ef81d6"
     ],
     "filterType": "GMObject",
     "folderName": "mage",

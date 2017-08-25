@@ -1,68 +1,40 @@
-/// @description scrAiMonkGetInput
-if (tpId.controlScheme == MOUSE) {
-    enemyId = opId;
-} else {
-    enemyId = tpId;
-}
+///@desc scrAiMonkGetInput
+var enemyId = kpId;
+var thisId = mpId;
 
-if (instance_exists(enemyId)) {
-    tpId.state = MOVE;
-    var xDisplace = tpId.x - enemyId.x;
-    var yDisplace = tpId.y - enemyId.y;
-    var duckRange = 50;
-    var attackRange = 120;
-    var duckXHitbox = 14;
-    var duckYHitbox = 18;
-    var kickBlinkHeight = 9;
-    
-    if (xDisplace > 0) {
-        tpId.direct = LEFT;
-    } else {
-        tpId.direct = RIGHT;
-    }
-    
-    if (tpId.currEnergy < tpId.kickBlinkEnergyCost) {
-        needToRecharge = true;
-    }
-    
-    if (tpId.currEnergy == tpId.maxEnergy) {
-        needToRecharge = false;
-    }
-    
-    show_debug_message(needToRecharge);
-    
-    if (!needToRecharge) {
-        var attack;
-        
-        if (tpId.controlScheme == MOUSE) {
-            attack = objAttackOP;
-        } else {
-            attack = objAttackTP;
-        }
-    
-        if (tpId.canShield && place_meeting(x, y, attack)) {
-            tpId.ducking = true;
-        } else if (tpId.attackState == NONE && abs(xDisplace) < duckXHitbox && abs(yDisplace) < duckYHitbox) {
-            tpId.ducking = true;
-            tpId.attackState = INIT_ATTACK;
-        } else if (abs(xDisplace) > tpId.blinkDisplace) {
-            tpId.ducking = false;
-            tpId.abilityState = INIT_ABILITY;
-        } else if (abs(yDisplace) < kickBlinkHeight && abs(xDisplace) < tpId.blinkDisplace) {
-            tpId.attackState = INIT_ATTACK;
-            tpId.abilityState = INIT_ABILITY;
-        }
-        
-        if (yDisplace > 0 && tpId.jumpState == NONE) {
-            if (tpId.currAirJumps < tpId.maxAirJumps) {
-                tpId.jumpState = INIT_JUMP;
-            } else {
-                tpId.abilityState = INIT_ABILITY;
-                tpId.jumpState = INIT_JUMP;
-            }
-        }
-    } else {
-        tpId.abilityState = NONE;
-        tpId.ducking = false;
-    }
+if (room == rmCharacterSelect) {
+	mousePlayerHero = objMonkTP;
+	thisId.lockedIn = true;
+} else {
+	if (instance_exists(enemyId)) {
+		var diffX = enemyId.x - thisId.x;
+		var diffY = thisId.y - enemyId.y;
+		var dist = sqrt(diffX * diffX + diffY * diffY);
+		var dev = 0;
+		thisId.state = MOVE;
+		thisId.direct = sign(diffX);
+		attackDists[0] = 30;
+		attackDists[1] = 80;
+		attackDists[2] = 60;
+		
+		if (dist < attackDists[thisId.attackCounter]) {
+			thisId.onePressed = true;
+			thisId.oneReleased = true;
+		}
+		
+		show_debug_message("dist = " + string(dist));
+		
+		thisId.tMouseX = enemyId.x + random_range(-dev, dev);
+		thisId.tMouseY = enemyId.y + random_range(-dev, dev);
+		
+		if (diffY > 0) {
+			if (thisId.moveDy == 0) {
+				thisId.twoPressed = true;
+			}
+			
+			thisId.upPressed = true;
+		} else {
+			thisId.upPressed = false;
+		}
+	}
 }

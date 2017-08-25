@@ -2,3 +2,4 @@
 alarm[0] = 1;
 dmg = daggerDmg;
 stunTime = daggerStunTime;
+dot = false;

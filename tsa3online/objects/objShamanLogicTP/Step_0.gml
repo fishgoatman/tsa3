@@ -40,7 +40,7 @@ if (instance_exists(heroId)) {
     } else if (summonWind) {
         summonWind = false;
         
-        if (nearestTotem != -1) {
+        if (numTotems >= 1) {
             wdCdId.image_index = 0;
             var tempX = nearestTotem.x;
             var tempY = nearestTotem.y;
@@ -51,7 +51,9 @@ if (instance_exists(heroId)) {
                 tempY -= windHeight;
                 instance_create(tempX, tempY, objWindTunnel);
             }
-        }
+        } else {
+			objShamanTP.windReady = true;
+		}
     } else if (summonLightning) {
         summonLightning = false;
 		
@@ -59,6 +61,7 @@ if (instance_exists(heroId)) {
 			ltCdId.image_index = 0;
 			lightningOn = true;
 			var tempNumTotems;
+			instance_create(-5, -5, objLightningStraight); //so that the cooldown is reset even if all three totems are stacked
         
 	        if (numTotems == 2) {
 	            tempNumTotems = 1;
@@ -147,14 +150,23 @@ if (instance_exists(heroId)) {
 	                instance_create(a.x + j * currLightningDx, a.y - j * currLightningDy, objLightning);
 	            }
 	        }*/
+		} else {
+			objShamanTP.lightningReady = true;
 		}
     } else if (summonFire) {
         summonFire = false;
-            
-        if (nearestTotem != -1) {
+        
+        if (numTotems >= 1) {
             frCdId.image_index = 0;
-            instance_create(nearestTotem.x, nearestTotem.y, objFireSpirit);
-        }
+            //instance_create(nearestTotem.x, nearestTotem.y, objFireSpirit);
+			
+			for (var i = 0; i < numTotems; i++) {
+				var currTotem = ds_list_find_value(totems, i);
+				instance_create(currTotem.x, currTotem.y, objFireSpirit);
+			}
+        } else {
+			objShamanTP.fireReady = true;
+		}
     }
 } else {
     instance_destroy();

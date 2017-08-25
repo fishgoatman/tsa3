@@ -3,3 +3,4 @@ alarm[0] = 1;
 dmg = boltDmg;
 stunTime = boltStunTime;
 controlScheme = rogueControlScheme;
+dot = false;

@@ -22,8 +22,7 @@
         "31a6cd47-c369-4d2d-8b68-376397188bb4",
         "149ea4e5-8b51-4d1d-a496-aa675c702df1",
         "b6151520-4d0f-4c42-b9bc-2fba3824c5ce",
-        "01e3e00c-da34-46bb-9dc8-918b5944e4c8",
-        "ca87fc89-b87d-475b-9db6-f8aae5e3e2eb"
+        "01e3e00c-da34-46bb-9dc8-918b5944e4c8"
     ],
     "filterType": "GMObject",
     "folderName": "rogue",

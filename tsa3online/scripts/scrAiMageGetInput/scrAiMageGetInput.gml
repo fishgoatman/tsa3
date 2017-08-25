@@ -30,6 +30,10 @@ if (room == rmCharacterSelect) {
 		if (abs(xDiff) <= fireShotXRange && abs(yDiff) <= fireShotYRange) {
 			thisId.twoPressed = true;
 		}
+		
+		if (thisId.abilityState == INIT_ABILITY) {
+			thisId.twoPressed = true;
+		}
 	
 		if (yDiff > 0) {
 			if (place_meeting(thisId.preciseX, thisId.preciseY + 1, objBlock)) {

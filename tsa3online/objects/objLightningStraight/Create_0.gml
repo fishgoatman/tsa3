@@ -5,3 +5,6 @@ controlScheme = shamanControlScheme;
 scrHeroId();
 dmg = lightningDmg;
 stunTime = lightningStunTime;
+dot = true;
+slowTime = lightningSlowTime;
+slowTo = lightningSlowTo;

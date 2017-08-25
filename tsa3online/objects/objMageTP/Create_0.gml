@@ -1,18 +1,18 @@
 /// @description creation stuff
 //stats
 ddy = 1.2 * overallSpd;
-jumpDy = 15 * overallSpd;
-flyDx = 4.1 * overallSpd;
+jumpDy = 18 * overallSpd;
+flyDx = 4.5 * overallSpd;
 flyDy = flyDx;
-boostedDx = 9.5 * overallSpd;
+boostedDx = 11 * overallSpd;
 boostedDy = boostedDx;
 boostedWalkingSpd = 8.1;
 moveSpd = 5.4 * overallSpd;
 attackPreTime = 7 / overallSpd;
 attackPostTime = 3 / overallSpd;
-fireShotCDTime = 22 / overallSpd;
+fireShotCDTime = 0.8 * room_speed / overallSpd;
 fireballPreTime = 3 / overallSpd;
-fireballPostTime = 15 / overallSpd;
+fireballPostTime = 12 / overallSpd;
 attackSpd = 1 * overallSpd;
 jumpDx = 1 * overallSpd;
 jumpPreTime = 1 / overallSpd;

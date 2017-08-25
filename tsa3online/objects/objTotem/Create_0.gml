@@ -1,5 +1,5 @@
 /// @description creation stuff
-totemBuildTime = 0.6 * room_speed / overallSpd;
+totemBuildTime = 0.4 * room_speed / overallSpd;
 image_speed = 30 / totemBuildTime;
 dx = 0;
 dy = 0;

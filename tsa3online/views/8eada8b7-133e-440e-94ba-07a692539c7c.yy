@@ -27,7 +27,10 @@
         "12effafa-acf5-4de3-b9a0-2fa7fa3a3fce",
         "7f02a93a-dfee-47b2-9661-dec8ee7c2a06",
         "ce211a9a-7800-42cb-98cb-6f3015a8bf3c",
-        "945053b8-e7a4-4ea5-ac4c-38a3ef890818"
+        "945053b8-e7a4-4ea5-ac4c-38a3ef890818",
+        "ab98bc25-9d79-418c-a532-76fb5ba41b4a",
+        "bf0fa702-8daa-49f8-bc13-87ff8562eee6",
+        "b59a4e1e-8ff4-414e-9924-09e3d06fe1a6"
     ],
     "filterType": "GMSprite",
     "folderName": "monk",

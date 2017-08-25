@@ -28,11 +28,11 @@ if (room != rmCharacterSelect) {
 		}
     }
     
-    if (hero == objMonkTP) {
+    /*if (hero == objMonkTP) {
         var width = 64;
         var height = 8;
         instance_create(room_width - hpBarOffset - width, hpBarOffset * 2 + objHpPod.sprite_height, objMonkEnergyBarTP);
-    }
+    }*/
 	
 	lastPodLost = array_length_1d(mouseHpBar);
 }

@@ -9,11 +9,29 @@ if (stunTime > 0) {
 	upHeld = false;
 	moveDx = 0;
 	moveDy = 0;
+	
+	with (objRogueKnifeIndicatorCW) {
+		instance_destroy();
+	}
+		
+	with (objRogueKnifeIndicatorCCW) {
+		instance_destroy();
+	}
+	
+	attackState = NONE;
+	spd = moveSpd;
+	currAngle = startAngle;
+	charging = false;
 } else if (dashing) {
 	sprite_index = sprRogueDash;
 	image_angle = dashAngle - 90;
 } else {
-	mouseAngle = darctan2(y - mouse_y, mouse_x - x);
+	if (mouseAi != "rogue") {
+		tMouseX = mouse_x;
+		tMouseY = mouse_y;
+	}
+	
+	mouseAngle = darctan2(y - tMouseY, tMouseX - x);
 
 	//dx
 	if (state == MOVE) {
@@ -123,8 +141,8 @@ if (stunTime > 0) {
 	//ability
 	if (twoPressed) {
 		if (dashReady) {
-			var diffX = mouse_x - x;
-			var diffY = y - mouse_y;
+			var diffX = tMouseX - x;
+			var diffY = y - tMouseY;
 			var hyp = sqrt(diffX * diffX + diffY * diffY);
 			naturalDx = dashSpd * diffX / hyp;
 			moveDy = dashSpd * diffY / hyp;
@@ -158,6 +176,13 @@ if (stunTime > 0) {
 	}
 }
 
+//slow
+var tempDdy = ddy;
+
+for (var i = 0; i < ds_list_size(slowTos); i++) {
+	tempDdy *= ds_list_find_value(slowTos, i);
+}
+
 if (place_meeting(preciseX, preciseY + 1, objBlock)) {
 	moveDy = 0;
 	naturalDy = 0;
@@ -168,18 +193,35 @@ if (place_meeting(preciseX, preciseY + 1, objBlock)) {
 	naturalDy = 0;
 	preciseY++;
 } else {
-	if (moveDy > ddy) {
-		moveDy -= ddy;
+	if (moveDy > tempDdy) {
+		moveDy -= tempDdy;
 	} else if (moveDy > 0) {
 		moveDy = 0;
 	} else {
-		naturalDy -= ddy;
+		naturalDy -= tempDdy;
 	}
 }
 
 dx = moveDx + naturalDx;
 dy = moveDy + naturalDy;
+
+for (var i = 0; i < ds_list_size(slowTos); i++) {
+	dx *= ds_list_find_value(slowTos, i);
+	dy *= ds_list_find_value(slowTos, i);
+}
+
+for (var i = 0; i < ds_list_size(slowTimes); i++) {
+	ds_list_replace(slowTimes, i, ds_list_find_value(slowTimes, i) - 1);
+	
+	if (ds_list_find_value(slowTimes, i) == 0) {
+		ds_list_delete(slowTimes, i);
+		ds_list_delete(slowIds, i);
+		ds_list_delete(slowTos, i);
+	}
+}
+
 scrMove();
+ds_list_clear(immuneToThisTick);
 
 ///sprite and image
 image_xscale = direct;

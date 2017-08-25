@@ -197,17 +197,19 @@ randomize();/**/
 /// @DnDAction : YoYo Games.Common.Execute_Code
 /// @DnDVersion : 1
 /// @DnDHash : 13494006
-/// @DnDArgument : "code" "/// @description settings$(13_10)globalvar mode;$(13_10)mode = "offline";$(13_10)globalvar mageAi;$(13_10)mageAi = false;"
+/// @DnDArgument : "code" "/// @description settings$(13_10)globalvar mode;$(13_10)mode = "offline";$(13_10)globalvar mouseAi;$(13_10)mouseAi = "none";$(13_10)globalvar keyboardAi;$(13_10)keyboardAi = "none";"
 /// @description settings
 globalvar mode;
 mode = "offline";
-globalvar mageAi;
-mageAi = false;
+globalvar mouseAi;
+mouseAi = "none";
+globalvar keyboardAi;
+keyboardAi = "none";
 
 /// @DnDAction : YoYo Games.Common.Execute_Code
 /// @DnDVersion : 1
 /// @DnDHash : 11315275
-/// @DnDArgument : "code" "/// @desc stats$(13_10)//mage$(13_10)globalvar mageControlScheme;$(13_10)mageControlScheme = "keyboard";$(13_10)globalvar mageHp;$(13_10)mageHp = 160;$(13_10)globalvar fireShotDmg;$(13_10)fireShotDmg = 5;$(13_10)globalvar fireShotStunTime;$(13_10)fireShotStunTime = 0.4 * room_speed;$(13_10)globalvar fireShotSpd;$(13_10)fireShotSpd = 21;$(13_10)globalvar fireShotSpread;$(13_10)fireShotSpread = 60;$(13_10)globalvar fireShotAmount;$(13_10)fireShotAmount = 12;$(13_10)globalvar fireShotTime;$(13_10)fireShotTime = 0.2 * room_speed;$(13_10)globalvar firebombDmg;$(13_10)firebombDmg = 3;$(13_10)globalvar firebombStunTime;$(13_10)firebombStunTime = 0.15 * room_speed;$(13_10)globalvar firebombSpd;$(13_10)firebombSpd = -5;$(13_10)globalvar firebombDDy;$(13_10)firebombDDy = 1.8;$(13_10)globalvar firebombDDyVar;$(13_10)firebombDDyVar = 0.2;$(13_10)globalvar firebombAmount;$(13_10)firebombAmount = 8;$(13_10)globalvar firebombBounces;$(13_10)firebombBounces = 4;$(13_10)globalvar firebombDamp;$(13_10)firebombDamp = 0.4;$(13_10)globalvar firebombXVar;$(13_10)firebombXVar = 1;$(13_10)globalvar fireballDmg;$(13_10)fireballDmg = 14;$(13_10)globalvar fireballStunTime;$(13_10)fireballStunTime = 0.3 * room_speed;$(13_10)globalvar fireballSpd;$(13_10)fireballSpd = 15;$(13_10)$(13_10)//rogue$(13_10)globalvar rogueControlScheme;$(13_10)rogueControlScheme = "mouse";$(13_10)globalvar rogueHp;$(13_10)rogueHp = 110;$(13_10)globalvar boltDmg;$(13_10)boltDmg = 1.5;$(13_10)globalvar boltStunTime;$(13_10)boltStunTime = 0.7 * room_speed;$(13_10)globalvar boltAmount;$(13_10)boltAmount = 12;$(13_10)globalvar boltSpread;$(13_10)boltSpread = 40;$(13_10)globalvar boltSpd;$(13_10)boltSpd = 30;$(13_10)globalvar startAngle;$(13_10)startAngle = 120;$(13_10)globalvar daggerDmg;$(13_10)daggerDmg = 3.2;$(13_10)globalvar daggerStunTime;$(13_10)daggerStunTime = 0.1 * room_speed;$(13_10)globalvar daggerAmount;$(13_10)daggerAmount = 15;$(13_10)globalvar daggerSpd;$(13_10)daggerSpd = 55;$(13_10)globalvar endAngle;$(13_10)endAngle = 5;$(13_10)globalvar dAngle;$(13_10)dAngle = -9;$(13_10)$(13_10)//monk$(13_10)$(13_10)//shaman$(13_10)globalvar shamanControlScheme;$(13_10)shamanControlScheme = "keyboard";$(13_10)globalvar shamanHp;$(13_10)shamanHp = 125;$(13_10)globalvar totemCooldown;$(13_10)totemCooldown = 0.8 * room_speed / overallSpd;$(13_10)globalvar totemDuration;$(13_10)totemDuration = 20 * room_speed;$(13_10)globalvar windCooldown;$(13_10)windCooldown = 1.4 * room_speed / overallSpd;$(13_10)globalvar lightningCooldown;$(13_10)lightningCooldown = 2.8 * room_speed / overallSpd;$(13_10)globalvar lightningDmg;$(13_10)lightningDmg = 7;$(13_10)globalvar lightningStunTime;$(13_10)lightningStunTime = 0.4 * room_speed;$(13_10)globalvar lightningDuration;$(13_10)lightningDuration = 1.5 * room_speed;$(13_10)globalvar fireCooldown;$(13_10)fireCooldown = 1.8 * room_speed / overallSpd;$(13_10)globalvar fireSpiritDmg;$(13_10)fireSpiritDmg = 18;$(13_10)globalvar fireSpiritStunTime;$(13_10)fireSpiritStunTime = 0.1 * room_speed;$(13_10)globalvar fireSpiritSpd;$(13_10)fireSpiritSpd = 14;$(13_10)globalvar fireSpiritDuration;$(13_10)fireSpiritDuration = 1.5 * room_speed;"
+/// @DnDArgument : "code" "/// @desc stats$(13_10)//mage$(13_10)globalvar mageControlScheme;$(13_10)mageControlScheme = "keyboard";$(13_10)globalvar mageHp;$(13_10)mageHp = 160;$(13_10)globalvar fireShotDmg;$(13_10)fireShotDmg = 6;$(13_10)globalvar fireShotStunTime;$(13_10)fireShotStunTime = 0.25 * room_speed;$(13_10)globalvar fireShotSpd;$(13_10)fireShotSpd = 24;$(13_10)globalvar fireShotSpread;$(13_10)fireShotSpread = 67;$(13_10)globalvar fireShotAmount;$(13_10)fireShotAmount = 12;$(13_10)globalvar fireShotTime;$(13_10)fireShotTime = 0.2 * room_speed;$(13_10)globalvar firebombDmg;$(13_10)firebombDmg = 1;$(13_10)globalvar firebombStunTime;$(13_10)firebombStunTime = 0.05 * room_speed;$(13_10)globalvar firebombSpd;$(13_10)firebombSpd = -5;$(13_10)globalvar firebombDDy;$(13_10)firebombDDy = 1.8;$(13_10)globalvar firebombDDyVar;$(13_10)firebombDDyVar = 0.2;$(13_10)globalvar firebombAmount;$(13_10)firebombAmount = 8;$(13_10)globalvar firebombBounces;$(13_10)firebombBounces = 3;$(13_10)globalvar firebombDamp;$(13_10)firebombDamp = 0.35;$(13_10)globalvar firebombXVar;$(13_10)firebombXVar = 0.5;$(13_10)globalvar firebombSlowTime;$(13_10)firebombSlowTime = 0.8 * room_speed;$(13_10)globalvar firebombSlowTo;$(13_10)firebombSlowTo = 0.9;$(13_10)globalvar fireballDmg;$(13_10)fireballDmg = 22;$(13_10)globalvar fireballStunTime;$(13_10)fireballStunTime = 0.15 * room_speed;$(13_10)globalvar fireballSpd;$(13_10)fireballSpd = 20;$(13_10)globalvar fireCircleDmg;$(13_10)fireCircleDmg = 0.2;$(13_10)globalvar fireCircleDuration;$(13_10)fireCircleDuration = 3 * room_speed;$(13_10)globalvar fireCircleSlowTime;$(13_10)fireCircleSlowTime = 0.3 * room_speed;$(13_10)globalvar fireCircleSlowTo;$(13_10)fireCircleSlowTo = 0.4;$(13_10)$(13_10)//rogue$(13_10)globalvar rogueControlScheme;$(13_10)rogueControlScheme = "mouse";$(13_10)globalvar rogueHp;$(13_10)rogueHp = 100;$(13_10)globalvar boltDmg;$(13_10)boltDmg = 1.5;$(13_10)globalvar boltStunTime;$(13_10)boltStunTime = 0.7 * room_speed;$(13_10)globalvar boltAmount;$(13_10)boltAmount = 12;$(13_10)globalvar boltSpread;$(13_10)boltSpread = 40;$(13_10)globalvar boltSpd;$(13_10)boltSpd = 30;$(13_10)globalvar daggerDmg;$(13_10)daggerDmg = 2;$(13_10)globalvar daggerStunTime;$(13_10)daggerStunTime = 0.1 * room_speed;$(13_10)globalvar daggerAmount;$(13_10)daggerAmount = 15;$(13_10)globalvar daggerSpd;$(13_10)daggerSpd = 55;$(13_10)$(13_10)//monk$(13_10)globalvar monkControlScheme;$(13_10)monkControlScheme = "mouse";$(13_10)globalvar monkHp;$(13_10)monkHp = 120;$(13_10)globalvar punchDmg;$(13_10)punchDmg = 20;$(13_10)globalvar punchStunTime;$(13_10)punchStunTime = 0.2 * room_speed;$(13_10)globalvar punchSlowTime;$(13_10)punchSlowTime = 1 * room_speed;$(13_10)globalvar punchSlowTo;$(13_10)punchSlowTo = 0.3 * room_speed;$(13_10)globalvar kickDmg;$(13_10)kickDmg = 17;$(13_10)globalvar kickStunTime;$(13_10)kickStunTime = 0.1 * room_speed;$(13_10)globalvar kickSlowTime;$(13_10)kickSlowTime = 0.3 * room_speed;$(13_10)globalvar kickSlowTo;$(13_10)kickSlowTo = 0.6 * room_speed;$(13_10)globalvar dragonPunchDmg;$(13_10)dragonPunchDmg = 30;$(13_10)globalvar dragonPunchStunTime;$(13_10)dragonPunchStunTime = 0.3 * room_speed;$(13_10)$(13_10)//shaman$(13_10)globalvar shamanControlScheme;$(13_10)shamanControlScheme = "keyboard";$(13_10)globalvar shamanHp;$(13_10)shamanHp = 125;$(13_10)globalvar totemCooldown;$(13_10)totemCooldown = 0.8 * room_speed / overallSpd;$(13_10)globalvar totemDuration;$(13_10)totemDuration = 20 * room_speed;$(13_10)globalvar windCooldown;$(13_10)windCooldown = 1.4 * room_speed / overallSpd;$(13_10)globalvar lightningCooldown;$(13_10)lightningCooldown = 2.8 * room_speed / overallSpd;$(13_10)globalvar lightningDmg;$(13_10)lightningDmg = 15 / room_speed;$(13_10)globalvar lightningStunTime;$(13_10)lightningStunTime = 0 * room_speed;$(13_10)globalvar lightningSlowTime;$(13_10)lightningSlowTime = 1;$(13_10)globalvar lightningSlowTo;$(13_10)lightningSlowTo = 0.3;$(13_10)globalvar lightningDuration;$(13_10)lightningDuration = 1.5 * room_speed;$(13_10)globalvar fireCooldown;$(13_10)fireCooldown = 1.8 * room_speed / overallSpd;$(13_10)globalvar fireSpiritDmg;$(13_10)fireSpiritDmg = 18;$(13_10)globalvar fireSpiritStunTime;$(13_10)fireSpiritStunTime = 0.1 * room_speed;$(13_10)globalvar fireSpiritSpd;$(13_10)fireSpiritSpd = 18;$(13_10)globalvar fireSpiritDuration;$(13_10)fireSpiritDuration = 1.5 * room_speed;"
 /// @desc stats
 //mage
 globalvar mageControlScheme;
@@ -215,21 +217,21 @@ mageControlScheme = "keyboard";
 globalvar mageHp;
 mageHp = 160;
 globalvar fireShotDmg;
-fireShotDmg = 5;
+fireShotDmg = 6;
 globalvar fireShotStunTime;
-fireShotStunTime = 0.4 * room_speed;
+fireShotStunTime = 0.25 * room_speed;
 globalvar fireShotSpd;
-fireShotSpd = 21;
+fireShotSpd = 24;
 globalvar fireShotSpread;
-fireShotSpread = 60;
+fireShotSpread = 67;
 globalvar fireShotAmount;
 fireShotAmount = 12;
 globalvar fireShotTime;
 fireShotTime = 0.2 * room_speed;
 globalvar firebombDmg;
-firebombDmg = 3;
+firebombDmg = 1;
 globalvar firebombStunTime;
-firebombStunTime = 0.15 * room_speed;
+firebombStunTime = 0.05 * room_speed;
 globalvar firebombSpd;
 firebombSpd = -5;
 globalvar firebombDDy;
@@ -239,23 +241,35 @@ firebombDDyVar = 0.2;
 globalvar firebombAmount;
 firebombAmount = 8;
 globalvar firebombBounces;
-firebombBounces = 4;
+firebombBounces = 3;
 globalvar firebombDamp;
-firebombDamp = 0.4;
+firebombDamp = 0.35;
 globalvar firebombXVar;
-firebombXVar = 1;
+firebombXVar = 0.5;
+globalvar firebombSlowTime;
+firebombSlowTime = 0.8 * room_speed;
+globalvar firebombSlowTo;
+firebombSlowTo = 0.9;
 globalvar fireballDmg;
-fireballDmg = 14;
+fireballDmg = 22;
 globalvar fireballStunTime;
-fireballStunTime = 0.3 * room_speed;
+fireballStunTime = 0.15 * room_speed;
 globalvar fireballSpd;
-fireballSpd = 15;
+fireballSpd = 20;
+globalvar fireCircleDmg;
+fireCircleDmg = 0.2;
+globalvar fireCircleDuration;
+fireCircleDuration = 3 * room_speed;
+globalvar fireCircleSlowTime;
+fireCircleSlowTime = 0.3 * room_speed;
+globalvar fireCircleSlowTo;
+fireCircleSlowTo = 0.4;
 
 //rogue
 globalvar rogueControlScheme;
 rogueControlScheme = "mouse";
 globalvar rogueHp;
-rogueHp = 110;
+rogueHp = 100;
 globalvar boltDmg;
 boltDmg = 1.5;
 globalvar boltStunTime;
@@ -266,22 +280,40 @@ globalvar boltSpread;
 boltSpread = 40;
 globalvar boltSpd;
 boltSpd = 30;
-globalvar startAngle;
-startAngle = 120;
 globalvar daggerDmg;
-daggerDmg = 3.2;
+daggerDmg = 2;
 globalvar daggerStunTime;
 daggerStunTime = 0.1 * room_speed;
 globalvar daggerAmount;
 daggerAmount = 15;
 globalvar daggerSpd;
 daggerSpd = 55;
-globalvar endAngle;
-endAngle = 5;
-globalvar dAngle;
-dAngle = -9;
 
 //monk
+globalvar monkControlScheme;
+monkControlScheme = "mouse";
+globalvar monkHp;
+monkHp = 120;
+globalvar punchDmg;
+punchDmg = 20;
+globalvar punchStunTime;
+punchStunTime = 0.2 * room_speed;
+globalvar punchSlowTime;
+punchSlowTime = 1 * room_speed;
+globalvar punchSlowTo;
+punchSlowTo = 0.3 * room_speed;
+globalvar kickDmg;
+kickDmg = 17;
+globalvar kickStunTime;
+kickStunTime = 0.1 * room_speed;
+globalvar kickSlowTime;
+kickSlowTime = 0.3 * room_speed;
+globalvar kickSlowTo;
+kickSlowTo = 0.6 * room_speed;
+globalvar dragonPunchDmg;
+dragonPunchDmg = 30;
+globalvar dragonPunchStunTime;
+dragonPunchStunTime = 0.3 * room_speed;
 
 //shaman
 globalvar shamanControlScheme;
@@ -297,9 +329,13 @@ windCooldown = 1.4 * room_speed / overallSpd;
 globalvar lightningCooldown;
 lightningCooldown = 2.8 * room_speed / overallSpd;
 globalvar lightningDmg;
-lightningDmg = 7;
+lightningDmg = 15 / room_speed;
 globalvar lightningStunTime;
-lightningStunTime = 0.4 * room_speed;
+lightningStunTime = 0 * room_speed;
+globalvar lightningSlowTime;
+lightningSlowTime = 1;
+globalvar lightningSlowTo;
+lightningSlowTo = 0.3;
 globalvar lightningDuration;
 lightningDuration = 1.5 * room_speed;
 globalvar fireCooldown;
@@ -309,6 +345,6 @@ fireSpiritDmg = 18;
 globalvar fireSpiritStunTime;
 fireSpiritStunTime = 0.1 * room_speed;
 globalvar fireSpiritSpd;
-fireSpiritSpd = 14;
+fireSpiritSpd = 18;
 globalvar fireSpiritDuration;
 fireSpiritDuration = 1.5 * room_speed;
