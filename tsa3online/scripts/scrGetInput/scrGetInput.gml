@@ -6,12 +6,16 @@ tpId.twoPressed = false;
 tpId.threePressed = false;
 tpId.fourPressed = false;
 
+if (keyboard_check_pressed(vk_right) || keyboard_check_pressed(ord("G"))) {
+	tpId.rightPressed = true;
+} else if (keyboard_check_pressed(vk_left) || keyboard_check_pressed(ord("D"))) {
+	tpId.leftPressed = true;
+}
+
 if (keyboard_check_direct(vk_right) || keyboard_check_direct(ord("G"))) {
-    tpId.direct = RIGHT;
-    tpId.state = MOVE;
+    tpId.leftHeld = true;
 } else if (keyboard_check_direct(vk_left) || keyboard_check_direct(ord("D"))) {
-    tpId.direct = LEFT;
-    tpId.state = MOVE;
+    tpId.rightHeld = true;
 }
 
 if (keyboard_check_direct(vk_up) || keyboard_check_direct(ord("R"))) {

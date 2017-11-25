@@ -1,3 +1,3 @@
 /// @description creation stuff
-alarm[0] = 8;
+alarm[0] = 16;
 depth = -1;

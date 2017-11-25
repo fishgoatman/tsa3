@@ -18,7 +18,9 @@
         "a048555e-5255-4350-bf16-52a041077441",
         "71c5cb16-2486-4ffd-a183-7af56426b206",
         "bee14292-b9f3-4bd9-9142-f2a6cc6e8698",
-        "9064f0a3-7165-4e63-9c13-a309dcc1ddf7"
+        "9064f0a3-7165-4e63-9c13-a309dcc1ddf7",
+        "9b3a030d-4637-4c5e-8ae5-fb1a934d07d6",
+        "5f215d4e-3801-4266-a482-c87410899b5d"
     ],
     "filterType": "GMObject",
     "folderName": "shaman",

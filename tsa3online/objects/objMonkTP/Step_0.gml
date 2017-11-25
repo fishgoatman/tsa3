@@ -20,15 +20,14 @@ if (stunTime > 0) {
 	mouseAngle = darctan2(y - tMouseY, tMouseX - x);
 
 	//dx
-	if (state == MOVE) {
-	    if (direct == RIGHT && !place_meeting(preciseX + 1, preciseY, objBlock) || direct == LEFT
-	    && !place_meeting(preciseX - 1, preciseY, objBlock)) {
-	        moveDx = direct * spd;
-	    } else {
-	        moveDx = 0;
-	    }
-	} else {
-	    moveDx = 0;
+	if (rightHeld) {
+	    moveDx = spd;
+		rightHeld = false;
+	}
+	
+	if (leftHeld) {
+		moveDx = -spd;
+		leftHeld = false;
 	}
 	
 	if (moveDx != 0 && sign(moveDx) != sign(naturalDx)) {
@@ -85,31 +84,22 @@ if (stunTime > 0) {
 	
 	if (oneReleased) {
 		if (attackState == NONE) {
-			var xDiff = mouse_x - x;
-			var yDiff = y - mouse_y;
-			var hyp = sqrt(xDiff * xDiff + yDiff * yDiff);
-			spd = moveSpd;
-			attackState = POST_ATTACK;
-			alarm[POST_ATTACK] = attackPostTime;
-		
-			if (oneChargingTime >= dragonPunchChargeTime) {
-				instance_create(preciseX, preciseY, objDragonPunchHurtboxTP);
-				preciseX -= attackDisplace * xDiff / hyp;
-				preciseY += attackDisplace * yDiff / hyp;
-				naturalDx -= attackNaturalDxIncrease * sign(xDiff);
-				naturalDy += attackNaturalDxIncrease * -sign(yDiff);
-			} else {
-				instance_create(preciseX, preciseY, objPunchHurtboxTP);
-				preciseX += attackDisplace * xDiff / hyp;
-				preciseY -= attackDisplace * yDiff / hyp;
-				naturalDx += attackNaturalDxIncrease * sign(xDiff);
-				naturalDy -= attackNaturalDxIncrease * -sign(yDiff);
-			}
+			attackState = PRE_ATTACK;
+			attackType = "punch";
+			spd = punchSpd;
+			alarm[PRE_ATTACK] = punchPreTime;
 		}
 		
-		oneChargingTime = 0;
 		oneReleased = false;
-		released = true;
+	}
+	
+	if (rightPressed) {
+		if (attackType == "punch" && attackState == POST_ATTACK) {
+			alarm[POST_ATTACK] = 0;
+			instance_create(preciseX, preciseY, objKickHurtboxTP);
+		}
+		
+		rightPressed = false;
 	}
 
 	//ability

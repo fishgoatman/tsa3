@@ -1,40 +1,19 @@
 /// @description move
-var tryX = preciseX;
-var tryY = preciseY;
-var totalDisp = 0;
-var hyp = sqrt(dx * dx + dy * dy);
-var tempDx = dx / hyp;
-var tempDy = dy / hyp;
-var dev = 8;
-    
-while (totalDisp < hyp) {
-	if (mode == "online") {
-	    if (place_meeting(tryX, tryY, objPlayerOP) || place_meeting(tryX, tryY, objBlock)) {
-	        instance_destroy();
-			instance_create(tryX, tryY, objFireShotExplosionTP);
-			break;
-	    }
-	} else if (mode == "offline") {
-		var collidingObject = instance_place(tryX, tryY, objPlayerTP);
-		
-		if ((instance_exists(collidingObject) && collidingObject.controlScheme != controlScheme) || place_meeting(tryX, tryY, objBlock)) {
-	        instance_destroy();
-			var hbId = instance_create(tryX, tryY, objFireShotExplosionTP);
-			hbId.projId = id;
-			break;
-	    }
-	}
-    
-	tryX += tempDx;
-	tryY -= tempDy;
-    totalDisp++;
-	
-	if (random(1) < 0.3) {
-		instance_create(tryX + random_range(-dev, dev), tryY + random_range(-dev, dev), objFireScrap);
-	}
+scrDestructiveProjectileMove();
+var offset = 5;
+
+for (var i = 0; i < random_range(-1, 0.7); i++) {
+	instance_create(preciseX + -sign(dx) * random_range(0, offset), preciseY + random_range(-offset, offset), objFireScrap);
 }
-    
-preciseX = tryX;
-preciseY = tryY;
-x = scrRound(preciseX);
-y = scrRound(preciseY);
+
+if (instance_exists(myHeroId)) {
+	currTime++;
+	dmg = myHeroId.blastBaseDmg + currTime * myHeroId.blastDmgMultiplier;
+
+	if (currTime > time) {
+		instance_destroy();
+		instance_create_depth(preciseX, preciseY, thisNumber, hitbox);
+	}
+} else {
+	instance_destroy();
+}

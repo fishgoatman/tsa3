@@ -12,7 +12,13 @@
         "cc83b55f-2e55-4807-a433-584df98df669",
         "12d20d3a-5de0-4a8b-95ba-2440709dd987",
         "da95e77c-5c4e-4163-950d-c128734939a0",
-        "4202f907-4be6-4a06-9add-bca7628208bc"
+        "4202f907-4be6-4a06-9add-bca7628208bc",
+        "831b31b6-68c4-4a03-9b3d-4b4da2e5ec9d",
+        "f3751b2a-3f1f-4b31-a454-0e7b81a7aa57",
+        "e45ebbad-f7e2-49a5-8c0c-27a35a95e93f",
+        "b2c18baa-c2c0-4324-ae30-a63b19b2dc74",
+        "4563cea6-b2ed-4cfa-85d0-aae3319ed0a0",
+        "e55d392d-e2e3-4f7e-87de-64ed8ed4001f"
     ],
     "filterType": "GMObject",
     "folderName": "playerGeneralStuff",

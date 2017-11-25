@@ -3,6 +3,7 @@ if (instance_exists(heroId)) {
     //nearest totem
     if (numTotems > 0) {
 		var first = ds_list_find_value(totems, 0);
+		show_debug_message("first = " + string(first));
         var lowestDist = point_distance(first.x, first.y, heroId.x, heroId.y);
         nearestTotem = first;
         
@@ -21,10 +22,10 @@ if (instance_exists(heroId)) {
     if (summonTotem) {
         summonTotem = false;
         ttCdId.image_index = 0;
-        buildingTotem = instance_create(heroId.x, heroId.y, objTotem); //totem build time has to be shorter than totem cooldown time otherwise two will be building at once
+	    buildingTotem = instance_create(heroId.x, heroId.y, objTotem); //totem build time has to be shorter than totem cooldown time otherwise two will be building at once
 		
-        if (numTotems >= maxTotems) {
-            var totemToDelete = ds_list_find_value(totems, 0);
+	    if (numTotems >= maxTotems) {
+	        var totemToDelete = ds_list_find_value(totems, 0);
 			ds_list_delete(totems, 0);
 			
 			with (totemToDelete.durationBar) {
@@ -35,9 +36,19 @@ if (instance_exists(heroId)) {
 				instance_destroy();
 			}
 			
-            numTotems--;
-        }
-    } else if (summonWind) {
+	        numTotems--;
+	    }
+    } else if (summonEarthAura) {
+		summonEarthAura = false;
+		
+		if (numTotems >= 1) {
+	        ttCdId.image_index = 0;
+			nearestTotem.type = "earth";
+			nearestTotem.created = false;
+		} else {
+			objShamanTP.totemReady = true;
+		}
+	} else if (summonWind) {
         summonWind = false;
         
         if (numTotems >= 1) {
@@ -157,8 +168,7 @@ if (instance_exists(heroId)) {
         summonFire = false;
         
         if (numTotems >= 1) {
-            frCdId.image_index = 0;
-            //instance_create(nearestTotem.x, nearestTotem.y, objFireSpirit);
+	        frCdId.image_index = 0;
 			
 			for (var i = 0; i < numTotems; i++) {
 				var currTotem = ds_list_find_value(totems, i);
@@ -167,7 +177,17 @@ if (instance_exists(heroId)) {
         } else {
 			objShamanTP.fireReady = true;
 		}
-    }
+    } else if (summonFireAura) {
+		summonFireAura = false;
+	
+		if (numTotems >= 1) {
+		    frCdId.image_index = 0;
+			nearestTotem.type = "fire";
+			nearestTotem.created = false;
+		} else {
+			objShamanTP.fireReady = true;
+		}
+	}
 } else {
     instance_destroy();
 }

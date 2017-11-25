@@ -43,7 +43,13 @@ if (stunTime > 0) {
 	if (onePressed) {
 	    if (totemReady) {
 	        totemReady = false;
-	        logicId.summonTotem = true;
+			
+	        if (place_meeting(preciseX, preciseY, objTotem)) {
+				//logicId.summonEarthAura = true;
+				logicId.summonTotem = true;
+			} else {
+				logicId.summonTotem = true;
+			}
 	    }
 	
 		onePressed = false;
@@ -73,7 +79,13 @@ if (stunTime > 0) {
 	if (fourPressed) {
 	    if (fireReady) {
 	        fireReady = false;
-	        logicId.summonFire = true;
+			
+			if (place_meeting(preciseX, preciseY, objTotem)) {
+				//logicId.summonFireAura = true;
+				logicId.summonFire = true;
+			} else {
+				logicId.summonFire = true;
+			}
 	    }
 	
 		fourPressed = false;
