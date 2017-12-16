@@ -5,7 +5,7 @@ collisionList = scrInstancePlaceList(preciseX, preciseY, objHitbox);
 for (var i = 0; i < ds_list_size(collisionList); i++) {
 	var collidingId = ds_list_find_value(collisionList, i);
 	
-	if (collidingId != noone && collidingId.thisNumber != thisNumber) {
+	if (collidingId != noone && collidingId.thisNumber != thisNumber && (thisNumber == 1 || collidingId.thisNumber == 1)) {
 		if (variable_instance_exists(collidingId, "duration")) {
 			var dmgMod = instance_create(0, 0, objDmgMod);
 			dmgMod.dmg = collidingId.dmg;
@@ -52,5 +52,5 @@ scrThisTakeDamage(hpLost);
 
 //die
 if (hp <= 0) {
-	instance_destroy();
+	sprite_index = sprMine;
 }

@@ -4,12 +4,14 @@ thisNumber = depth;
 depth = 0;
 heroString = selectedHero[thisNumber];
 
-if (heroString == "standardMage") {
+if (heroString == "mage") {
 	heroObj = objStandardMageTP;
-} else if (heroString == "assassinMage") {
-	heroObj = objAssassinMageTP;
 } else if (heroString == "caster") {
 	heroObj = objCasterTP;
+} else if (heroString == "rogue") {
+	heroObj = objRogueTP;
+} else if (heroString == "bot") {
+	heroObj = objBot;
 }
 
 mask_index = object_get_mask(heroObj);
@@ -17,7 +19,7 @@ var createX;
 var createY;
 
 do {
-	if (thisNumber == 0) {
+	if (thisNumber != 1) {
 		createX = random(room_width / 3);
 	} else if (thisNumber == 1) {
 		createX = random(room_width / 3) + room_width * 2 / 3;
@@ -35,7 +37,7 @@ var hpPerGap = hpPerLine * hpBarWidth / myHeroId.maxHp;
 var lastGap = 0;
 
 for (var i = 0; i < hpBarWidth; i++) {
-    if (i - lastGap < hpPerGap) {
+	if (i - lastGap < hpPerGap) {
 		var createX;
 		
 		if (thisNumber == 0) {
@@ -52,29 +54,33 @@ for (var i = 0; i < hpBarWidth; i++) {
 }
 
 lastPodLost = array_length_2d(hpBar, thisNumber);
-
-//cooldowns
-cooldownNum = 4;
-cooldownFrames = 30;
-var cooldownWidth = 32;
-var cooldownGap = (hpBarWidth - cooldownWidth * cooldownNum) / (cooldownNum - 1);
-var cooldownObj;
-
-if (heroString == "standardMage" || heroString == "assassinMage") {
-	cooldownObj = objMageCooldown;
-} else if (heroString == "caster") {
-	cooldownObj = objCasterCooldown;
-}
-
-for (var i = 0; i < cooldownNum; i++) {
-	var createX = hpBarOffset + (i + 0.5) * cooldownWidth + i * cooldownGap;
 	
-	if (thisNumber == 1) {
-		createX = room_width - hpBarWidth - 2 * hpBarOffset + createX;
+if (heroString != "bot") {
+	//cooldowns
+	cooldownNum = 4;
+	cooldownFrames = 30;
+	var cooldownWidth = 32;
+	var cooldownGap = (hpBarWidth - cooldownWidth * cooldownNum) / (cooldownNum - 1);
+	var cooldownObj;
+
+	if (heroString == "mage") {
+		cooldownObj = objMageCooldown;
+	} else if (heroString == "caster") {
+		cooldownObj = objCasterCooldown;
+	} else if (heroString == "rogue") {
+		cooldownObj = objRogueCooldown;
 	}
+
+	for (var i = 0; i < cooldownNum; i++) {
+		var createX = hpBarOffset + (i + 0.5) * cooldownWidth + i * cooldownGap;
 	
-	var createY = hpBarOffset + hpBarHeight + cooldownOffset;
-	var cd = instance_create(createX, createY, cooldownObj);
-	cd.image_speed = 0;
-	cooldownBar[thisNumber, i] = cd;
+		if (thisNumber == 1) {
+			createX = room_width - hpBarWidth - 2 * hpBarOffset + createX;
+		}
+	
+		var createY = hpBarOffset + hpBarHeight + cooldownOffset;
+		var cd = instance_create(createX, createY, cooldownObj);
+		cd.image_speed = 0;
+		cooldownBar[thisNumber, i] = cd;
+	}
 }

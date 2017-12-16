@@ -4,7 +4,16 @@
     "mvc": "1.0",
     "name": "objCasterCooldown",
     "eventList": [
-        
+        {
+            "id": "c10c2053-b8af-4b0c-9f18-d8e2de2d341a",
+            "modelName": "GMEvent",
+            "mvc": "1.0",
+            "IsDnD": false,
+            "collisionObjectId": "00000000-0000-0000-0000-000000000000",
+            "enumb": 0,
+            "eventtype": 0,
+            "m_owner": "7859e01a-920b-40f4-8824-881f7b356a11"
+        }
     ],
     "maskSpriteId": "00000000-0000-0000-0000-000000000000",
     "parentObjectId": "00000000-0000-0000-0000-000000000000",

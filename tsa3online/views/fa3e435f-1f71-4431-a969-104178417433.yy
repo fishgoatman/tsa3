@@ -25,7 +25,8 @@
         "518fde11-8626-44be-86e4-f8a01a972463",
         "c4567d95-d657-4e9a-8ca8-2c32552de138",
         "2f65ebbb-aa8b-416e-a3da-f7132e3cdc71",
-        "a1059fd0-41a2-4f4a-a570-882c8251d9e7"
+        "a1059fd0-41a2-4f4a-a570-882c8251d9e7",
+        "8647955d-58b8-4b07-8311-dd77cbc978e2"
     ],
     "filterType": "GMSprite",
     "folderName": "rogue",

@@ -1,0 +1,10 @@
+///@desc creation stuff
+thisNumber = depth;
+depth = 0;
+myHeroId = heroId[thisNumber];
+dmg = myHeroId.icebergDmg;
+dDmg = 0;
+duration = 1;
+forever = false;
+time = myHeroId.icebergDuration;
+currTime = 0;

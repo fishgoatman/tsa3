@@ -27,7 +27,8 @@
         "726e693a-a909-47d6-ad95-50c98e23a535",
         "1bae3814-5997-45ae-8d22-c67f82921927",
         "e1d1a1d7-f1be-49fa-b644-907c459be3ad",
-        "a7be3a27-ea75-4c40-befc-d0b79a738c94"
+        "a7be3a27-ea75-4c40-befc-d0b79a738c94",
+        "b1e2e2f4-4068-4f5d-a950-532dd0459832"
     ],
     "filterType": "GMSprite",
     "folderName": "mage",

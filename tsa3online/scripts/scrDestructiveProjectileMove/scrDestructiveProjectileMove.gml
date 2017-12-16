@@ -6,7 +6,7 @@ var xDisp = 0;
 var hyp = sqrt(dx * dx + dy * dy);
 var tempDx = dx / hyp;
 var tempDy = dy / hyp;
-var createdAlready = false;
+createdAlready = false;
 
 while (abs(yDisp) < abs(dy) && !place_meeting(tryX, tryY - tempDy, objBlock)) {
     tryY -= tempDy;
@@ -14,8 +14,8 @@ while (abs(yDisp) < abs(dy) && !place_meeting(tryX, tryY - tempDy, objBlock)) {
 	var collidingId = instance_place(tryX, tryY, objPlayer);
 	
 	if (collidingId != noone && !createdAlready && collidingId.thisNumber != thisNumber) {
+		instance_create_depth(tryX, tryY, id, hitbox);
 		instance_destroy();
-		instance_create_depth(tryX, tryY, thisNumber, hitbox);
 		createdAlready = true;
 		break;
 	}
@@ -27,20 +27,20 @@ while (abs(xDisp) < abs(dx) && !place_meeting(tryX + tempDx, tryY, objBlock)) {
 	var collidingId = instance_place(tryX, tryY, objPlayer);
 	
 	if (collidingId != noone && !createdAlready && collidingId.thisNumber != thisNumber) {
+		instance_create_depth(tryX, tryY, id, hitbox);
 		instance_destroy();
-		instance_create_depth(tryX, tryY, thisNumber, hitbox);
 		createdAlready = true;
 		break;
 	}
 }
 
 if (abs(xDisp) < abs(dx) || abs(yDisp) < abs(dy)) {
-	instance_destroy();
-	
 	if (!createdAlready) {
-		instance_create_depth(tryX, tryY, thisNumber, hitbox);
+		instance_create_depth(tryX, tryY, id, hitbox);
 		createdAlready = true;
 	}
+	
+	instance_destroy();
 }
 
 preciseX = tryX;

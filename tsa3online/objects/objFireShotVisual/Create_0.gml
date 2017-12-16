@@ -1,11 +1,5 @@
 ///@desc creation stuff
-thisNumber = depth;
+hbId = depth;
 depth = 0;
-myHeroId = heroId[thisNumber];
-
-if (instance_exists(myHeroId)) {
-	time = myHeroId.blastHitboxDuration;
-	currTime = 0;
-} else {
-	instance_destroy();
-}
+time = hbId.time;
+currTime = 0;

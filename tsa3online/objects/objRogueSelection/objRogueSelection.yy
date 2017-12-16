@@ -1,21 +1,13 @@
 {
-    "id": "6ce75a0d-224b-42b2-a6da-51a8f13d6547",
+    "id": "e2651277-96b3-4861-b301-a5fa5018857e",
     "modelName": "GMObject",
     "mvc": "1.0",
     "name": "objRogueSelection",
     "eventList": [
-        {
-            "id": "56d1c162-fc45-49d1-ac96-9c55fa06367d",
-            "modelName": "GMEvent",
-            "mvc": "1.0",
-            "IsDnD": false,
-            "collisionObjectId": "00000000-0000-0000-0000-000000000000",
-            "enumb": 0,
-            "eventtype": 0,
-            "m_owner": "6ce75a0d-224b-42b2-a6da-51a8f13d6547"
-        }
+        
     ],
     "maskSpriteId": "00000000-0000-0000-0000-000000000000",
+    "overriddenProperties": null,
     "parentObjectId": "00000000-0000-0000-0000-000000000000",
     "persistent": false,
     "physicsAngularDamping": 0.1,
@@ -32,7 +24,8 @@
         
     ],
     "physicsStartAwake": true,
+    "properties": null,
     "solid": false,
-    "spriteId": "f4ecfdcd-f66d-4623-bafe-914d39436181",
-    "visible": false
+    "spriteId": "8247ffe1-1eaf-415d-9bfe-ae6680b2a718",
+    "visible": true
 }
