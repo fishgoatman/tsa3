@@ -1,28 +1,28 @@
 {
-    "id": "29037fad-649e-429c-9fad-b7de7b766362",
+    "id": "6f242e05-7441-4d82-8c76-d670e0d2dc28",
     "modelName": "GMObject",
     "mvc": "1.0",
-    "name": "objKnifeHitbox",
+    "name": "objPiercingKnifeHitbox",
     "eventList": [
         {
-            "id": "aad411bf-fdd7-4042-aff4-cc8a0e6102e7",
+            "id": "062b0ed2-ac1e-4454-86b7-442514f3e063",
             "modelName": "GMEvent",
             "mvc": "1.0",
             "IsDnD": false,
             "collisionObjectId": "00000000-0000-0000-0000-000000000000",
             "enumb": 0,
             "eventtype": 0,
-            "m_owner": "29037fad-649e-429c-9fad-b7de7b766362"
+            "m_owner": "6f242e05-7441-4d82-8c76-d670e0d2dc28"
         },
         {
-            "id": "d4b879d4-6316-416a-8cf1-288201613900",
+            "id": "c9f536a8-7d5e-4015-996b-abac458aeddb",
             "modelName": "GMEvent",
             "mvc": "1.0",
             "IsDnD": false,
             "collisionObjectId": "00000000-0000-0000-0000-000000000000",
             "enumb": 0,
             "eventtype": 3,
-            "m_owner": "29037fad-649e-429c-9fad-b7de7b766362"
+            "m_owner": "6f242e05-7441-4d82-8c76-d670e0d2dc28"
         }
     ],
     "maskSpriteId": "00000000-0000-0000-0000-000000000000",
@@ -43,6 +43,6 @@
     "physicsStartAwake": true,
     "properties": null,
     "solid": false,
-    "spriteId": "65ba3295-f243-4a18-9f6c-f08baba94e7b",
+    "spriteId": "407728d7-488c-45d5-b04f-57d70e5f31ca",
     "visible": true
 }

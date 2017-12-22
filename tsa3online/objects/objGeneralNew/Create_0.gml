@@ -35,10 +35,10 @@ selectBoxes[0, 2] = objRogueSelection;
 /// @DnDAction : YoYo Games.Common.Execute_Code
 /// @DnDVersion : 1
 /// @DnDHash : 411EA560
-/// @DnDArgument : "code" "///@desc creation stuff$(13_10)randomize();$(13_10)window_set_fullscreen(false);$(13_10)texture_set_interpolation(false);$(13_10)$(13_10)for (var i = 0; i < numPlayers; i++) {$(13_10)	lockedIn[i] = false;$(13_10)}"
+/// @DnDArgument : "code" "///@desc creation stuff$(13_10)randomize();$(13_10)window_set_fullscreen(true);$(13_10)texture_set_interpolation(false);$(13_10)$(13_10)for (var i = 0; i < numPlayers; i++) {$(13_10)	lockedIn[i] = false;$(13_10)}"
 ///@desc creation stuff
 randomize();
-window_set_fullscreen(false);
+window_set_fullscreen(true);
 texture_set_interpolation(false);
 
 for (var i = 0; i < numPlayers; i++) {

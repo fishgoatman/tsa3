@@ -10,7 +10,6 @@ var diffY = y - mouse_y;
 var angle = scrArcTan(diffY, diffX);
 var rightBorder = 270 + tpId.currAngle / 2;
 var leftBorder = 270 - tpId.currAngle / 2;
-
 if (angle > rightBorder || angle < leftBorder) {
 	if (diffX > 0) {
 		dx = spd * dcos(rightBorder);

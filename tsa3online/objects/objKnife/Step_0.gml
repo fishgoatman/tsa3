@@ -1,2 +1,3 @@
 ///@desc move
 scrDestructiveProjectileMove();
+currTime++;

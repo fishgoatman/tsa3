@@ -1,4 +1,4 @@
-/// @description scrMove
+/// @description scrMove !!CHANGE TO DOING DX AND DY FIRST THEN DOING THEM SEPARATELY!!
 var tryX = preciseX;
 var tryY = preciseY;
 var yDisp = 0;

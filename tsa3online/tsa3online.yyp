@@ -919,6 +919,14 @@
             }
         },
         {
+            "Key": "407728d7-488c-45d5-b04f-57d70e5f31ca",
+            "Value": {
+                "id": "8a377766-7c0b-4063-a299-e38ee465c883",
+                "resourcePath": "sprites\\sprPiercingKnifeHitbox\\sprPiercingKnifeHitbox.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
             "Key": "413b562f-2477-4f48-aa3e-f0f3537325f4",
             "Value": {
                 "id": "86fbc8db-e14a-453f-9363-24784b5b5d3c",
@@ -1138,7 +1146,7 @@
             "Key": "51c82f75-009d-4c90-9a21-07bb67efc468",
             "Value": {
                 "id": "4a80e75c-9860-466b-adc1-922e259798ea",
-                "resourcePath": "sprites\\sprKnifeHurtbox\\sprKnifeHurtbox.yy",
+                "resourcePath": "sprites\\sprSpinningKnifeHitbox\\sprSpinningKnifeHitbox.yy",
                 "resourceType": "GMSprite"
             }
         },
@@ -1327,6 +1335,14 @@
             }
         },
         {
+            "Key": "611c27a2-3278-4628-8345-50795af5a1d4",
+            "Value": {
+                "id": "c6636c3c-6dc0-4507-a35d-7a09f1a25a43",
+                "resourcePath": "objects\\objBounceCheckHitbox\\objBounceCheckHitbox.yy",
+                "resourceType": "GMObject"
+            }
+        },
+        {
             "Key": "6191dd18-516c-4339-a5b8-0e708aaec4cc",
             "Value": {
                 "id": "5f696dbd-9fab-4e6f-a1ec-d41afb896601",
@@ -1370,7 +1386,7 @@
             "Key": "65ba3295-f243-4a18-9f6c-f08baba94e7b",
             "Value": {
                 "id": "75c9e052-4117-4eab-9a98-3216afd4b411",
-                "resourcePath": "sprites\\sprDaggerHurtbox\\sprDaggerHurtbox.yy",
+                "resourcePath": "sprites\\sprKnifeHitbox\\sprKnifeHitbox.yy",
                 "resourceType": "GMSprite"
             }
         },
@@ -1443,6 +1459,14 @@
             "Value": {
                 "id": "bd2cbfd2-2ad4-47a4-bf8f-7a710efc79f2",
                 "resourcePath": "objects\\objArrowDown\\objArrowDown.yy",
+                "resourceType": "GMObject"
+            }
+        },
+        {
+            "Key": "6f242e05-7441-4d82-8c76-d670e0d2dc28",
+            "Value": {
+                "id": "9983398c-9f1e-4568-95ba-c6bdee324977",
+                "resourcePath": "objects\\objPiercingKnifeHitbox\\objPiercingKnifeHitbox.yy",
                 "resourceType": "GMObject"
             }
         },
@@ -1564,6 +1588,14 @@
                 "id": "df4372ef-6075-4a11-9577-5feb0039275e",
                 "resourcePath": "views\\753b4b29-4e14-4421-8996-430fa1c0da0f.yy",
                 "resourceType": "GMFolder"
+            }
+        },
+        {
+            "Key": "7665c09d-0adb-4292-822b-278c1fb9a60f",
+            "Value": {
+                "id": "8eae1fec-cb10-4123-b6af-af00067d589e",
+                "resourcePath": "sprites\\sprBounceCheckHitbox\\sprBounceCheckHitbox.yy",
+                "resourceType": "GMSprite"
             }
         },
         {
@@ -1986,7 +2018,7 @@
             "Key": "8d223865-b4ec-44dc-b59f-8ece4098c354",
             "Value": {
                 "id": "6a83f5c0-68f8-4202-a463-34ea0f8d41aa",
-                "resourcePath": "sprites\\sprKnife\\sprKnife.yy",
+                "resourcePath": "sprites\\sprSpinningKnife\\sprSpinningKnife.yy",
                 "resourceType": "GMSprite"
             }
         },
@@ -2308,6 +2340,14 @@
                 "id": "45542424-440b-48b3-b196-406a3bdac283",
                 "resourcePath": "objects\\objThree\\objThree.yy",
                 "resourceType": "GMObject"
+            }
+        },
+        {
+            "Key": "a4f99503-cc6c-45cc-99b1-6cb30081d5fb",
+            "Value": {
+                "id": "97d7976c-58b0-4d6a-add4-ac629f349f82",
+                "resourcePath": "sprites\\sprPiercingKnife\\sprPiercingKnife.yy",
+                "resourceType": "GMSprite"
             }
         },
         {
@@ -2791,6 +2831,14 @@
             }
         },
         {
+            "Key": "c53d2077-8d67-4402-b742-b6c9cea0878f",
+            "Value": {
+                "id": "7687769e-1cb5-4592-b371-76204826360b",
+                "resourcePath": "objects\\objPiercingKnife\\objPiercingKnife.yy",
+                "resourceType": "GMObject"
+            }
+        },
+        {
             "Key": "c5a7c89a-7dd3-4cd6-902f-cb456866d064",
             "Value": {
                 "id": "0a343734-c1f4-4fc3-9a3a-8ca5acc7efa2",
@@ -3010,7 +3058,7 @@
             "Key": "d3f0d335-198f-42fe-8a7e-06ff865d0cf6",
             "Value": {
                 "id": "ba92a216-8f11-44b0-9a42-2892aa243b02",
-                "resourcePath": "sprites\\sprDagger\\sprDagger.yy",
+                "resourcePath": "sprites\\sprKnife\\sprKnife.yy",
                 "resourceType": "GMSprite"
             }
         },

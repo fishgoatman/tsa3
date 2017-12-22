@@ -2,7 +2,7 @@
     "id": "51c82f75-009d-4c90-9a21-07bb67efc468",
     "modelName": "GMSprite",
     "mvc": "1.12",
-    "name": "sprKnifeHurtbox",
+    "name": "sprSpinningKnifeHitbox",
     "For3D": false,
     "HTile": false,
     "VTile": false,

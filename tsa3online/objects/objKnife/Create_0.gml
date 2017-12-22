@@ -8,3 +8,4 @@ image_angle = myHeroId.fanCurrAngle;
 hitbox = objKnifeHitbox;
 preciseX = x;
 preciseY = y;
+currTime = 0;

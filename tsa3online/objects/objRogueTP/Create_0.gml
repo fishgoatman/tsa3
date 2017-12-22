@@ -1,7 +1,7 @@
 /// @DnDAction : YoYo Games.Common.Execute_Code
 /// @DnDVersion : 1
 /// @DnDHash : 5820CA38
-/// @DnDArgument : "code" "///@desc stats$(13_10)thisNumber = depth;$(13_10)depth = 0;$(13_10)maxHp = 120;$(13_10)$(13_10)if (thisNumber == 1) {$(13_10)	maxHp *= 1;$(13_10)}$(13_10)$(13_10)moveSpd = 105 / room_speed;$(13_10)jumpPower = 380 / room_speed;$(13_10)grav = 720 / (room_speed * room_speed);$(13_10)airJumps = 0;$(13_10)bounciness = 0.2;$(13_10)$(13_10)//fan of knives$(13_10)windUp[0] = 0.04 * room_speed;$(13_10)duration[0] = 0.06 * room_speed;$(13_10)windDown[0] = 0.05 * room_speed;$(13_10)slowWindUp[0] = 0.3;$(13_10)slowDuring[0] = 1;$(13_10)slowWindDown[0] = 0.3;$(13_10)cooldown[0] = 0.7 * room_speed;$(13_10)$(13_10)fanDmg = 0.4;$(13_10)$(13_10)fanNumKnives = 8;$(13_10)fanAngle = 45;$(13_10)fanCurrAngle = -1;$(13_10)fanSpd = 400 / room_speed;$(13_10)$(13_10)//lob$(13_10)windUp[1] = 0.02 * room_speed;$(13_10)duration[1] = 1;$(13_10)windDown[1] = 0.02 * room_speed;$(13_10)slowWindUp[1] = 0.3;$(13_10)slowDuring[1] = 0.7;$(13_10)slowWindDown[1] = 0.3;$(13_10)cooldown[1] = 1.5 * room_speed;$(13_10)$(13_10)lobDmg = 7.5;$(13_10)$(13_10)maxLobs = 5;$(13_10)lobAngleBetween = 16;$(13_10)lobDist = 16;$(13_10)lobBaseAngle = 37;$(13_10)timePerLobCharge = 0.28 * room_speed;$(13_10)lobSpd = 470 / room_speed;$(13_10)lobHitboxDuration = 0.05 * room_speed;$(13_10)lobGrav = 800 / (room_speed * room_speed);$(13_10)$(13_10)//rocket$(13_10)windUp[2] = 0 * room_speed;$(13_10)duration[2] = 0.35 * room_speed;$(13_10)windDown[2] = 0 * room_speed;$(13_10)slowWindUp[2] = 0.3;$(13_10)slowDuring[2] = 3;$(13_10)slowWindDown[2] = 0;$(13_10)cooldown[2] = 4.1 * room_speed;$(13_10)$(13_10)rocketSpd = 600 / room_speed;$(13_10)rocketDec = rocketSpd / duration[2] / room_speed;$(13_10)$(13_10)//blast$(13_10)windUp[3] = 0.5 * room_speed;$(13_10)duration[3] = 0.2 * room_speed;$(13_10)windDown[3] = 0.35 * room_speed;$(13_10)slowWindUp[3] = 0;$(13_10)slowDuring[3] = 0;$(13_10)slowWindDown[3] = 0;$(13_10)cooldown[3] = 3.2 * room_speed;$(13_10)$(13_10)blastDmgMultiplier = 1.5 / room_speed;$(13_10)blastBaseDmg = 0.7;$(13_10)$(13_10)blastAmount = 22;$(13_10)blastSpread = 70;$(13_10)blastSpd = 150 / room_speed;$(13_10)blastTime = 1.4 * room_speed;$(13_10)blastRecoilSpd = -180 / room_speed;$(13_10)blastRecoilDSpd = 30 / room_speed;$(13_10)blastRecoilDuration = 0.12 * room_speed;$(13_10)blastHitboxDuration = 0.05 * room_speed;"
+/// @DnDArgument : "code" "///@desc stats$(13_10)thisNumber = depth;$(13_10)depth = 0;$(13_10)maxHp = 120;$(13_10)$(13_10)if (thisNumber == 1) {$(13_10)	maxHp *= 1;$(13_10)}$(13_10)$(13_10)moveSpd = 105 / room_speed;$(13_10)jumpPower = 380 / room_speed;$(13_10)grav = 720 / (room_speed * room_speed);$(13_10)airJumps = 0;$(13_10)bounciness = 0.2;$(13_10)$(13_10)//fan of knives$(13_10)windUp[0] = 0.04 * room_speed;$(13_10)duration[0] = 0.06 * room_speed;$(13_10)windDown[0] = 0.05 * room_speed;$(13_10)slowWindUp[0] = 0.3;$(13_10)slowDuring[0] = 1;$(13_10)slowWindDown[0] = 0.3;$(13_10)cooldown[0] = 0.8 * room_speed;$(13_10)$(13_10)fanBaseDmg = 1;$(13_10)fanDmgIncrease = 8 / room_speed;$(13_10)$(13_10)fanNumKnives = 12;$(13_10)fanAngle = 45;$(13_10)fanCurrAngle = -1;$(13_10)fanSpd = 800 / room_speed;$(13_10)$(13_10)//wall bounce$(13_10)windUp[1] = 0 * room_speed;$(13_10)duration[1] = 0.3 * room_speed;$(13_10)windDown[1] = 0 * room_speed;$(13_10)slowWindUp[1] = 1;$(13_10)slowDuring[1] = 3;$(13_10)slowWindDown[1] = 1;$(13_10)cooldown[1] = 0.3 * room_speed;$(13_10)$(13_10)bounceJumpMultiplier = 2;$(13_10)$(13_10)//air jump$(13_10)windUp[2] = 0 * room_speed;$(13_10)duration[2] = 0.1 * room_speed;$(13_10)windDown[2] = 0 * room_speed;$(13_10)slowWindUp[2] = 1;$(13_10)slowDuring[2] = 1;$(13_10)slowWindDown[2] = 1;$(13_10)cooldown[2] = 4.5 * room_speed;$(13_10)$(13_10)jumpKnifeAngle = 120;$(13_10)jumpNumKnives = 12;$(13_10)$(13_10)//piercing knife$(13_10)windUp[3] = 0.4 * room_speed;$(13_10)duration[3] = 0.1 * room_speed;$(13_10)windDown[3] = 0.2 * room_speed;$(13_10)slowWindUp[3] = 0;$(13_10)slowDuring[3] = 0;$(13_10)slowWindDown[3] = 0;$(13_10)cooldown[3] = 2 * room_speed;$(13_10)$(13_10)pierceDmg = 16;$(13_10)$(13_10)pierceSpd = 2000 / room_speed;"
 ///@desc stats
 thisNumber = depth;
 depth = 0;
@@ -24,67 +24,51 @@ windDown[0] = 0.05 * room_speed;
 slowWindUp[0] = 0.3;
 slowDuring[0] = 1;
 slowWindDown[0] = 0.3;
-cooldown[0] = 0.7 * room_speed;
+cooldown[0] = 0.8 * room_speed;
 
-fanDmg = 0.4;
+fanBaseDmg = 1;
+fanDmgIncrease = 8 / room_speed;
 
-fanNumKnives = 8;
+fanNumKnives = 12;
 fanAngle = 45;
 fanCurrAngle = -1;
-fanSpd = 400 / room_speed;
+fanSpd = 800 / room_speed;
 
-//lob
-windUp[1] = 0.02 * room_speed;
-duration[1] = 1;
-windDown[1] = 0.02 * room_speed;
-slowWindUp[1] = 0.3;
-slowDuring[1] = 0.7;
-slowWindDown[1] = 0.3;
-cooldown[1] = 1.5 * room_speed;
+//wall bounce
+windUp[1] = 0 * room_speed;
+duration[1] = 0.3 * room_speed;
+windDown[1] = 0 * room_speed;
+slowWindUp[1] = 1;
+slowDuring[1] = 3;
+slowWindDown[1] = 1;
+cooldown[1] = 0.3 * room_speed;
 
-lobDmg = 7.5;
+bounceJumpMultiplier = 2;
 
-maxLobs = 5;
-lobAngleBetween = 16;
-lobDist = 16;
-lobBaseAngle = 37;
-timePerLobCharge = 0.28 * room_speed;
-lobSpd = 470 / room_speed;
-lobHitboxDuration = 0.05 * room_speed;
-lobGrav = 800 / (room_speed * room_speed);
-
-//rocket
+//air jump
 windUp[2] = 0 * room_speed;
-duration[2] = 0.35 * room_speed;
+duration[2] = 0.1 * room_speed;
 windDown[2] = 0 * room_speed;
-slowWindUp[2] = 0.3;
-slowDuring[2] = 3;
-slowWindDown[2] = 0;
-cooldown[2] = 4.1 * room_speed;
+slowWindUp[2] = 1;
+slowDuring[2] = 1;
+slowWindDown[2] = 1;
+cooldown[2] = 4.5 * room_speed;
 
-rocketSpd = 600 / room_speed;
-rocketDec = rocketSpd / duration[2] / room_speed;
+jumpKnifeAngle = 120;
+jumpNumKnives = 12;
 
-//blast
-windUp[3] = 0.5 * room_speed;
-duration[3] = 0.2 * room_speed;
-windDown[3] = 0.35 * room_speed;
+//piercing knife
+windUp[3] = 0.4 * room_speed;
+duration[3] = 0.1 * room_speed;
+windDown[3] = 0.2 * room_speed;
 slowWindUp[3] = 0;
 slowDuring[3] = 0;
 slowWindDown[3] = 0;
-cooldown[3] = 3.2 * room_speed;
+cooldown[3] = 2 * room_speed;
 
-blastDmgMultiplier = 1.5 / room_speed;
-blastBaseDmg = 0.7;
+pierceDmg = 16;
 
-blastAmount = 22;
-blastSpread = 70;
-blastSpd = 150 / room_speed;
-blastTime = 1.4 * room_speed;
-blastRecoilSpd = -180 / room_speed;
-blastRecoilDSpd = 30 / room_speed;
-blastRecoilDuration = 0.12 * room_speed;
-blastHitboxDuration = 0.05 * room_speed;
+pierceSpd = 2000 / room_speed;
 
 /// @DnDAction : YoYo Games.Common.Execute_Code
 /// @DnDVersion : 1
