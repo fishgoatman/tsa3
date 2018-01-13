@@ -8,7 +8,7 @@ if (thisNumber == 0) {
 }
 
 for (var i = 0; i < numKeys; i++) {
-	if (thisNumber == 0 || rightControlMode == "keyboard" || i >= 4) {
+	if (thisNumber == 0 || rightControlMode == "keyboard" || i >= 4 || room == rmCharacterSelectionScreen) {
 		if (keyboard_check_direct(arrayToUse[i])) {
 			if (durationHeld[i] > 0) {
 				heldBefore[i] = true;

@@ -3,7 +3,7 @@ var startX = x;
 var startY = y;
 var i = 0;
 
-while (place_meeting(x, y, objBlock)) {
+while (physics_test_overlap(x, y, image_angle, objBlock)) {
     if (i % 4 == 0) {
         x = startX + i / 4;
         y = startY;
