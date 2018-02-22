@@ -2,8 +2,15 @@
 var startX = x;
 var startY = y;
 var i = 0;
+var collideObj;
 
-while (physics_test_overlap(x, y, image_angle, objBlock)) {
+if (dy <= 0) {
+	collideObj = objBlockAndPlatform;
+} else {
+	collideObj = objBlock;
+}
+
+while (place_meeting(x, y, collideObj)) {
     if (i % 4 == 0) {
         x = startX + i / 4;
         y = startY;

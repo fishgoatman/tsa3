@@ -815,6 +815,14 @@
             }
         },
         {
+            "Key": "36aa1cbc-dec2-44f6-868d-336461c9c6da",
+            "Value": {
+                "id": "7b77a223-9e70-4762-9d8d-0fe1d4d75b43",
+                "resourcePath": "objects\\objBlockAndPlatform\\objBlockAndPlatform.yy",
+                "resourceType": "GMObject"
+            }
+        },
+        {
             "Key": "386bac8e-07f8-4e1b-8021-18ec75145645",
             "Value": {
                 "id": "2f587e06-2ccf-4001-b006-f692f34495b2",
@@ -2947,6 +2955,14 @@
             "Value": {
                 "id": "05bbf4dc-8f78-4ef3-bff9-7266c8d94fdc",
                 "resourcePath": "objects\\objFireScrap\\objFireScrap.yy",
+                "resourceType": "GMObject"
+            }
+        },
+        {
+            "Key": "cf97effc-f5f0-4ad9-8a69-e88fc3d68058",
+            "Value": {
+                "id": "d92cf237-2e59-4d76-a3d7-61627fa37938",
+                "resourcePath": "objects\\objPlatform\\objPlatform.yy",
                 "resourceType": "GMObject"
             }
         },

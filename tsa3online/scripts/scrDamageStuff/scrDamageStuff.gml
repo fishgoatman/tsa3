@@ -32,7 +32,7 @@ for (var i = 0; i < ds_list_size(collisionList); i++) {
 
 if (place_meeting(preciseX, preciseY + 1, objBorder)) {
 	var dmgMod = instance_create(0, 0, objDmgMod);
-	dmgMod.dmg = 0.08;
+	dmgMod.dmg = 0;
 	ds_list_add(dmgModList, dmgMod);
 }
 

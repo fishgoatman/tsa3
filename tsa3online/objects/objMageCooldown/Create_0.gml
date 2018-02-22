@@ -1,2 +1,2 @@
 ///@desc creation stuff
-depth = 1;
+depth = 0;

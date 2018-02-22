@@ -6,13 +6,20 @@ var xDisp = 0;
 var hyp = sqrt(dx * dx + dy * dy);
 var tempDx = dx / hyp;
 var tempDy = dy / hyp;
+var collideObj;
 
-while (abs(yDisp) < abs(dy) && !place_meeting(tryX, tryY - tempDy, objBlock)) {
+if (dy <= 0) {
+	collideObj = objBlockAndPlatform;
+} else {
+	collideObj = objBlock;
+}
+
+while (abs(yDisp) < abs(dy) && !place_meeting(tryX, tryY - tempDy, collideObj)) {
     tryY -= tempDy;
     yDisp -= tempDy;
 }
 
-while (abs(xDisp) < abs(dx) && !place_meeting(tryX + tempDx, tryY, objBlock)) {
+while (abs(xDisp) < abs(dx) && !place_meeting(tryX + tempDx, tryY, collideObj)) {
     tryX += tempDx;
     xDisp += tempDx;
 }
