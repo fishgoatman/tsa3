@@ -12,13 +12,13 @@ if (keyboard_check_pressed(vk_right) || keyboard_check_pressed(ord("G"))) {
 	tpId.leftPressed = true;
 }
 
-if (keyboard_check_direct(vk_right) || keyboard_check_direct(ord("G"))) {
+if (keyboard_check(vk_right) || keyboard_check(ord("G"))) {
     tpId.leftHeld = true;
-} else if (keyboard_check_direct(vk_left) || keyboard_check_direct(ord("D"))) {
+} else if (keyboard_check(vk_left) || keyboard_check(ord("D"))) {
     tpId.rightHeld = true;
 }
 
-if (keyboard_check_direct(vk_up) || keyboard_check_direct(ord("R"))) {
+if (keyboard_check(vk_up) || keyboard_check(ord("R"))) {
 	tpId.upHeld = true;
 }
 
@@ -26,7 +26,7 @@ if (keyboard_check_pressed(vk_up) || keyboard_check_pressed(ord("R"))) {
 	tpId.upPressed = true;
 }
 
-if (keyboard_check_direct(vk_down) || keyboard_check_direct(ord("F"))) {
+if (keyboard_check(vk_down) || keyboard_check(ord("F"))) {
     tpId.ducking = true;
 } else {
     tpId.ducking = false;
@@ -41,7 +41,7 @@ if (tpId.isSelectHero) {
 		tpId.twoPressed = true;
 	}
 } else {
-	if (mouse_check_button(mb_left) || keyboard_check_direct(ord("1"))) {
+	if (mouse_check_button(mb_left) || keyboard_check(ord("1"))) {
 		tpId.onePressed = true;
 	}
 	
@@ -49,15 +49,15 @@ if (tpId.isSelectHero) {
 		tpId.oneReleased = true;
 	}
 	
-	if (mouse_check_button(mb_right) || keyboard_check_direct(ord("2"))) {
+	if (mouse_check_button(mb_right) || keyboard_check(ord("2"))) {
 		tpId.twoPressed = true;
 	}
 	
-	if (keyboard_check_direct(ord("3"))) {
+	if (keyboard_check(ord("3"))) {
 		tpId.threePressed = true;
 	}
 	
-	if (keyboard_check_direct(ord("4"))) {
+	if (keyboard_check(ord("4"))) {
 		tpId.fourPressed = true;
 	}
 }

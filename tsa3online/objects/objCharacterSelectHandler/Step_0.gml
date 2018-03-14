@@ -50,7 +50,7 @@ if (startGame) {
 	if (currTime < startGameDelay) {
 		currTime++;
 	} else {
-		room_goto(rmFlagship);
+		room_goto(rmStandard);
 		gameWasStarted = true;
 	
 		for (var i = 0; i < numPlayers; i++) {

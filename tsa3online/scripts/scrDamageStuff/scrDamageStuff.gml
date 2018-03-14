@@ -55,8 +55,3 @@ for (var i = 0; i < ds_list_size(dmgModList); i++) {
 }
 
 scrThisTakeDamage(hpLost);
-
-//die
-if (hp <= 0) {
-	sprite_index = sprMine;
-}

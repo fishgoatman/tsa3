@@ -1,90 +1,159 @@
 /// @DnDAction : YoYo Games.Common.Execute_Code
 /// @DnDVersion : 1
-/// @DnDHash : 7D2B14B0
-/// @DnDArgument : "code" "///@desc stats$(13_10)ddy = 1.5 * overallSpd;$(13_10)jumpDy = 18 * overallSpd;$(13_10)moveSpd = 5.4 * overallSpd;$(13_10)climbSpd = 10 * overallSpd;$(13_10)attackSpd = moveSpd / 2;$(13_10)punchPostTime = 8 / 30 * room_speed;$(13_10)punchPreTime = 3 / 30 * room_speed;$(13_10)punchSpd = 0.3 * moveSpd;$(13_10)jumpDx = 3 * overallSpd;$(13_10)jumpPreTime = 2 / overallSpd;$(13_10)jumpPostTime = 4 / overallSpd;$(13_10)blinkKickTime = 4 / 30 * room_speed;$(13_10)dragonPunchChargeTime = 12 / 30 * room_speed;$(13_10)maxAirJumps = 0;$(13_10)frictionDx = 1.5;$(13_10)maxHp = monkHp;$(13_10)punchMomentum = 0;$(13_10)attackDisplace = 5;$(13_10)attackNaturalDxIncrease = 4;$(13_10)kickMomentum = 2;$(13_10)blinkDist = 55;$(13_10)blinkCooldownTime = 10 / 30 * room_speed;$(13_10)numAttacks = 1;"
+/// @DnDHash : 5820CA38
+/// @DnDArgument : "code" "///@desc stats$(13_10)thisNumber = depth;$(13_10)depth = 0;$(13_10)maxHp = 84;$(13_10)$(13_10)if (thisNumber == 1) {$(13_10)	maxHp *= 1;$(13_10)}$(13_10)$(13_10)moveSpd = 120 / room_speed;$(13_10)jumpPower = 370 / room_speed;$(13_10)grav = 900 / (room_speed * room_speed);$(13_10)currAirJumps = 0;$(13_10)airJumps = 0;$(13_10)bounciness = 0.2;$(13_10)$(13_10)//crescent punch$(13_10)windUp[0] = 0.15 * room_speed;$(13_10)duration[0] = 0.1 * room_speed;$(13_10)windDown[0] = 0.15 * room_speed;$(13_10)slowWindUp[0] = 0.3;$(13_10)slowDuring[0] = 1;$(13_10)slowWindDown[0] = 0.3;$(13_10)cooldown[0] = 1.1 * room_speed;$(13_10)$(13_10)crescentPunchDmg = 10;$(13_10)$(13_10)crescentPunchSpd = 500 / room_speed;$(13_10)phaseTime = 0.28 * room_speed;$(13_10)crescentPunchPreTurnTime = phaseTime;$(13_10)crescentPunchTurnTime = phaseTime;$(13_10)crescentPunchPostTurnTime = phaseTime * 2 / 3;$(13_10)$(13_10)//flash kick$(13_10)windUp[1] = 0.05 * room_speed;$(13_10)duration[1] = 0.15 * room_speed;$(13_10)windDown[1] = 0.08 * room_speed;$(13_10)slowWindUp[1] = 0.3;$(13_10)slowDuring[1] = 0.3;$(13_10)slowWindDown[1] = 0.3;$(13_10)cooldown[1] = 1 * room_speed;$(13_10)$(13_10)flashKickDmg = 12;$(13_10)$(13_10)kickExtendedDuration = duration[1];$(13_10)$(13_10)//dash$(13_10)windUp[2] = 0.05 * room_speed;$(13_10)duration[2] = 0.2 * room_speed;$(13_10)windDown[2] = 0.05 * room_speed;$(13_10)slowWindUp[2] = 0.5;$(13_10)slowDuring[2] = 0;$(13_10)slowWindDown[2] = 0.5;$(13_10)cooldown[2] = 2.8 * room_speed;$(13_10)$(13_10)var yFactor = 4;$(13_10)dashXSpd = 1100 / room_speed;$(13_10)dashYSpd = dashXSpd / yFactor;$(13_10)dashDXSpd = -100 / room_speed;$(13_10)dashDYSpd = dashDXSpd / yFactor;$(13_10)$(13_10)//thousand palms$(13_10)windUp[3] = 0.35 * room_speed;$(13_10)duration[3] = 1.2 * room_speed;$(13_10)windDown[3] = 0.3 * room_speed;$(13_10)slowWindUp[3] = 0;$(13_10)slowDuring[3] = 0;$(13_10)slowWindDown[3] = 0;$(13_10)cooldown[3] = 5.5 * room_speed;$(13_10)$(13_10)palmDmg = 7;$(13_10)$(13_10)palmSpd = 400 / room_speed;$(13_10)palmDuration = 0.3 * room_speed;$(13_10)palmFreq = 0.12 * room_speed;$(13_10)palmDAngle = 140 / room_speed;$(13_10)palmAngleDiff = 8;$(13_10)palmVisualTime = 0.1 * room_speed;"
 ///@desc stats
-ddy = 1.5 * overallSpd;
-jumpDy = 18 * overallSpd;
-moveSpd = 5.4 * overallSpd;
-climbSpd = 10 * overallSpd;
-attackSpd = moveSpd / 2;
-punchPostTime = 8 / 30 * room_speed;
-punchPreTime = 3 / 30 * room_speed;
-punchSpd = 0.3 * moveSpd;
-jumpDx = 3 * overallSpd;
-jumpPreTime = 2 / overallSpd;
-jumpPostTime = 4 / overallSpd;
-blinkKickTime = 4 / 30 * room_speed;
-dragonPunchChargeTime = 12 / 30 * room_speed;
-maxAirJumps = 0;
-frictionDx = 1.5;
-maxHp = monkHp;
-punchMomentum = 0;
-attackDisplace = 5;
-attackNaturalDxIncrease = 4;
-kickMomentum = 2;
-blinkDist = 55;
-blinkCooldownTime = 10 / 30 * room_speed;
-numAttacks = 1;
+thisNumber = depth;
+depth = 0;
+maxHp = 84;
+
+if (thisNumber == 1) {
+	maxHp *= 1;
+}
+
+moveSpd = 120 / room_speed;
+jumpPower = 370 / room_speed;
+grav = 900 / (room_speed * room_speed);
+currAirJumps = 0;
+airJumps = 0;
+bounciness = 0.2;
+
+//crescent punch
+windUp[0] = 0.15 * room_speed;
+duration[0] = 0.1 * room_speed;
+windDown[0] = 0.15 * room_speed;
+slowWindUp[0] = 0.3;
+slowDuring[0] = 1;
+slowWindDown[0] = 0.3;
+cooldown[0] = 1.1 * room_speed;
+
+crescentPunchDmg = 10;
+
+crescentPunchSpd = 500 / room_speed;
+phaseTime = 0.28 * room_speed;
+crescentPunchPreTurnTime = phaseTime;
+crescentPunchTurnTime = phaseTime;
+crescentPunchPostTurnTime = phaseTime * 2 / 3;
+
+//flash kick
+windUp[1] = 0.05 * room_speed;
+duration[1] = 0.15 * room_speed;
+windDown[1] = 0.08 * room_speed;
+slowWindUp[1] = 0.3;
+slowDuring[1] = 0.3;
+slowWindDown[1] = 0.3;
+cooldown[1] = 1 * room_speed;
+
+flashKickDmg = 12;
+
+kickExtendedDuration = duration[1];
+
+//dash
+windUp[2] = 0.05 * room_speed;
+duration[2] = 0.2 * room_speed;
+windDown[2] = 0.05 * room_speed;
+slowWindUp[2] = 0.5;
+slowDuring[2] = 0;
+slowWindDown[2] = 0.5;
+cooldown[2] = 2.8 * room_speed;
+
+var yFactor = 4;
+dashXSpd = 1100 / room_speed;
+dashYSpd = dashXSpd / yFactor;
+dashDXSpd = -100 / room_speed;
+dashDYSpd = dashDXSpd / yFactor;
+
+//thousand palms
+windUp[3] = 0.35 * room_speed;
+duration[3] = 1.2 * room_speed;
+windDown[3] = 0.3 * room_speed;
+slowWindUp[3] = 0;
+slowDuring[3] = 0;
+slowWindDown[3] = 0;
+cooldown[3] = 5.5 * room_speed;
+
+palmDmg = 7;
+
+palmSpd = 400 / room_speed;
+palmDuration = 0.3 * room_speed;
+palmFreq = 0.12 * room_speed;
+palmDAngle = 140 / room_speed;
+palmAngleDiff = 8;
+palmVisualTime = 0.1 * room_speed;
 
 /// @DnDAction : YoYo Games.Common.Execute_Code
 /// @DnDVersion : 1
-/// @DnDHash : 059E7D8B
-/// @DnDArgument : "code" "///@desc necessary vars$(13_10)state = NONE;$(13_10)attackState = NONE;$(13_10)jumpState = NONE;$(13_10)abilityState = NONE;$(13_10)direct = RIGHT;$(13_10)spd = moveSpd;$(13_10)moveDx = 0;$(13_10)naturalDx = 0;$(13_10)moveDy = 0;$(13_10)naturalDy = 0;$(13_10)dx = 0;$(13_10)dy = 0;$(13_10)preciseX = x;$(13_10)preciseY = y;$(13_10)currAirJumps = 0;$(13_10)climbing = false;$(13_10)immune = false;$(13_10)immuneTime = IMMUNE_TIME;$(13_10)isSelectHero = false;$(13_10)hp = maxHp;$(13_10)blinkReady = true;$(13_10)timeAfterBlink = 0;$(13_10)oneChargingTime = 0;$(13_10)released = true;$(13_10)BLINK = 4;$(13_10)BLINK_COOLDOWN = 5;$(13_10)immuneTo = ds_list_create();$(13_10)immuneToThisTick = ds_list_create();$(13_10)upPressed = false;$(13_10)upHeld = false;$(13_10)onePressed = false;$(13_10)oneReleased = false;$(13_10)twoPressed = false;$(13_10)threePressed = false;$(13_10)fourPressed = false;$(13_10)rightPressed = false;$(13_10)leftPressed = false;$(13_10)rightHeld = false;$(13_10)leftHeld = false;$(13_10)ducking = false;$(13_10)controlScheme = rogueControlScheme;$(13_10)stunTime = 0;$(13_10)slowTimes = ds_list_create();$(13_10)slowTos = ds_list_create();$(13_10)slowIds = ds_list_create();$(13_10)tMouseX = mouse_x;$(13_10)tMouseY = mouse_y;$(13_10)randoMoveTime = 0;$(13_10)attackCounter = 0;$(13_10)attackType = "";"
+/// @DnDHash : 496EA0FF
+/// @DnDArgument : "code" "///@desc necessary vars$(13_10)///general$(13_10)hp = maxHp;$(13_10)hpLost = 0;$(13_10)preciseX = x;$(13_10)preciseY = y;$(13_10)gravMoveMod = noone;$(13_10)jumpMoveMod = noone;$(13_10)moveModList = ds_list_create(); //affected by cc$(13_10)envMoveModList = ds_list_create(); //not affected by cc$(13_10)slowModList = ds_list_create();$(13_10)dmgModList = ds_list_create();$(13_10)grounded = false;$(13_10)ceilinged = false;$(13_10)dx = 0;$(13_10)dy = 0;$(13_10)jumpIndicatorId = noone;$(13_10)$(13_10)///ability$(13_10)aState = "n";$(13_10)aPhase = "n";$(13_10)timeInAPhase = 0;$(13_10)//order: 1 2 3 4$(13_10)for (var i = 0; i < 4; i++) {$(13_10)	cooldownTimer[i] = 0;$(13_10)}$(13_10)$(13_10)abilityKey[0] = "1";$(13_10)abilityKey[1] = "2";$(13_10)abilityKey[2] = "3";$(13_10)abilityKey[3] = "4";$(13_10)numAbilities = 4;$(13_10)timeSinceBlast = 0;$(13_10)numLobs = 0;$(13_10)$(13_10)///key$(13_10)//order: w a s d 1 2 3 4$(13_10)UP = 0;$(13_10)LEFT = 1;$(13_10)DOWN = 2;$(13_10)RIGHT = 3;$(13_10)ONE = 4;$(13_10)TWO = 5;$(13_10)THREE = 6;$(13_10)FOUR = 7;$(13_10)leftKeyOrder[UP] = ord("R");$(13_10)leftKeyOrder[LEFT] = ord("D");$(13_10)leftKeyOrder[DOWN] = ord("F");$(13_10)leftKeyOrder[RIGHT] = ord("G");$(13_10)leftKeyOrder[ONE] = ord("1");$(13_10)leftKeyOrder[TWO] = ord("2");$(13_10)leftKeyOrder[THREE] = ord("3");$(13_10)leftKeyOrder[FOUR] = ord("4");$(13_10)rightKeyOrder[UP] = vk_up;$(13_10)rightKeyOrder[LEFT] = vk_left;$(13_10)rightKeyOrder[DOWN] = vk_down;$(13_10)rightKeyOrder[RIGHT] = vk_right;$(13_10)rightKeyOrder[ONE] = ord("M");$(13_10)rightKeyOrder[TWO] = 188;$(13_10)rightKeyOrder[THREE] = 190;$(13_10)rightKeyOrder[FOUR] = 191;$(13_10)numKeys = 8;$(13_10)$(13_10)for (var i = 0; i < numKeys; i++) {$(13_10)	durationHeld[i] = 0;$(13_10)	heldBefore[i] = false;$(13_10)}$(13_10)$(13_10)maxMouseX = mouse_x;$(13_10)$(13_10)///stuff needed for sprite and image$(13_10)moveState = "none";"
 ///@desc necessary vars
-state = NONE;
-attackState = NONE;
-jumpState = NONE;
-abilityState = NONE;
-direct = RIGHT;
-spd = moveSpd;
-moveDx = 0;
-naturalDx = 0;
-moveDy = 0;
-naturalDy = 0;
-dx = 0;
-dy = 0;
+///general
+hp = maxHp;
+hpLost = 0;
 preciseX = x;
 preciseY = y;
-currAirJumps = 0;
-climbing = false;
-immune = false;
-immuneTime = IMMUNE_TIME;
-isSelectHero = false;
-hp = maxHp;
-blinkReady = true;
-timeAfterBlink = 0;
-oneChargingTime = 0;
-released = true;
-BLINK = 4;
-BLINK_COOLDOWN = 5;
-immuneTo = ds_list_create();
-immuneToThisTick = ds_list_create();
-upPressed = false;
-upHeld = false;
-onePressed = false;
-oneReleased = false;
-twoPressed = false;
-threePressed = false;
-fourPressed = false;
-rightPressed = false;
-leftPressed = false;
-rightHeld = false;
-leftHeld = false;
-ducking = false;
-controlScheme = rogueControlScheme;
-stunTime = 0;
-slowTimes = ds_list_create();
-slowTos = ds_list_create();
-slowIds = ds_list_create();
-tMouseX = mouse_x;
-tMouseY = mouse_y;
-randoMoveTime = 0;
-attackCounter = 0;
-attackType = "";
+gravMoveMod = noone;
+jumpMoveMod = noone;
+moveModList = ds_list_create(); //affected by cc
+envMoveModList = ds_list_create(); //not affected by cc
+slowModList = ds_list_create();
+dmgModList = ds_list_create();
+grounded = false;
+ceilinged = false;
+dx = 0;
+dy = 0;
+jumpIndicatorId = noone;
 
-/// @DnDAction : YoYo Games.Common.Execute_Code
-/// @DnDVersion : 1
-/// @DnDHash : 2027F514
-/// @DnDArgument : "code" "///@desc creation stuff"
-///@desc creation stuff
+///ability
+aState = "n";
+aPhase = "n";
+timeInAPhase = 0;
+//order: 1 2 3 4
+for (var i = 0; i < 4; i++) {
+	cooldownTimer[i] = 0;
+}
+
+abilityKey[0] = "1";
+abilityKey[1] = "2";
+abilityKey[2] = "3";
+abilityKey[3] = "4";
+numAbilities = 4;
+timeSinceBlast = 0;
+numLobs = 0;
+
+///key
+//order: w a s d 1 2 3 4
+UP = 0;
+LEFT = 1;
+DOWN = 2;
+RIGHT = 3;
+ONE = 4;
+TWO = 5;
+THREE = 6;
+FOUR = 7;
+leftKeyOrder[UP] = ord("R");
+leftKeyOrder[LEFT] = ord("D");
+leftKeyOrder[DOWN] = ord("F");
+leftKeyOrder[RIGHT] = ord("G");
+leftKeyOrder[ONE] = ord("1");
+leftKeyOrder[TWO] = ord("2");
+leftKeyOrder[THREE] = ord("3");
+leftKeyOrder[FOUR] = ord("4");
+rightKeyOrder[UP] = vk_up;
+rightKeyOrder[LEFT] = vk_left;
+rightKeyOrder[DOWN] = vk_down;
+rightKeyOrder[RIGHT] = vk_right;
+rightKeyOrder[ONE] = ord("M");
+rightKeyOrder[TWO] = 188;
+rightKeyOrder[THREE] = 190;
+rightKeyOrder[FOUR] = 191;
+numKeys = 8;
+
+for (var i = 0; i < numKeys; i++) {
+	durationHeld[i] = 0;
+	heldBefore[i] = false;
+}
+
+maxMouseX = mouse_x;
+
+///stuff needed for sprite and image
+moveState = "none";

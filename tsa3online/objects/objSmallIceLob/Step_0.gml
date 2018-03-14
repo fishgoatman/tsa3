@@ -1,3 +1,3 @@
 ///@desc move
-dy -= grav;
 scrDestructiveProjectileMove();
+dy -= grav;

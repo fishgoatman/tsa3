@@ -20,6 +20,8 @@ if (grounded) {
 	if (instance_exists(gravMoveMod)) {
 		gravMoveMod.duration = 0;
 	}
+	
+	currAirJumps = 0;
 } else {
 	if (!instance_exists(gravMoveMod)) {
 		gravMoveMod = instance_create(0, 0, objMoveMod);
@@ -39,12 +41,31 @@ if (ceilinged) {
 if (grounded) {
 	if (instance_exists(jumpMoveMod)) {
 		jumpMoveMod.duration = 0;
-	} else if (durationHeld[UP] > 0 && (!heldBefore[UP] || heldBefore[UP] && durationHeld[UP] <= jumpGrace)) {
+	} else if (durationHeld[UP] > 0 && !heldBefore[UP]/*(!heldBefore[UP] || heldBefore[UP] && durationHeld[UP] <= jumpGrace)*/) {
 		jumpMoveMod = instance_create(0, 0, objMoveMod);
 		jumpMoveMod.dy = jumpPower;
 		jumpMoveMod.forever = true;
 		ds_list_add(moveModList, jumpMoveMod);
 		preciseY += 1;
+	}
+}
+
+if (!grounded && currAirJumps < airJumps) {
+	if (durationHeld[UP] > 0 && !heldBefore[UP]/*(!heldBefore[UP] || heldBefore[UP] && durationHeld[UP] <= jumpGrace)*/) {
+		if (instance_exists(jumpMoveMod)) {
+			jumpMoveMod.dy = jumpPower;
+		} else {
+			jumpMoveMod = instance_create(0, 0, objMoveMod);
+			jumpMoveMod.dy = jumpPower;
+			jumpMoveMod.forever = true;
+			ds_list_add(moveModList, jumpMoveMod);
+		}
+		
+		if (instance_exists(gravMoveMod)) {
+			gravMoveMod.dy = 0;
+		}
+		
+		currAirJumps++;
 	}
 }
 

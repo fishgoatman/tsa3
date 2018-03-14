@@ -10,6 +10,8 @@ if (heroString == "mage") {
 	heroObj = objCasterTP;
 } else if (heroString == "rogue") {
 	heroObj = objRogueTP;
+} else if (heroString == "monk") {
+	heroObj = objMonkTP;
 } else if (heroString == "bot") {
 	heroObj = objBot;
 }
@@ -17,15 +19,16 @@ if (heroString == "mage") {
 mask_index = object_get_mask(heroObj);
 var createX;
 var createY;
+var margin = 20;
 
 do {
 	if (thisNumber != 1) {
-		createX = random(room_width / 3);
+		createX = random_range(margin, room_width / 3);
 	} else if (thisNumber == 1) {
-		createX = random(room_width / 3) + room_width * 2 / 3;
+		createX = random_range(room_width * 2 / 3, room_width - margin);
 	}
 	
-	createY = random(room_height);
+	createY = random_range(margin, room_height - margin);
 } until (!place_meeting(createX, createY, objBlock));
 
 var createdId = instance_create_depth(createX, createY, thisNumber, heroObj);
@@ -69,6 +72,8 @@ if (heroString != "bot") {
 		cooldownObj = objCasterCooldown;
 	} else if (heroString == "rogue") {
 		cooldownObj = objRogueCooldown;
+	} else if (heroString == "monk") {
+		cooldownObj = objMonkCooldown;
 	}
 
 	for (var i = 0; i < cooldownNum; i++) {

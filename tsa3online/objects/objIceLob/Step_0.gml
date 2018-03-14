@@ -9,6 +9,7 @@ var hyp = sqrt(dx * dx + dy * dy);
 var tempDx = dx / hyp;
 var tempDy = dy / hyp;
 var createdAlready = false;
+var hitBlock = false;
 
 while (abs(yDisp) < abs(dy) && !place_meeting(tryX, tryY - tempDy, objBlock)) {
     tryY -= tempDy;
@@ -38,6 +39,7 @@ if (abs(xDisp) < abs(dx) || abs(yDisp) < abs(dy)) {
 	if (!createdAlready) {
 		instance_create_depth(tryX, tryY, id, hitbox);
 		createdAlready = true;
+		hitBlock = true;
 	}
 }
 
@@ -47,8 +49,10 @@ x = scrRound(preciseX);
 y = scrRound(preciseY);
 
 if (createdAlready) {
-	for (i = 0; i < smallLobNumber; i++) {
-		instance_create_depth(preciseX, preciseY, id, objSmallIceLob);
+	if (hitBlock) {
+		for (i = 0; i < smallLobNumber; i++) {
+			instance_create_depth(preciseX, preciseY, id, objSmallIceLob);
+		}
 	}
 	
 	instance_destroy();

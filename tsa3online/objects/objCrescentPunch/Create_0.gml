@@ -1,0 +1,21 @@
+///@desc creation stuff
+thisNumber = depth;
+depth = 0;
+myHeroId = heroId[thisNumber];
+spd = myHeroId.crescentPunchSpd;
+ogDir = myHeroId.image_xscale;
+image_xscale = ogDir;
+image_speed = 0;
+image_index = 3;
+dx = spd * ogDir;
+dy = 0;
+preTurnTime = myHeroId.crescentPunchPreTurnTime;
+turnTime = myHeroId.crescentPunchTurnTime;
+postTurnTime = myHeroId.crescentPunchPostTurnTime;
+degreesPerTick = 90 / myHeroId.crescentPunchTurnTime;
+hitbox = objCrescentPunchHitbox;
+preciseX = x;
+preciseY = y;
+currTime = 0;
+createdAlready = false;
+visualFreq = 5;
