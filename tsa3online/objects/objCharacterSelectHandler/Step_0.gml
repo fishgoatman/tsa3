@@ -1,5 +1,5 @@
 ///@desc start game
-if (gameWasStarted) {
+/*if (gameWasStarted) {
 	gameWasStarted = false;
 	numPlayersCreated = 0;
 	
@@ -36,13 +36,9 @@ if (room == rmCharacterSelectionScreen) {
 	}
 	
 	if (numAlivePlayers <= 1) {
-		if (!startGame) {
-			currTime = 0;
-		}
-		
-		startGame = true;
+		gameInBetween = true;
 	} else {
-		startGame = false;
+		gameInBetween = false;
 	}
 }
 
@@ -56,5 +52,18 @@ if (startGame) {
 		for (var i = 0; i < numPlayers; i++) {
 			lockedIn[i] = false;
 		}
+		
+		startGame = false;
 	}
 }
+
+if (gameInBetween) {
+	room_goto(rmCharacterSelectionScreen);
+	gameInBetween = false;
+	currTime = 0;
+	
+	for (var i = 0; i < numPlayers; i++) {
+		lockedIn[i] = false;
+		instance_create_depth(0, 0, i, objCharacterSelecter);
+	}
+}*/

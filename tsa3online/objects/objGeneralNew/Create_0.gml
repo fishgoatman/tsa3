@@ -31,8 +31,11 @@ selectBoxes[0, 3] = objMonkSelection;
 /// @DnDAction : YoYo Games.Common.Execute_Code
 /// @DnDVersion : 1
 /// @DnDHash : 5B11FB31
-/// @DnDArgument : "code" "///@desc necessary vars"
+/// @DnDArgument : "code" "///@desc necessary vars$(13_10)currRoom = "select";$(13_10)targetRoom = "select";$(13_10)createGameStuff = false;"
 ///@desc necessary vars
+currRoom = "select";
+targetRoom = "select";
+createGameStuff = false;
 
 /// @DnDAction : YoYo Games.Common.Execute_Code
 /// @DnDVersion : 1

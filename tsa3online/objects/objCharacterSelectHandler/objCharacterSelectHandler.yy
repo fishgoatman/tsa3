@@ -5,16 +5,6 @@
     "name": "objCharacterSelectHandler",
     "eventList": [
         {
-            "id": "bbbebc59-114a-4a17-94a0-1ac2b5098073",
-            "modelName": "GMEvent",
-            "mvc": "1.0",
-            "IsDnD": false,
-            "collisionObjectId": "00000000-0000-0000-0000-000000000000",
-            "enumb": 0,
-            "eventtype": 2,
-            "m_owner": "5abc48a4-9e37-439a-96df-120449f5fa0a"
-        },
-        {
             "id": "8778fed1-46e0-488b-baa7-8057b0e4a9da",
             "modelName": "GMEvent",
             "mvc": "1.0",
@@ -38,7 +28,7 @@
     "maskSpriteId": "00000000-0000-0000-0000-000000000000",
     "overriddenProperties": null,
     "parentObjectId": "00000000-0000-0000-0000-000000000000",
-    "persistent": true,
+    "persistent": false,
     "physicsAngularDamping": 0.1,
     "physicsDensity": 0.5,
     "physicsFriction": 0.2,

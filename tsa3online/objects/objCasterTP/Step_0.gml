@@ -136,7 +136,7 @@ if (aState == "1") {
 /// @DnDAction : YoYo Games.Common.Execute_Code
 /// @DnDVersion : 1
 /// @DnDHash : 78F94C44
-/// @DnDArgument : "code" "///@desc sprite and image$(13_10)if (durationHeld[RIGHT] > 0) {$(13_10)	image_xscale = 1;$(13_10)} else if (durationHeld[LEFT] > 0) {$(13_10)	image_xscale = -1;$(13_10)}$(13_10)$(13_10)if (hp <= 0) {$(13_10)	sprite_index = sprMine;$(13_10)}$(13_10)$(13_10)/*if (aPhase != "n") {$(13_10)	if (aState == "4") {$(13_10)		if (aPhase == "u") {$(13_10)			sprite_index = sprMagePreBlast;$(13_10)			$(13_10)			if (timeInAPhase == 0) {$(13_10)				image_index = 0;$(13_10)			}$(13_10)		} else if (aPhase == "d") {$(13_10)			sprite_index = sprMagePostBlast;$(13_10)			$(13_10)			if (timeInAPhase == 0) {$(13_10)				image_index = 0;$(13_10)			}$(13_10)		}$(13_10)	}$(13_10)} else if (!grounded) {$(13_10)	if (dy >= 0) {$(13_10)		sprite_index = sprMageGoingUp;$(13_10)	} else {$(13_10)		sprite_index = sprMageGoingDown;$(13_10)	}$(13_10)} else if (durationHeld[RIGHT] > 0 || durationHeld[LEFT] > 0) {$(13_10)	sprite_index = sprMageMove;$(13_10)} else {$(13_10)	sprite_index = sprMageNone;$(13_10)}*/"
+/// @DnDArgument : "code" "///@desc sprite and image$(13_10)if (durationHeld[RIGHT] > 0) {$(13_10)	image_xscale = 1;$(13_10)} else if (durationHeld[LEFT] > 0) {$(13_10)	image_xscale = -1;$(13_10)}$(13_10)$(13_10)if (aPhase != "n") {$(13_10)	if (aPhase == "u" && timeInAPhase == 0) {$(13_10)		image_index = 0;$(13_10)	}$(13_10)	$(13_10)	if (aState == "1") {$(13_10)		sprite_index = sprCasterShoot;$(13_10)	} else if (aState == "2") {$(13_10)		sprite_index = sprCasterLob;$(13_10)	} else if (aState == "4") {$(13_10)		sprite_index = sprCasterBlizzard;$(13_10)	}$(13_10)	$(13_10)	if (image_index >= image_number - image_speed) {$(13_10)		image_index = image_number - image_speed;$(13_10)	}$(13_10)} else if (!grounded) {$(13_10)	if (dy >= 0) {$(13_10)		sprite_index = sprCasterGoingUp;$(13_10)	} else {$(13_10)		sprite_index = sprCasterGoingDown;$(13_10)	}$(13_10)} else if (durationHeld[RIGHT] > 0 || durationHeld[LEFT] > 0) {$(13_10)	sprite_index = sprCasterMove;$(13_10)} else {$(13_10)	sprite_index = sprCasterNone;$(13_10)}$(13_10)$(13_10)if (hp <= 0) {$(13_10)	sprite_index = sprMine;$(13_10)}"
 ///@desc sprite and image
 if (durationHeld[RIGHT] > 0) {
 	image_xscale = 1;
@@ -144,34 +144,34 @@ if (durationHeld[RIGHT] > 0) {
 	image_xscale = -1;
 }
 
-if (hp <= 0) {
-	sprite_index = sprMine;
-}
-
-/*if (aPhase != "n") {
-	if (aState == "4") {
-		if (aPhase == "u") {
-			sprite_index = sprMagePreBlast;
-			
-			if (timeInAPhase == 0) {
-				image_index = 0;
-			}
-		} else if (aPhase == "d") {
-			sprite_index = sprMagePostBlast;
-			
-			if (timeInAPhase == 0) {
-				image_index = 0;
-			}
-		}
+if (aPhase != "n") {
+	if (aPhase == "u" && timeInAPhase == 0) {
+		image_index = 0;
+	}
+	
+	if (aState == "1") {
+		sprite_index = sprCasterShoot;
+	} else if (aState == "2") {
+		sprite_index = sprCasterLob;
+	} else if (aState == "4") {
+		sprite_index = sprCasterBlizzard;
+	}
+	
+	if (image_index >= image_number - image_speed) {
+		image_index = image_number - image_speed;
 	}
 } else if (!grounded) {
 	if (dy >= 0) {
-		sprite_index = sprMageGoingUp;
+		sprite_index = sprCasterGoingUp;
 	} else {
-		sprite_index = sprMageGoingDown;
+		sprite_index = sprCasterGoingDown;
 	}
 } else if (durationHeld[RIGHT] > 0 || durationHeld[LEFT] > 0) {
-	sprite_index = sprMageMove;
+	sprite_index = sprCasterMove;
 } else {
-	sprite_index = sprMageNone;
-}*//**/
+	sprite_index = sprCasterNone;
+}
+
+if (hp <= 0) {
+	sprite_index = sprMine;
+}
