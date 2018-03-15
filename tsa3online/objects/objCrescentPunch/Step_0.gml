@@ -1,15 +1,18 @@
 ///@desc movement
-if (currTime >= preTurnTime + turnTime + postTurnTime) {
+if (currTime >= turnTime + postTurnTime) {
 	instance_destroy();
-} else if (currTime >= preTurnTime + turnTime) {
+} else if (currTime >= turnTime) {
 	dy = -spd;
-} else if (currTime >= preTurnTime) {
+} else if (currTime > 0) {
 	image_angle -= degreesPerTick * ogDir;
 	dx = spd * ogDir * dcos(image_angle);
 	dy = spd * ogDir * dsin(image_angle);
 }
 
-currTime++;
+if (changedDirection) {
+	currTime++;
+}
+
 scrDestructiveProjectileMove();
 
 if (!createdAlready && currTime % visualFreq == 0) {

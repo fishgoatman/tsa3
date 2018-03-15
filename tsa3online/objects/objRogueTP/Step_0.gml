@@ -72,7 +72,7 @@ for (var i = 0; i < numAbilities; i++) {
 /// @DnDAction : YoYo Games.Common.Execute_Code
 /// @DnDVersion : 1
 /// @DnDHash : 3771CA6E
-/// @DnDArgument : "code" "///@desc ability function$(13_10)//show_debug_message(string(aState) + " " + string(aPhase));$(13_10)if (aState == "1") {$(13_10)	if (aPhase == "d" && timeInAPhase == 0) {$(13_10)		for (var i = 0; i < fanNumKnives; i++) {$(13_10)			fanCurrAngle = 90 - 90 * image_xscale - fanAngle / fanNumKnives * i * image_xscale;$(13_10)			instance_create_depth(preciseX, preciseY, thisNumber, objKnife);$(13_10)		}$(13_10)	}$(13_10)	$(13_10)	scrResetAir();$(13_10)} else if (aState == "2") {$(13_10)	if (aPhase == "d") {$(13_10)		if (timeInAPhase == 0) {$(13_10)			for (var i = 0; i < blinkNumBlades; i++) {$(13_10)				blinkCurrAngle = 90 - 90 * image_xscale - blinkBladeAngle / 2 + blinkBladeAngle / blinkNumBlades * i;$(13_10)				instance_create_depth(preciseX, preciseY, thisNumber, objBlade);$(13_10)			}$(13_10)			$(13_10)			var moveMod = instance_create(0, 0, objMoveMod);$(13_10)			moveMod.dx = -image_xscale * blinkSpd;$(13_10)			moveMod.ddx = image_xscale * blinkDSpd;$(13_10)			moveMod.duration = duration[1];$(13_10)			ds_list_add(envMoveModList, moveMod);$(13_10)		}$(13_10)		$(13_10)		scrResetAir();$(13_10)	}$(13_10)} else if (aState == "3") {$(13_10)	if (aPhase == "d" && timeInAPhase == 0) {$(13_10)		for (var i = 0; i < jumpNumKnives; i++) {$(13_10)			fanCurrAngle = 270 - jumpKnifeAngle / 2 + jumpKnifeAngle / jumpNumKnives * i;$(13_10)			instance_create_depth(preciseX, preciseY, thisNumber, objKnife);$(13_10)		}$(13_10)		$(13_10)		scrResetAir();$(13_10)		jumpMoveMod = instance_create(0, 0, objMoveMod);$(13_10)		jumpMoveMod.dy = jumpPower;$(13_10)		jumpMoveMod.forever = true;$(13_10)		ds_list_add(moveModList, jumpMoveMod);$(13_10)	}$(13_10)} else if (aState == "4") {$(13_10)	if (aPhase == "d" && timeInAPhase == 0) {$(13_10)		instance_create_depth(preciseX, preciseY, thisNumber, objPiercingKnife);$(13_10)		var moveMod = instance_create(0, 0, objMoveMod);$(13_10)		moveMod.dx = image_xscale * pierceDashSpd;$(13_10)		moveMod.ddx = -image_xscale * pierceDashDSpd;$(13_10)		moveMod.duration = duration[1];$(13_10)		ds_list_add(envMoveModList, moveMod);$(13_10)	}$(13_10)	$(13_10)	scrResetAir();$(13_10)}"
+/// @DnDArgument : "code" "///@desc ability function$(13_10)//show_debug_message(string(aState) + " " + string(aPhase));$(13_10)if (aState == "1") {$(13_10)	if (aPhase == "d" && timeInAPhase == 0) {$(13_10)		for (var i = 0; i < fanNumKnives; i++) {$(13_10)			fanCurrAngle = 90 - 90 * image_xscale - fanAngle / fanNumKnives * i * image_xscale;$(13_10)			instance_create_depth(preciseX, preciseY, thisNumber, objKnife);$(13_10)		}$(13_10)	}$(13_10)	$(13_10)	scrResetAir();$(13_10)} else if (aState == "2") {$(13_10)	if (aPhase == "d" && timeInAPhase == 0) {$(13_10)		instance_create_depth(preciseX, preciseY, thisNumber, objPiercingKnife);$(13_10)		var moveMod = instance_create(0, 0, objMoveMod);$(13_10)		moveMod.dx = image_xscale * pierceDashSpd;$(13_10)		moveMod.ddx = -image_xscale * pierceDashDSpd;$(13_10)		moveMod.duration = duration[1];$(13_10)		ds_list_add(envMoveModList, moveMod);$(13_10)	}$(13_10)	$(13_10)	scrResetAir();$(13_10)} else if (aState == "3") {$(13_10)	if (aPhase == "d" && timeInAPhase == 0) {$(13_10)		for (var i = 0; i < jumpNumKnives; i++) {$(13_10)			fanCurrAngle = 270 - jumpKnifeAngle / 2 + jumpKnifeAngle / jumpNumKnives * i;$(13_10)			instance_create_depth(preciseX, preciseY, thisNumber, objKnife);$(13_10)		}$(13_10)		$(13_10)		scrResetAir();$(13_10)		jumpMoveMod = instance_create(0, 0, objMoveMod);$(13_10)		jumpMoveMod.dy = jumpPower;$(13_10)		jumpMoveMod.forever = true;$(13_10)		ds_list_add(moveModList, jumpMoveMod);$(13_10)	}$(13_10)} else if (aState == "4") {$(13_10)	if (aPhase == "d") {$(13_10)		if (timeInAPhase == 0) {$(13_10)			for (var i = 0; i < blinkNumBlades; i++) {$(13_10)				blinkCurrAngle = 90 - 90 * image_xscale - blinkBladeAngle / 2 + blinkBladeAngle / blinkNumBlades * i;$(13_10)				instance_create_depth(preciseX, preciseY, thisNumber, objBlade);$(13_10)			}$(13_10)			$(13_10)			var moveMod = instance_create(0, 0, objMoveMod);$(13_10)			moveMod.dx = -image_xscale * blinkSpd;$(13_10)			moveMod.ddx = image_xscale * blinkDSpd;$(13_10)			moveMod.duration = duration[1];$(13_10)			ds_list_add(envMoveModList, moveMod);$(13_10)		}$(13_10)		$(13_10)		scrResetAir();$(13_10)	}$(13_10)}"
 ///@desc ability function
 //show_debug_message(string(aState) + " " + string(aPhase));
 if (aState == "1") {
@@ -85,6 +85,30 @@ if (aState == "1") {
 	
 	scrResetAir();
 } else if (aState == "2") {
+	if (aPhase == "d" && timeInAPhase == 0) {
+		instance_create_depth(preciseX, preciseY, thisNumber, objPiercingKnife);
+		var moveMod = instance_create(0, 0, objMoveMod);
+		moveMod.dx = image_xscale * pierceDashSpd;
+		moveMod.ddx = -image_xscale * pierceDashDSpd;
+		moveMod.duration = duration[1];
+		ds_list_add(envMoveModList, moveMod);
+	}
+	
+	scrResetAir();
+} else if (aState == "3") {
+	if (aPhase == "d" && timeInAPhase == 0) {
+		for (var i = 0; i < jumpNumKnives; i++) {
+			fanCurrAngle = 270 - jumpKnifeAngle / 2 + jumpKnifeAngle / jumpNumKnives * i;
+			instance_create_depth(preciseX, preciseY, thisNumber, objKnife);
+		}
+		
+		scrResetAir();
+		jumpMoveMod = instance_create(0, 0, objMoveMod);
+		jumpMoveMod.dy = jumpPower;
+		jumpMoveMod.forever = true;
+		ds_list_add(moveModList, jumpMoveMod);
+	}
+} else if (aState == "4") {
 	if (aPhase == "d") {
 		if (timeInAPhase == 0) {
 			for (var i = 0; i < blinkNumBlades; i++) {
@@ -101,36 +125,12 @@ if (aState == "1") {
 		
 		scrResetAir();
 	}
-} else if (aState == "3") {
-	if (aPhase == "d" && timeInAPhase == 0) {
-		for (var i = 0; i < jumpNumKnives; i++) {
-			fanCurrAngle = 270 - jumpKnifeAngle / 2 + jumpKnifeAngle / jumpNumKnives * i;
-			instance_create_depth(preciseX, preciseY, thisNumber, objKnife);
-		}
-		
-		scrResetAir();
-		jumpMoveMod = instance_create(0, 0, objMoveMod);
-		jumpMoveMod.dy = jumpPower;
-		jumpMoveMod.forever = true;
-		ds_list_add(moveModList, jumpMoveMod);
-	}
-} else if (aState == "4") {
-	if (aPhase == "d" && timeInAPhase == 0) {
-		instance_create_depth(preciseX, preciseY, thisNumber, objPiercingKnife);
-		var moveMod = instance_create(0, 0, objMoveMod);
-		moveMod.dx = image_xscale * pierceDashSpd;
-		moveMod.ddx = -image_xscale * pierceDashDSpd;
-		moveMod.duration = duration[1];
-		ds_list_add(envMoveModList, moveMod);
-	}
-	
-	scrResetAir();
 }
 
 /// @DnDAction : YoYo Games.Common.Execute_Code
 /// @DnDVersion : 1
 /// @DnDHash : 78F94C44
-/// @DnDArgument : "code" "///@desc sprite and image$(13_10)if (durationHeld[RIGHT] > 0) {$(13_10)	image_xscale = 1;$(13_10)} else if (durationHeld[LEFT] > 0) {$(13_10)	image_xscale = -1;$(13_10)}$(13_10)$(13_10)/*if (aPhase != "n") {$(13_10)	if (aState == "4") {$(13_10)		if (aPhase == "u") {$(13_10)			sprite_index = sprMagePreBlast;$(13_10)			$(13_10)			if (timeInAPhase == 0) {$(13_10)				image_index = 0;$(13_10)			}$(13_10)		} else if (aPhase == "d") {$(13_10)			sprite_index = sprMagePostBlast;$(13_10)			$(13_10)			if (timeInAPhase == 0) {$(13_10)				image_index = 0;$(13_10)			}$(13_10)		}$(13_10)	}$(13_10)} else if (!grounded) {$(13_10)	if (dy >= 0) {$(13_10)		sprite_index = sprMageGoingUp;$(13_10)	} else {$(13_10)		sprite_index = sprMageGoingDown;$(13_10)	}$(13_10)} else if (durationHeld[RIGHT] > 0 || durationHeld[LEFT] > 0) {$(13_10)	sprite_index = sprMageMove;$(13_10)} else {$(13_10)	sprite_index = sprMageNone;$(13_10)}*/"
+/// @DnDArgument : "code" "///@desc sprite and image$(13_10)if (durationHeld[RIGHT] > 0) {$(13_10)	image_xscale = 1;$(13_10)} else if (durationHeld[LEFT] > 0) {$(13_10)	image_xscale = -1;$(13_10)}$(13_10)$(13_10)if (aPhase != "n") {$(13_10)	if (aPhase == "u" && timeInAPhase == 0) {$(13_10)		image_index = 0;$(13_10)	}$(13_10)	$(13_10)	if (aState == "1") {$(13_10)		sprite_index = sprRogueAttack;$(13_10)	} else if (aState == "2") {$(13_10)		if (aPhase == "d" && timeInAPhase == 0) {$(13_10)			image_index = 0;$(13_10)		}$(13_10)		$(13_10)		if (aPhase == "u") {$(13_10)			sprite_index = sprRogueNoneDuck;$(13_10)		} else {$(13_10)			sprite_index = sprRogueDash;$(13_10)		}$(13_10)	} else if (aState == "4") {$(13_10)		sprite_index = sprRogueAttack;$(13_10)	}$(13_10)	$(13_10)	if (image_index >= image_number - image_speed) {$(13_10)		image_index = image_number - image_speed;$(13_10)	}$(13_10)} else if (!grounded) {$(13_10)	if (dy >= 0) {$(13_10)		sprite_index = sprRogueGoingUp;$(13_10)	} else {$(13_10)		sprite_index = sprRogueGoingDown;$(13_10)	}$(13_10)} else if (durationHeld[RIGHT] > 0 || durationHeld[LEFT] > 0) {$(13_10)	sprite_index = sprRogueMove;$(13_10)} else {$(13_10)	sprite_index = sprRogueNone;$(13_10)}$(13_10)$(13_10)if (hp <= 0) {$(13_10)	sprite_index = sprMine;$(13_10)}"
 ///@desc sprite and image
 if (durationHeld[RIGHT] > 0) {
 	image_xscale = 1;
@@ -138,30 +138,42 @@ if (durationHeld[RIGHT] > 0) {
 	image_xscale = -1;
 }
 
-/*if (aPhase != "n") {
-	if (aState == "4") {
-		if (aPhase == "u") {
-			sprite_index = sprMagePreBlast;
-			
-			if (timeInAPhase == 0) {
-				image_index = 0;
-			}
-		} else if (aPhase == "d") {
-			sprite_index = sprMagePostBlast;
-			
-			if (timeInAPhase == 0) {
-				image_index = 0;
-			}
+if (aPhase != "n") {
+	if (aPhase == "u" && timeInAPhase == 0) {
+		image_index = 0;
+	}
+	
+	if (aState == "1") {
+		sprite_index = sprRogueAttack;
+	} else if (aState == "2") {
+		if (aPhase == "d" && timeInAPhase == 0) {
+			image_index = 0;
 		}
+		
+		if (aPhase == "u") {
+			sprite_index = sprRogueNoneDuck;
+		} else {
+			sprite_index = sprRogueDash;
+		}
+	} else if (aState == "4") {
+		sprite_index = sprRogueAttack;
+	}
+	
+	if (image_index >= image_number - image_speed) {
+		image_index = image_number - image_speed;
 	}
 } else if (!grounded) {
 	if (dy >= 0) {
-		sprite_index = sprMageGoingUp;
+		sprite_index = sprRogueGoingUp;
 	} else {
-		sprite_index = sprMageGoingDown;
+		sprite_index = sprRogueGoingDown;
 	}
 } else if (durationHeld[RIGHT] > 0 || durationHeld[LEFT] > 0) {
-	sprite_index = sprMageMove;
+	sprite_index = sprRogueMove;
 } else {
-	sprite_index = sprMageNone;
-}*//**/
+	sprite_index = sprRogueNone;
+}
+
+if (hp <= 0) {
+	sprite_index = sprMine;
+}

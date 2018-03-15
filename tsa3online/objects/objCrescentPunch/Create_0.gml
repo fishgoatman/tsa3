@@ -18,4 +18,5 @@ preciseX = x;
 preciseY = y;
 currTime = 0;
 createdAlready = false;
+changedDirection = false;
 visualFreq = 5;
