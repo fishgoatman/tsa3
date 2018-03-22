@@ -10,6 +10,8 @@ if (heroString == "mage") {
 	heroObj = objCasterTP;
 } else if (heroString == "rogue") {
 	heroObj = objRogueTP;
+} else if (heroString == "shaman") {
+	heroObj = objShamanTP;
 } else if (heroString == "monk") {
 	heroObj = objMonkTP;
 } else if (heroString == "bot") {
@@ -72,6 +74,8 @@ if (heroString != "bot") {
 		cooldownObj = objCasterCooldown;
 	} else if (heroString == "rogue") {
 		cooldownObj = objRogueCooldown;
+	} else if (heroString == "shaman") {
+		cooldownObj = objShamanCooldown;
 	} else if (heroString == "monk") {
 		cooldownObj = objMonkCooldown;
 	}

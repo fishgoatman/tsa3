@@ -1,0 +1,9 @@
+///@desc creation stuff
+thisNumber = depth;
+depth = 0;
+myHeroId = heroId[thisNumber];
+image_angle = myHeroId.jetAngle;
+preciseX = x;
+preciseY = y;
+dx = 0;
+dy = 0;
