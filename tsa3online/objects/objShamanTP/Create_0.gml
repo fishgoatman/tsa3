@@ -1,7 +1,7 @@
 /// @DnDAction : YoYo Games.Common.Execute_Code
 /// @DnDVersion : 1
 /// @DnDHash : 5820CA38
-/// @DnDArgument : "code" "///@desc stats$(13_10)thisNumber = depth;$(13_10)depth = 0;$(13_10)maxHp = 105;$(13_10)$(13_10)if (thisNumber == 1) {$(13_10)	maxHp *= 1;$(13_10)}$(13_10)$(13_10)moveSpd = 90 / room_speed;$(13_10)jumpPower = 340 / room_speed;$(13_10)grav = 750 / (room_speed * room_speed);$(13_10)airJumps = 0;$(13_10)currAirJumps = 0;$(13_10)bounciness = 0.3;$(13_10)$(13_10)//lava burst$(13_10)windUp[0] = 0.15 * room_speed;$(13_10)duration[0] = 0.4 * room_speed;$(13_10)windDown[0] = 0.05 * room_speed;$(13_10)slowWindUp[0] = 0.3;$(13_10)slowDuring[0] = 0.1;$(13_10)slowWindDown[0] = 0.3;$(13_10)cooldown[0] = 2 * room_speed;$(13_10)$(13_10)lavaAmountPerTick = 5;$(13_10)lavaDmg = 0.78 / lavaAmountPerTick;$(13_10)lavaDmgIncrease = 0.54 / (room_speed * lavaAmountPerTick);$(13_10)$(13_10)lavaBaseSpd = 250 / room_speed;$(13_10)lavaBaseDx = lavaBaseSpd * 1.1;$(13_10)lavaBaseDy = lavaBaseSpd;$(13_10)lavaDxVar = 20 / room_speed;$(13_10)lavaDyVar = 10 / room_speed;$(13_10)lavaXOff = 15;$(13_10)lavaXVar = 16;$(13_10)lavaYVar = 8;$(13_10)lavaDdy = -12 / room_speed;$(13_10)$(13_10)//call lightning$(13_10)windUp[1] = 0.02 * room_speed;$(13_10)duration[1] = 1;$(13_10)windDown[1] = 0.6 * room_speed;$(13_10)slowWindUp[1] = 0.3;$(13_10)slowDuring[1] = 0;$(13_10)slowWindDown[1] = 0;$(13_10)cooldown[1] = 3.5 * room_speed;$(13_10)$(13_10)lightningDmg = 8;$(13_10)$(13_10)lightningOffset = 30;$(13_10)maxLightningAmount = 10;$(13_10)lightningDuration = 1 * room_speed;$(13_10)lightningInBetweenTime = 0.15 * room_speed;$(13_10)$(13_10)//water jet$(13_10)windUp[2] = 0.1 * room_speed;$(13_10)duration[2] = 0.8 * room_speed;$(13_10)windDown[2] = 0.05 * room_speed;$(13_10)slowWindUp[2] = 0.3;$(13_10)slowDuring[2] = 0;$(13_10)slowWindDown[2] = 0.3;$(13_10)cooldown[2] = 4.1 * room_speed;$(13_10)$(13_10)jetSpd = 400 / room_speed;$(13_10)jetCurrSpd = 0;$(13_10)jetDAngle = 240 / room_speed;$(13_10)jetStartAngle = 90;$(13_10)jetAngle = jetStartAngle;$(13_10)dropTime = 0.3 * room_speed;$(13_10)jetMultiplier = 0.05;$(13_10)dropXVar = 12;$(13_10)dropYVar = 12;$(13_10)dropsPerTick = 7;$(13_10)dropDdy = -30 / room_speed;$(13_10)$(13_10)//totem$(13_10)windUp[3] = 0.2 * room_speed;$(13_10)duration[3] = 1;$(13_10)windDown[3] = 0.05 * room_speed;$(13_10)slowWindUp[3] = 0;$(13_10)slowDuring[3] = 0;$(13_10)slowWindDown[3] = 0;$(13_10)$(13_10)siege = false;$(13_10)$(13_10)if (siege) {$(13_10)	cooldown[3] = 0.1 * room_speed;$(13_10)	totemDuration = 999 * room_speed;$(13_10)} else {$(13_10)	cooldown[3] = 3.6 * room_speed;$(13_10)	totemDuration = 8 * room_speed;$(13_10)}$(13_10)$(13_10)totemIdList = ds_list_create();$(13_10)ds_list_add(totemIdList, id);"
+/// @DnDArgument : "code" "///@desc stats$(13_10)thisNumber = depth;$(13_10)depth = 0;$(13_10)maxHp = 105;$(13_10)$(13_10)if (thisNumber == 1) {$(13_10)	maxHp *= 1;$(13_10)}$(13_10)$(13_10)moveSpd = 90 / room_speed;$(13_10)jumpPower = 340 / room_speed;$(13_10)grav = 750 / (room_speed * room_speed);$(13_10)airJumps = 0;$(13_10)currAirJumps = 0;$(13_10)bounciness = 0.3;$(13_10)$(13_10)//lava burst$(13_10)windUp[0] = 0.15 * room_speed;$(13_10)duration[0] = 0.4 * room_speed;$(13_10)windDown[0] = 0.05 * room_speed;$(13_10)slowWindUp[0] = 0.8;$(13_10)slowDuring[0] = 0.5;$(13_10)slowWindDown[0] = 0.8;$(13_10)cooldown[0] = 2 * room_speed;$(13_10)$(13_10)lavaAmountPerTick = 6;$(13_10)lavaDmg = 0.78 / lavaAmountPerTick;$(13_10)lavaDmgIncrease = 0.34 / (room_speed * lavaAmountPerTick);$(13_10)$(13_10)lavaBaseSpd = 250 / room_speed;$(13_10)lavaBaseDx = lavaBaseSpd * 1.1;$(13_10)lavaBaseDy = lavaBaseSpd;$(13_10)lavaDxVar = 30 / room_speed;$(13_10)lavaDyVar = 15 / room_speed;$(13_10)lavaXOff = 15;$(13_10)lavaXVar = 24;$(13_10)lavaYVar = 16;$(13_10)lavaDdy = -12 / room_speed;$(13_10)$(13_10)//call lightning$(13_10)windUp[1] = 0.02 * room_speed;$(13_10)duration[1] = 1;$(13_10)windDown[1] = 0.6 * room_speed;$(13_10)slowWindUp[1] = 0.3;$(13_10)slowDuring[1] = 0;$(13_10)slowWindDown[1] = 0;$(13_10)cooldown[1] = 3.5 * room_speed;$(13_10)$(13_10)lightningDmg = 8;$(13_10)$(13_10)lightningOffset = 30;$(13_10)maxLightningAmount = 10;$(13_10)lightningDuration = 1 * room_speed;$(13_10)lightningInBetweenTime = 0.15 * room_speed;$(13_10)$(13_10)//water jet$(13_10)windUp[2] = 0.1 * room_speed;$(13_10)duration[2] = 0.8 * room_speed;$(13_10)windDown[2] = 0.05 * room_speed;$(13_10)slowWindUp[2] = 0.3;$(13_10)slowDuring[2] = 0;$(13_10)slowWindDown[2] = 0.3;$(13_10)cooldown[2] = 4.1 * room_speed;$(13_10)$(13_10)jetSpd = 400 / room_speed;$(13_10)jetCurrSpd = 0;$(13_10)jetDAngle = 240 / room_speed;$(13_10)jetStartAngle = 90;$(13_10)jetAngle = jetStartAngle;$(13_10)dropTime = 0.3 * room_speed;$(13_10)jetMultiplier = 0.05;$(13_10)dropXVar = 12;$(13_10)dropYVar = 12;$(13_10)dropsPerTick = 7;$(13_10)dropDdy = -30 / room_speed;$(13_10)$(13_10)//totem$(13_10)windUp[3] = 0.2 * room_speed;$(13_10)duration[3] = 1;$(13_10)windDown[3] = 0.05 * room_speed;$(13_10)slowWindUp[3] = 0;$(13_10)slowDuring[3] = 0;$(13_10)slowWindDown[3] = 0;$(13_10)$(13_10)siege = false;$(13_10)$(13_10)if (siege) {$(13_10)	cooldown[3] = 0.1 * room_speed;$(13_10)	totemDuration = 999 * room_speed;$(13_10)} else {$(13_10)	cooldown[3] = 3.6 * room_speed;$(13_10)	totemDuration = 8 * room_speed;$(13_10)}$(13_10)$(13_10)totemIdList = ds_list_create();$(13_10)ds_list_add(totemIdList, id);"
 ///@desc stats
 thisNumber = depth;
 depth = 0;
@@ -22,23 +22,23 @@ bounciness = 0.3;
 windUp[0] = 0.15 * room_speed;
 duration[0] = 0.4 * room_speed;
 windDown[0] = 0.05 * room_speed;
-slowWindUp[0] = 0.3;
-slowDuring[0] = 0.1;
-slowWindDown[0] = 0.3;
+slowWindUp[0] = 0.8;
+slowDuring[0] = 0.5;
+slowWindDown[0] = 0.8;
 cooldown[0] = 2 * room_speed;
 
-lavaAmountPerTick = 5;
+lavaAmountPerTick = 6;
 lavaDmg = 0.78 / lavaAmountPerTick;
-lavaDmgIncrease = 0.54 / (room_speed * lavaAmountPerTick);
+lavaDmgIncrease = 0.34 / (room_speed * lavaAmountPerTick);
 
 lavaBaseSpd = 250 / room_speed;
 lavaBaseDx = lavaBaseSpd * 1.1;
 lavaBaseDy = lavaBaseSpd;
-lavaDxVar = 20 / room_speed;
-lavaDyVar = 10 / room_speed;
+lavaDxVar = 30 / room_speed;
+lavaDyVar = 15 / room_speed;
 lavaXOff = 15;
-lavaXVar = 16;
-lavaYVar = 8;
+lavaXVar = 24;
+lavaYVar = 16;
 lavaDdy = -12 / room_speed;
 
 //call lightning

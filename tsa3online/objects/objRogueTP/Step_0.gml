@@ -72,7 +72,7 @@ for (var i = 0; i < numAbilities; i++) {
 /// @DnDAction : YoYo Games.Common.Execute_Code
 /// @DnDVersion : 1
 /// @DnDHash : 3771CA6E
-/// @DnDArgument : "code" "///@desc ability function$(13_10)//show_debug_message(string(aState) + " " + string(aPhase));$(13_10)if (aState == "1") {$(13_10)	if (aPhase == "d" && timeInAPhase == 0) {$(13_10)		for (var i = 0; i < fanNumKnives; i++) {$(13_10)			fanCurrAngle = 90 - 90 * image_xscale - fanAngle / fanNumKnives * i * image_xscale;$(13_10)			instance_create_depth(preciseX, preciseY, thisNumber, objKnife);$(13_10)		}$(13_10)	}$(13_10)	$(13_10)	scrResetAir();$(13_10)} else if (aState == "2") {$(13_10)	if (aPhase == "d" && timeInAPhase == 0) {$(13_10)		instance_create_depth(preciseX, preciseY, thisNumber, objPiercingKnife);$(13_10)		var moveMod = instance_create(0, 0, objMoveMod);$(13_10)		moveMod.dx = image_xscale * pierceDashSpd;$(13_10)		moveMod.ddx = -image_xscale * pierceDashDSpd;$(13_10)		moveMod.duration = duration[1];$(13_10)		ds_list_add(envMoveModList, moveMod);$(13_10)	}$(13_10)	$(13_10)	scrResetAir();$(13_10)} else if (aState == "3") {$(13_10)	if (aPhase == "d" && timeInAPhase == 0) {$(13_10)		for (var i = 0; i < jumpNumKnives; i++) {$(13_10)			fanCurrAngle = 270 - jumpKnifeAngle / 2 + jumpKnifeAngle / jumpNumKnives * i;$(13_10)			instance_create_depth(preciseX, preciseY, thisNumber, objKnife);$(13_10)		}$(13_10)		$(13_10)		scrResetAir();$(13_10)		jumpMoveMod = instance_create(0, 0, objMoveMod);$(13_10)		jumpMoveMod.dy = jumpPower;$(13_10)		jumpMoveMod.forever = true;$(13_10)		ds_list_add(moveModList, jumpMoveMod);$(13_10)	}$(13_10)} else if (aState == "4") {$(13_10)	if (aPhase == "d") {$(13_10)		if (timeInAPhase == 0) {$(13_10)			for (var i = 0; i < blinkNumBlades; i++) {$(13_10)				blinkCurrAngle = 90 - 90 * image_xscale - blinkBladeAngle / 2 + blinkBladeAngle / blinkNumBlades * i;$(13_10)				instance_create_depth(preciseX, preciseY, thisNumber, objBlade);$(13_10)			}$(13_10)			$(13_10)			var moveMod = instance_create(0, 0, objMoveMod);$(13_10)			moveMod.dx = -image_xscale * blinkSpd;$(13_10)			moveMod.ddx = image_xscale * blinkDSpd;$(13_10)			moveMod.duration = duration[1];$(13_10)			ds_list_add(envMoveModList, moveMod);$(13_10)		}$(13_10)		$(13_10)		scrResetAir();$(13_10)	}$(13_10)}"
+/// @DnDArgument : "code" "///@desc ability function$(13_10)//show_debug_message(string(aState) + " " + string(aPhase));$(13_10)if (aState == "1") {$(13_10)	if (aPhase == "d" && timeInAPhase == 0) {$(13_10)		for (var i = 0; i < fanNumKnives; i++) {$(13_10)			fanCurrAngle = 90 - 90 * image_xscale - fanAngle / fanNumKnives * i * image_xscale;$(13_10)			instance_create_depth(preciseX, preciseY, thisNumber, objKnife);$(13_10)		}$(13_10)	}$(13_10)	$(13_10)	scrResetAir();$(13_10)} else if (aState == "2") {$(13_10)	if (aPhase == "d" && timeInAPhase == 0) {$(13_10)		instance_create_depth(preciseX, preciseY, thisNumber, objPiercingKnife);$(13_10)		var moveMod = instance_create(0, 0, objMoveMod);$(13_10)		moveMod.dx = image_xscale * pierceDashSpd;$(13_10)		moveMod.ddx = -image_xscale * pierceDashDSpd;$(13_10)		moveMod.duration = duration[1];$(13_10)		ds_list_add(envMoveModList, moveMod);$(13_10)	}$(13_10)	$(13_10)	scrResetAir();$(13_10)} else if (aState == "3") {$(13_10)	if (aPhase == "d" && timeInAPhase == 0) {$(13_10)		for (var i = 0; i < jumpNumKnives; i++) {$(13_10)			fanCurrAngle = 270 - jumpKnifeAngle / 2 + jumpKnifeAngle / jumpNumKnives * i;$(13_10)			instance_create_depth(preciseX, preciseY, thisNumber, objKnife);$(13_10)		}$(13_10)		$(13_10)		scrResetAir();$(13_10)		preciseY--;$(13_10)		jumpMoveMod = instance_create(0, 0, objMoveMod);$(13_10)		jumpMoveMod.dy = jumpPower;$(13_10)		jumpMoveMod.forever = true;$(13_10)		ds_list_add(moveModList, jumpMoveMod);$(13_10)	}$(13_10)} else if (aState == "4") {$(13_10)	if (aPhase == "d") {$(13_10)		if (timeInAPhase == 0) {$(13_10)			for (var i = 0; i < blinkNumBlades; i++) {$(13_10)				blinkCurrAngle = 90 - 90 * image_xscale - blinkBladeAngle / 2 + blinkBladeAngle / blinkNumBlades * i;$(13_10)				instance_create_depth(preciseX, preciseY, thisNumber, objBlade);$(13_10)			}$(13_10)			$(13_10)			var moveMod = instance_create(0, 0, objMoveMod);$(13_10)			moveMod.dx = -image_xscale * blinkSpd;$(13_10)			moveMod.ddx = image_xscale * blinkDSpd;$(13_10)			moveMod.duration = duration[1];$(13_10)			ds_list_add(envMoveModList, moveMod);$(13_10)		}$(13_10)		$(13_10)		//scrResetAir();$(13_10)	}$(13_10)}"
 ///@desc ability function
 //show_debug_message(string(aState) + " " + string(aPhase));
 if (aState == "1") {
@@ -103,6 +103,7 @@ if (aState == "1") {
 		}
 		
 		scrResetAir();
+		preciseY--;
 		jumpMoveMod = instance_create(0, 0, objMoveMod);
 		jumpMoveMod.dy = jumpPower;
 		jumpMoveMod.forever = true;
@@ -123,7 +124,7 @@ if (aState == "1") {
 			ds_list_add(envMoveModList, moveMod);
 		}
 		
-		scrResetAir();
+		//scrResetAir();
 	}
 }
 

@@ -8,3 +8,4 @@ dy = 0;
 preciseX = x;
 preciseY = y;
 hitbox = objIceShotHitbox;
+currTime = 0;
