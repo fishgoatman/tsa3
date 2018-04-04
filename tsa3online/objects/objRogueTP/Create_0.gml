@@ -1,11 +1,11 @@
 /// @DnDAction : YoYo Games.Common.Execute_Code
 /// @DnDVersion : 1
 /// @DnDHash : 5820CA38
-/// @DnDArgument : "code" "///@desc stats$(13_10)thisNumber = depth;$(13_10)depth = 0;$(13_10)maxHp = 80;$(13_10)$(13_10)if (thisNumber == 1) {$(13_10)	maxHp *= 1;$(13_10)}$(13_10)$(13_10)moveSpd = 110 / room_speed;$(13_10)jumpPower = 400 / room_speed;$(13_10)grav = 900 / (room_speed * room_speed);$(13_10)airJumps = 0;$(13_10)currAirJumps = 0;$(13_10)bounciness = 0.2;$(13_10)$(13_10)//fan of knives$(13_10)windUp[0] = 0.1 * room_speed;$(13_10)duration[0] = 0.05 * room_speed;$(13_10)windDown[0] = 0.02 * room_speed;$(13_10)slowWindUp[0] = 0.3;$(13_10)slowDuring[0] = 1;$(13_10)slowWindDown[0] = 0.3;$(13_10)cooldown[0] = 0.9 * room_speed;$(13_10)$(13_10)fanBaseDmg = 0.8;$(13_10)fanDmgIncrease = 3.5 / room_speed;$(13_10)$(13_10)fanNumKnives = 10;$(13_10)fanAngle = 20;$(13_10)fanCurrAngle = -1;$(13_10)fanSpd = 800 / room_speed;$(13_10)$(13_10)//dash$(13_10)windUp[1] = 0.05 * room_speed;$(13_10)duration[1] = 0.1 * room_speed;$(13_10)windDown[1] = 0.05 * room_speed;$(13_10)slowWindUp[1] = 0;$(13_10)slowDuring[1] = 0;$(13_10)slowWindDown[1] = 0;$(13_10)cooldown[1] = 2.4 * room_speed;$(13_10)$(13_10)pierceDmg = 12;$(13_10)$(13_10)pierceKnifeSpd = 2400 / room_speed;$(13_10)pierceDashSpd = 1100 / room_speed;$(13_10)pierceDashDSpd = 0 / room_speed;$(13_10)$(13_10)//air jump$(13_10)windUp[2] = 0 * room_speed;$(13_10)duration[2] = 0.1 * room_speed;$(13_10)windDown[2] = 0 * room_speed;$(13_10)slowWindUp[2] = 1;$(13_10)slowDuring[2] = 1;$(13_10)slowWindDown[2] = 1;$(13_10)cooldown[2] = 2.5 * room_speed;$(13_10)$(13_10)jumpKnifeAngle = 120;$(13_10)jumpNumKnives = 24;$(13_10)$(13_10)//rake$(13_10)windUp[3] = 0.15 * room_speed;$(13_10)duration[3] = 0.1 * room_speed;$(13_10)windDown[3] = 0.02 * room_speed;$(13_10)slowWindUp[3] = 0.5;$(13_10)slowDuring[3] = 0.5;$(13_10)slowWindDown[3] = 0.5;$(13_10)cooldown[3] = 3.6 * room_speed;$(13_10)$(13_10)bladeBaseDmg = 1.4;$(13_10)bladeDmgIncrease = 1.2 / room_speed;$(13_10)$(13_10)blinkSpd = 900 / room_speed;$(13_10)blinkDSpd = 50 / room_speed;$(13_10)bladeSpd = 900 / room_speed;$(13_10)blinkCurrAngle = -1;$(13_10)blinkBladeAngle = 35;$(13_10)blinkNumBlades = 12;$(13_10)rakeOutDuration = 0.2 * room_speed;"
+/// @DnDArgument : "code" "///@desc stats$(13_10)thisNumber = depth;$(13_10)depth = 0;$(13_10)maxHp = 85;$(13_10)$(13_10)if (thisNumber == 1) {$(13_10)	maxHp *= 1;$(13_10)}$(13_10)$(13_10)moveSpd = 110 / room_speed;$(13_10)jumpPower = 400 / room_speed;$(13_10)grav = 900 / (room_speed * room_speed);$(13_10)airJumps = 0;$(13_10)currAirJumps = 0;$(13_10)bounciness = 0.2;$(13_10)$(13_10)//fan of knives$(13_10)windUp[0] = 0.1 * room_speed;$(13_10)duration[0] = 0.05 * room_speed;$(13_10)windDown[0] = 0.02 * room_speed;$(13_10)slowWindUp[0] = 0.3;$(13_10)slowDuring[0] = 1;$(13_10)slowWindDown[0] = 0.3;$(13_10)cooldown[0] = 0.9 * room_speed;$(13_10)$(13_10)fanBaseDmg = 0.8;$(13_10)fanDmgIncrease = 3 / room_speed;$(13_10)$(13_10)fanNumKnives = 10;$(13_10)fanAngle = 20;$(13_10)fanCurrAngle = -1;$(13_10)fanSpd = 800 / room_speed;$(13_10)$(13_10)//dash$(13_10)windUp[1] = 0.05 * room_speed;$(13_10)duration[1] = 0.1 * room_speed;$(13_10)windDown[1] = 0.05 * room_speed;$(13_10)slowWindUp[1] = 0;$(13_10)slowDuring[1] = 0;$(13_10)slowWindDown[1] = 0;$(13_10)cooldown[1] = 2.8 * room_speed;$(13_10)$(13_10)pierceDmg = 10;$(13_10)$(13_10)pierceKnifeSpd = 2400 / room_speed;$(13_10)pierceDashSpd = 1100 / room_speed;$(13_10)pierceDashDSpd = 0 / room_speed;$(13_10)$(13_10)//air jump$(13_10)windUp[2] = 0 * room_speed;$(13_10)duration[2] = 0.1 * room_speed;$(13_10)windDown[2] = 0 * room_speed;$(13_10)slowWindUp[2] = 1;$(13_10)slowDuring[2] = 1;$(13_10)slowWindDown[2] = 1;$(13_10)cooldown[2] = 3.1 * room_speed;$(13_10)$(13_10)jumpKnifeAngle = 120;$(13_10)jumpNumKnives = 24;$(13_10)$(13_10)//rake$(13_10)windUp[3] = 0.15 * room_speed;$(13_10)duration[3] = 0.1 * room_speed;$(13_10)windDown[3] = 0.02 * room_speed;$(13_10)slowWindUp[3] = 0.5;$(13_10)slowDuring[3] = 0.5;$(13_10)slowWindDown[3] = 0.5;$(13_10)cooldown[3] = 3.6 * room_speed;$(13_10)$(13_10)bladeBaseDmg = 1.2;$(13_10)bladeDmgIncrease = 0.8 / room_speed;$(13_10)$(13_10)blinkSpd = 900 / room_speed;$(13_10)blinkDSpd = 50 / room_speed;$(13_10)bladeSpd = 900 / room_speed;$(13_10)blinkCurrAngle = -1;$(13_10)blinkBladeAngle = 35;$(13_10)blinkNumBlades = 12;$(13_10)rakeOutDuration = 0.2 * room_speed;"
 ///@desc stats
 thisNumber = depth;
 depth = 0;
-maxHp = 80;
+maxHp = 85;
 
 if (thisNumber == 1) {
 	maxHp *= 1;
@@ -28,7 +28,7 @@ slowWindDown[0] = 0.3;
 cooldown[0] = 0.9 * room_speed;
 
 fanBaseDmg = 0.8;
-fanDmgIncrease = 3.5 / room_speed;
+fanDmgIncrease = 3 / room_speed;
 
 fanNumKnives = 10;
 fanAngle = 20;
@@ -42,9 +42,9 @@ windDown[1] = 0.05 * room_speed;
 slowWindUp[1] = 0;
 slowDuring[1] = 0;
 slowWindDown[1] = 0;
-cooldown[1] = 2.4 * room_speed;
+cooldown[1] = 2.8 * room_speed;
 
-pierceDmg = 12;
+pierceDmg = 10;
 
 pierceKnifeSpd = 2400 / room_speed;
 pierceDashSpd = 1100 / room_speed;
@@ -57,7 +57,7 @@ windDown[2] = 0 * room_speed;
 slowWindUp[2] = 1;
 slowDuring[2] = 1;
 slowWindDown[2] = 1;
-cooldown[2] = 2.5 * room_speed;
+cooldown[2] = 3.1 * room_speed;
 
 jumpKnifeAngle = 120;
 jumpNumKnives = 24;
@@ -71,8 +71,8 @@ slowDuring[3] = 0.5;
 slowWindDown[3] = 0.5;
 cooldown[3] = 3.6 * room_speed;
 
-bladeBaseDmg = 1.4;
-bladeDmgIncrease = 1.2 / room_speed;
+bladeBaseDmg = 1.2;
+bladeDmgIncrease = 0.8 / room_speed;
 
 blinkSpd = 900 / room_speed;
 blinkDSpd = 50 / room_speed;

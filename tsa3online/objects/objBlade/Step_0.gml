@@ -49,4 +49,6 @@ if (currTime == outDuration) {
 		dx = spd * dcos(image_angle);
 		dy = spd * dsin(image_angle);
 	}
+} else {
+	currDmgTime++;
 }

@@ -13,7 +13,9 @@ if (durationHeld[LEFT] > 0) {
 }
 
 //gravity
-grounded = !place_meeting(preciseX, preciseY, objBlockAndPlatform) && place_meeting(preciseX, preciseY + 1, objBlockAndPlatform);
+blockGrounded = !place_meeting(preciseX, preciseY, objBlock) && place_meeting(preciseX, preciseY + 1, objBlock);
+platformGrounded = !place_meeting(preciseX, preciseY, objPlatform) && place_meeting(preciseX, preciseY + 1, objPlatform);
+grounded = blockGrounded || platformGrounded && dy <= 0;
 ceilinged = !place_meeting(preciseX, preciseY, objBlock) && place_meeting(preciseX, preciseY - 1, objBlock);
 
 if (grounded) {

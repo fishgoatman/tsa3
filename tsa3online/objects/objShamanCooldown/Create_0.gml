@@ -1,2 +1,2 @@
 ///@desc creation stuff
-depth = 0;
+depth = uiDepth;

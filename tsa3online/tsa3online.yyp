@@ -172,6 +172,25 @@
             }
         },
         {
+            "Key": "05ccba7b-4b79-4b67-bb19-e23920995ddc",
+            "Value": {
+                "id": "25297542-53b6-4f08-9b06-446297f0fbf4",
+                "modelName": "GMResourceInfo",
+                "mvc": "1.0",
+                "configDeltaFiles": [
+                    
+                ],
+                "configDeltas": [
+                    
+                ],
+                "resourceCreationConfigs": [
+                    "default"
+                ],
+                "resourcePath": "sprites\/sprWaterBlast\/sprWaterBlast.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
             "Key": "06a8e574-9d27-40ee-9d1b-bb209eaa74da",
             "Value": {
                 "id": "c6dbfad7-21f2-4865-bb88-b11c7365c88c",
@@ -663,6 +682,25 @@
                 ],
                 "resourcePath": "sprites\/sprShamanGoingDown\/sprShamanGoingDown.yy",
                 "resourceType": "GMSprite"
+            }
+        },
+        {
+            "Key": "13400868-b99e-4f6d-aa36-d7dbb851707c",
+            "Value": {
+                "id": "b28b0a20-80fa-404a-925b-3e181fd56571",
+                "modelName": "GMResourceInfo",
+                "mvc": "1.0",
+                "configDeltaFiles": [
+                    
+                ],
+                "configDeltas": [
+                    
+                ],
+                "resourceCreationConfigs": [
+                    "default"
+                ],
+                "resourcePath": "objects\/objWaterBlast\/objWaterBlast.yy",
+                "resourceType": "GMObject"
             }
         },
         {
@@ -3189,6 +3227,25 @@
                     "default"
                 ],
                 "resourcePath": "objects\/objChimeBoltKP\/objChimeBoltKP.yy",
+                "resourceType": "GMObject"
+            }
+        },
+        {
+            "Key": "59e93125-562a-41bc-9aed-1dd8f56dcb62",
+            "Value": {
+                "id": "9ecf775f-68b4-4dc2-aae1-075b38a07048",
+                "modelName": "GMResourceInfo",
+                "mvc": "1.0",
+                "configDeltaFiles": [
+                    
+                ],
+                "configDeltas": [
+                    
+                ],
+                "resourceCreationConfigs": [
+                    "default"
+                ],
+                "resourcePath": "objects\/objWaterBlastHitbox\/objWaterBlastHitbox.yy",
                 "resourceType": "GMObject"
             }
         },
