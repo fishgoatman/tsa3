@@ -8,6 +8,7 @@ hitbox = objIceLobHitbox;
 angle = myHeroId.lobAngle;
 spd = myHeroId.lobSpd;
 grav = myHeroId.lobGrav;
+smallXSpd = myHeroId.smallLobXSpd;
 factor = myHeroId.lobFactor;
 smallLobNumber = myHeroId.smallLobNumber;
 image_xscale = myHeroId.image_xscale;

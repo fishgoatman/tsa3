@@ -91,5 +91,9 @@ if (heroString != "bot") {
 		var cd = instance_create(createX, createY, cooldownObj);
 		cd.image_speed = 0;
 		cooldownBar[thisNumber, i] = cd;
+		
+		if (heroString == "shaman" && i == 3) {
+			instance_create_depth(createX, createY, thisNumber, objTotemCharges);
+		}
 	}
 }

@@ -57,3 +57,13 @@ if (createdAlready) {
 	
 	instance_destroy();
 }
+
+var TWO = myHeroId.TWO;
+
+if (!createdAlready && myHeroId.durationHeld[TWO] > 0 && !myHeroId.heldBefore[TWO]) {
+	for (i = 0; i < smallLobNumber; i++) {
+		instance_create_depth(preciseX, preciseY, id, objSmallIceLob);
+	}
+		
+	instance_destroy();
+}

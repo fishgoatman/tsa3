@@ -1236,6 +1236,25 @@
             }
         },
         {
+            "Key": "2125b124-aba0-4d9c-9bba-62da3b1d9b55",
+            "Value": {
+                "id": "55dcef04-ca73-491c-9ceb-99b5bc751d8c",
+                "modelName": "GMResourceInfo",
+                "mvc": "1.0",
+                "configDeltaFiles": [
+                    
+                ],
+                "configDeltas": [
+                    
+                ],
+                "resourceCreationConfigs": [
+                    "default"
+                ],
+                "resourcePath": "sprites\/sprTotemCharges\/sprTotemCharges.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
             "Key": "21d17bcf-6c8f-47c9-99ca-fc27ff254348",
             "Value": {
                 "id": "256e3d4d-d233-4676-8674-5d383bb2e5e2",
@@ -6860,6 +6879,25 @@
             }
         },
         {
+            "Key": "bfa66124-c99f-4dc9-8946-b078424f7c0f",
+            "Value": {
+                "id": "5679be4c-a006-4c99-bbd1-c22f06714e06",
+                "modelName": "GMResourceInfo",
+                "mvc": "1.0",
+                "configDeltaFiles": [
+                    
+                ],
+                "configDeltas": [
+                    
+                ],
+                "resourceCreationConfigs": [
+                    "default"
+                ],
+                "resourcePath": "objects\/objTotemCharges\/objTotemCharges.yy",
+                "resourceType": "GMObject"
+            }
+        },
+        {
             "Key": "bfd19822-a2ed-465e-8766-c3f5fe89829f",
             "Value": {
                 "id": "a616abbc-6159-4a60-aeff-2f3c9da92a1f",
@@ -7578,6 +7616,25 @@
                     "default"
                 ],
                 "resourcePath": "objects\/objChimeCarrierShadow\/objChimeCarrierShadow.yy",
+                "resourceType": "GMObject"
+            }
+        },
+        {
+            "Key": "d0eaa843-4026-4bf1-925c-d809eb18a5a5",
+            "Value": {
+                "id": "e23e4452-8194-4651-bcd7-373b22c35176",
+                "modelName": "GMResourceInfo",
+                "mvc": "1.0",
+                "configDeltaFiles": [
+                    
+                ],
+                "configDeltas": [
+                    
+                ],
+                "resourceCreationConfigs": [
+                    "default"
+                ],
+                "resourcePath": "objects\/objClient\/objClient.yy",
                 "resourceType": "GMObject"
             }
         },
