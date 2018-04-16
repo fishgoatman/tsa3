@@ -33,7 +33,7 @@ if (room == rmMainMenu) {
 	if (createSelectStuff) {
 		for (var i = 0; i < numPlayers; i++) {
 			lockedIn[i] = false;
-			instance_create_depth(0, 0, i, objCharacterSelecter);
+			heroId[i] = instance_create_depth(0, 0, i, objCharacterSelecter);
 		}
 		
 		createSelectStuff = false;

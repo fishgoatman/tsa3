@@ -8,13 +8,15 @@ if (ds_list_size(inQueuePlayerNums) >= 2) {
 	currGameDataId.playerNums[0] = firstNum;
 	currGameDataId.playerNums[1] = secondNum;
 	var firstClientId = ds_map_find_value(playerDataIds, firstNum).clientId;
+	var firstClientDataId = ds_map_find_value(clientDataIds, firstClientId);
 	currGameDataId.clientIds[0] = firstClientId;
-	firstClientId.gameDataId = currGameDataId;
+	firstClientDataId.gameDataId = currGameDataId;
 	var secondClientId = ds_map_find_value(playerDataIds, secondNum).clientId;
+	var secondClientDataId = ds_map_find_value(clientDataIds, secondClientId);
 	
 	if (secondClientId != firstClientId) {
 		currGameDataId.clientIds[1] = secondClientId;
-		secondClientId.gameDataId = currGameDataId;
+		secondClientDataId.gameDataId = currGameDataId;
 	}
 	
 	ds_list_add(currGameDataIds, currGameDataId);
@@ -22,16 +24,20 @@ if (ds_list_size(inQueuePlayerNums) >= 2) {
 	ds_list_delete(inQueuePlayerNums, 1);
 	
 	//sending thisNumber
-	for (var p = 0; p < array_length_1d(currGameDataId.playerNums); p++) {
-		var thisPlayerNum = currGameDataId.playerNums[p];
-		var playerClientId = ds_map_find_value(playerDataIds, thisPlayerNum).clientId;
+	for (var c = 0; c < array_length_1d(currGameDataId.clientIds); c++) {
+		var currClientId = currGameDataId.clientIds[c];
+		
+		for (var p = 0; p < array_length_1d(currGameDataId.playerNums); p++) {
+			var thisPlayerNum = currGameDataId.playerNums[p];
+			var playerClientId = ds_map_find_value(playerDataIds, thisPlayerNum).clientId;
 			
-		if (currClientId == playerClientId) {
-			buffer_seek(bufferToSend, buffer_seek_start, 0);
-			buffer_write(bufferToSend, buffer_string, "thisNumber");
-			buffer_write(bufferToSend, buffer_u8, p);
-			buffer_write(bufferToSend, buffer_u32, thisPlayerNum);
-			network_send_packet(currClientId, bufferToSend, buffer_tell(bufferToSend));
+			if (currClientId == playerClientId) {
+				buffer_seek(bufferToSend, buffer_seek_start, 0);
+				buffer_write(bufferToSend, buffer_string, "thisNumber");
+				buffer_write(bufferToSend, buffer_u8, p);
+				buffer_write(bufferToSend, buffer_u32, thisPlayerNum);
+				network_send_packet(currClientId, bufferToSend, buffer_tell(bufferToSend));
+			}
 		}
 	}
 }

@@ -1,4 +1,4 @@
 ///@desc creation stuff
-sentBasics = false;
+clientId = noone;
 xPos = 0;
 yPos = 0;
