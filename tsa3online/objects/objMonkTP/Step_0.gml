@@ -8,11 +8,39 @@ scrDamageStuff();
 /// @DnDAction : YoYo Games.Common.Execute_Code
 /// @DnDVersion : 1
 /// @DnDHash : 74C028A6
-/// @DnDArgument : "code" "///@desc get input$(13_10)if (hp > 0) {$(13_10)	scrPlayerGetInput();$(13_10)}"
+/// @DnDArgument : "code" "///@desc get input$(13_10)if (hp > 0) {$(13_10)	scrPlayerGetInput();$(13_10)	/*for (var i = 0; i < numKeys; i++) {$(13_10)		durationHeld[i] = 0;$(13_10)		heldBefore[i] = false;$(13_10)	}$(13_10)	$(13_10)	var rando = irandom(3) + 4;$(13_10)	durationHeld[rando] = 1;$(13_10)	heldBefore[rando] = false;$(13_10)	$(13_10)	if (random(1) < 0.1) {$(13_10)		durationHeld[UP] = 1;$(13_10)		heldBefore[UP] = false;$(13_10)	}$(13_10)	$(13_10)	if (abs(preciseX - targetX) < 20) {$(13_10)		targetX = random(room_width);$(13_10)	}$(13_10)	$(13_10)	var dir;$(13_10)	$(13_10)	if (preciseX < targetX) {$(13_10)		dir = RIGHT;$(13_10)	} else {$(13_10)		dir = LEFT;$(13_10)	}$(13_10)	$(13_10)	durationHeld[dir] = 1;$(13_10)	heldBefore[dir] = false;*/$(13_10)}"
 ///@desc get input
 if (hp > 0) {
 	scrPlayerGetInput();
-}
+	/*for (var i = 0; i < numKeys; i++) {
+		durationHeld[i] = 0;
+		heldBefore[i] = false;
+	}
+	
+	var rando = irandom(3) + 4;
+	durationHeld[rando] = 1;
+	heldBefore[rando] = false;
+	
+	if (random(1) < 0.1) {
+		durationHeld[UP] = 1;
+		heldBefore[UP] = false;
+	}
+	
+	if (abs(preciseX - targetX) < 20) {
+		targetX = random(room_width);
+	}
+	
+	var dir;
+	
+	if (preciseX < targetX) {
+		dir = RIGHT;
+	} else {
+		dir = LEFT;
+	}
+	
+	durationHeld[dir] = 1;
+	heldBefore[dir] = false;*/
+}/**/
 
 /// @DnDAction : YoYo Games.Common.Execute_Code
 /// @DnDVersion : 1

@@ -4,6 +4,12 @@ thisNumber = depth;
 depth = 0;
 heroString = selectedHero[thisNumber];
 
+while (heroString == "random") {
+	var randRow = irandom(array_height_2d(characterSelect) - 1);
+	var randCol = irandom(array_length_2d(characterSelect, randRow) - 1);
+	heroString = characterSelect[randRow, randCol];
+}
+
 if (heroString == "mage") {
 	heroObj = objStandardMageTP;
 } else if (heroString == "caster") {
@@ -93,7 +99,7 @@ if (heroString != "bot") {
 		cooldownBar[thisNumber, i] = cd;
 		
 		if (heroString == "shaman" && i == 3) {
-			instance_create_depth(createX, createY, thisNumber, objTotemCharges);
+			//instance_create_depth(createX, createY, thisNumber, objTotemCharges);
 		}
 	}
 }

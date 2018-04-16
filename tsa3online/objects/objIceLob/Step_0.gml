@@ -64,6 +64,7 @@ if (!createdAlready && myHeroId.durationHeld[TWO] > 0 && !myHeroId.heldBefore[TW
 	for (i = 0; i < smallLobNumber; i++) {
 		instance_create_depth(preciseX, preciseY, id, objSmallIceLob);
 	}
-		
+	
+	instance_create_depth(tryX, tryY, id, hitbox);
 	instance_destroy();
 }

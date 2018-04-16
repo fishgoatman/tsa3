@@ -1,5 +1,4 @@
 ///@desc handle game rooms
-//determine what target game screen in
 if (createGameStuff) {	
 	for (var i = 0; i < numPlayers; i++) {
 		playerHandlerObj[i] = instance_create_depth(0, 0, i, objPlayerHandler);
@@ -9,7 +8,37 @@ if (createGameStuff) {
 	createGameStuff = false;
 }
 
-if (room == rmCharacterSelectionScreen) {
+if (room == rmMainMenu) {
+	if (keyboard_check_pressed(ord("2"))) {
+		startOffline = true;
+	} else if (keyboard_check_pressed(ord("3"))) {
+		startOnline = true;
+	}
+	
+	if (startOffline) {
+		for (var i = 0; i < numPlayers; i++) {
+			thisInControl[i] = true;
+		}
+		
+		targetRoom = "select";
+		mode = "offline";
+		startOffline = false;
+	} else if (startOnline) {
+		targetRoom = "select";
+		mode = "online";
+		instance_create(0, 0, objClient);
+		startOnline = false;
+	}
+} if (room == rmCharacterSelectionScreen) {
+	if (createSelectStuff) {
+		for (var i = 0; i < numPlayers; i++) {
+			lockedIn[i] = false;
+			instance_create_depth(0, 0, i, objCharacterSelecter);
+		}
+		
+		createSelectStuff = false;
+	}
+	
 	var startGame = true;
 	
 	for (var i = 0; i < numPlayers; i++) {
@@ -42,12 +71,13 @@ if (room == rmCharacterSelectionScreen) {
 if (currRoom != targetRoom) {
 	currTime++;
 	
-	if (currTime >= 1 * room_speed) {
+	if (currTime >= 1 * room_speed || currRoom == "main") {
 		if (targetRoom == "game") {
 			room_goto(rmStandard);
 			createGameStuff = true;
 		} else if (targetRoom == "select") {
 			room_goto(rmCharacterSelectionScreen);
+			createSelectStuff = true;
 		}
 		
 		currTime = 0;
