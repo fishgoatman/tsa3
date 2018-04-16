@@ -9,5 +9,13 @@ if (bufferType == "connected") {
 	network_send_packet(tcp, bufferToSend, buffer_tell(bufferToSend));
 } else if (bufferType == "thisNumber") {
 	var thisNumber = buffer_read(receivedBuffer, buffer_u8);
+	var playerNum = buffer_read(receivedBuffer, buffer_u32);
 	thisInControl[thisNumber] = true;
+	playerNums[thisNumber] = playerNum;
+} else if (bufferType == "basicState") {
+	var thisNumber = buffer_read(receivedBuffer, buffer_u8);
+	var xPos = buffer_read(receivedBuffer, buffer_u32);
+	var yPos = buffer_read(receivedBuffer, buffer_u32);
+	heroId[thisNumber].x = xPos;
+	heroId[thisNumber].y = yPos;
 }
