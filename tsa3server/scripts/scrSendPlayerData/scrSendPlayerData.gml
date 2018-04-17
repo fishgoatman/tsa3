@@ -5,4 +5,4 @@ buffer_write(bufferToSend, buffer_string, "basicState");
 buffer_write(bufferToSend, buffer_u8, p);
 buffer_write(bufferToSend, buffer_u32, playerDataId.xPos);
 buffer_write(bufferToSend, buffer_u32, playerDataId.yPos);
-network_send_udp(udp, clientIp, portNum, bufferToSend, buffer_tell(bufferToSend));
+network_send_udp(udp, clientIp, udpPortNum, bufferToSend, buffer_tell(bufferToSend));

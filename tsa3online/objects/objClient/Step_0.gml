@@ -7,6 +7,6 @@ for (var i = 0; i < numPlayers; i++) {
 		buffer_write(bufferToSend, buffer_u32, playerNums[i]);
 		buffer_write(bufferToSend, buffer_u32, heroId[i].x);
 		buffer_write(bufferToSend, buffer_u32, heroId[i].y);
-		network_send_udp(udp, ipNum, portNum, bufferToSend, buffer_tell(bufferToSend));
+		network_send_udp(udp, ipNum, udpPortNum, bufferToSend, buffer_tell(bufferToSend));
 	}
 }

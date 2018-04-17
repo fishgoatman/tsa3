@@ -1,11 +1,13 @@
 ///@desc creation stuff
 //settings
-globalvar portNum;
-portNum = 8125;
+globalvar tcpPortNum;
+tcpPortNum = 8127;
+globalvar udpPortNum;
+udpPortNum = 8128;
 maxClients = 32;
 
 //necessary vars
-tcp = network_create_server(network_socket_tcp, portNum, maxClients);
+tcp = network_create_server(network_socket_tcp, tcpPortNum, maxClients);
 bufferToSend = buffer_create(256, buffer_grow, 1);
 numConnected = 0;
 
