@@ -9,7 +9,7 @@ maxClients = 32;
 //necessary vars
 tcp = network_create_server(network_socket_tcp, tcpPortNum, maxClients);
 bufferToSend = buffer_create(256, buffer_grow, 1);
-numConnected = 0;
+numConnected = 5;
 
 globalvar clientIds, clientDataIds, playerDataIds, inQueuePlayerNums, currGameDataIds;
 clientIds = ds_list_create();

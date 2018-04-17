@@ -15,7 +15,6 @@ if (portNum == tcpPortNum) {
 		var playerNum = buffer_read(receivedBuffer, buffer_u16);
 		thisInControl[thisNumber] = true;
 		playerNums[thisNumber] = playerNum;
-		show_debug_message("A");
 	}
 } else if (portNum == udpPortNum) {
 	var bufferType = buffer_read(receivedBuffer, buffer_string);

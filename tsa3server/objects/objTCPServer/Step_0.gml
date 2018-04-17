@@ -35,7 +35,7 @@ if (ds_list_size(inQueuePlayerNums) >= 2) {
 				buffer_seek(bufferToSend, buffer_seek_start, 0);
 				buffer_write(bufferToSend, buffer_string, "thisNumber");
 				buffer_write(bufferToSend, buffer_u8, p);
-				buffer_write(bufferToSend, buffer_u32, thisPlayerNum);
+				buffer_write(bufferToSend, buffer_u16, thisPlayerNum);
 				network_send_packet(currClientId, bufferToSend, buffer_tell(bufferToSend));
 			}
 		}
