@@ -4,9 +4,16 @@ var portNum = async_load[? "port"];
 if (portNum != udpPortNum && portNum != tcpPortNum) {
 	var receivedBuffer = async_load[? "buffer"];
 	var bufferType = buffer_read(receivedBuffer, buffer_string);
-	show_debug_message(bufferType);
 
-	if (bufferType == "basicState") {
+	if (bufferType == "udpConnection") {
+		var playerNum = buffer_read(receivedBuffer, buffer_u16);
+		var clientId = ds_map_find_value(playerDataIds, playerNum);
+		var clientDataId = ds_map_find_value(clientDataIds, clientId);
+		clientDataId.udpPortNum = portNum;
+		buffer_seek(bufferToSend, buffer_seek_start, 0);
+		buffer_write(bufferToSend, buffer_seek_start, "udpConnection");
+		network_send_udp(udp, clientDataId.ip, clientDataId.udpPortNum, bufferToSend, buffer_tell(bufferToSend));
+	} else if (bufferType == "basicState") {
 		var playerNum = buffer_read(receivedBuffer, buffer_u16);
 		var xPos = buffer_read(receivedBuffer, buffer_u16);
 		var yPos = buffer_read(receivedBuffer, buffer_u16);
