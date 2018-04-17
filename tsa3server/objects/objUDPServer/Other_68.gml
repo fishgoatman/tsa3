@@ -8,7 +8,6 @@ if (portNum != udpPortNum && portNum != tcpPortNum) {
 
 	if (bufferType == "udpConnection") {
 		var playerNum = buffer_read(receivedBuffer, buffer_u16);
-		show_debug_message(playerNum);
 		var playerDataId = ds_map_find_value(playerDataIds, playerNum);
 		var clientDataId = ds_map_find_value(clientDataIds, playerDataId.clientId);
 		clientDataId.udpPortNum = portNum;
