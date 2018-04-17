@@ -8,7 +8,8 @@ if (portNum != udpPortNum && portNum != tcpPortNum) {
 
 	if (bufferType == "basicState") {
 		var playerNum = buffer_read(receivedBuffer, buffer_u16);
-		show_debug_message("pn" + playerNum);
+		var xPos = buffer_read(receivedBuffer, buffer_u16);
+		var yPos = buffer_read(receivedBuffer, buffer_u16);
 		var playerDataId = ds_map_find_value(playerDataIds, playerNum);
 		playerDataId.xPos = xPos;
 		playerDataId.yPos = yPos;
