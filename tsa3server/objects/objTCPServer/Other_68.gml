@@ -26,6 +26,7 @@ if (portNum == tcpPortNum) {
 	} else if (type == network_type_data) {
 		var clientId = async_load[? "id"];
 		var receivedBuffer = async_load[? "buffer"];
+		buffer_seek(receivedBuffer, buffer_seek_start, 0);
 		var bufferType = buffer_read(receivedBuffer, buffer_string);
 	
 		if (bufferType == "numPlayers") {
