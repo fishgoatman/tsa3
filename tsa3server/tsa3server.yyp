@@ -39,25 +39,6 @@
     },
     "resources": [
         {
-            "Key": "0633e580-3740-43fb-9c2b-5f0355d6505f",
-            "Value": {
-                "id": "566dbb92-e8bf-42ed-891c-a26e585480b0",
-                "modelName": "GMResourceInfo",
-                "mvc": "1.0",
-                "configDeltaFiles": [
-                    
-                ],
-                "configDeltas": [
-                    
-                ],
-                "resourceCreationConfigs": [
-                    "default"
-                ],
-                "resourcePath": "scripts\/scrSendPlayerData\/scrSendPlayerData.yy",
-                "resourceType": "GMScript"
-            }
-        },
-        {
             "Key": "1cc15476-d49d-43cc-ae10-1e9ae625a3d7",
             "Value": {
                 "id": "9fcca4bd-de0c-44ec-ae83-3c712b6f36c3",
@@ -534,7 +515,7 @@
         }
     ],
     "script_order": [
-        "0633e580-3740-43fb-9c2b-5f0355d6505f"
+        
     ],
     "tutorial": ""
 }
