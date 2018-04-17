@@ -3,11 +3,10 @@
 for (var i = 0; i < numPlayers; i++) {
 	if (thisInControl[i]) {
 		buffer_seek(bufferToSend, buffer_seek_start, 0);
-		buffer_write(bufferToSend, buffer_string, "basicState");
-		buffer_write(bufferToSend, buffer_u8, playerNums[i]);
-		buffer_write(bufferToSend, buffer_u8, 44);
-		buffer_write(bufferToSend, buffer_u8, heroId[i].y);
+		var str = "basicState" + string(playerNums[i]);
+		show_debug_message(str);
+		show_debug_message(string(playerNums[i]));
+		buffer_write(bufferToSend, buffer_string, str);
 		network_send_udp(udp, ipNum, udpPortNum, bufferToSend, buffer_tell(bufferToSend));
-		show_debug_message(i);
 	}
 }
