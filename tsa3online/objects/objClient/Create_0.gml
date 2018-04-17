@@ -1,7 +1,7 @@
 ///@desc creation stuff
 //settings
-tcpPortNum = 8125;
-udpPortNum = 8126;
+tcpPortNum = 8127;
+udpPortNum = 8128;
 ipNum = "10.0.1.43";
 
 //necessary vars

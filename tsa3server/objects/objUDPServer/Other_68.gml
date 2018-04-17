@@ -7,9 +7,12 @@ if (portNum == udpPortNum) {
 	var bufferType = buffer_read(receivedBuffer, buffer_string);
 
 	if (bufferType == "basicState") {
-		var playerNum = buffer_read(receivedBuffer, buffer_u16);
-		var xPos = buffer_read(receivedBuffer, buffer_u16);
-		var yPos = buffer_read(receivedBuffer, buffer_u16);
+		var playerNum = buffer_read(receivedBuffer, buffer_u8);
+		show_debug_message("pn" + string(playerNum));
+		var xPos = buffer_read(receivedBuffer, buffer_u8);
+		show_debug_message("xp" + string(xPos));
+		var yPos = buffer_read(receivedBuffer, buffer_u8);
+		show_debug_message("yp" + string(yPos));
 		var playerDataId = ds_map_find_value(playerDataIds, playerNum);
 		playerDataId.xPos = xPos;
 		playerDataId.yPos = yPos;
