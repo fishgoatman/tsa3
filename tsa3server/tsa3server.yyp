@@ -476,6 +476,25 @@
             }
         },
         {
+            "Key": "f00b4e72-0179-4963-9edd-11eb1342e65e",
+            "Value": {
+                "id": "77b62c68-f6e3-4769-bfc7-c454edf2c7d6",
+                "modelName": "GMResourceInfo",
+                "mvc": "1.0",
+                "configDeltaFiles": [
+                    
+                ],
+                "configDeltas": [
+                    
+                ],
+                "resourceCreationConfigs": [
+                    "default"
+                ],
+                "resourcePath": "scripts\/scrCreateBuffer\/scrCreateBuffer.yy",
+                "resourceType": "GMScript"
+            }
+        },
+        {
             "Key": "f418569b-3bdd-4706-a0e4-364317f54032",
             "Value": {
                 "id": "c4890601-8c78-439a-b9c7-b4be47b3eaab",
@@ -515,7 +534,7 @@
         }
     ],
     "script_order": [
-        
+        "f00b4e72-0179-4963-9edd-11eb1342e65e"
     ],
     "tutorial": ""
 }
