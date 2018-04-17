@@ -1,11 +1,9 @@
 ///@desc receive data
-var type = async_load[? "type"];
-
-if (type == network_type_data) {
-	var receivedBuffer = async_load[? "buffer"];
-	var portNum = async_load[? "port"];
-	var bufferType = buffer_read(receivedBuffer, buffer_string);
+var portNum = async_load[? "port"];
+var receivedBuffer = async_load[? "buffer"];
+var bufferType = buffer_read(receivedBuffer, buffer_string);
 	
+if (portNum == tcpPortNum) {
 	if (bufferType == "connected") {
 		buffer_write(bufferToSend, buffer_string, "numPlayers");
 		buffer_write(bufferToSend, buffer_u8, 1);
@@ -15,7 +13,9 @@ if (type == network_type_data) {
 		var playerNum = buffer_read(receivedBuffer, buffer_u16);
 		thisInControl[thisNumber] = true;
 		playerNums[thisNumber] = playerNum;
-	} else if (bufferType == "udpConnection") {
+	}
+} else {
+	if (bufferType == "udpConnection") {
 		udpConnected = true;
 	} else if (bufferType == "basicState") {
 		var thisNumber = buffer_read(receivedBuffer, buffer_u8);
