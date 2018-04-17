@@ -1426,25 +1426,6 @@
             }
         },
         {
-            "Key": "2795989a-8c39-4fbe-98ec-1dfed1bf4ca3",
-            "Value": {
-                "id": "506875e9-c106-4c33-846c-f94665938e01",
-                "modelName": "GMResourceInfo",
-                "mvc": "1.0",
-                "configDeltaFiles": [
-                    
-                ],
-                "configDeltas": [
-                    
-                ],
-                "resourceCreationConfigs": [
-                    "default"
-                ],
-                "resourcePath": "objects\/objRmArrowRain\/objRmArrowRain.yy",
-                "resourceType": "GMObject"
-            }
-        },
-        {
             "Key": "28525832-11b9-4e87-a2b0-29c5895bbcb2",
             "Value": {
                 "id": "4b0e8e28-4fe6-4911-be67-7addf2ac3b00",
@@ -8057,25 +8038,6 @@
             }
         },
         {
-            "Key": "eb05c12d-9dbc-4f11-89a0-25a133720c8a",
-            "Value": {
-                "id": "0817d5b7-18ce-4b41-acd6-bfd79a91f977",
-                "modelName": "GMResourceInfo",
-                "mvc": "1.0",
-                "configDeltaFiles": [
-                    
-                ],
-                "configDeltas": [
-                    
-                ],
-                "resourceCreationConfigs": [
-                    "default"
-                ],
-                "resourcePath": "objects\/objRmChimes\/objRmChimes.yy",
-                "resourceType": "GMObject"
-            }
-        },
-        {
             "Key": "ec1762bc-34f0-4cdd-9e10-c7291d1eb641",
             "Value": {
                 "id": "75d6ea2d-5ffd-43ed-8165-685ec15b8e82",
@@ -8795,25 +8757,6 @@
                 ],
                 "resourcePath": "scripts\/scrGetHeight\/scrGetHeight.yy",
                 "resourceType": "GMScript"
-            }
-        },
-        {
-            "Key": "ffa1fcdf-b70c-43c0-8430-ae8447b1c85c",
-            "Value": {
-                "id": "bb3b757c-21e4-4d5b-90d8-190752e47dd2",
-                "modelName": "GMResourceInfo",
-                "mvc": "1.0",
-                "configDeltaFiles": [
-                    
-                ],
-                "configDeltas": [
-                    
-                ],
-                "resourceCreationConfigs": [
-                    "default"
-                ],
-                "resourcePath": "objects\/objWindManager\/objWindManager.yy",
-                "resourceType": "GMObject"
             }
         }
     ],
