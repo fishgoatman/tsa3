@@ -1,9 +1,9 @@
 ///@desc creation stuff
 //settings
 globalvar tcpPortNum;
-tcpPortNum = 8127;
+tcpPortNum = 8125;
 globalvar udpPortNum;
-udpPortNum = 8128;
+udpPortNum = 8126;
 maxClients = 32;
 
 //necessary vars
