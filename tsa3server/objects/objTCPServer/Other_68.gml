@@ -1,6 +1,6 @@
 ///@desc networking stuff
 var type = async_load[? "type"];
-var port = async_load[? "port"];
+var portNum = async_load[? "port"];
 
 if (portNum == tcpPortNum) {
 	if (type == network_type_connect) {
