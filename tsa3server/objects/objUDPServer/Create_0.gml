@@ -7,4 +7,5 @@ if (udp < 0) {
 	show_debug_message("server successfully created");
 }
 
-bufferToSend = buffer_create(256, buffer_grow, 1);
+bufferToSend = scrCreateBuffer();
+a = 0;

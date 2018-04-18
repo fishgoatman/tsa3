@@ -44,5 +44,7 @@ if (portNum == tcpPortNum) {
 				ds_list_add(inQueuePlayerNums, playerNum);
 			}
 		}
+		
+		buffer_delete(receivedBuffer);
 	}
 }
