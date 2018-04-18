@@ -11,8 +11,9 @@ if (portNum == tcpPortNum) {
 		clientDataId.ip = ip;
 		ds_map_add(clientDataIds, clientId, clientDataId);
 		buffer_seek(bufferToSend, buffer_seek_start, 0);
-		buffer_write(bufferToSend, buffer_string, "connected");
+		buffer_write(bufferToSend, buffer_string, "tcpConnection");
 		network_send_packet(clientId, bufferToSend, buffer_tell(bufferToSend));
+		show_debug_message("tcpConnection" + string(buffer_tell(bufferToSend)));
 	} else if (type == network_type_disconnect) {
 		var clientId = async_load[? "socket"];
 		for (var i = 0; i < ds_list_size(listIds); i++) {
