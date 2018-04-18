@@ -10,14 +10,17 @@ if (portNum == tcpPortNum) {
 	
 	if (bufferType == "tcpConnection") {
 		show_debug_message("tcpConnection");
+		show_debug_message("tcpConnection" + string(buffer_tell(receivedBuffer)));
 		buffer_write(bufferToSend, buffer_string, "numPlayers");
 		buffer_write(bufferToSend, buffer_u8, 1);
 		network_send_packet(tcp, bufferToSend, buffer_tell(bufferToSend));
 	} else if (bufferType == "thisNumber") {
 		show_debug_message("thisNumber");
-		var thisNumber = buffer_read(receivedBuffer, buffer_u8);
-		var playerNum = buffer_read(receivedBuffer, buffer_u16);
-		show_debug_message(string(thisNumber) + " " + string(playerNum));
+		//var thisNumber = buffer_read(receivedBuffer, buffer_u8);
+		//var playerNum = buffer_read(receivedBuffer, buffer_u16);
+		var useless = buffer_read(receivedBuffer, buffer_string);
+		show_debug_message(useless);
+		show_debug_message("thisNumber" + string(buffer_tell(receivedBuffer)));
 		thisInControl[thisNumber] = true;
 		playerNums[thisNumber] = playerNum;
 	}
