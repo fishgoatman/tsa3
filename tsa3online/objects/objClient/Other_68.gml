@@ -21,8 +21,8 @@ if (portNum == tcpPortNum) {
 		var useless = buffer_read(receivedBuffer, buffer_string);
 		show_debug_message(useless);
 		show_debug_message("thisNumber" + string(buffer_tell(receivedBuffer)));
-		thisInControl[thisNumber] = true;
-		playerNums[thisNumber] = playerNum;
+		//thisInControl[thisNumber] = true;
+		//playerNums[thisNumber] = playerNum;
 	}
 } else {
 	show_debug_message("udp");
