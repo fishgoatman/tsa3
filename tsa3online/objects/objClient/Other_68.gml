@@ -1,22 +1,29 @@
 ///@desc receive data
 var portNum = async_load[? "port"];
+show_debug_message(portNum);
 var receivedBuffer = async_load[? "buffer"];
-show_debug_message("size" + string(buffer_sizeof(receivedBuffer)));
 buffer_seek(receivedBuffer, buffer_seek_start, 0);
 var bufferType = buffer_read(receivedBuffer, buffer_string);
 	
 if (portNum == tcpPortNum) {
+	show_debug_message("tcp");
+	
 	if (bufferType == "tcpConnection") {
+		show_debug_message("tcpConnection");
 		buffer_write(bufferToSend, buffer_string, "numPlayers");
 		buffer_write(bufferToSend, buffer_u8, 1);
 		network_send_packet(tcp, bufferToSend, buffer_tell(bufferToSend));
 	} else if (bufferType == "thisNumber") {
+		show_debug_message("thisNumber");
 		var thisNumber = buffer_read(receivedBuffer, buffer_u8);
 		var playerNum = buffer_read(receivedBuffer, buffer_u16);
+		show_debug_message(string(thisNumber) + " " + string(playerNum));
 		thisInControl[thisNumber] = true;
 		playerNums[thisNumber] = playerNum;
 	}
 } else {
+	show_debug_message("udp");
+	
 	if (bufferType == "udpConnection") {
 		udpConnected = true;
 	} else if (udpConnected) {
