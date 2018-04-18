@@ -19,11 +19,13 @@ if (portNum == tcpPortNum) {
 } else {
 	if (bufferType == "udpConnection") {
 		udpConnected = true;
-	} else if (bufferType == "basicState") {
-		var thisNumber = buffer_read(receivedBuffer, buffer_u8);
-		var xPos = buffer_read(receivedBuffer, buffer_u16);
-		var yPos = buffer_read(receivedBuffer, buffer_u16);
-		heroId[thisNumber].x = xPos;
-		heroId[thisNumber].y = yPos;
+	} else if (udpConnected) {
+		if (bufferType == "basicState") {
+			var thisNumber = buffer_read(receivedBuffer, buffer_u8);
+			var xPos = buffer_read(receivedBuffer, buffer_u16);
+			var yPos = buffer_read(receivedBuffer, buffer_u16);
+			heroId[thisNumber].x = xPos;
+			heroId[thisNumber].y = yPos;
+		}
 	}
 }

@@ -14,7 +14,6 @@ if (portNum != udpPortNum && portNum != tcpPortNum) {
 		buffer_seek(bufferToSend, buffer_seek_start, 0);
 		buffer_write(bufferToSend, buffer_seek_start, "udpConnection");
 		network_send_udp(udp, clientDataId.ip, clientDataId.udpPortNum, bufferToSend, buffer_tell(bufferToSend));
-		show_debug_message("udpConnected" + string(buffer_tell(bufferToSend)));
 	} else if (bufferType == "basicState") {
 		var playerNum = buffer_read(receivedBuffer, buffer_u16);
 		var xPos = buffer_read(receivedBuffer, buffer_u16);
