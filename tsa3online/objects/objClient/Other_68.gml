@@ -1,4 +1,4 @@
-///@desc receive dataasdf
+///@desc receive data
 var portNum = async_load[? "port"];
 show_debug_message(portNum);
 var receivedBuffer = async_load[? "buffer"];
