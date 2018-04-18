@@ -1,6 +1,7 @@
 ///@desc receive data
 var portNum = async_load[? "port"];
 var receivedBuffer = async_load[? "buffer"];
+show_debug_message("size" + string(buffer_sizeof(receivedBuffer)));
 buffer_seek(receivedBuffer, buffer_seek_start, 0);
 var bufferType = buffer_read(receivedBuffer, buffer_string);
 	
@@ -26,5 +27,3 @@ if (portNum == tcpPortNum) {
 		heroId[thisNumber].y = yPos;
 	}
 }
-
-buffer_delete(receivedBuffer);

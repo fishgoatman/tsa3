@@ -23,6 +23,4 @@ if (portNum != udpPortNum && portNum != tcpPortNum) {
 		playerDataId.xPos = xPos;
 		playerDataId.yPos = yPos;
 	}
-	
-	buffer_delete(receivedBuffer);
 }
