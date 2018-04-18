@@ -16,13 +16,11 @@ if (portNum == tcpPortNum) {
 		network_send_packet(tcp, bufferToSend, buffer_tell(bufferToSend));
 	} else if (bufferType == "thisNumber") {
 		show_debug_message("thisNumber");
-		//var thisNumber = buffer_read(receivedBuffer, buffer_u8);
+		var thisNumber = buffer_read(receivedBuffer, buffer_u8);
 		//var playerNum = buffer_read(receivedBuffer, buffer_u16);
-		var useless = buffer_read(receivedBuffer, buffer_string);
-		show_debug_message(useless);
 		show_debug_message("thisNumber" + string(buffer_tell(receivedBuffer)));
 		//thisInControl[thisNumber] = true;
-		//playerNums[thisNumber] = playerNum;
+		playerNums[thisNumber] = playerNum;
 	}
 } else {
 	show_debug_message("udp");
