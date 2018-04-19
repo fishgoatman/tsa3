@@ -20,10 +20,10 @@ for (var g = 0; g < ds_list_size(currGameDataIds); g++) {
 					buffer_write(bufferToSend, buffer_u8, p);
 					buffer_write(bufferToSend, buffer_u16, playerDataId.xPos);
 					buffer_write(bufferToSend, buffer_u16, playerDataId.yPos);
-					buffer_write(bufferToSend, buffer_u16, playerDataId.sprite_index);
-					buffer_write(bufferToSend, buffer_s8, playerDataId.image_index);
-					buffer_write(bufferToSend, buffer_s16, playerDataId.image_angle);
-					buffer_write(bufferToSend, buffer_s8, playerDataId.image_xscale);
+					buffer_write(bufferToSend, buffer_s16, playerDataId.spriteIndex);
+					buffer_write(bufferToSend, buffer_s8, playerDataId.imageIndex);
+					buffer_write(bufferToSend, buffer_s16, playerDataId.imageAngle);
+					buffer_write(bufferToSend, buffer_s8, playerDataId.imageXScale);
 					network_send_udp(udp, clientIp, clientPortNum, bufferToSend, buffer_tell(bufferToSend));
 					
 					if (playerDataId.sendLockedIn) {
@@ -31,6 +31,7 @@ for (var g = 0; g < ds_list_size(currGameDataIds); g++) {
 						buffer_write(bufferToSend, buffer_string, "lockedIn");
 						buffer_write(bufferToSend, buffer_u8, p);
 						buffer_write(bufferToSend, buffer_bool, playerDataId.lockedIn);
+						buffer_write(bufferToSend, buffer_string, playerDataId.selectedHero);
 						network_send_udp(udp, clientIp, clientPortNum, bufferToSend, buffer_tell(bufferToSend));
 					}
 				}

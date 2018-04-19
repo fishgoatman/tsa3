@@ -21,7 +21,7 @@ if (!udpConnected) {
 			buffer_write(bufferToSend, buffer_u16, playerNums[i]);
 			buffer_write(bufferToSend, buffer_u16, myHeroId.x);
 			buffer_write(bufferToSend, buffer_u16, myHeroId.y);
-			buffer_write(bufferToSend, buffer_u16, myHeroId.sprite_index);
+			buffer_write(bufferToSend, buffer_s16, myHeroId.sprite_index);
 			buffer_write(bufferToSend, buffer_s8, myHeroId.image_index);
 			buffer_write(bufferToSend, buffer_s16, myHeroId.image_angle);
 			buffer_write(bufferToSend, buffer_s8, myHeroId.image_xscale);
@@ -33,6 +33,7 @@ if (!udpConnected) {
 				buffer_write(bufferToSend, buffer_string, "lockedIn");
 				buffer_write(bufferToSend, buffer_u16, playerNums[i]);
 				buffer_write(bufferToSend, buffer_bool, lockedIn[i]);
+				buffer_write(bufferToSend, buffer_string, selectedHero[i]);
 				network_send_udp(udp, ipNum, udpPortNum, bufferToSend, buffer_tell(bufferToSend));
 			}
 		}

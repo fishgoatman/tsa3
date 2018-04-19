@@ -3,7 +3,7 @@ var portNum = async_load[? "port"];
 var receivedBuffer = async_load[? "buffer"];
 buffer_seek(receivedBuffer, buffer_seek_start, 0);
 var bufferType = buffer_read(receivedBuffer, buffer_string);
-	
+
 if (portNum == tcpPortNum) {
 	if (bufferType == "tcpConnection") {
 		buffer_write(bufferToSend, buffer_string, "numPlayers");
@@ -29,7 +29,7 @@ if (portNum == tcpPortNum) {
 			if (instance_exists(myHeroId)) {
 				myHeroId.x = buffer_read(receivedBuffer, buffer_u16);
 				myHeroId.y = buffer_read(receivedBuffer, buffer_u16);
-				myHeroId.sprite_index = buffer_read(receivedBuffer, buffer_u16);
+				myHeroId.sprite_index = buffer_read(receivedBuffer, buffer_s16);
 				myHeroId.image_index = buffer_read(receivedBuffer, buffer_s8);
 				myHeroId.image_angle = buffer_read(receivedBuffer, buffer_s16);
 				myHeroId.image_xscale = buffer_read(receivedBuffer, buffer_s8);
@@ -39,6 +39,7 @@ if (portNum == tcpPortNum) {
 		} else if (bufferType == "lockedIn") {
 			var thisNumber = buffer_read(receivedBuffer, buffer_u8);
 			lockedIn[thisNumber] = buffer_read(receivedBuffer, buffer_bool);
+			selectedHero[thisNumber] = buffer_read(receivedBuffer, buffer_string);
 		}
 	}
 }

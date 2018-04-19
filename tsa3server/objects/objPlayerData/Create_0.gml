@@ -2,4 +2,8 @@
 clientId = noone;
 xPos = 0;
 yPos = 0;
+spriteIndex = 0;
+imageIndex = 0;
+imageAngle = 0;
+imageXScale = 0;
 sendLockedIn = false;

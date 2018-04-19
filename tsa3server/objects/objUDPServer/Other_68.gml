@@ -19,7 +19,7 @@ if (portNum != udpPortNum && portNum != tcpPortNum) {
 		var playerDataId = ds_map_find_value(playerDataIds, playerNum);
 		playerDataId.xPos = buffer_read(receivedBuffer, buffer_u16);
 		playerDataId.yPos = buffer_read(receivedBuffer, buffer_u16);
-		playerDataId.spriteIndex = buffer_read(receivedBuffer, buffer_u16);
+		playerDataId.spriteIndex = buffer_read(receivedBuffer, buffer_s16);
 		playerDataId.imageIndex = buffer_read(receivedBuffer, buffer_s8);
 		playerDataId.imageAngle = buffer_read(receivedBuffer, buffer_s16);
 		playerDataId.imageXScale = buffer_read(receivedBuffer, buffer_s8);
@@ -27,6 +27,7 @@ if (portNum != udpPortNum && portNum != tcpPortNum) {
 		var playerNum = buffer_read(receivedBuffer, buffer_u16);
 		var playerDataId = ds_map_find_value(playerDataIds, playerNum);
 		playerDataId.lockedIn = buffer_read(receivedBuffer, buffer_bool);
+		playerDataId.selectedHero = buffer_read(receivedBuffer, buffer_string);
 		playerDataId.sendLockedIn = true;
 	}
 }
