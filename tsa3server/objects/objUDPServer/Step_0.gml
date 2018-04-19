@@ -28,7 +28,7 @@ for (var g = 0; g < ds_list_size(currGameDataIds); g++) {
 					
 					if (playerDataId.sendLockedIn) {
 						buffer_seek(bufferToSend, buffer_seek_start, 0);
-						buffer_write(bufferToSend, buffer_string, "basicState");
+						buffer_write(bufferToSend, buffer_string, "lockedIn");
 						buffer_write(bufferToSend, buffer_u8, p);
 						buffer_write(bufferToSend, buffer_bool, playerDataId.lockedIn);
 						network_send_udp(udp, clientIp, clientPortNum, bufferToSend, buffer_tell(bufferToSend));

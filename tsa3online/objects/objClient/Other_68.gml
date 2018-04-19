@@ -25,12 +25,17 @@ if (portNum == tcpPortNum) {
 		if (bufferType == "basicState") {
 			var thisNumber = buffer_read(receivedBuffer, buffer_u8);
 			var myHeroId = heroId[thisNumber];
-			myHeroId.x = buffer_read(receivedBuffer, buffer_u16);
-			myHeroId.y = buffer_read(receivedBuffer, buffer_u16);
-			myHeroId.sprite_index = buffer_read(receivedBuffer, buffer_u16);
-			myHeroId.image_index = buffer_read(receivedBuffer, buffer_s8);
-			myHeroId.image_angle = buffer_read(receivedBuffer, buffer_s16);
-			myHeroId.image_xscale = buffer_read(receivedBuffer, buffer_s8);
+			
+			if (instance_exists(myHeroId)) {
+				myHeroId.x = buffer_read(receivedBuffer, buffer_u16);
+				myHeroId.y = buffer_read(receivedBuffer, buffer_u16);
+				myHeroId.sprite_index = buffer_read(receivedBuffer, buffer_u16);
+				myHeroId.image_index = buffer_read(receivedBuffer, buffer_s8);
+				myHeroId.image_angle = buffer_read(receivedBuffer, buffer_s16);
+				myHeroId.image_xscale = buffer_read(receivedBuffer, buffer_s8);
+				show_debug_message(string(myHeroId.sprite_index) + " " + string(myHeroId.image_index) + " " + string(myHeroId.image_xscale));
+				show_debug_message(sprLeftSelection);
+			}
 		} else if (bufferType == "lockedIn") {
 			var thisNumber = buffer_read(receivedBuffer, buffer_u8);
 			lockedIn[thisNumber] = buffer_read(receivedBuffer, buffer_bool);
