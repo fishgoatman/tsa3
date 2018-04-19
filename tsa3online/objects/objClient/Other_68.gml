@@ -16,9 +16,12 @@ if (portNum == tcpPortNum) {
 		playerNums[thisNumber] = playerNum;
 	}
 } else {
-	if (bufferType == "udpConnection") {
-		udpConnected = true;
-	} else if (udpConnected) {
+	if (!udpConnected) {
+		if (bufferType == "udpConnection") {
+			udpConnected = true;
+			show_debug_message("udpConnected");
+		}
+	} else {
 		if (bufferType == "basicState") {
 			var thisNumber = buffer_read(receivedBuffer, buffer_u8);
 			var xPos = buffer_read(receivedBuffer, buffer_u16);

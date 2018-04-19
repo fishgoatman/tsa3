@@ -18,7 +18,7 @@ for (var g = 0; g < ds_list_size(currGameDataIds); g++) {
 				buffer_write(bufferToSend, buffer_u8, p);
 				buffer_write(bufferToSend, buffer_u16, playerDataId.xPos);
 				buffer_write(bufferToSend, buffer_u16, playerDataId.yPos);
-				network_send_udp(udp, clientIp, udpPortNum, bufferToSend, buffer_tell(bufferToSend));
+				network_send_udp(udp, clientIp, clientDataId.udpPortNum, bufferToSend, buffer_tell(bufferToSend));
 				show_debug_message(string(a) + "basicState" + string(buffer_tell(bufferToSend)));
 				a++;
 			}
