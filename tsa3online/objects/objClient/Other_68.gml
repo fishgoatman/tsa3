@@ -24,11 +24,16 @@ if (portNum == tcpPortNum) {
 	} else {
 		if (bufferType == "basicState") {
 			var thisNumber = buffer_read(receivedBuffer, buffer_u8);
-			var xPos = buffer_read(receivedBuffer, buffer_u16);
-			var yPos = buffer_read(receivedBuffer, buffer_u16);
-			heroId[thisNumber].x = xPos;
-			heroId[thisNumber].y = yPos;
-			show_debug_message(thisNumber);
+			var myHeroId = heroId[thisNumber];
+			myHeroId.x = buffer_read(receivedBuffer, buffer_u16);
+			myHeroId.y = buffer_read(receivedBuffer, buffer_u16);
+			myHeroId.sprite_index = buffer_read(receivedBuffer, buffer_u16);
+			myHeroId.image_index = buffer_read(receivedBuffer, buffer_s8);
+			myHeroId.image_angle = buffer_read(receivedBuffer, buffer_s16);
+			myHeroId.image_xscale = buffer_read(receivedBuffer, buffer_s8);
+		} else if (bufferType == "lockedIn") {
+			var thisNumber = buffer_read(receivedBuffer, buffer_u8);
+			lockedIn[thisNumber] = buffer_read(receivedBuffer, buffer_bool);
 		}
 	}
 }

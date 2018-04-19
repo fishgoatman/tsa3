@@ -2,3 +2,4 @@
 clientId = noone;
 xPos = 0;
 yPos = 0;
+sendLockedIn = false;
