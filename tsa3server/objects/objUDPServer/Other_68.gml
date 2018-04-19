@@ -12,7 +12,7 @@ if (portNum != udpPortNum && portNum != tcpPortNum) {
 		var clientDataId = ds_map_find_value(clientDataIds, playerDataId.clientId);
 		clientDataId.udpPortNum = portNum;
 		buffer_seek(bufferToSend, buffer_seek_start, 0);
-		buffer_write(bufferToSend, buffer_seek_start, "udpConnection");
+		buffer_write(bufferToSend, buffer_string, "udpConnection");
 		network_send_udp(udp, clientDataId.ip, clientDataId.udpPortNum, bufferToSend, buffer_tell(bufferToSend));
 	} else if (bufferType == "basicState") {
 		var playerNum = buffer_read(receivedBuffer, buffer_u16);
