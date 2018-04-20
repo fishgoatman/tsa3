@@ -9,11 +9,18 @@ if (portNum == tcpPortNum) {
 		buffer_write(bufferToSend, buffer_string, "numPlayers");
 		buffer_write(bufferToSend, buffer_u8, 1);
 		network_send_packet(tcp, bufferToSend, buffer_tell(bufferToSend));
+		tcpConnected = true;
+		show_debug_message("currTime = " + string(current_time));
 	} else if (bufferType == "thisNumber") {
 		var thisNumber = buffer_read(receivedBuffer, buffer_u8);
 		var playerNum = buffer_read(receivedBuffer, buffer_u16);
 		thisInControl[thisNumber] = true;
 		playerNums[thisNumber] = playerNum;
+	} else if (bufferType == "delayTest") {
+		var receivedTestNum = buffer_read(receivedBuffer, buffer_u8);
+		serverTimes[receivedTestNum] = buffer_read(receivedBuffer, buffer_f32);
+		receivedTimes[receivedTestNum] = current_time;
+		numReceivedTests++;
 	}
 } else {
 	if (!udpConnected) {

@@ -14,6 +14,7 @@ if (portNum == tcpPortNum) {
 		buffer_seek(bufferToSend, buffer_seek_start, 0);
 		buffer_write(bufferToSend, buffer_string, "tcpConnection");
 		network_send_packet(clientId, bufferToSend, buffer_tell(bufferToSend));
+		show_debug_message("currTime = " + string(current_time));
 	} else if (type == network_type_disconnect) {
 		var clientId = async_load[? "socket"];
 		for (var i = 0; i < ds_list_size(listIds); i++) {
@@ -43,6 +44,13 @@ if (portNum == tcpPortNum) {
 				ds_map_add(playerDataIds, playerNum, playerDataId);
 				ds_list_add(inQueuePlayerNums, playerNum);
 			}
+		} else if (bufferType == "delayTest") {
+			var testNum = buffer_read(receivedBuffer, buffer_u8);
+			buffer_seek(bufferToSend, buffer_seek_start, 0);
+			buffer_write(bufferToSend, buffer_string, "delayTest");
+			buffer_write(bufferToSend, buffer_u8, testNum);
+			buffer_write(bufferToSend, buffer_f32, current_time);
+			network_send_packet(clientId, bufferToSend, buffer_tell(bufferToSend));
 		}
 	}
 }

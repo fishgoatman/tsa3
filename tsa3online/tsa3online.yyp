@@ -281,7 +281,7 @@
                 "resourceCreationConfigs": [
                     "default"
                 ],
-                "resourcePath": "objects\/objStandardMageTP\/objStandardMageTP.yy",
+                "resourcePath": "objects\/objMageTP\/objMageTP.yy",
                 "resourceType": "GMObject"
             }
         },

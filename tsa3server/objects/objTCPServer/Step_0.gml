@@ -1,5 +1,4 @@
 ///@desc step
-
 ///matchmaking
 if (ds_list_size(inQueuePlayerNums) >= 2) {
 	var currGameDataId = instance_create_depth(0, 0, 0, objData);

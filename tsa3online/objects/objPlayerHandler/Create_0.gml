@@ -11,7 +11,7 @@ while (heroString == "random") {
 }
 
 if (heroString == "mage") {
-	heroObj = objStandardMageTP;
+	heroObj = objMageTP;
 } else if (heroString == "caster") {
 	heroObj = objCasterTP;
 } else if (heroString == "rogue") {

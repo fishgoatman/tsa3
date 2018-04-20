@@ -2,7 +2,7 @@
     "id": "0a5c1dd0-7ca6-4cd1-9ea9-a4dc909b161d",
     "modelName": "GMObject",
     "mvc": "1.0",
-    "name": "objStandardMageTP",
+    "name": "objMageTP",
     "eventList": [
         {
             "id": "b5783f1b-dab0-494f-a28e-90071cd9541a",
