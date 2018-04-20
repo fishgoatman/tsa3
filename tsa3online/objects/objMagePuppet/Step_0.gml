@@ -7,7 +7,7 @@ if (lastTimeToActivate != timeToActivate) {
 }
 
 if (aState == "1") {
-	if (current_time >= timeToActivate && firstTime[0]) {
+	if (current_time >= timeToActivate && firstTime) {
 		instance_create_depth(preciseX, preciseY, thisNumber, objFireSlashHitbox);
 		timeSinceSlashBlast = 0;
 			
@@ -16,7 +16,7 @@ if (aState == "1") {
 			instance_create_depth(preciseX + slashBlastAheadDist * dcos(blastAngle), preciseY - slashBlastAheadDist * dsin(blastAngle), thisNumber, objFireShot);
 		}
 			
-		firstTime[0] = false;
+		firstTime = false;
 	}
 } else if (aState == "2") {
 	if (aPhase == "u") {
