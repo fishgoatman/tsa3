@@ -2,6 +2,7 @@
 scrMageStats();
 hp = maxHp;
 clientGivenHp = hp;
+aState = "n";
 timeToActivate = 0;
 lastTimeToActivate = 0;
 firstTime = false;
