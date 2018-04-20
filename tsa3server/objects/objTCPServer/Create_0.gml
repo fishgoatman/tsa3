@@ -17,3 +17,8 @@ clientDataIds = ds_map_create();
 playerDataIds = ds_map_create();
 inQueuePlayerNums = ds_list_create();
 currGameDataIds = ds_list_create();
+
+TCP_CONNECTION = 0;
+THIS_NUMBER = 1;
+DELAY_TEST = 2;
+NUM_PLAYERS = 3;

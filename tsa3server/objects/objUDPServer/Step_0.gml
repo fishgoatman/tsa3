@@ -17,13 +17,11 @@ for (var g = 0; g < ds_list_size(currGameDataIds); g++) {
 				if (clientId != playerClientId) {
 					//basic state
 					buffer_seek(bufferToSend, buffer_seek_start, 0);
-					buffer_write(bufferToSend, buffer_string, "basicState");
+					buffer_write(bufferToSend, buffer_u8, BASIC_STATE);
 					buffer_write(bufferToSend, buffer_u8, p);
 					buffer_write(bufferToSend, buffer_u16, playerDataId.xPos);
 					buffer_write(bufferToSend, buffer_u16, playerDataId.yPos);
 					buffer_write(bufferToSend, buffer_s16, playerDataId.spriteIndex);
-					buffer_write(bufferToSend, buffer_s8, playerDataId.imageIndex);
-					buffer_write(bufferToSend, buffer_s16, playerDataId.imageAngle);
 					buffer_write(bufferToSend, buffer_s8, playerDataId.imageXScale);
 					buffer_write(bufferToSend, buffer_u8, playerDataId.hp);
 					network_send_udp(udp, clientIp, clientPortNum, bufferToSend, buffer_tell(bufferToSend));

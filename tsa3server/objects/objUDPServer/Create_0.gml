@@ -8,4 +8,8 @@ if (udp < 0) {
 }
 
 bufferToSend = scrCreateBuffer();
-a = 0;
+
+UDP_CONNECTION = 4;
+BASIC_STATE = 5;
+LOCKED_IN = 6;
+ABILITY = 7;

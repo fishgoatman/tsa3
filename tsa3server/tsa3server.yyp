@@ -262,7 +262,7 @@
                 "resourceCreationConfigs": [
                     "default"
                 ],
-                "resourcePath": "objects\/objData\/objData.yy",
+                "resourcePath": "objects\/objGameData\/objGameData.yy",
                 "resourceType": "GMObject"
             }
         },

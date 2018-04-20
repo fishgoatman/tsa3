@@ -1,7 +1,12 @@
 ///@desc step
 ///matchmaking
 if (ds_list_size(inQueuePlayerNums) >= 2) {
-	var currGameDataId = instance_create_depth(0, 0, 0, objData);
+	var currGameDataId = instance_create_depth(0, 0, 0, objGameData);
+	
+	for (var p = 0; p < array_length_1d(currGameDataId.playerNums); p++) {
+		currGameDataId.sentThisNumber[p] = false;
+	}
+	
 	var firstNum = ds_list_find_value(inQueuePlayerNums, 0);
 	var secondNum = ds_list_find_value(inQueuePlayerNums, 1);
 	currGameDataId.playerNums[0] = firstNum;
@@ -30,12 +35,13 @@ if (ds_list_size(inQueuePlayerNums) >= 2) {
 			var thisPlayerNum = currGameDataId.playerNums[p];
 			var playerClientId = ds_map_find_value(playerDataIds, thisPlayerNum).clientId;
 			
-			if (currClientId == playerClientId) {
+			if (!currGameDataId.sentThisNumber[p] && currClientId == playerClientId) {
 				buffer_seek(bufferToSend, buffer_seek_start, 0);
-				buffer_write(bufferToSend, buffer_string, "thisNumber");
+				buffer_write(bufferToSend, buffer_u8, THIS_NUMBER);
 				buffer_write(bufferToSend, buffer_u8, p);
 				buffer_write(bufferToSend, buffer_u16, thisPlayerNum);
 				network_send_packet(currClientId, bufferToSend, buffer_tell(bufferToSend));
+				currGameDataId.sentThisNumber[p] = true;
 			}
 		}
 	}

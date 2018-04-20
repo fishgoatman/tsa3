@@ -12,7 +12,7 @@ if (portNum == tcpPortNum) {
 		clientDataId.udpPortNum = portNum;
 		ds_map_add(clientDataIds, clientId, clientDataId);
 		buffer_seek(bufferToSend, buffer_seek_start, 0);
-		buffer_write(bufferToSend, buffer_string, "tcpConnection");
+		buffer_write(bufferToSend, buffer_u8, TCP_CONNECTION);
 		network_send_packet(clientId, bufferToSend, buffer_tell(bufferToSend));
 		show_debug_message("currTime = " + string(current_time));
 	} else if (type == network_type_disconnect) {
@@ -29,7 +29,7 @@ if (portNum == tcpPortNum) {
 		var clientId = async_load[? "id"];
 		var receivedBuffer = async_load[? "buffer"];
 		buffer_seek(receivedBuffer, buffer_seek_start, 0);
-		var bufferType = buffer_read(receivedBuffer, buffer_string);
+		var bufferType = buffer_read(receivedBuffer, buffer_u8);
 	
 		if (bufferType == "numPlayers") {
 			var numNewPlayers = buffer_read(receivedBuffer, buffer_u8);
@@ -47,7 +47,7 @@ if (portNum == tcpPortNum) {
 		} else if (bufferType == "delayTest") {
 			var testNum = buffer_read(receivedBuffer, buffer_u8);
 			buffer_seek(bufferToSend, buffer_seek_start, 0);
-			buffer_write(bufferToSend, buffer_string, "delayTest");
+			buffer_write(bufferToSend, buffer_string, DELAY_TEST);
 			buffer_write(bufferToSend, buffer_u8, testNum);
 			buffer_write(bufferToSend, buffer_f32, current_time);
 			network_send_packet(clientId, bufferToSend, buffer_tell(bufferToSend));
