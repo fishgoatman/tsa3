@@ -28,7 +28,7 @@ for (var g = 0; g < ds_list_size(currGameDataIds); g++) {
 					
 					//ability
 					buffer_seek(bufferToSend, buffer_seek_start, 0);
-					buffer_write(bufferToSend, buffer_string, "ability");
+					buffer_write(bufferToSend, buffer_u8, ABILITY);
 					buffer_write(bufferToSend, buffer_u8, p);
 					buffer_write(bufferToSend, buffer_string, playerDataId.aState);
 					buffer_write(bufferToSend, buffer_f32, playerDataId.timeToActivate);
@@ -37,7 +37,7 @@ for (var g = 0; g < ds_list_size(currGameDataIds); g++) {
 					if (playerDataId.sendLockedIn) {
 						//locked in
 						buffer_seek(bufferToSend, buffer_seek_start, 0);
-						buffer_write(bufferToSend, buffer_string, "lockedIn");
+						buffer_write(bufferToSend, buffer_u8, LOCKED_IN);
 						buffer_write(bufferToSend, buffer_u8, p);
 						buffer_write(bufferToSend, buffer_bool, playerDataId.lockedIn);
 						buffer_write(bufferToSend, buffer_string, playerDataId.selectedHero);

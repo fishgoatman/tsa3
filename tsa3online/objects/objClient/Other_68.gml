@@ -14,6 +14,7 @@ if (portNum == tcpPortNum) {
 	} else if (bufferType == THIS_NUMBER) {
 		var thisNumber = buffer_read(receivedBuffer, buffer_u8);
 		var playerNum = buffer_read(receivedBuffer, buffer_u16);
+		show_debug_message(thisNumber);
 		thisInControl[thisNumber] = true;
 		playerNums[thisNumber] = playerNum;
 	} else if (bufferType == DELAY_TEST) {

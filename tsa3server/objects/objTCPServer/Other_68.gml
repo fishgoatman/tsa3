@@ -31,7 +31,7 @@ if (portNum == tcpPortNum) {
 		buffer_seek(receivedBuffer, buffer_seek_start, 0);
 		var bufferType = buffer_read(receivedBuffer, buffer_u8);
 	
-		if (bufferType == "numPlayers") {
+		if (bufferType == NUM_PLAYERS) {
 			var numNewPlayers = buffer_read(receivedBuffer, buffer_u8);
 			var clientDataId = ds_map_find_value(clientDataIds, clientId);
 		
@@ -44,7 +44,7 @@ if (portNum == tcpPortNum) {
 				ds_map_add(playerDataIds, playerNum, playerDataId);
 				ds_list_add(inQueuePlayerNums, playerNum);
 			}
-		} else if (bufferType == "delayTest") {
+		} else if (bufferType == DELAY_TEST) {
 			var testNum = buffer_read(receivedBuffer, buffer_u8);
 			buffer_seek(bufferToSend, buffer_seek_start, 0);
 			buffer_write(bufferToSend, buffer_string, DELAY_TEST);
