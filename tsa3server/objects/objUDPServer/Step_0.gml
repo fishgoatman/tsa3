@@ -15,6 +15,7 @@ for (var g = 0; g < ds_list_size(currGameDataIds); g++) {
 				var playerClientId = playerDataId.clientId;
 			
 				if (clientId != playerClientId) {
+					//basic state
 					buffer_seek(bufferToSend, buffer_seek_start, 0);
 					buffer_write(bufferToSend, buffer_string, "basicState");
 					buffer_write(bufferToSend, buffer_u8, p);
@@ -26,7 +27,16 @@ for (var g = 0; g < ds_list_size(currGameDataIds); g++) {
 					buffer_write(bufferToSend, buffer_s8, playerDataId.imageXScale);
 					network_send_udp(udp, clientIp, clientPortNum, bufferToSend, buffer_tell(bufferToSend));
 					
+					//ability
+					buffer_seek(bufferToSend, buffer_seek_start, 0);
+					buffer_write(bufferToSend, buffer_string, "ability");
+					buffer_write(bufferToSend, buffer_u8, p);
+					buffer_write(bufferToSend, buffer_string, playerDataId.aState);
+					buffer_write(bufferToSend, buffer_f32, playerDataId.timeToActivate);
+					network_send_udp(udp, clientIp, clientPortNum, bufferToSend, buffer_tell(bufferToSend));
+					
 					if (playerDataId.sendLockedIn) {
+						//locked in
 						buffer_seek(bufferToSend, buffer_seek_start, 0);
 						buffer_write(bufferToSend, buffer_string, "lockedIn");
 						buffer_write(bufferToSend, buffer_u8, p);

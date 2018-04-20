@@ -29,5 +29,10 @@ if (portNum != udpPortNum && portNum != tcpPortNum) {
 		playerDataId.lockedIn = buffer_read(receivedBuffer, buffer_bool);
 		playerDataId.selectedHero = buffer_read(receivedBuffer, buffer_string);
 		playerDataId.sendLockedIn = true;
+	} else if (bufferType == "ability") {
+		var playerNum = buffer_read(receivedBuffer, buffer_u16);
+		var playerDataId = ds_map_find_value(playerDataIds, playerNum);
+		playerDataId.aState = buffer_read(receivedBuffer, buffer_string);
+		playerDataId.timeToActivate = buffer_read(receivedBuffer, buffer_f32);
 	}
 }

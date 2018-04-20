@@ -67,8 +67,9 @@ if (!udpConnected) {
 				//ability
 				buffer_seek(bufferToSend, buffer_seek_start, 0);
 				buffer_write(bufferToSend, buffer_string, "ability");
-				buffer_write(bufferToSend, buffer_string, myHeroId.activatedState);
-				buffer_write(bufferToSend, buffer_f32, myHeroId.timeToActivateAbility);
+				buffer_write(bufferToSend, buffer_u16, playerNums[i]);
+				buffer_write(bufferToSend, buffer_string, myHeroId.clientAState);
+				buffer_write(bufferToSend, buffer_f32, myHeroId.timeToActivate - clientServerDelay);
 				network_send_udp(udp, ipNum, udpPortNum, bufferToSend, buffer_tell(bufferToSend));
 			}
 		}

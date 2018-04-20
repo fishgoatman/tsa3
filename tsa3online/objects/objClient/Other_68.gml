@@ -51,7 +51,7 @@ if (portNum == tcpPortNum) {
 			var thisNumber = buffer_read(receivedBuffer, buffer_u8);
 			myHeroId = heroId[thisNumber];
 			myHeroId.aState = buffer_read(receivedBuffer, buffer_string);
-			myHeroId.timeToActivate = buffer_read(receivedBuffer, buffer_f32);
+			myHeroId.timeToActivate = buffer_read(receivedBuffer, buffer_f32) + clientServerDelay;
 		}
 	}
 }

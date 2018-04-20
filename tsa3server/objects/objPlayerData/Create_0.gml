@@ -7,3 +7,5 @@ imageIndex = 0;
 imageAngle = 0;
 imageXScale = 0;
 sendLockedIn = false;
+aState = "n";
+timeToActivate = 0;
