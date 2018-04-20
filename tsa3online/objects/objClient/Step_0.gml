@@ -80,10 +80,6 @@ if (!udpConnected) {
 					network_send_udp(udp, ipNum, udpPortNum, bufferToSend, buffer_tell(bufferToSend));
 				}
 			}
-		} else {
-			buffer_write(bufferToSend, buffer_u8, HP);
-			buffer_write(bufferToSend, buffer_u16, playerNums[i]);
-			buffer_write(bufferToSend, buffer_u8, myHeroId.hp);
 		}
 	}
 }
