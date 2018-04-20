@@ -1,5 +1,6 @@
 ///@desc creation stuff
 scrMageStats();
+hp = maxHp;
 clientGivenHp = hp;
 timeToActivate = 0;
 lastTimeToActivate = 0;
