@@ -2,7 +2,7 @@
 //settings
 tcpPortNum = 8125;
 udpPortNum = 8126;
-ipNum = "10.0.1.43";
+ipNum = "98.210.161.45";
 
 //necessary vars
 tcp = network_create_socket(network_socket_tcp);
