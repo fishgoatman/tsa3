@@ -5948,6 +5948,25 @@
             }
         },
         {
+            "Key": "aa9570a9-b733-4e8e-aab1-5fe31023fea2",
+            "Value": {
+                "id": "22d91bdd-5582-4c90-8005-6db3036926a2",
+                "modelName": "GMResourceInfo",
+                "mvc": "1.0",
+                "configDeltaFiles": [
+                    
+                ],
+                "configDeltas": [
+                    
+                ],
+                "resourceCreationConfigs": [
+                    "default"
+                ],
+                "resourcePath": "scripts\/scrMageStats\/scrMageStats.yy",
+                "resourceType": "GMScript"
+            }
+        },
+        {
             "Key": "ab98bc25-9d79-418c-a532-76fb5ba41b4a",
             "Value": {
                 "id": "8c64a832-2c06-4867-90fa-1191e920f727",
@@ -8816,7 +8835,8 @@
         "f39ad93d-0854-4ef3-9cbf-7030da56016e",
         "ff22b358-c9f0-408a-9622-f8cf4de5b373",
         "79f7e072-f213-4f77-85c6-cc3d17cc03ba",
-        "2589cecc-5644-4061-ae4c-cb77226a88a5"
+        "2589cecc-5644-4061-ae4c-cb77226a88a5",
+        "aa9570a9-b733-4e8e-aab1-5fe31023fea2"
     ],
     "tutorial": ""
 }
