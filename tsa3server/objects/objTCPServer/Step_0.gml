@@ -3,10 +3,6 @@
 if (ds_list_size(inQueuePlayerNums) >= 2) {
 	var currGameDataId = instance_create_depth(0, 0, 0, objGameData);
 	
-	for (var p = 0; p < array_length_1d(currGameDataId.playerNums); p++) {
-		currGameDataId.sentThisNumber[p] = false;
-	}
-	
 	var firstNum = ds_list_find_value(inQueuePlayerNums, 0);
 	var secondNum = ds_list_find_value(inQueuePlayerNums, 1);
 	currGameDataId.playerNums[0] = firstNum;
@@ -21,6 +17,10 @@ if (ds_list_size(inQueuePlayerNums) >= 2) {
 	if (secondClientId != firstClientId) {
 		currGameDataId.clientIds[1] = secondClientId;
 		secondClientDataId.gameDataId = currGameDataId;
+	}
+	
+	for (var p = 0; p < array_length_1d(currGameDataId.playerNums); p++) {
+		currGameDataId.sentThisNumber[p] = false;
 	}
 	
 	ds_list_add(currGameDataIds, currGameDataId);

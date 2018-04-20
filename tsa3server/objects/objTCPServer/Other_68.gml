@@ -47,7 +47,7 @@ if (portNum == tcpPortNum) {
 		} else if (bufferType == DELAY_TEST) {
 			var testNum = buffer_read(receivedBuffer, buffer_u8);
 			buffer_seek(bufferToSend, buffer_seek_start, 0);
-			buffer_write(bufferToSend, buffer_string, DELAY_TEST);
+			buffer_write(bufferToSend, buffer_u8, DELAY_TEST);
 			buffer_write(bufferToSend, buffer_u8, testNum);
 			buffer_write(bufferToSend, buffer_f32, current_time);
 			network_send_packet(clientId, bufferToSend, buffer_tell(bufferToSend));
