@@ -35,7 +35,7 @@ if (ds_list_size(inQueuePlayerNums) >= 2) {
 			var thisPlayerNum = currGameDataId.playerNums[p];
 			var playerClientId = ds_map_find_value(playerDataIds, thisPlayerNum).clientId;
 			
-			if (!currGameDataId.sentThisNumber[p] && currClientId == playerClientId) {
+			if (/*!currGameDataId.sentThisNumber[p] && */currClientId == playerClientId) {
 				buffer_seek(bufferToSend, buffer_seek_start, 0);
 				buffer_write(bufferToSend, buffer_u8, THIS_NUMBER);
 				buffer_write(bufferToSend, buffer_u8, p);

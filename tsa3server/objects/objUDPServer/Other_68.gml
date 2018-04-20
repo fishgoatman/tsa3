@@ -12,7 +12,7 @@ if (portNum != udpPortNum && portNum != tcpPortNum) {
 		var clientDataId = ds_map_find_value(clientDataIds, playerDataId.clientId);
 		clientDataId.udpPortNum = portNum;
 		buffer_seek(bufferToSend, buffer_seek_start, 0);
-		buffer_write(bufferToSend, buffer_string, "udpConnection");
+		buffer_write(bufferToSend, buffer_u8, UDP_CONNECTION);
 		network_send_udp(udp, clientDataId.ip, clientDataId.udpPortNum, bufferToSend, buffer_tell(bufferToSend));
 	} else if (bufferType == BASIC_STATE) {
 		var playerNum = buffer_read(receivedBuffer, buffer_u16);
@@ -20,8 +20,6 @@ if (portNum != udpPortNum && portNum != tcpPortNum) {
 		playerDataId.xPos = buffer_read(receivedBuffer, buffer_u16);
 		playerDataId.yPos = buffer_read(receivedBuffer, buffer_u16);
 		playerDataId.spriteIndex = buffer_read(receivedBuffer, buffer_s16);
-		playerDataId.imageIndex = buffer_read(receivedBuffer, buffer_s8);
-		playerDataId.imageAngle = buffer_read(receivedBuffer, buffer_s16);
 		playerDataId.imageXScale = buffer_read(receivedBuffer, buffer_s8);
 		playerDataId.hp = buffer_read(receivedBuffer, buffer_u8);
 	} else if (bufferType == LOCKED_IN) {

@@ -43,8 +43,9 @@ if (!udpConnected) {
 	for (var i = 0; i < numPlayers; i++) {
 		if (thisInControl[i]) {
 			//basics
-			if (currTimeSinceLast >= maxTimeSinceLast) {
 			var myHeroId = heroId[i];
+			
+			if (currTimeSinceLast >= maxTimeSinceLast) {
 				buffer_seek(bufferToSend, buffer_seek_start, 0);
 				buffer_write(bufferToSend, buffer_u8, BASIC_STATE);
 				buffer_write(bufferToSend, buffer_u16, playerNums[i]);
