@@ -55,13 +55,20 @@ if (!udpConnected) {
 			buffer_write(bufferToSend, buffer_s8, myHeroId.image_xscale);
 			network_send_udp(udp, ipNum, udpPortNum, bufferToSend, buffer_tell(bufferToSend));
 			
-			//locked in
 			if (room == rmCharacterSelectionScreen) {
+				//locked in
 				buffer_seek(bufferToSend, buffer_seek_start, 0);
 				buffer_write(bufferToSend, buffer_string, "lockedIn");
 				buffer_write(bufferToSend, buffer_u16, playerNums[i]);
 				buffer_write(bufferToSend, buffer_bool, lockedIn[i]);
 				buffer_write(bufferToSend, buffer_string, selectedHero[i]);
+				network_send_udp(udp, ipNum, udpPortNum, bufferToSend, buffer_tell(bufferToSend));
+			} else {
+				//ability
+				buffer_seek(bufferToSend, buffer_seek_start, 0);
+				buffer_write(bufferToSend, buffer_string, "ability");
+				buffer_write(bufferToSend, buffer_string, myHeroId.activatedState);
+				buffer_write(bufferToSend, buffer_f32, myHeroId.timeToActivateAbility);
 				network_send_udp(udp, ipNum, udpPortNum, bufferToSend, buffer_tell(bufferToSend));
 			}
 		}

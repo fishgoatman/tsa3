@@ -8437,6 +8437,25 @@
             }
         },
         {
+            "Key": "f7ca389b-e4d7-4971-866f-a9d829ffb55f",
+            "Value": {
+                "id": "c1ebb540-7b12-4010-bec8-b84c187c72bf",
+                "modelName": "GMResourceInfo",
+                "mvc": "1.0",
+                "configDeltaFiles": [
+                    
+                ],
+                "configDeltas": [
+                    
+                ],
+                "resourceCreationConfigs": [
+                    "default"
+                ],
+                "resourcePath": "objects\/objMagePuppet\/objMagePuppet.yy",
+                "resourceType": "GMObject"
+            }
+        },
+        {
             "Key": "f82e3640-ef54-45ac-bbea-b355e757edd9",
             "Value": {
                 "id": "a09d9bce-631a-4149-8eb8-58960fa33f76",

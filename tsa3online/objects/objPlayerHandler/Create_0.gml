@@ -10,18 +10,24 @@ while (heroString == "random") {
 	heroString = characterSelect[randRow, randCol];
 }
 
-if (heroString == "mage") {
-	heroObj = objMageTP;
-} else if (heroString == "caster") {
-	heroObj = objCasterTP;
-} else if (heroString == "rogue") {
-	heroObj = objRogueTP;
-} else if (heroString == "shaman") {
-	heroObj = objShamanTP;
-} else if (heroString == "monk") {
-	heroObj = objMonkTP;
-} else if (heroString == "bot") {
-	heroObj = objBot;
+if (thisInControl[thisNumber]) {
+	if (heroString == "mage") {
+		heroObj = objMageTP;
+	} else if (heroString == "caster") {
+		heroObj = objCasterTP;
+	} else if (heroString == "rogue") {
+		heroObj = objRogueTP;
+	} else if (heroString == "shaman") {
+		heroObj = objShamanTP;
+	} else if (heroString == "monk") {
+		heroObj = objMonkTP;
+	} else if (heroString == "bot") {
+		heroObj = objBot;
+	}
+} else {
+	if (heroString == "mage") {
+		heroObj = objMagePuppet;
+	}
 }
 
 mask_index = object_get_mask(heroObj);

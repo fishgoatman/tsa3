@@ -47,6 +47,11 @@ if (portNum == tcpPortNum) {
 			var thisNumber = buffer_read(receivedBuffer, buffer_u8);
 			lockedIn[thisNumber] = buffer_read(receivedBuffer, buffer_bool);
 			selectedHero[thisNumber] = buffer_read(receivedBuffer, buffer_string);
+		} else if (bufferType == "ability") {
+			var thisNumber = buffer_read(receivedBuffer, buffer_u8);
+			myHeroId = heroId[thisNumber];
+			myHeroId.aState = buffer_read(receivedBuffer, buffer_string);
+			myHeroId.timeToActivate = buffer_read(receivedBuffer, buffer_f32);
 		}
 	}
 }
