@@ -1,21 +1,23 @@
 ///@desc abilities and dmg
 ///abilities
+//reset firstTime
+if (lastTimeToActivate != timeToActivate) {
+	lastTimeToActivate = timeToActivate;
+	firstTime = true;
+}
+
 if (aState == "1") {
-	if (aPhase == "d") {
-		if (current_time >= timeToActivate && firstTime[0]) {
-			instance_create_depth(preciseX, preciseY, thisNumber, objFireSlashHitbox);
-			timeSinceSlashBlast = 0;
+	if (current_time >= timeToActivate && firstTime[0]) {
+		instance_create_depth(preciseX, preciseY, thisNumber, objFireSlashHitbox);
+		timeSinceSlashBlast = 0;
 			
-			for (var i = 0; i < slashBlastAmount; i++) {
-				blastAngle = 90 - image_xscale * 90 + slashBlastCentralAngle * image_xscale + slashBlastSpread * i / (slashBlastAmount - 1) - slashBlastSpread / 2;
-				instance_create_depth(preciseX + slashBlastAheadDist * dcos(blastAngle), preciseY - slashBlastAheadDist * dsin(blastAngle), thisNumber, objFireShot);
-			}
-			
-			firstTime[0] = false;
+		for (var i = 0; i < slashBlastAmount; i++) {
+			blastAngle = 90 - image_xscale * 90 + slashBlastCentralAngle * image_xscale + slashBlastSpread * i / (slashBlastAmount - 1) - slashBlastSpread / 2;
+			instance_create_depth(preciseX + slashBlastAheadDist * dcos(blastAngle), preciseY - slashBlastAheadDist * dsin(blastAngle), thisNumber, objFireShot);
 		}
+			
+		firstTime[0] = false;
 	}
-	
-	scrResetAir();
 } else if (aState == "2") {
 	if (aPhase == "u") {
 		lobChargeTime = 0;
