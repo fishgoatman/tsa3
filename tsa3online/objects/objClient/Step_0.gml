@@ -41,10 +41,10 @@ if (!udpConnected) {
 } else {
 	//data
 	for (var i = 0; i < numPlayers; i++) {
+		var myHeroId = heroId[i];
+		
 		if (thisInControl[i]) {
 			//basics
-			var myHeroId = heroId[i];
-			
 			if (currTimeSinceLast >= maxTimeSinceLast) {
 				buffer_seek(bufferToSend, buffer_seek_start, 0);
 				buffer_write(bufferToSend, buffer_u8, BASIC_STATE);
@@ -80,6 +80,10 @@ if (!udpConnected) {
 					network_send_udp(udp, ipNum, udpPortNum, bufferToSend, buffer_tell(bufferToSend));
 				}
 			}
+		} else {
+			buffer_write(bufferToSend, buffer_u8, HP);
+			buffer_write(bufferToSend, buffer_u16, playerNums[i]);
+			buffer_write(bufferToSend, buffer_u8, myHeroId.hp);
 		}
 	}
 }
