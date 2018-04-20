@@ -53,6 +53,7 @@ if (!udpConnected) {
 			buffer_write(bufferToSend, buffer_s8, myHeroId.image_index);
 			buffer_write(bufferToSend, buffer_s16, myHeroId.image_angle);
 			buffer_write(bufferToSend, buffer_s8, myHeroId.image_xscale);
+			buffer_write(bufferToSend, buffer_u8, myHeroId.hp); //if max hp goes above 255 this will cause problems
 			network_send_udp(udp, ipNum, udpPortNum, bufferToSend, buffer_tell(bufferToSend));
 			
 			if (room == rmCharacterSelectionScreen) {

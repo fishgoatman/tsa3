@@ -25,6 +25,7 @@ for (var g = 0; g < ds_list_size(currGameDataIds); g++) {
 					buffer_write(bufferToSend, buffer_s8, playerDataId.imageIndex);
 					buffer_write(bufferToSend, buffer_s16, playerDataId.imageAngle);
 					buffer_write(bufferToSend, buffer_s8, playerDataId.imageXScale);
+					buffer_write(bufferToSend, buffer_u8, playerDataId.hp);
 					network_send_udp(udp, clientIp, clientPortNum, bufferToSend, buffer_tell(bufferToSend));
 					
 					//ability

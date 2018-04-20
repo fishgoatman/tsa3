@@ -23,6 +23,7 @@ if (portNum != udpPortNum && portNum != tcpPortNum) {
 		playerDataId.imageIndex = buffer_read(receivedBuffer, buffer_s8);
 		playerDataId.imageAngle = buffer_read(receivedBuffer, buffer_s16);
 		playerDataId.imageXScale = buffer_read(receivedBuffer, buffer_s8);
+		playerDataId.hp = buffer_read(receivedBuffer, buffer_u8);
 	} else if (bufferType == "lockedIn") {
 		var playerNum = buffer_read(receivedBuffer, buffer_u16);
 		var playerDataId = ds_map_find_value(playerDataIds, playerNum);

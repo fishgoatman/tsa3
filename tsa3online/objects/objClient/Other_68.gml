@@ -40,8 +40,7 @@ if (portNum == tcpPortNum) {
 				myHeroId.image_index = buffer_read(receivedBuffer, buffer_s8);
 				myHeroId.image_angle = buffer_read(receivedBuffer, buffer_s16);
 				myHeroId.image_xscale = buffer_read(receivedBuffer, buffer_s8);
-				show_debug_message(string(myHeroId.sprite_index) + " " + string(myHeroId.image_index) + " " + string(myHeroId.image_xscale));
-				show_debug_message(sprLeftSelection);
+				myHeroId.clientGivenHp = buffer_read(receivedBuffer, buffer_u8);
 			}
 		} else if (bufferType == "lockedIn") {
 			var thisNumber = buffer_read(receivedBuffer, buffer_u8);
@@ -50,8 +49,11 @@ if (portNum == tcpPortNum) {
 		} else if (bufferType == "ability") {
 			var thisNumber = buffer_read(receivedBuffer, buffer_u8);
 			myHeroId = heroId[thisNumber];
-			myHeroId.aState = buffer_read(receivedBuffer, buffer_string);
-			myHeroId.timeToActivate = buffer_read(receivedBuffer, buffer_f32) + clientServerDelay;
+			
+			if (instance_exists(myHeroId)) {
+				myHeroId.aState = buffer_read(receivedBuffer, buffer_string);
+				myHeroId.timeToActivate = buffer_read(receivedBuffer, buffer_f32) + clientServerDelay;
+			}
 		}
 	}
 }

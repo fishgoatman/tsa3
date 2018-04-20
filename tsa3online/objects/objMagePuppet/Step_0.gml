@@ -1,4 +1,5 @@
-///@desc abilities
+///@desc abilities and dmg
+///abilities
 if (aState == "1") {
 	if (aPhase == "d") {
 		if (current_time >= timeToActivate && firstTime[0]) {
@@ -86,3 +87,6 @@ if (aState == "1") {
 	timeSinceBlast++;
 	scrResetAir();
 }
+
+///dmg
+scrThisTakeDamage(hp - clientGivenHp);

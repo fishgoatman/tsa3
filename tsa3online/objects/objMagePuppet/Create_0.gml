@@ -3,6 +3,10 @@ thisNumber = depth;
 depth = 0;
 aState = "n";
 timeToActivate = 0;
+maxHp = 100; //temporary
+hp = maxHp;
+clientGivenHp = hp;
+hpLost = 0;
 
 for (var i = 0; i < 4; i++) {
 	firstTime[i] = false;
