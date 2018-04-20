@@ -91,7 +91,4 @@ if (aState == "1") {
 }
 
 ///dmg
-//scrThisTakeDamage(hp - clientGivenHp);
-preciseX = x;
-preciseY = y;
-scrDamageStuff();
+scrThisTakeDamage(hp - clientGivenHp);

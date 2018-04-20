@@ -1,10 +1,9 @@
 /// @DnDAction : YoYo Games.Common.Execute_Code
 /// @DnDVersion : 1
 /// @DnDHash : 3AB2A1AA
-/// @DnDArgument : "code" "///@desc damage$(13_10)//scrDamageStuff();$(13_10)scrThisTakeDamage(hp - clientGivenHp);"
+/// @DnDArgument : "code" "///@desc damage$(13_10)scrDamageStuff();"
 ///@desc damage
-//scrDamageStuff();
-scrThisTakeDamage(hp - clientGivenHp);
+scrDamageStuff();
 
 /// @DnDAction : YoYo Games.Common.Execute_Code
 /// @DnDVersion : 1
