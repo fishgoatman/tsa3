@@ -6,6 +6,7 @@ spriteIndex = 0;
 imageIndex = 0;
 imageAngle = 0;
 imageXScale = 0;
+hp = 120;
 sendLockedIn = false;
 aState = "n";
 timeToActivate = 0;

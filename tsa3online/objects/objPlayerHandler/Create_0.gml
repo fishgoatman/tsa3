@@ -72,7 +72,7 @@ for (var i = 0; i < hpBarWidth; i++) {
 
 lastPodLost = array_length_2d(hpBar, thisNumber);
 	
-if (heroString != "bot") {
+if (heroString != "bot" && thisInControl[thisNumber]) {
 	//cooldowns
 	cooldownNum = 4;
 	cooldownFrames = 30;
