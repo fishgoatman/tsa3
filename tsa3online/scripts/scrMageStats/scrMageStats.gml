@@ -32,7 +32,7 @@ slashBlastAheadDist = 40;
 slashHitboxDuration = 0.2 * room_speed;
 
 //lob
-windUp[1] = 0.02 * room_speed;
+windUp[1] = 0.3 * room_speed;
 duration[1] = 1;
 windDown[1] = 0.02 * room_speed;
 slowWindUp[1] = 0.3;

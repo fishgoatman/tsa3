@@ -4903,6 +4903,25 @@
             }
         },
         {
+            "Key": "8d47e64c-7e59-4754-a67f-b233c61d2562",
+            "Value": {
+                "id": "3e39ff61-8f4d-4dfd-ab28-2926019f42cd",
+                "modelName": "GMResourceInfo",
+                "mvc": "1.0",
+                "configDeltaFiles": [
+                    
+                ],
+                "configDeltas": [
+                    
+                ],
+                "resourceCreationConfigs": [
+                    "default"
+                ],
+                "resourcePath": "sprites\/sprMageLob\/sprMageLob.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
             "Key": "8d8e12db-c24b-42b7-a686-d14b5b24dcf1",
             "Value": {
                 "id": "10b52d8c-99c1-44e8-be74-4ea7bce3ccba",
