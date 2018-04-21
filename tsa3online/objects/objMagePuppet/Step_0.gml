@@ -1,6 +1,9 @@
 ///@desc abilities and dmg
 ///abilities
-//reset firstTime
+preciseX = x;
+preciseY = y;
+
+//reset firstTime 
 if (lastTimeToActivate != timeToActivate) {
 	lastTimeToActivate = timeToActivate;
 	firstTime = true;
@@ -42,14 +45,9 @@ if (aState == "1") {
 			
 		for (var i = 0; i < blastAmount; i++) {
 			blastAngle = 90 - image_xscale * 90 + blastSpread * i / (blastAmount - 1) - blastSpread / 2;
-			instance_create_depth(preciseX, preciseY, thisNumber, objFireShot);
+			instance_create_depth(x, y, thisNumber, objFireShot);
 		}
-			
-		var moveMod = instance_create(0, 0, objMoveMod);
-		moveMod.dx = blastRecoilSpd * image_xscale;
-		moveMod.ddx = blastRecoilDSpd * image_xscale;
-		moveMod.duration = blastRecoilDuration;
-		ds_list_add(envMoveModList, moveMod);
+
 		firstTime = false;
 	}
 	
