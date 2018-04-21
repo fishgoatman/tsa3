@@ -28,7 +28,7 @@ if (aState == "1") {
 			var angle = lobBaseAngle + angleDir * lobAngleBetween * floor((i + 1) / 2);
 			diffX = lobDist * dcos(angle);
 			diffY = lobDist * dsin(angle);
-			instance_create_depth(x + diffX * image_xscale, y - diffY, thisNumber, objFireLobCharge);
+			instance_create_depth(x + diffX * image_xscale, y - diffY, thisNumber, objFireLob);
 		}
 	
 		firstTime = false;
