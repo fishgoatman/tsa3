@@ -38,7 +38,7 @@ if (aState == "1") {
 } else if (aState == "3") {
 	if (current_time >= timeToActivate && current_time < timeToActivate + duration[2]) {
 		for (var i = 0; i < 12; i++) {
-			instance_create(x + random_range(-offset, offset), y - random_range(-offset, 0), objFireScrap);
+			instance_create(x + random_range(-particleOffset, particleOffset), y - random_range(-particleOffset, 0), objFireScrap);
 		}
 	}
 } else if (aState == "4") {

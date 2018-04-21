@@ -62,6 +62,7 @@ cooldown[2] = 4.1 * room_speed;
 
 rocketSpd = 600 / room_speed;
 rocketDec = rocketSpd / duration[2] / room_speed;
+particleOffset = 10;
 
 //blast
 windUp[3] = 0.4 * room_speed;
