@@ -20,6 +20,8 @@ if (aState == "1") {
 		}
 			
 		firstTime = false;
+	} else if (!firstTime) {
+		timeSinceSlashBlast = 0;
 	}
 } else if (aState == "2") {
 	if (current_time >= timeToActivate && firstTime) {
@@ -49,9 +51,9 @@ if (aState == "1") {
 		}
 
 		firstTime = false;
+	} else if (!firstTime) {
+		timeSinceBlast++;
 	}
-	
-	timeSinceBlast++;
 }
 
 ///dmg
