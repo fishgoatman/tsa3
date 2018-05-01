@@ -8,39 +8,15 @@ scrDamageStuff();
 /// @DnDAction : YoYo Games.Common.Execute_Code
 /// @DnDVersion : 1
 /// @DnDHash : 74C028A6
-/// @DnDArgument : "code" "///@desc get input$(13_10)if (hp > 0) {$(13_10)	scrPlayerGetInput();$(13_10)	/*for (var i = 0; i < numKeys; i++) {$(13_10)		durationHeld[i] = 0;$(13_10)		heldBefore[i] = false;$(13_10)	}$(13_10)	$(13_10)	var rando = irandom(3) + 4;$(13_10)	durationHeld[rando] = 1;$(13_10)	heldBefore[rando] = false;$(13_10)	$(13_10)	if (random(1) < 0.1) {$(13_10)		durationHeld[UP] = 1;$(13_10)		heldBefore[UP] = false;$(13_10)	}$(13_10)	$(13_10)	if (abs(preciseX - targetX) < 20) {$(13_10)		targetX = random(room_width);$(13_10)	}$(13_10)	$(13_10)	var dir;$(13_10)	$(13_10)	if (preciseX < targetX) {$(13_10)		dir = RIGHT;$(13_10)	} else {$(13_10)		dir = LEFT;$(13_10)	}$(13_10)	$(13_10)	durationHeld[dir] = 1;$(13_10)	heldBefore[dir] = false;*/$(13_10)}"
+/// @DnDArgument : "code" "///@desc get input$(13_10)if (hp > 0) {$(13_10)	if (auto) {$(13_10)		scrAIGetInput();$(13_10)	} else {$(13_10)		scrPlayerGetInput();$(13_10)	}$(13_10)}"
 ///@desc get input
 if (hp > 0) {
-	scrPlayerGetInput();
-	/*for (var i = 0; i < numKeys; i++) {
-		durationHeld[i] = 0;
-		heldBefore[i] = false;
-	}
-	
-	var rando = irandom(3) + 4;
-	durationHeld[rando] = 1;
-	heldBefore[rando] = false;
-	
-	if (random(1) < 0.1) {
-		durationHeld[UP] = 1;
-		heldBefore[UP] = false;
-	}
-	
-	if (abs(preciseX - targetX) < 20) {
-		targetX = random(room_width);
-	}
-	
-	var dir;
-	
-	if (preciseX < targetX) {
-		dir = RIGHT;
+	if (auto) {
+		scrAIGetInput();
 	} else {
-		dir = LEFT;
+		scrPlayerGetInput();
 	}
-	
-	durationHeld[dir] = 1;
-	heldBefore[dir] = false;*/
-}/**/
+}
 
 /// @DnDAction : YoYo Games.Common.Execute_Code
 /// @DnDVersion : 1
@@ -52,13 +28,15 @@ scrPlayerMovementCode();
 /// @DnDAction : YoYo Games.Common.Execute_Code
 /// @DnDVersion : 1
 /// @DnDHash : 1B235E9C
-/// @DnDArgument : "code" "///@desc abilities$(13_10)//ability input$(13_10)for (var i = 0; i < numAbilities; i++) {$(13_10)	if (cooldownTimer[i] > 0) {$(13_10)		cooldownTimer[i]--;$(13_10)		continue;$(13_10)	}$(13_10)	$(13_10)	var index = i + 4;$(13_10)	$(13_10)	if (durationHeld[index] > 0 && !heldBefore[index]) {$(13_10)		if (aState != abilityKey[i] && aPhase == "n") {$(13_10)			if (aPhase == "w") {$(13_10)				cooldownTimer[i] = cooldown[i];$(13_10)			}$(13_10)			$(13_10)			aState = abilityKey[i];$(13_10)			aPhase = "u";$(13_10)			timeInAPhase = 0;$(13_10)			abilityImageXScale = image_xscale;$(13_10)		}$(13_10)	} else if (aState == abilityKey[i]) {$(13_10)		if (aPhase != "n") {$(13_10)			timeInAPhase++;$(13_10)		}$(13_10)			$(13_10)		if (aPhase == "u" && timeInAPhase >= windUp[i]) {$(13_10)			aPhase = "d";$(13_10)			timeInAPhase = 0;$(13_10)		}$(13_10)			$(13_10)		if (aPhase == "d" && timeInAPhase >= duration[i]) {$(13_10)			aPhase = "w";$(13_10)			timeInAPhase = 0;$(13_10)		}$(13_10)			$(13_10)		if (aPhase == "w" && timeInAPhase >= windDown[i]) {$(13_10)			aPhase = "n";$(13_10)			timeInAPhase = 0;$(13_10)			aState = "n";$(13_10)			cooldownTimer[i] = cooldown[i];$(13_10)		}$(13_10)	}$(13_10)}"
+/// @DnDArgument : "code" "///@desc abilities$(13_10)//ability input$(13_10)for (var i = 0; i < numAbilities; i++) {$(13_10)	if (cooldownTimer[i] >= 1) {$(13_10)		cooldownTimer[i]--;$(13_10)		continue;$(13_10)	} else {$(13_10)		cooldownTimer[i] = 0;$(13_10)	}$(13_10)	$(13_10)	var index = i + 4;$(13_10)	$(13_10)	if (durationHeld[index] > 0 && !heldBefore[index]) {$(13_10)		if (aState != abilityKey[i] && aPhase == "n") {$(13_10)			if (aPhase == "w") {$(13_10)				cooldownTimer[i] = cooldown[i];$(13_10)			}$(13_10)			$(13_10)			aState = abilityKey[i];$(13_10)			aPhase = "u";$(13_10)			timeInAPhase = 0;$(13_10)			abilityImageXScale = image_xscale;$(13_10)		}$(13_10)	} else if (aState == abilityKey[i]) {$(13_10)		if (aPhase != "n") {$(13_10)			timeInAPhase++;$(13_10)		}$(13_10)			$(13_10)		if (aPhase == "u" && timeInAPhase >= windUp[i]) {$(13_10)			aPhase = "d";$(13_10)			timeInAPhase = 0;$(13_10)		}$(13_10)			$(13_10)		if (aPhase == "d" && timeInAPhase >= duration[i]) {$(13_10)			aPhase = "w";$(13_10)			timeInAPhase = 0;$(13_10)		}$(13_10)			$(13_10)		if (aPhase == "w" && timeInAPhase >= windDown[i]) {$(13_10)			aPhase = "n";$(13_10)			timeInAPhase = 0;$(13_10)			aState = "n";$(13_10)			cooldownTimer[i] = cooldown[i];$(13_10)		}$(13_10)	}$(13_10)	$(13_10)	if (aState != abilityKey[i]) {$(13_10)		firstTime[i] = true;$(13_10)	}$(13_10)}"
 ///@desc abilities
 //ability input
 for (var i = 0; i < numAbilities; i++) {
-	if (cooldownTimer[i] > 0) {
+	if (cooldownTimer[i] >= 1) {
 		cooldownTimer[i]--;
 		continue;
+	} else {
+		cooldownTimer[i] = 0;
 	}
 	
 	var index = i + 4;
@@ -96,14 +74,17 @@ for (var i = 0; i < numAbilities; i++) {
 			cooldownTimer[i] = cooldown[i];
 		}
 	}
+	
+	if (aState != abilityKey[i]) {
+		firstTime[i] = true;
+	}
 }
 
 /// @DnDAction : YoYo Games.Common.Execute_Code
 /// @DnDVersion : 1
 /// @DnDHash : 3771CA6E
-/// @DnDArgument : "code" "///@desc ability function$(13_10)//show_debug_message(string(aState) + " " + string(aPhase));$(13_10)if (!(aState == "3" && aPhase == "d") && instance_exists(shadowId)) {$(13_10)	preciseX = endX;$(13_10)	preciseY = endY;$(13_10)			$(13_10)	with (shadowId) {$(13_10)		instance_destroy();$(13_10)	}$(13_10)}$(13_10)$(13_10)if (aState == "1") {$(13_10)	if (aPhase == "d") {$(13_10)		if (timeInAPhase == 0) {$(13_10)			instance_create_depth(preciseX, preciseY, thisNumber, objIceShot);$(13_10)		}$(13_10)	}$(13_10)	$(13_10)	scrResetAir();$(13_10)} else if (aState == "2") {$(13_10)	if (aPhase == "d") {$(13_10)		if (timeInAPhase == 0) {$(13_10)			lobId = instance_create_depth(preciseX, preciseY, thisNumber, objIceLob);$(13_10)		}$(13_10)	}$(13_10)} else if (aState == "3") {$(13_10)	if (aPhase == "d") {$(13_10)		if (timeInAPhase == 0) {$(13_10)			endX = preciseX + image_xscale * teleportDist;$(13_10)			$(13_10)			if (endX < 1) {$(13_10)				endX = 1;$(13_10)			}$(13_10)			$(13_10)			if (endX > room_width - 1) {$(13_10)				endX = room_width - 1;$(13_10)			}$(13_10)			$(13_10)			endY = preciseY;$(13_10)			preciseX = room_width / 2;$(13_10)			preciseY = -50;$(13_10)			shadowId = instance_create_depth(endX, endY, thisNumber, objCasterShadow);$(13_10)		} else if (timeInAPhase >= duration[2] - 1) {$(13_10)			scrResetAir();$(13_10)			preciseX = endX;$(13_10)			preciseY = endY;$(13_10)			$(13_10)			with (shadowId) {$(13_10)				instance_destroy();$(13_10)			}$(13_10)		}$(13_10)	}$(13_10)} else if (aState == "4") {$(13_10)	if (aPhase == "u") {$(13_10)		if (timeInAPhase == 0) {$(13_10)			pillarXScale = image_xscale;$(13_10)		}$(13_10)	} else if (aPhase == "d") {$(13_10)		if (timeInAPhase == 0) {$(13_10)			instance_create_depth(preciseX + slowOffset * pillarXScale, room_height, thisNumber, objIceSlow);$(13_10)		}$(13_10)	}$(13_10)}"
+/// @DnDArgument : "code" "///@desc ability function$(13_10)if (!(aState == "3" && aPhase == "d") && instance_exists(shadowId)) {$(13_10)	preciseX = endX;$(13_10)	preciseY = endY;$(13_10)			$(13_10)	with (shadowId) {$(13_10)		instance_destroy();$(13_10)	}$(13_10)}$(13_10)$(13_10)if (aState == "1") {$(13_10)	if (aPhase == "d") {$(13_10)		if (timeInAPhase >= 0 && firstTime[0]) {$(13_10)			instance_create_depth(preciseX, preciseY, thisNumber, objIceShot);$(13_10)			firstTime[0] = false;$(13_10)		}$(13_10)	}$(13_10)	$(13_10)	scrResetAir();$(13_10)} else if (aState == "2") {$(13_10)	if (aPhase == "d") {$(13_10)		if (timeInAPhase >= 0 && firstTime[1]) {$(13_10)			lobId = instance_create_depth(preciseX, preciseY, thisNumber, objIceLob);$(13_10)			firstTime[1] = false;$(13_10)		}$(13_10)	}$(13_10)} else if (aState == "3") {$(13_10)	if (aPhase == "d") {$(13_10)		if (timeInAPhase >= 0 && firstTime[2]) {$(13_10)			endX = preciseX + image_xscale * teleportDist;$(13_10)			$(13_10)			if (endX < 1) {$(13_10)				endX = 1;$(13_10)			}$(13_10)			$(13_10)			if (endX > room_width - 1) {$(13_10)				endX = room_width - 1;$(13_10)			}$(13_10)			$(13_10)			endY = preciseY;$(13_10)			preciseX = room_width / 2;$(13_10)			preciseY = -50;$(13_10)			shadowId = instance_create_depth(endX, endY, thisNumber, objCasterShadow);$(13_10)			firstTime[2] = false;$(13_10)		} else if (timeInAPhase >= duration[2] - 1) {$(13_10)			scrResetAir();$(13_10)			preciseX = endX;$(13_10)			preciseY = endY;$(13_10)			$(13_10)			with (shadowId) {$(13_10)				instance_destroy();$(13_10)			}$(13_10)		}$(13_10)	}$(13_10)} else if (aState == "4") {$(13_10)	if (aPhase == "d") {$(13_10)		if (timeInAPhase >= 0 && firstTime[3]) {$(13_10)			instance_create_depth(preciseX + slowOffset * image_xscale, room_height, thisNumber, objIceSlow);$(13_10)			firstTime[3] = false;$(13_10)		}$(13_10)	}$(13_10)}"
 ///@desc ability function
-//show_debug_message(string(aState) + " " + string(aPhase));
 if (!(aState == "3" && aPhase == "d") && instance_exists(shadowId)) {
 	preciseX = endX;
 	preciseY = endY;
@@ -115,21 +96,23 @@ if (!(aState == "3" && aPhase == "d") && instance_exists(shadowId)) {
 
 if (aState == "1") {
 	if (aPhase == "d") {
-		if (timeInAPhase == 0) {
+		if (timeInAPhase >= 0 && firstTime[0]) {
 			instance_create_depth(preciseX, preciseY, thisNumber, objIceShot);
+			firstTime[0] = false;
 		}
 	}
 	
 	scrResetAir();
 } else if (aState == "2") {
 	if (aPhase == "d") {
-		if (timeInAPhase == 0) {
+		if (timeInAPhase >= 0 && firstTime[1]) {
 			lobId = instance_create_depth(preciseX, preciseY, thisNumber, objIceLob);
+			firstTime[1] = false;
 		}
 	}
 } else if (aState == "3") {
 	if (aPhase == "d") {
-		if (timeInAPhase == 0) {
+		if (timeInAPhase >= 0 && firstTime[2]) {
 			endX = preciseX + image_xscale * teleportDist;
 			
 			if (endX < 1) {
@@ -144,6 +127,7 @@ if (aState == "1") {
 			preciseX = room_width / 2;
 			preciseY = -50;
 			shadowId = instance_create_depth(endX, endY, thisNumber, objCasterShadow);
+			firstTime[2] = false;
 		} else if (timeInAPhase >= duration[2] - 1) {
 			scrResetAir();
 			preciseX = endX;
@@ -155,13 +139,10 @@ if (aState == "1") {
 		}
 	}
 } else if (aState == "4") {
-	if (aPhase == "u") {
-		if (timeInAPhase == 0) {
-			pillarXScale = image_xscale;
-		}
-	} else if (aPhase == "d") {
-		if (timeInAPhase == 0) {
-			instance_create_depth(preciseX + slowOffset * pillarXScale, room_height, thisNumber, objIceSlow);
+	if (aPhase == "d") {
+		if (timeInAPhase >= 0 && firstTime[3]) {
+			instance_create_depth(preciseX + slowOffset * image_xscale, room_height, thisNumber, objIceSlow);
+			firstTime[3] = false;
 		}
 	}
 }

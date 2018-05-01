@@ -856,25 +856,6 @@
             }
         },
         {
-            "Key": "1af7cf46-8f6c-47a7-be89-84674e78193a",
-            "Value": {
-                "id": "c9cbb400-e366-4fa3-84c0-fe477c7967f0",
-                "modelName": "GMResourceInfo",
-                "mvc": "1.0",
-                "configDeltaFiles": [
-                    
-                ],
-                "configDeltas": [
-                    
-                ],
-                "resourceCreationConfigs": [
-                    "default"
-                ],
-                "resourcePath": "rooms\/rmCharacterSelect\/rmCharacterSelect.yy",
-                "resourceType": "GMRoom"
-            }
-        },
-        {
             "Key": "1b58ccf7-db74-4f5e-9f83-e0de7a6f392f",
             "Value": {
                 "id": "b443979c-529f-4120-a550-707e95336dcc",
@@ -1100,6 +1081,44 @@
                 ],
                 "resourcePath": "objects\/objSolidBlock\/objSolidBlock.yy",
                 "resourceType": "GMObject"
+            }
+        },
+        {
+            "Key": "1fbfbf74-4fa1-4f94-a8d7-92b795ac0417",
+            "Value": {
+                "id": "585bfdc4-3c90-4c87-8016-12e734d9f73b",
+                "modelName": "GMResourceInfo",
+                "mvc": "1.0",
+                "configDeltaFiles": [
+                    
+                ],
+                "configDeltas": [
+                    
+                ],
+                "resourceCreationConfigs": [
+                    "default"
+                ],
+                "resourcePath": "scripts\/scrInArena\/scrInArena.yy",
+                "resourceType": "GMScript"
+            }
+        },
+        {
+            "Key": "1fcd5407-d694-4fad-be49-e686cc7e94ef",
+            "Value": {
+                "id": "44601d6b-a4d2-40b0-b6ef-138d3c734003",
+                "modelName": "GMResourceInfo",
+                "mvc": "1.0",
+                "configDeltaFiles": [
+                    
+                ],
+                "configDeltas": [
+                    
+                ],
+                "resourceCreationConfigs": [
+                    "default"
+                ],
+                "resourcePath": "scripts\/scrAIGetInput\/scrAIGetInput.yy",
+                "resourceType": "GMScript"
             }
         },
         {
@@ -1483,25 +1502,6 @@
             }
         },
         {
-            "Key": "2a7dc21d-2268-43bf-a712-75992c648234",
-            "Value": {
-                "id": "ba4273f3-42aa-4233-a3d5-4165b0f49c33",
-                "modelName": "GMResourceInfo",
-                "mvc": "1.0",
-                "configDeltaFiles": [
-                    
-                ],
-                "configDeltas": [
-                    
-                ],
-                "resourceCreationConfigs": [
-                    "default"
-                ],
-                "resourcePath": "rooms\/rm0\/rm0.yy",
-                "resourceType": "GMRoom"
-            }
-        },
-        {
             "Key": "2a9331d2-1f4f-4cce-afe3-8bc34b4bf60b",
             "Value": {
                 "id": "2011d5f5-4387-4342-975f-7eaee39fc628",
@@ -1613,25 +1613,6 @@
                 ],
                 "resourcePath": "objects\/objBlock\/objBlock.yy",
                 "resourceType": "GMObject"
-            }
-        },
-        {
-            "Key": "2da324ff-f8b5-4f42-be4b-322a67cf0a30",
-            "Value": {
-                "id": "27195a27-bdce-43b5-8aa2-85b6a58a3823",
-                "modelName": "GMResourceInfo",
-                "mvc": "1.0",
-                "configDeltaFiles": [
-                    
-                ],
-                "configDeltas": [
-                    
-                ],
-                "resourceCreationConfigs": [
-                    "default"
-                ],
-                "resourcePath": "rooms\/rm1\/rm1.yy",
-                "resourceType": "GMRoom"
             }
         },
         {
@@ -1860,25 +1841,6 @@
                 ],
                 "resourcePath": "objects\/objLavaHitbox\/objLavaHitbox.yy",
                 "resourceType": "GMObject"
-            }
-        },
-        {
-            "Key": "339d3c03-f710-4b33-8366-dfead906206e",
-            "Value": {
-                "id": "3b264ec9-2577-4dc9-9b0e-e71ba29997bc",
-                "modelName": "GMResourceInfo",
-                "mvc": "1.0",
-                "configDeltaFiles": [
-                    
-                ],
-                "configDeltas": [
-                    
-                ],
-                "resourceCreationConfigs": [
-                    "default"
-                ],
-                "resourcePath": "rooms\/rmArrowRain\/rmArrowRain.yy",
-                "resourceType": "GMRoom"
             }
         },
         {
@@ -2756,6 +2718,25 @@
             }
         },
         {
+            "Key": "50bbc488-2c7b-44f9-8971-f533388edc7d",
+            "Value": {
+                "id": "5f6df6b5-6337-4d96-aaa2-9ae9205a68a1",
+                "modelName": "GMResourceInfo",
+                "mvc": "1.0",
+                "configDeltaFiles": [
+                    
+                ],
+                "configDeltas": [
+                    
+                ],
+                "resourceCreationConfigs": [
+                    "default"
+                ],
+                "resourcePath": "scripts\/scrRandomArena\/scrRandomArena.yy",
+                "resourceType": "GMScript"
+            }
+        },
+        {
             "Key": "50dd0ab4-c56d-42c9-a430-ddb23a6e2e6f",
             "Value": {
                 "id": "eb6271de-8716-449b-8f6b-1c75e916d4f9",
@@ -2865,7 +2846,7 @@
                 "resourceCreationConfigs": [
                     "default"
                 ],
-                "resourcePath": "rooms\/rmStandard\/rmStandard.yy",
+                "resourcePath": "rooms\/rmBowl\/rmBowl.yy",
                 "resourceType": "GMRoom"
             }
         },
@@ -3421,6 +3402,25 @@
             }
         },
         {
+            "Key": "69d0828b-eec7-4bd3-8267-35e87af90abf",
+            "Value": {
+                "id": "0fdd3c51-6c1d-4c3d-9bfc-fd7cf445106e",
+                "modelName": "GMResourceInfo",
+                "mvc": "1.0",
+                "configDeltaFiles": [
+                    
+                ],
+                "configDeltas": [
+                    
+                ],
+                "resourceCreationConfigs": [
+                    "default"
+                ],
+                "resourcePath": "rooms\/rmFlat\/rmFlat.yy",
+                "resourceType": "GMRoom"
+            }
+        },
+        {
             "Key": "6b059d63-e680-48c5-9368-4452cce37d60",
             "Value": {
                 "id": "9993d055-2575-495d-a0dc-9ca74e41882f",
@@ -3779,25 +3779,6 @@
                 ],
                 "resourcePath": "objects\/objChimeCarrier\/objChimeCarrier.yy",
                 "resourceType": "GMObject"
-            }
-        },
-        {
-            "Key": "751f47b0-429b-4507-9378-1ccef25d74f7",
-            "Value": {
-                "id": "0aac9f53-abf7-4b4c-9b43-449017661f19",
-                "modelName": "GMResourceInfo",
-                "mvc": "1.0",
-                "configDeltaFiles": [
-                    
-                ],
-                "configDeltas": [
-                    
-                ],
-                "resourceCreationConfigs": [
-                    "default"
-                ],
-                "resourcePath": "rooms\/rmChimes\/rmChimes.yy",
-                "resourceType": "GMRoom"
             }
         },
         {
@@ -5359,6 +5340,25 @@
             }
         },
         {
+            "Key": "95f61b1d-eb38-4e01-879b-52e56255f80e",
+            "Value": {
+                "id": "c58154d8-9aab-424b-8a85-35064c01e355",
+                "modelName": "GMResourceInfo",
+                "mvc": "1.0",
+                "configDeltaFiles": [
+                    
+                ],
+                "configDeltas": [
+                    
+                ],
+                "resourceCreationConfigs": [
+                    "default"
+                ],
+                "resourcePath": "scripts\/scrGetOtherId\/scrGetOtherId.yy",
+                "resourceType": "GMScript"
+            }
+        },
+        {
             "Key": "9619043d-8cb9-4375-8487-2066f92a03fa",
             "Value": {
                 "id": "fc5e969b-7864-4700-a928-6f1c3052a659",
@@ -5432,6 +5432,25 @@
                 ],
                 "resourcePath": "scripts\/scrGetOutOfBlock\/scrGetOutOfBlock.yy",
                 "resourceType": "GMScript"
+            }
+        },
+        {
+            "Key": "9cba6205-1dec-4416-a3a1-52da6c852ff4",
+            "Value": {
+                "id": "58bf09ff-ab71-4967-afc7-f6ea47cb75ee",
+                "modelName": "GMResourceInfo",
+                "mvc": "1.0",
+                "configDeltaFiles": [
+                    
+                ],
+                "configDeltas": [
+                    
+                ],
+                "resourceCreationConfigs": [
+                    "default"
+                ],
+                "resourcePath": "rooms\/rmPillar\/rmPillar.yy",
+                "resourceType": "GMRoom"
             }
         },
         {
@@ -6404,25 +6423,6 @@
             }
         },
         {
-            "Key": "b9759751-8419-49f7-8958-649dd179b5c3",
-            "Value": {
-                "id": "fd9ad4fa-d1ee-4e71-866b-3db3840f6655",
-                "modelName": "GMResourceInfo",
-                "mvc": "1.0",
-                "configDeltaFiles": [
-                    
-                ],
-                "configDeltas": [
-                    
-                ],
-                "resourceCreationConfigs": [
-                    "default"
-                ],
-                "resourcePath": "rooms\/rmTesting\/rmTesting.yy",
-                "resourceType": "GMRoom"
-            }
-        },
-        {
             "Key": "ba50b1e6-8568-43f2-8bac-fd30c10c66e2",
             "Value": {
                 "id": "1d46f3ff-952e-46b7-a188-88ee37271365",
@@ -6477,44 +6477,6 @@
                 ],
                 "resourcePath": "sprites\/sprLightningMT2\/sprLightningMT2.yy",
                 "resourceType": "GMSprite"
-            }
-        },
-        {
-            "Key": "bbbe96ea-07b9-4190-86f8-525f1ea1448e",
-            "Value": {
-                "id": "4b5975d7-43f6-48b7-ad84-42fdc529926f",
-                "modelName": "GMResourceInfo",
-                "mvc": "1.0",
-                "configDeltaFiles": [
-                    
-                ],
-                "configDeltas": [
-                    
-                ],
-                "resourceCreationConfigs": [
-                    "default"
-                ],
-                "resourcePath": "sprites\/sprMonkLockedIn\/sprMonkLockedIn.yy",
-                "resourceType": "GMSprite"
-            }
-        },
-        {
-            "Key": "bbdb87c4-f444-4ab4-b25a-4b71b6f006f4",
-            "Value": {
-                "id": "3b3eda01-d7cd-4c70-95f9-bbc34c3cfbf8",
-                "modelName": "GMResourceInfo",
-                "mvc": "1.0",
-                "configDeltaFiles": [
-                    
-                ],
-                "configDeltas": [
-                    
-                ],
-                "resourceCreationConfigs": [
-                    "default"
-                ],
-                "resourcePath": "rooms\/rmFinalDestination\/rmFinalDestination.yy",
-                "resourceType": "GMRoom"
             }
         },
         {
@@ -6895,25 +6857,6 @@
                 ],
                 "resourcePath": "sprites\/sprFireSpiritExplosion\/sprFireSpiritExplosion.yy",
                 "resourceType": "GMSprite"
-            }
-        },
-        {
-            "Key": "c64cfdfa-41ec-4148-8603-a937e698d118",
-            "Value": {
-                "id": "effda466-97b8-4088-8ff2-25cd22918fc4",
-                "modelName": "GMResourceInfo",
-                "mvc": "1.0",
-                "configDeltaFiles": [
-                    
-                ],
-                "configDeltas": [
-                    
-                ],
-                "resourceCreationConfigs": [
-                    "default"
-                ],
-                "resourcePath": "rooms\/rm2\/rm2.yy",
-                "resourceType": "GMRoom"
             }
         },
         {
@@ -7373,6 +7316,25 @@
             }
         },
         {
+            "Key": "d3930cbf-55b9-45e8-91cb-f2f381b6d88b",
+            "Value": {
+                "id": "b359a46e-42e0-4584-9399-0d1508b8ef87",
+                "modelName": "GMResourceInfo",
+                "mvc": "1.0",
+                "configDeltaFiles": [
+                    
+                ],
+                "configDeltas": [
+                    
+                ],
+                "resourceCreationConfigs": [
+                    "default"
+                ],
+                "resourcePath": "rooms\/rmHill\/rmHill.yy",
+                "resourceType": "GMRoom"
+            }
+        },
+        {
             "Key": "d3aaa090-3b8a-47b9-9ed0-3f09a6d3e7c1",
             "Value": {
                 "id": "0fde19f5-9d69-4946-9da7-7d6f18f7d9d2",
@@ -7465,6 +7427,25 @@
                 ],
                 "resourcePath": "objects\/objWaterJet\/objWaterJet.yy",
                 "resourceType": "GMObject"
+            }
+        },
+        {
+            "Key": "d65f3321-2fa2-48d1-aa3e-0d2033532726",
+            "Value": {
+                "id": "b638e35e-4a63-47ad-b7f5-5cd46dd36bc3",
+                "modelName": "GMResourceInfo",
+                "mvc": "1.0",
+                "configDeltaFiles": [
+                    
+                ],
+                "configDeltas": [
+                    
+                ],
+                "resourceCreationConfigs": [
+                    "default"
+                ],
+                "resourcePath": "rooms\/rmMapSelectionScreen\/rmMapSelectionScreen.yy",
+                "resourceType": "GMRoom"
             }
         },
         {
@@ -8627,25 +8608,6 @@
             }
         },
         {
-            "Key": "fb0af816-de05-4518-94e9-fa09ff0cca39",
-            "Value": {
-                "id": "9b65d5b1-6982-470a-a989-68b541d080dd",
-                "modelName": "GMResourceInfo",
-                "mvc": "1.0",
-                "configDeltaFiles": [
-                    
-                ],
-                "configDeltas": [
-                    
-                ],
-                "resourceCreationConfigs": [
-                    "default"
-                ],
-                "resourcePath": "rooms\/rmFlagship\/rmFlagship.yy",
-                "resourceType": "GMRoom"
-            }
-        },
-        {
             "Key": "fb0faaa1-b99e-443b-8d1f-80d414cc6579",
             "Value": {
                 "id": "df5614ca-4b09-4e1d-9498-0bfcc8d76a4d",
@@ -8855,7 +8817,11 @@
         "ff22b358-c9f0-408a-9622-f8cf4de5b373",
         "79f7e072-f213-4f77-85c6-cc3d17cc03ba",
         "2589cecc-5644-4061-ae4c-cb77226a88a5",
-        "aa9570a9-b733-4e8e-aab1-5fe31023fea2"
+        "aa9570a9-b733-4e8e-aab1-5fe31023fea2",
+        "1fbfbf74-4fa1-4f94-a8d7-92b795ac0417",
+        "50bbc488-2c7b-44f9-8971-f533388edc7d",
+        "1fcd5407-d694-4fad-be49-e686cc7e94ef",
+        "95f61b1d-eb38-4e01-879b-52e56255f80e"
     ],
     "tutorial": ""
 }

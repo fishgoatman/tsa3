@@ -1,6 +1,6 @@
 
 {
-    "name": "rmStandard",
+    "name": "rmBowl",
     "id": "52c162d1-2a08-45e4-a1a2-3265b48eaf91",
     "creationCodeFile": "",
     "inheritCode": false,

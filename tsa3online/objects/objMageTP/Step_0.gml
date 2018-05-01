@@ -8,40 +8,15 @@ scrDamageStuff();
 /// @DnDAction : YoYo Games.Common.Execute_Code
 /// @DnDVersion : 1
 /// @DnDHash : 74C028A6
-/// @DnDArgument : "code" "///@desc get input$(13_10)if (hp > 0) {$(13_10)	scrPlayerGetInput();$(13_10)	$(13_10)	/*for (var i = 0; i < numKeys; i++) {$(13_10)		durationHeld[i] = 0;$(13_10)		heldBefore[i] = false;$(13_10)	}$(13_10)	$(13_10)	var rando = irandom(3) + 4;$(13_10)	durationHeld[rando] = 1;$(13_10)	heldBefore[rando] = false;$(13_10)	$(13_10)	if (random(1) < 0.1) {$(13_10)		durationHeld[UP] = 1;$(13_10)		heldBefore[UP] = false;$(13_10)	}$(13_10)	$(13_10)	if (abs(preciseX - targetX) < 20) {$(13_10)		targetX = random(room_width);$(13_10)	}$(13_10)	$(13_10)	var dir;$(13_10)	$(13_10)	if (preciseX < targetX) {$(13_10)		dir = RIGHT;$(13_10)	} else {$(13_10)		dir = LEFT;$(13_10)	}$(13_10)	$(13_10)	durationHeld[dir] = 1;$(13_10)	heldBefore[dir] = false;*/$(13_10)}"
+/// @DnDArgument : "code" "///@desc get input$(13_10)if (hp > 0) {$(13_10)	if (auto) {$(13_10)		scrAIGetInput();$(13_10)	} else {$(13_10)		scrPlayerGetInput();$(13_10)	}$(13_10)}"
 ///@desc get input
 if (hp > 0) {
-	scrPlayerGetInput();
-	
-	/*for (var i = 0; i < numKeys; i++) {
-		durationHeld[i] = 0;
-		heldBefore[i] = false;
-	}
-	
-	var rando = irandom(3) + 4;
-	durationHeld[rando] = 1;
-	heldBefore[rando] = false;
-	
-	if (random(1) < 0.1) {
-		durationHeld[UP] = 1;
-		heldBefore[UP] = false;
-	}
-	
-	if (abs(preciseX - targetX) < 20) {
-		targetX = random(room_width);
-	}
-	
-	var dir;
-	
-	if (preciseX < targetX) {
-		dir = RIGHT;
+	if (auto) {
+		scrAIGetInput();
 	} else {
-		dir = LEFT;
+		scrPlayerGetInput();
 	}
-	
-	durationHeld[dir] = 1;
-	heldBefore[dir] = false;*/
-}/**/
+}
 
 /// @DnDAction : YoYo Games.Common.Execute_Code
 /// @DnDVersion : 1
@@ -110,7 +85,7 @@ for (var i = 0; i < numAbilities; i++) {
 /// @DnDAction : YoYo Games.Common.Execute_Code
 /// @DnDVersion : 1
 /// @DnDHash : 3771CA6E
-/// @DnDArgument : "code" "///@desc ability function$(13_10)//show_debug_message(string(aState) + " " + string(aPhase));$(13_10)if (aState == "1") {$(13_10)	if (aPhase == "d") {$(13_10)		if (timeInAPhase >= 0 && firstTime[0]) {$(13_10)			instance_create_depth(preciseX, preciseY, thisNumber, objFireSlashHitbox);$(13_10)			timeSinceSlashBlast = 0;$(13_10)			$(13_10)			for (var i = 0; i < slashBlastAmount; i++) {$(13_10)				blastAngle = 90 - image_xscale * 90 + slashBlastCentralAngle * image_xscale + slashBlastSpread * i / (slashBlastAmount - 1) - slashBlastSpread / 2;$(13_10)				instance_create_depth(preciseX + slashBlastAheadDist * dcos(blastAngle), preciseY - slashBlastAheadDist * dsin(blastAngle), thisNumber, objFireShot);$(13_10)			}$(13_10)			$(13_10)			firstTime[0] = false;$(13_10)		}$(13_10)	}$(13_10)	$(13_10)	scrResetAir();$(13_10)} else if (aState == "2") {$(13_10)	if (aPhase == "u") {$(13_10)		lobChargeTime = 0;$(13_10)		numLobs = 0;$(13_10)	}$(13_10)	$(13_10)	if (aPhase == "d") {$(13_10)		if (timeInAPhase == 0) {$(13_10)			for (var i = 0; i < maxLobs; i++) {$(13_10)				var angleDir = i % 2 == 0 ? -1 : 1;$(13_10)				var angle = lobBaseAngle + angleDir * lobAngleBetween * floor((i + 1) / 2);$(13_10)				diffX = lobDist * dcos(angle);$(13_10)				diffY = lobDist * dsin(angle);$(13_10)				instance_create_depth(preciseX + diffX * image_xscale, preciseY - diffY, thisNumber, objFireLob);$(13_10)			}$(13_10)		}$(13_10)		/*if (numLobs == 0) {$(13_10)			var angle = lobBaseAngle;$(13_10)			diffX = lobDist * dcos(angle);$(13_10)			diffY = lobDist * dsin(angle);$(13_10)			instance_create_depth(preciseX + diffX * image_xscale, preciseY - diffY, thisNumber, objFireLobCharge);$(13_10)			numLobs++;$(13_10)		}$(13_10)		$(13_10)		if (lobChargeTime / timePerLobCharge > numLobs && numLobs < maxLobs) {$(13_10)			var angleDir = numLobs % 2 == 0 ? -1 : 1;$(13_10)			var angle = lobBaseAngle + angleDir * lobAngleBetween * floor((numLobs + 1) / 2);$(13_10)			diffX = lobDist * dcos(angle);$(13_10)			diffY = lobDist * dsin(angle);$(13_10)			instance_create_depth(preciseX + diffX * image_xscale, preciseY - diffY, thisNumber, objFireLobCharge);$(13_10)			numLobs++;$(13_10)		}$(13_10)		$(13_10)		lobChargeTime++;*/$(13_10)	}$(13_10)} else if (aState == "3") {$(13_10)	if (aPhase == "d") {$(13_10)		if (timeInAPhase >= 0 && firstTime[2]) {$(13_10)			var moveMod = instance_create(0, 0, objMoveMod);$(13_10)			moveMod.dy = rocketSpd;$(13_10)			moveMod.ddy = -rocketDec;$(13_10)			moveMod.duration = duration[2];$(13_10)			ds_list_add(envMoveModList, moveMod);$(13_10)		}$(13_10)		$(13_10)		scrResetAir();$(13_10)		$(13_10)		for (var i = 0; i < 12; i++) {$(13_10)			instance_create(preciseX + random_range(-particleOffset, particleOffset), preciseY - random_range(-particleOffset, 0), objFireScrap);$(13_10)		}$(13_10)		$(13_10)		firstTime[2] = false;$(13_10)	} else if (aPhase == "w") {$(13_10)		if (timeInAPhase >= windDown[2] - 1) {$(13_10)			gravMoveMod.dy = dy;$(13_10)		}$(13_10)	}$(13_10)} else if (aState == "4") {$(13_10)	if (aPhase == "d") {$(13_10)		if (timeInAPhase >= 0 && firstTime[3]) {$(13_10)			timeSinceBlast = 0;$(13_10)			$(13_10)			for (var i = 0; i < blastAmount; i++) {$(13_10)				blastAngle = 90 - image_xscale * 90 + blastSpread * i / (blastAmount - 1) - blastSpread / 2;$(13_10)				instance_create_depth(preciseX, preciseY, thisNumber, objFireShot);$(13_10)			}$(13_10)			$(13_10)			var moveMod = instance_create(0, 0, objMoveMod);$(13_10)			moveMod.dx = blastRecoilSpd * image_xscale;$(13_10)			moveMod.ddx = blastRecoilDSpd * image_xscale;$(13_10)			moveMod.duration = blastRecoilDuration;$(13_10)			ds_list_add(envMoveModList, moveMod);$(13_10)			firstTime[3] = false;$(13_10)		}$(13_10)	}$(13_10)	$(13_10)	timeSinceBlast++;$(13_10)	scrResetAir();$(13_10)}"
+/// @DnDArgument : "code" "///@desc ability function$(13_10)//show_debug_message(string(aState) + " " + string(aPhase));$(13_10)if (aState == "1") {$(13_10)	if (aPhase == "d") {$(13_10)		if (timeInAPhase >= 0 && firstTime[0]) {$(13_10)			instance_create_depth(preciseX, preciseY, thisNumber, objFireSlashHitbox);$(13_10)			timeSinceSlashBlast = 0;$(13_10)			$(13_10)			for (var i = 0; i < slashBlastAmount; i++) {$(13_10)				blastAngle = 90 - image_xscale * 90 + slashBlastCentralAngle * image_xscale + slashBlastSpread * i / (slashBlastAmount - 1) - slashBlastSpread / 2;$(13_10)				instance_create_depth(preciseX + slashBlastAheadDist * dcos(blastAngle), preciseY - slashBlastAheadDist * dsin(blastAngle), thisNumber, objFireShot);$(13_10)			}$(13_10)			$(13_10)			firstTime[0] = false;$(13_10)		}$(13_10)	}$(13_10)	$(13_10)	scrResetAir();$(13_10)} else if (aState == "2") {$(13_10)	if (aPhase == "u") {$(13_10)		lobChargeTime = 0;$(13_10)		numLobs = 0;$(13_10)	}$(13_10)	$(13_10)	if (aPhase == "d") {$(13_10)		if (timeInAPhase >= 0 && firstTime[1]) {$(13_10)			for (var i = 0; i < maxLobs; i++) {$(13_10)				var angleDir = i % 2 == 0 ? -1 : 1;$(13_10)				var angle = lobBaseAngle + angleDir * lobAngleBetween * floor((i + 1) / 2);$(13_10)				diffX = lobDist * dcos(angle);$(13_10)				diffY = lobDist * dsin(angle);$(13_10)				instance_create_depth(preciseX + diffX * image_xscale, preciseY - diffY, thisNumber, objFireLob);$(13_10)			}$(13_10)			$(13_10)			firstTime[1] = false;$(13_10)		}$(13_10)		/*if (numLobs == 0) {$(13_10)			var angle = lobBaseAngle;$(13_10)			diffX = lobDist * dcos(angle);$(13_10)			diffY = lobDist * dsin(angle);$(13_10)			instance_create_depth(preciseX + diffX * image_xscale, preciseY - diffY, thisNumber, objFireLobCharge);$(13_10)			numLobs++;$(13_10)		}$(13_10)		$(13_10)		if (lobChargeTime / timePerLobCharge > numLobs && numLobs < maxLobs) {$(13_10)			var angleDir = numLobs % 2 == 0 ? -1 : 1;$(13_10)			var angle = lobBaseAngle + angleDir * lobAngleBetween * floor((numLobs + 1) / 2);$(13_10)			diffX = lobDist * dcos(angle);$(13_10)			diffY = lobDist * dsin(angle);$(13_10)			instance_create_depth(preciseX + diffX * image_xscale, preciseY - diffY, thisNumber, objFireLobCharge);$(13_10)			numLobs++;$(13_10)		}$(13_10)		$(13_10)		lobChargeTime++;*/$(13_10)	}$(13_10)} else if (aState == "3") {$(13_10)	if (aPhase == "d") {$(13_10)		if (timeInAPhase >= 0 && firstTime[2]) {$(13_10)			var moveMod = instance_create(0, 0, objMoveMod);$(13_10)			moveMod.dy = rocketSpd;$(13_10)			moveMod.ddy = -rocketDec;$(13_10)			moveMod.duration = duration[2];$(13_10)			ds_list_add(envMoveModList, moveMod);$(13_10)		}$(13_10)		$(13_10)		scrResetAir();$(13_10)		$(13_10)		for (var i = 0; i < 12; i++) {$(13_10)			instance_create(preciseX + random_range(-particleOffset, particleOffset), preciseY - random_range(-particleOffset, 0), objFireScrap);$(13_10)		}$(13_10)		$(13_10)		firstTime[2] = false;$(13_10)	} else if (aPhase == "w") {$(13_10)		if (timeInAPhase >= windDown[2] - 1) {$(13_10)			gravMoveMod.dy = dy;$(13_10)		}$(13_10)	}$(13_10)} else if (aState == "4") {$(13_10)	if (aPhase == "d") {$(13_10)		if (timeInAPhase >= 0 && firstTime[3]) {$(13_10)			timeSinceBlast = 0;$(13_10)			$(13_10)			for (var i = 0; i < blastAmount; i++) {$(13_10)				blastAngle = 90 - image_xscale * 90 + blastSpread * i / (blastAmount - 1) - blastSpread / 2;$(13_10)				instance_create_depth(preciseX, preciseY, thisNumber, objFireShot);$(13_10)			}$(13_10)			$(13_10)			var moveMod = instance_create(0, 0, objMoveMod);$(13_10)			moveMod.dx = blastRecoilSpd * image_xscale;$(13_10)			moveMod.ddx = blastRecoilDSpd * image_xscale;$(13_10)			moveMod.duration = blastRecoilDuration;$(13_10)			ds_list_add(envMoveModList, moveMod);$(13_10)			firstTime[3] = false;$(13_10)		}$(13_10)	}$(13_10)	$(13_10)	timeSinceBlast++;$(13_10)	scrResetAir();$(13_10)}"
 ///@desc ability function
 //show_debug_message(string(aState) + " " + string(aPhase));
 if (aState == "1") {
@@ -136,7 +111,7 @@ if (aState == "1") {
 	}
 	
 	if (aPhase == "d") {
-		if (timeInAPhase == 0) {
+		if (timeInAPhase >= 0 && firstTime[1]) {
 			for (var i = 0; i < maxLobs; i++) {
 				var angleDir = i % 2 == 0 ? -1 : 1;
 				var angle = lobBaseAngle + angleDir * lobAngleBetween * floor((i + 1) / 2);
@@ -144,6 +119,8 @@ if (aState == "1") {
 				diffY = lobDist * dsin(angle);
 				instance_create_depth(preciseX + diffX * image_xscale, preciseY - diffY, thisNumber, objFireLob);
 			}
+			
+			firstTime[1] = false;
 		}
 		/*if (numLobs == 0) {
 			var angle = lobBaseAngle;
