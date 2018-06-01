@@ -10,7 +10,7 @@ if (currTime >= turnTime + postTurnTime) {
 } else if (currTime >= turnTime) {
 	dx = 0;
 	dy = -spd;
-	image_angle = 180 + 90 * image_xscale;
+	image_angle = 180 + 90 * ogDir;
 } else if (currTime > 0) {
 	image_angle -= degreesPerTick * ogDir;
 	dx = spd * ogDir * dcos(image_angle);

@@ -116,6 +116,8 @@ for (var i = 0; i < ds_list_size(moveModList); i++) {
 }
 
 //slowMod
+image_speed = 1;
+
 for (var i = 0; i < ds_list_size(slowModList); i++) {
 	var slowMod = ds_list_find_value(slowModList, i);
 	
@@ -129,6 +131,11 @@ for (var i = 0; i < ds_list_size(slowModList); i++) {
 	} else {
 		dx *= slowMod.slowTo;
 		dy *= slowMod.slowTo;
+		
+		//bad practice but i'm adding image_speed in here
+		if (aState == "n") {
+			image_speed *= slowMod.slowTo;
+		}
 	}
 }
 

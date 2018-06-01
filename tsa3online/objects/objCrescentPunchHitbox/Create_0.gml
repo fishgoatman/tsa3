@@ -11,6 +11,7 @@ time = 1;
 currTime = 0;
 image_angle = projId.image_angle;
 image_xscale = projId.image_xscale;
+image_yscale = projId.image_yscale;
 image_index = projId.image_index;
 image_speed = 0;
 instance_create_depth(x, y, id, objCrescentPunchVisual);

@@ -66,7 +66,7 @@ if (room == rmMainMenu) {
 		targetRoom = "game";
 	}
 	
-	if (auto) {
+	if (!auto) {
 		selectedArena = scrRandomArena();
 		targetRoom = "game";
 	}
