@@ -17,8 +17,8 @@ if (thisInControl[thisNumber]) {
 		heroObj = objCasterTP;
 	} else if (heroString == "rogue") {
 		heroObj = objRogueTP;
-	} else if (heroString == "shaman") {
-		heroObj = objShamanTP;
+	} else if (heroString == "warlord") {
+		heroObj = objWarlordTP;
 	} else if (heroString == "monk") {
 		heroObj = objMonkTP;
 	} else if (heroString == "bot") {
@@ -63,7 +63,7 @@ for (var i = 0; i < hpBarWidth; i++) {
 			createX = room_width - hpBarOffset - hpBarWidth + i;
 		}
 		
-		hpBar[thisNumber, i] = instance_create(createX, hpBarOffset, objHpPod);
+		hpBar[thisNumber, i] = instance_create_depth(createX, hpBarOffset, thisNumber, objHpPod)
 	} else {
 		hpBar[thisNumber, i] = -1;
 		lastGap = i;
@@ -86,8 +86,8 @@ if (heroString != "bot" && thisInControl[thisNumber]) {
 		cooldownObj = objCasterCooldown;
 	} else if (heroString == "rogue") {
 		cooldownObj = objRogueCooldown;
-	} else if (heroString == "shaman") {
-		cooldownObj = objShamanCooldown;
+	} else if (heroString == "warlord") {
+		cooldownObj = objWarlordCooldown;
 	} else if (heroString == "monk") {
 		cooldownObj = objMonkCooldown;
 	}

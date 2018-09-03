@@ -10,3 +10,4 @@ forever = false;
 time = myHeroId.lobHitboxDuration;
 currTime = 0;
 instance_create_depth(x, y, id, objFireLobVisual);
+hitSound = sndFireShotHit;

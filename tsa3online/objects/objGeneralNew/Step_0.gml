@@ -1,11 +1,16 @@
 ///@desc handle game rooms
 if (createGameStuff) {	
+	numberWithSprite2 = irandom(1)
+	
 	for (var i = 0; i < numPlayers; i++) {
 		playerHandlerObj[i] = instance_create_depth(0, 0, i, objPlayerHandler);
 		lockedIn[i] = false;
 	}
 	
 	createGameStuff = false;
+	bkMusic = bkMusics[irandom(array_length_1d(bkMusics) - 1)]
+	
+	audio_play_sound(bkMusic, 1, true);
 }
 
 if (room == rmMainMenu) {
@@ -31,8 +36,8 @@ if (room == rmMainMenu) {
 } else if (room == rmCharacterSelectionScreen) {
 	if (createSelectStuff) {
 		for (var i = 0; i < numPlayers; i++) {
-			lockedIn[i] = false;
-			heroId[i] = instance_create_depth(0, 0, i, objCharacterSelecter);
+			lockedIn[i] = false
+			heroId[i] = instance_create_depth(0, 0, i, objCharacterSelector)
 		}
 		
 		createSelectStuff = false;
@@ -50,26 +55,24 @@ if (room == rmMainMenu) {
 		targetRoom = "mapSelect";
 	}
 	
-	currRoom = "characterSelect";
+	currRoom = "characterSelect"
 } else if (room == rmMapSelectionScreen) {
-	if (keyboard_check_pressed(ord("1"))) {
-		selectedArena = rmBowl;
-		targetRoom = "game";
-	} else if (keyboard_check_pressed(ord("2"))) {
-		selectedArena = rmPillar;
-		targetRoom = "game";
-	} else if (keyboard_check_pressed(ord("3"))) {
-		selectedArena = rmHill;
-		targetRoom = "game";
-	} else if (keyboard_check_pressed(ord("4"))) {
-		selectedArena = rmFlat;
-		targetRoom = "game";
+	if (createMapSelectStuff) {
+		instance_create(0, 0, objMapSelector)
+		createMapSelectStuff = false
 	}
 	
-	if (!auto) {
-		selectedArena = scrRandomArena();
-		targetRoom = "game";
+	if (mapLockedIn) {
+		mapLockedIn = false
+		targetRoom = "game"
 	}
+	
+	if (auto) {
+		selectedMap = scrRandomArena()
+		targetRoom = "game"
+	}
+	
+	currRoom = "mapSelect"
 } else if (scrInArena()) {
 	var numAlivePlayers = 0;
 	
@@ -81,6 +84,7 @@ if (room == rmMainMenu) {
 	
 	if (numAlivePlayers <= 1) {
 		targetRoom = "characterSelect";
+		audio_stop_sound(bkMusic);
 	}
 	
 	currRoom = "game";
@@ -91,13 +95,14 @@ if (currRoom != targetRoom) {
 	
 	if (currTime >= 0.5 * room_speed || currRoom == "main") {
 		if (targetRoom == "game") {
-			room_goto(selectedArena);
-			createGameStuff = true;
+			room_goto(selectedMap)
+			createGameStuff = true
 		} else if (targetRoom == "characterSelect") {
-			room_goto(rmCharacterSelectionScreen);
-			createSelectStuff = true;
+			room_goto(rmCharacterSelectionScreen)
+			createSelectStuff = true
 		} else if (targetRoom == "mapSelect") {
-			room_goto(rmMapSelectionScreen);
+			room_goto(rmMapSelectionScreen)
+			createMapSelectStuff = true
 		}
 		
 		currTime = 0;

@@ -81,7 +81,7 @@ for (var i = 0; i < numAbilities; i++) {
 /// @DnDAction : YoYo Games.Common.Execute_Code
 /// @DnDVersion : 1
 /// @DnDHash : 3771CA6E
-/// @DnDArgument : "code" "///@desc ability function$(13_10)if (instance_exists(fist) && durationHeld[4] > 0 && !heldBefore[4]) {$(13_10)	fist.changedDirection = true;$(13_10)}$(13_10)$(13_10)if (aState == "1") {$(13_10)	if (aPhase == "d") {$(13_10)		if (timeInAPhase >= 0 && firstTime[0]) {$(13_10)			fist = instance_create_depth(preciseX, preciseY, thisNumber, objCrescentPunch);$(13_10)			firstTime[0] = false;$(13_10)		}$(13_10)	$(13_10)		scrResetAir();$(13_10)	}$(13_10)} else if (aState == "2") {$(13_10)	if (aPhase == "u") {$(13_10)		if (timeInAPhase >= 0 && firstTime[1]) {$(13_10)			instance_create_depth(preciseX, preciseY, thisNumber, objFlashKick);$(13_10)			firstTime[1] = false;$(13_10)		}$(13_10)	}$(13_10)	$(13_10)	scrResetAir();$(13_10)} else if (aState == "3") {$(13_10)	if (aPhase == "d") {$(13_10)		if (timeInAPhase >= 0 && firstTime[2]) {$(13_10)			var moveMod = instance_create(0, 0, objMoveMod);$(13_10)			moveMod.dx = image_xscale * dashXSpd;$(13_10)			moveMod.dy = dashYSpd;$(13_10)			moveMod.ddx = image_xscale * dashDXSpd;$(13_10)			moveMod.ddy = dashDYSpd;$(13_10)			moveMod.duration = dashDuration;$(13_10)			ds_list_add(envMoveModList, moveMod);$(13_10)			jumpEnabled = false;$(13_10)			firstTime[2] = false;$(13_10)		}$(13_10)		$(13_10)		if (!grounded && !jumpEnabled) {$(13_10)			jumpEnabed = true;$(13_10)			currAirJumps = -1;$(13_10)		}$(13_10)		$(13_10)		scrResetAir();$(13_10)	}$(13_10)} else if (aState == "4") {$(13_10)	if (aPhase == "d") {$(13_10)		if (timeInAPhase >= 0 && firstTime[3]) {$(13_10)			palmAngle = 90 - image_xscale * 90;$(13_10)			lastPalm = timeInAPhase - palmFreq;$(13_10)		}$(13_10)		$(13_10)		if (durationHeld[RIGHT] > 0) {$(13_10)			palmAngle -= palmDAngle;$(13_10)		}$(13_10)		$(13_10)		if (durationHeld[LEFT] > 0) {$(13_10)			palmAngle += palmDAngle;$(13_10)		}$(13_10)		$(13_10)		palmAngle %= 360;$(13_10)		$(13_10)		if (timeInAPhase > lastPalm + palmFreq) {$(13_10)			instance_create_depth(preciseX, preciseY, thisNumber, objPalm);$(13_10)			lastPalm = timeInAPhase;$(13_10)		}$(13_10)		$(13_10)		firstTime[3] = false;$(13_10)	}$(13_10)	$(13_10)	scrResetAir();$(13_10)}"
+/// @DnDArgument : "code" "///@desc ability function$(13_10)if (instance_exists(fist) && durationHeld[4] > 0 && !heldBefore[4]) {$(13_10)	fist.changedDirection = true;$(13_10)}$(13_10)$(13_10)if (aState == "1") {$(13_10)	if (aPhase == "d") {$(13_10)		if (timeInAPhase >= 0 && firstTime[0]) {$(13_10)			fist = instance_create_depth(preciseX, preciseY, thisNumber, objCrescentPunch);$(13_10)			firstTime[0] = false;$(13_10)		}$(13_10)	$(13_10)		scrResetAir();$(13_10)	}$(13_10)} else if (aState == "2") {$(13_10)	if (aPhase == "u") {$(13_10)		if (timeInAPhase >= 0 && firstTime[1]) {$(13_10)			instance_create_depth(preciseX, preciseY, thisNumber, objFlashKick);$(13_10)			firstTime[1] = false;$(13_10)		}$(13_10)	}$(13_10)	$(13_10)	scrResetAir();$(13_10)} else if (aState == "3") {$(13_10)	if (aPhase == "d") {$(13_10)		if (timeInAPhase >= 0 && firstTime[2]) {$(13_10)			var moveMod = instance_create(0, 0, objMoveMod);$(13_10)			moveMod.dx = image_xscale * dashXSpd;$(13_10)			moveMod.dy = dashYSpd;$(13_10)			moveMod.ddx = image_xscale * dashDXSpd;$(13_10)			moveMod.ddy = dashDYSpd;$(13_10)			moveMod.duration = dashDuration;$(13_10)			ds_list_add(envMoveModList, moveMod);$(13_10)			jumpEnabled = false;$(13_10)			firstTime[2] = false;$(13_10)		}$(13_10)		$(13_10)		if (!grounded && !jumpEnabled) {$(13_10)			jumpEnabed = true;$(13_10)			currAirJumps = -1;$(13_10)		}$(13_10)		$(13_10)		scrResetAir();$(13_10)	}$(13_10)} else if (aState == "4") {$(13_10)	if (aPhase == "d") {$(13_10)		if (timeInAPhase >= 0 && firstTime[3]) {$(13_10)			palmAngle = 90 - image_xscale * 90;$(13_10)			lastPalm = timeInAPhase - palmFreq;$(13_10)			firstTime[3] = false$(13_10)		}$(13_10)		$(13_10)		if (durationHeld[RIGHT] > 0) {$(13_10)			palmAngle -= palmDAngle;$(13_10)		}$(13_10)		$(13_10)		if (durationHeld[LEFT] > 0) {$(13_10)			palmAngle += palmDAngle;$(13_10)		}$(13_10)		$(13_10)		palmAngle %= 360;$(13_10)		$(13_10)		if (timeInAPhase > lastPalm + palmFreq) {$(13_10)			instance_create_depth(preciseX, preciseY, thisNumber, objPalm);$(13_10)			lastPalm = timeInAPhase;$(13_10)		}$(13_10)	}$(13_10)	$(13_10)	scrResetAir();$(13_10)}"
 ///@desc ability function
 if (instance_exists(fist) && durationHeld[4] > 0 && !heldBefore[4]) {
 	fist.changedDirection = true;
@@ -131,6 +131,7 @@ if (aState == "1") {
 		if (timeInAPhase >= 0 && firstTime[3]) {
 			palmAngle = 90 - image_xscale * 90;
 			lastPalm = timeInAPhase - palmFreq;
+			firstTime[3] = false
 		}
 		
 		if (durationHeld[RIGHT] > 0) {
@@ -147,8 +148,6 @@ if (aState == "1") {
 			instance_create_depth(preciseX, preciseY, thisNumber, objPalm);
 			lastPalm = timeInAPhase;
 		}
-		
-		firstTime[3] = false;
 	}
 	
 	scrResetAir();
@@ -157,7 +156,7 @@ if (aState == "1") {
 /// @DnDAction : YoYo Games.Common.Execute_Code
 /// @DnDVersion : 1
 /// @DnDHash : 78F94C44
-/// @DnDArgument : "code" "///@desc sprite and image$(13_10)if (aState == "n") {$(13_10)	if (durationHeld[RIGHT] > 0) {$(13_10)		image_xscale = 1;$(13_10)	} else if (durationHeld[LEFT] > 0) {$(13_10)		image_xscale = -1;$(13_10)	}$(13_10)} else {$(13_10)	image_xscale = abilityImageXScale;$(13_10)}$(13_10)$(13_10)if (currAirJumps == -1) {$(13_10)	if (!instance_exists(jumpIndicatorId)) {$(13_10)		jumpIndicatorId = instance_create_depth(preciseX, preciseY, thisNumber, objJumpIndicator);$(13_10)	}$(13_10)} else {$(13_10)	if (instance_exists(jumpIndicatorId)) {$(13_10)		with (jumpIndicatorId) {$(13_10)			instance_destroy();$(13_10)		}$(13_10)	}$(13_10)}$(13_10)$(13_10)if (aPhase != "n") {$(13_10)	if (aPhase == "u" && timeInAPhase == 0) {$(13_10)		image_index = 0;$(13_10)	}$(13_10)	$(13_10)	if (aState == "1") {$(13_10)		sprite_index = sprMonkCrescentPunch;$(13_10)	} else if (aState == "2") {$(13_10)		sprite_index = sprMonkFlashKick;$(13_10)	} else if (aState == "3") {$(13_10)		sprite_index = sprMonkDash;$(13_10)	} else if (aState == "4") {$(13_10)		sprite_index = sprMonkThousandPalmsPre;$(13_10)		$(13_10)		if (aPhase == "d") {$(13_10)			sprite_index = sprMonkThousandPalmsDuring;$(13_10)			$(13_10)			if (timeInAPhase == 0) {$(13_10)				image_index = 0;$(13_10)			}$(13_10)			$(13_10)			if (palmAngle < 90 || palmAngle > 270) {$(13_10)				image_xscale = 1;$(13_10)			} else {$(13_10)				image_xscale = -1;$(13_10)			}$(13_10)		}$(13_10)	}$(13_10)	$(13_10)	if (aState != "4" && image_index >= image_number - image_speed) {$(13_10)		image_index = image_number - image_speed;$(13_10)	}$(13_10)} else if (!grounded) {$(13_10)	if (dy >= 0) {$(13_10)		sprite_index = sprMonkGoingUp;$(13_10)	} else {$(13_10)		sprite_index = sprMonkGoingDown;$(13_10)	}$(13_10)} else if (durationHeld[RIGHT] > 0 || durationHeld[LEFT] > 0) {$(13_10)	sprite_index = sprMonkMove;$(13_10)} else {$(13_10)	sprite_index = sprMonkNone;$(13_10)}$(13_10)$(13_10)if (hp <= 0) {$(13_10)	sprite_index = sprMine;$(13_10)}"
+/// @DnDArgument : "code" "///@desc sprite and image$(13_10)if (aState == "n") {$(13_10)	if (durationHeld[RIGHT] > 0) {$(13_10)		image_xscale = 1;$(13_10)	} else if (durationHeld[LEFT] > 0) {$(13_10)		image_xscale = -1;$(13_10)	}$(13_10)} else {$(13_10)	image_xscale = abilityImageXScale;$(13_10)}$(13_10)$(13_10)if (currAirJumps == -1) {$(13_10)	if (!instance_exists(jumpIndicatorId)) {$(13_10)		jumpIndicatorId = instance_create_depth(preciseX, preciseY, thisNumber, objJumpIndicator);$(13_10)	}$(13_10)} else {$(13_10)	if (instance_exists(jumpIndicatorId)) {$(13_10)		with (jumpIndicatorId) {$(13_10)			instance_destroy();$(13_10)		}$(13_10)	}$(13_10)}$(13_10)$(13_10)if (aPhase != "n") {$(13_10)	if (aPhase == "u" && timeInAPhase == 0) {$(13_10)		image_index = 0;$(13_10)	}$(13_10)	$(13_10)	if (aState == "1") {$(13_10)		if (sprite2) {$(13_10)			sprite_index = sprMonkCrescentPunch2$(13_10)		} else {$(13_10)			sprite_index = sprMonkCrescentPunch$(13_10)		}$(13_10)	} else if (aState == "2") {$(13_10)		if (sprite2) {$(13_10)			sprite_index = sprMonkFlashKick2$(13_10)		} else {$(13_10)			sprite_index = sprMonkFlashKick$(13_10)		}$(13_10)	} else if (aState == "3") {$(13_10)		if (sprite2) {$(13_10)			sprite_index = sprMonkDash2$(13_10)		} else {$(13_10)			sprite_index = sprMonkDash$(13_10)		}$(13_10)	} else if (aState == "4") {$(13_10)		if (sprite2) {$(13_10)			sprite_index = sprMonkThousandPalmsPre2$(13_10)		} else {$(13_10)			sprite_index = sprMonkThousandPalmsPre$(13_10)		}$(13_10)		$(13_10)		if (aPhase == "d") {$(13_10)			if (sprite2) {$(13_10)				sprite_index = sprMonkThousandPalmsDuring2$(13_10)			} else {$(13_10)				sprite_index = sprMonkThousandPalmsDuring$(13_10)			}$(13_10)			$(13_10)			if (timeInAPhase == 0) {$(13_10)				image_index = 0;$(13_10)			}$(13_10)			$(13_10)			if (palmAngle < 90 || palmAngle > 270) {$(13_10)				image_xscale = 1;$(13_10)			} else {$(13_10)				image_xscale = -1;$(13_10)			}$(13_10)		}$(13_10)	}$(13_10)	$(13_10)	if (aState != "4" && image_index >= image_number - image_speed) {$(13_10)		image_index = image_number - image_speed;$(13_10)	}$(13_10)} else if (!grounded) {$(13_10)	if (dy >= 0) {$(13_10)		if (sprite2) {$(13_10)			sprite_index = sprMonkGoingUp2$(13_10)		} else {$(13_10)			sprite_index = sprMonkGoingUp$(13_10)		}$(13_10)	} else {$(13_10)		if (sprite2) {$(13_10)			sprite_index = sprMonkGoingDown2$(13_10)		} else {$(13_10)			sprite_index = sprMonkGoingDown$(13_10)		}$(13_10)	}$(13_10)} else if (durationHeld[RIGHT] > 0 || durationHeld[LEFT] > 0) {$(13_10)	if (sprite2) {$(13_10)		sprite_index = sprMonkMove2$(13_10)	} else {$(13_10)		sprite_index = sprMonkMove$(13_10)	}$(13_10)} else {$(13_10)	if (sprite2) {$(13_10)		sprite_index = sprMonkNone2$(13_10)	} else {$(13_10)		sprite_index = sprMonkNone$(13_10)	}$(13_10)}$(13_10)$(13_10)if (hp <= 0) {$(13_10)	sprite_index = sprMine;$(13_10)}"
 ///@desc sprite and image
 if (aState == "n") {
 	if (durationHeld[RIGHT] > 0) {
@@ -187,16 +186,36 @@ if (aPhase != "n") {
 	}
 	
 	if (aState == "1") {
-		sprite_index = sprMonkCrescentPunch;
+		if (sprite2) {
+			sprite_index = sprMonkCrescentPunch2
+		} else {
+			sprite_index = sprMonkCrescentPunch
+		}
 	} else if (aState == "2") {
-		sprite_index = sprMonkFlashKick;
+		if (sprite2) {
+			sprite_index = sprMonkFlashKick2
+		} else {
+			sprite_index = sprMonkFlashKick
+		}
 	} else if (aState == "3") {
-		sprite_index = sprMonkDash;
+		if (sprite2) {
+			sprite_index = sprMonkDash2
+		} else {
+			sprite_index = sprMonkDash
+		}
 	} else if (aState == "4") {
-		sprite_index = sprMonkThousandPalmsPre;
+		if (sprite2) {
+			sprite_index = sprMonkThousandPalmsPre2
+		} else {
+			sprite_index = sprMonkThousandPalmsPre
+		}
 		
 		if (aPhase == "d") {
-			sprite_index = sprMonkThousandPalmsDuring;
+			if (sprite2) {
+				sprite_index = sprMonkThousandPalmsDuring2
+			} else {
+				sprite_index = sprMonkThousandPalmsDuring
+			}
 			
 			if (timeInAPhase == 0) {
 				image_index = 0;
@@ -215,14 +234,30 @@ if (aPhase != "n") {
 	}
 } else if (!grounded) {
 	if (dy >= 0) {
-		sprite_index = sprMonkGoingUp;
+		if (sprite2) {
+			sprite_index = sprMonkGoingUp2
+		} else {
+			sprite_index = sprMonkGoingUp
+		}
 	} else {
-		sprite_index = sprMonkGoingDown;
+		if (sprite2) {
+			sprite_index = sprMonkGoingDown2
+		} else {
+			sprite_index = sprMonkGoingDown
+		}
 	}
 } else if (durationHeld[RIGHT] > 0 || durationHeld[LEFT] > 0) {
-	sprite_index = sprMonkMove;
+	if (sprite2) {
+		sprite_index = sprMonkMove2
+	} else {
+		sprite_index = sprMonkMove
+	}
 } else {
-	sprite_index = sprMonkNone;
+	if (sprite2) {
+		sprite_index = sprMonkNone2
+	} else {
+		sprite_index = sprMonkNone
+	}
 }
 
 if (hp <= 0) {

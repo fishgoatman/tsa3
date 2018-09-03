@@ -15,3 +15,5 @@ instance_create_depth(x, y, id, objPalmVisual);
 if (image_angle > 90 && image_angle < 270) {
 	image_yscale = -1;
 }
+
+hitSound = noone;

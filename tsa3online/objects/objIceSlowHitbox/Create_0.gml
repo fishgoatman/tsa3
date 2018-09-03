@@ -12,3 +12,4 @@ slowDuration = 1;
 slowForever = false;
 time = 1;
 currTime = 0;
+hitSound = noone;

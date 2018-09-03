@@ -10,3 +10,4 @@ forever = false;
 time = 1;
 currTime = 0;
 image_angle = projId.image_angle;
+hitSound = noone;

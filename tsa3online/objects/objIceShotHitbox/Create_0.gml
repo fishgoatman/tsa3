@@ -15,3 +15,4 @@ time = myHeroId.shotHitboxDuration;
 currTime = 0;
 image_xscale = x > myHeroId.preciseX ? 1 : -1;
 instance_create_depth(x, y, id, objIceShotVisual);
+hitSound = noone;

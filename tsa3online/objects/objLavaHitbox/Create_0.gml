@@ -12,4 +12,4 @@ currTime = 0;
 image_xscale = projId.image_xscale;
 image_index = projId.image_index;
 image_speed = 0;
-//instance_create_depth(x, y, id, objLavaHitboxVisual);
+hitSound = noone;

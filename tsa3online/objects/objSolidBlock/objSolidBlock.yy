@@ -4,7 +4,16 @@
     "mvc": "1.0",
     "name": "objSolidBlock",
     "eventList": [
-        
+        {
+            "id": "328a7fe5-bc2b-4f3c-9df6-a100952a14e7",
+            "modelName": "GMEvent",
+            "mvc": "1.0",
+            "IsDnD": false,
+            "collisionObjectId": "00000000-0000-0000-0000-000000000000",
+            "enumb": 0,
+            "eventtype": 0,
+            "m_owner": "1f7e4c9e-11fc-4f4e-8a5f-e996d1bb8269"
+        }
     ],
     "maskSpriteId": "00000000-0000-0000-0000-000000000000",
     "overriddenProperties": null,

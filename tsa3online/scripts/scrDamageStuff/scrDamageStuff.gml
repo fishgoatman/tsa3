@@ -24,6 +24,8 @@ for (var i = 0; i < ds_list_size(collisionList); i++) {
 			ds_list_add(slowModList, slowMod);
 		}
 		
+		audio_play_sound(collidingId.hitSound, 1, false);
+		
 		with (collidingId) {
 			instance_destroy();
 		}

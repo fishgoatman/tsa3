@@ -2,17 +2,17 @@
 var rando = irandom(3);
 
 if (rando == 0) {
-	return rmBowl;
+	return rmForest;
 }
 
 if (rando == 1) {
-	return rmPillar;
+	return rmMountain;
 }
 
 if (rando == 2) {
-	return rmHill;
+	return rmTundra;
 }
 
 if (rando == 3) {
-	return rmFlat;
+	return rmDesert;
 }

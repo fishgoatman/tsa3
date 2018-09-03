@@ -83,7 +83,7 @@ for (var i = 0; i < numAbilities; i++) {
 /// @DnDAction : YoYo Games.Common.Execute_Code
 /// @DnDVersion : 1
 /// @DnDHash : 3771CA6E
-/// @DnDArgument : "code" "///@desc ability function$(13_10)if (!(aState == "3" && aPhase == "d") && instance_exists(shadowId)) {$(13_10)	preciseX = endX;$(13_10)	preciseY = endY;$(13_10)			$(13_10)	with (shadowId) {$(13_10)		instance_destroy();$(13_10)	}$(13_10)}$(13_10)$(13_10)if (aState == "1") {$(13_10)	if (aPhase == "d") {$(13_10)		if (timeInAPhase >= 0 && firstTime[0]) {$(13_10)			instance_create_depth(preciseX, preciseY, thisNumber, objIceShot);$(13_10)			firstTime[0] = false;$(13_10)		}$(13_10)	}$(13_10)	$(13_10)	scrResetAir();$(13_10)} else if (aState == "2") {$(13_10)	if (aPhase == "d") {$(13_10)		if (timeInAPhase >= 0 && firstTime[1]) {$(13_10)			lobId = instance_create_depth(preciseX, preciseY, thisNumber, objIceLob);$(13_10)			firstTime[1] = false;$(13_10)		}$(13_10)	}$(13_10)} else if (aState == "3") {$(13_10)	if (aPhase == "d") {$(13_10)		if (timeInAPhase >= 0 && firstTime[2]) {$(13_10)			endX = preciseX + image_xscale * teleportDist;$(13_10)			$(13_10)			if (endX < 1) {$(13_10)				endX = 1;$(13_10)			}$(13_10)			$(13_10)			if (endX > room_width - 1) {$(13_10)				endX = room_width - 1;$(13_10)			}$(13_10)			$(13_10)			endY = preciseY;$(13_10)			preciseX = room_width / 2;$(13_10)			preciseY = -50;$(13_10)			shadowId = instance_create_depth(endX, endY, thisNumber, objCasterShadow);$(13_10)			firstTime[2] = false;$(13_10)		} else if (timeInAPhase >= duration[2] - 1) {$(13_10)			scrResetAir();$(13_10)			preciseX = endX;$(13_10)			preciseY = endY;$(13_10)			$(13_10)			with (shadowId) {$(13_10)				instance_destroy();$(13_10)			}$(13_10)		}$(13_10)	}$(13_10)} else if (aState == "4") {$(13_10)	if (aPhase == "d") {$(13_10)		if (timeInAPhase >= 0 && firstTime[3]) {$(13_10)			instance_create_depth(preciseX + slowOffset * image_xscale, room_height, thisNumber, objIceSlow);$(13_10)			firstTime[3] = false;$(13_10)		}$(13_10)	}$(13_10)}"
+/// @DnDArgument : "code" "///@desc ability function$(13_10)if (!(aState == "3" && aPhase == "d") && instance_exists(shadowId)) {$(13_10)	preciseX = endX;$(13_10)	preciseY = endY;$(13_10)			$(13_10)	with (shadowId) {$(13_10)		instance_destroy();$(13_10)	}$(13_10)}$(13_10)$(13_10)if (aState == "1") {$(13_10)	if (aPhase == "d") {$(13_10)		if (timeInAPhase >= 0 && firstTime[0]) {$(13_10)			instance_create_depth(preciseX, preciseY, thisNumber, objIceShot);$(13_10)			firstTime[0] = false;$(13_10)		}$(13_10)	}$(13_10)	$(13_10)	scrResetAir();$(13_10)} else if (aState == "2") {$(13_10)	if (aPhase == "d") {$(13_10)		if (timeInAPhase >= 0 && firstTime[1]) {$(13_10)			lobId = instance_create_depth(preciseX, preciseY, thisNumber, objIceLob);$(13_10)			firstTime[1] = false;$(13_10)		}$(13_10)	}$(13_10)} else if (aState == "3") {$(13_10)	if (aPhase == "d") {$(13_10)		if (timeInAPhase >= 0 && firstTime[2]) {$(13_10)			endX = preciseX + image_xscale * teleportDist;$(13_10)			$(13_10)			if (endX < 1) {$(13_10)				endX = 1;$(13_10)			}$(13_10)			$(13_10)			if (endX > room_width - 1) {$(13_10)				endX = room_width - 1;$(13_10)			}$(13_10)			$(13_10)			endY = preciseY;$(13_10)			preciseX = room_width / 2;$(13_10)			preciseY = -50;$(13_10)			shadowId = instance_create_depth(endX, endY, thisNumber, objCasterShadow);$(13_10)			firstTime[2] = false;$(13_10)		} else if (timeInAPhase >= duration[2] - 1) {$(13_10)			scrResetAir();$(13_10)			preciseX = endX;$(13_10)			preciseY = endY;$(13_10)			$(13_10)			with (shadowId) {$(13_10)				instance_destroy();$(13_10)			}$(13_10)		}$(13_10)	}$(13_10)} else if (aState == "4") {$(13_10)	if (aPhase == "d") {$(13_10)		if (timeInAPhase >= 0 && firstTime[3]) {$(13_10)			//instance_create_depth(preciseX + slowOffset * image_xscale, room_height, thisNumber, objIceSlow);$(13_10)			instance_create_depth(preciseX, preciseY, thisNumber, objIceBall)$(13_10)			firstTime[3] = false;$(13_10)		}$(13_10)	}$(13_10)}"
 ///@desc ability function
 if (!(aState == "3" && aPhase == "d") && instance_exists(shadowId)) {
 	preciseX = endX;
@@ -141,7 +141,8 @@ if (aState == "1") {
 } else if (aState == "4") {
 	if (aPhase == "d") {
 		if (timeInAPhase >= 0 && firstTime[3]) {
-			instance_create_depth(preciseX + slowOffset * image_xscale, room_height, thisNumber, objIceSlow);
+			//instance_create_depth(preciseX + slowOffset * image_xscale, room_height, thisNumber, objIceSlow);
+			instance_create_depth(preciseX, preciseY, thisNumber, objIceBall)
 			firstTime[3] = false;
 		}
 	}
@@ -150,7 +151,7 @@ if (aState == "1") {
 /// @DnDAction : YoYo Games.Common.Execute_Code
 /// @DnDVersion : 1
 /// @DnDHash : 78F94C44
-/// @DnDArgument : "code" "///@desc sprite and image$(13_10)if (aState == "n") {$(13_10)	if (durationHeld[RIGHT] > 0) {$(13_10)		image_xscale = 1;$(13_10)	} else if (durationHeld[LEFT] > 0) {$(13_10)		image_xscale = -1;$(13_10)	}$(13_10)} else {$(13_10)	image_xscale = abilityImageXScale;$(13_10)}$(13_10)$(13_10)if (aPhase != "n") {$(13_10)	if (aPhase == "u" && timeInAPhase == 0) {$(13_10)		image_index = 0;$(13_10)	}$(13_10)	$(13_10)	if (aState == "1") {$(13_10)		sprite_index = sprCasterShoot;$(13_10)	} else if (aState == "2") {$(13_10)		sprite_index = sprCasterLob;$(13_10)	} else if (aState == "4") {$(13_10)		sprite_index = sprCasterBlizzard;$(13_10)	}$(13_10)	$(13_10)	if (image_index >= image_number - image_speed) {$(13_10)		image_index = image_number - image_speed;$(13_10)	}$(13_10)} else if (!grounded) {$(13_10)	if (dy >= 0) {$(13_10)		sprite_index = sprCasterGoingUp;$(13_10)	} else {$(13_10)		sprite_index = sprCasterGoingDown;$(13_10)	}$(13_10)} else if (durationHeld[RIGHT] > 0 || durationHeld[LEFT] > 0) {$(13_10)	sprite_index = sprCasterMove;$(13_10)} else {$(13_10)	sprite_index = sprCasterNone;$(13_10)}$(13_10)$(13_10)if (hp <= 0) {$(13_10)	sprite_index = sprMine;$(13_10)}"
+/// @DnDArgument : "code" "///@desc sprite and image$(13_10)if (aState == "n") {$(13_10)	if (durationHeld[RIGHT] > 0) {$(13_10)		image_xscale = 1;$(13_10)	} else if (durationHeld[LEFT] > 0) {$(13_10)		image_xscale = -1;$(13_10)	}$(13_10)} else {$(13_10)	image_xscale = abilityImageXScale;$(13_10)}$(13_10)$(13_10)if (aPhase != "n") {$(13_10)	if (aPhase == "u" && timeInAPhase == 0) {$(13_10)		image_index = 0;$(13_10)	}$(13_10)	$(13_10)	if (aState == "1") {$(13_10)		if (sprite2) {$(13_10)			sprite_index = sprCasterShoot2$(13_10)		} else {$(13_10)			sprite_index = sprCasterShoot$(13_10)		}$(13_10)	} else if (aState == "2") {$(13_10)		if (sprite2) {$(13_10)			sprite_index = sprCasterLob2$(13_10)		} else {$(13_10)			sprite_index = sprCasterLob$(13_10)		}$(13_10)	} else if (aState == "4") {$(13_10)		if (sprite2) {$(13_10)			sprite_index = sprCasterBlizzard2$(13_10)		} else {$(13_10)			sprite_index = sprCasterBlizzard$(13_10)		}$(13_10)	}$(13_10)	$(13_10)	if (image_index >= image_number - image_speed) {$(13_10)		image_index = image_number - image_speed;$(13_10)	}$(13_10)} else if (!grounded) {$(13_10)	if (dy >= 0) {$(13_10)		if (sprite2) {$(13_10)			sprite_index = sprCasterGoingUp2$(13_10)		} else {$(13_10)			sprite_index = sprCasterGoingUp$(13_10)		}$(13_10)	} else {$(13_10)		if (sprite2) {$(13_10)			sprite_index = sprCasterGoingDown2$(13_10)		} else {$(13_10)			sprite_index = sprCasterGoingDown$(13_10)		}$(13_10)	}$(13_10)} else if (durationHeld[RIGHT] > 0 || durationHeld[LEFT] > 0) {$(13_10)	if (sprite2) {$(13_10)		sprite_index = sprCasterMove2$(13_10)	} else {$(13_10)		sprite_index = sprCasterMove$(13_10)	}$(13_10)} else {$(13_10)	if (sprite2) {$(13_10)		sprite_index = sprCasterNone2$(13_10)	} else {$(13_10)		sprite_index = sprCasterNone$(13_10)	}$(13_10)}$(13_10)$(13_10)if (hp <= 0) {$(13_10)	sprite_index = sprMine;$(13_10)}"
 ///@desc sprite and image
 if (aState == "n") {
 	if (durationHeld[RIGHT] > 0) {
@@ -168,11 +169,23 @@ if (aPhase != "n") {
 	}
 	
 	if (aState == "1") {
-		sprite_index = sprCasterShoot;
+		if (sprite2) {
+			sprite_index = sprCasterShoot2
+		} else {
+			sprite_index = sprCasterShoot
+		}
 	} else if (aState == "2") {
-		sprite_index = sprCasterLob;
+		if (sprite2) {
+			sprite_index = sprCasterLob2
+		} else {
+			sprite_index = sprCasterLob
+		}
 	} else if (aState == "4") {
-		sprite_index = sprCasterBlizzard;
+		if (sprite2) {
+			sprite_index = sprCasterBlizzard2
+		} else {
+			sprite_index = sprCasterBlizzard
+		}
 	}
 	
 	if (image_index >= image_number - image_speed) {
@@ -180,14 +193,30 @@ if (aPhase != "n") {
 	}
 } else if (!grounded) {
 	if (dy >= 0) {
-		sprite_index = sprCasterGoingUp;
+		if (sprite2) {
+			sprite_index = sprCasterGoingUp2
+		} else {
+			sprite_index = sprCasterGoingUp
+		}
 	} else {
-		sprite_index = sprCasterGoingDown;
+		if (sprite2) {
+			sprite_index = sprCasterGoingDown2
+		} else {
+			sprite_index = sprCasterGoingDown
+		}
 	}
 } else if (durationHeld[RIGHT] > 0 || durationHeld[LEFT] > 0) {
-	sprite_index = sprCasterMove;
+	if (sprite2) {
+		sprite_index = sprCasterMove2
+	} else {
+		sprite_index = sprCasterMove
+	}
 } else {
-	sprite_index = sprCasterNone;
+	if (sprite2) {
+		sprite_index = sprCasterNone2
+	} else {
+		sprite_index = sprCasterNone
+	}
 }
 
 if (hp <= 0) {

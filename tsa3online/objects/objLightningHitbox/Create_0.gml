@@ -9,3 +9,4 @@ dDmg = 0;
 duration = 1;
 forever = false;
 instance_create_depth(x, y, id, objLightningVisual);
+hitSound = noone;

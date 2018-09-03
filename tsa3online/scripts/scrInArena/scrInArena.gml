@@ -1,2 +1,2 @@
 ///in an arena
-return room == rmBowl || room == rmPillar || room == rmHill || room == rmFlat;
+return room == rmForest || room == rmMountain || room == rmTundra || room == rmDesert

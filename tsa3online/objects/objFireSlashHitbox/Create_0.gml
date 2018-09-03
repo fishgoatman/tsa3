@@ -10,3 +10,4 @@ time = myHeroId.slashHitboxDuration;
 currTime = 0;
 image_xscale = myHeroId.image_xscale;
 instance_create_depth(x, y, thisNumber, objFireSlashVisual);
+hitSound = sndFireSlashHit;

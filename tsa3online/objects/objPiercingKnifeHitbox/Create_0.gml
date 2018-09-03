@@ -9,4 +9,4 @@ time = 1;
 currTime = 0;
 image_xscale = projId.image_xscale;
 thisNumber = projId.thisNumber;
-//instance_create_depth(x, y, thisNumber, objFireSlashVisual);
+hitSound = noone;
