@@ -51,7 +51,8 @@ y = scrRound(preciseY);
 if (createdAlready) {
 	if (hitBlock) {
 		for (i = 0; i < smallLobNumber; i++) {
-			instance_create_depth(preciseX, preciseY, id, objSmallIceLob);
+			instance_create_depth(preciseX, preciseY, id, objSmallIceLob)
+			audio_play_sound(sndIceLobMiss, 1, false)
 		}
 	}
 	

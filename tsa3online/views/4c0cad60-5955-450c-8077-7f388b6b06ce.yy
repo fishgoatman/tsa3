@@ -9,7 +9,9 @@
         "890b9f83-17bd-4e3a-9665-31a5f4850d70",
         "8516c115-d4a1-47fc-b332-b9f94e3bf82f",
         "a5af04a6-eb32-422e-91a7-0f5d7d099c39",
-        "43ef5b53-8f6f-41cf-815d-9d97c3012a04"
+        "43ef5b53-8f6f-41cf-815d-9d97c3012a04",
+        "f6d895ef-b1b8-495c-a73a-3ece2d6f1f17",
+        "f5c36d58-211d-4835-9a6a-955e0e50d2c4"
     ],
     "filterType": "GMSound",
     "folderName": "mage",

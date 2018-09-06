@@ -1,3 +1,4 @@
 ///@desc move
-scrDestructiveProjectileMove();
-dy -= grav;
+scrDestructiveProjectileMove()
+dy -= grav
+scrDestroyIfOOB()

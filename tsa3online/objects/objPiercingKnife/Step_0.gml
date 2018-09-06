@@ -1,2 +1,2 @@
 ///@desc piercing move
-scrPiercingProjectileMove();
+scrPiercingProjectileMove()

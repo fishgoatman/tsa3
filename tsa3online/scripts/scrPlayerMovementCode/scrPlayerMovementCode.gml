@@ -19,6 +19,14 @@ grounded = blockGrounded || platformGrounded && dy <= 0;
 ceilinged = !place_meeting(preciseX, preciseY, objBlock) && place_meeting(preciseX, preciseY - 1, objBlock);
 
 if (grounded) {
+	timeSinceGrounded = 0
+} else {
+	timeSinceGrounded++
+}
+
+var coyoteTime = 5
+
+if (grounded) {
 	if (instance_exists(gravMoveMod)) {
 		gravMoveMod.duration = 0;
 	}
@@ -40,19 +48,32 @@ if (ceilinged) {
 }
 
 //jumping
-if (grounded) {
+if (timeSinceGrounded == 0) {
 	if (instance_exists(jumpMoveMod)) {
-		jumpMoveMod.duration = 0;
-	} else if (durationHeld[UP] > 0 && !heldBefore[UP]/*(!heldBefore[UP] || heldBefore[UP] && durationHeld[UP] <= jumpGrace)*/) {
-		jumpMoveMod = instance_create(0, 0, objMoveMod);
-		jumpMoveMod.dy = jumpPower;
-		jumpMoveMod.forever = true;
-		ds_list_add(moveModList, jumpMoveMod);
-		preciseY += 1;
+		jumpMoveMod.duration = 0
 	}
 }
 
-if (!grounded && currAirJumps < airJumps) {
+if (timeSinceGrounded < coyoteTime) {
+	if (durationHeld[UP] > 0 && !heldBefore[UP]/*(!heldBefore[UP] || heldBefore[UP] && durationHeld[UP] <= jumpGrace)*/) {
+		jumpMoveMod = instance_create(0, 0, objMoveMod)
+		jumpMoveMod.dy = jumpPower
+		jumpMoveMod.forever = true
+		ds_list_add(moveModList, jumpMoveMod)
+		
+		if (instance_exists(gravMoveMod)) {
+			gravMoveMod.dy = 0
+		}
+		
+		if (timeSinceGrounded == 0) {
+			preciseY += 1
+		}
+		
+		timeSinceGrounded = coyoteTime
+	}
+}
+
+if (/*!grounded*/timeSinceGrounded >= coyoteTime && currAirJumps < airJumps) {
 	if (durationHeld[UP] > 0 && !heldBefore[UP]/*(!heldBefore[UP] || heldBefore[UP] && durationHeld[UP] <= jumpGrace)*/) {
 		if (instance_exists(jumpMoveMod)) {
 			jumpMoveMod.dy = jumpPower;

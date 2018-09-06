@@ -9,7 +9,7 @@ durationHeld[rando] = 1;
 heldBefore[rando] = false;
 
 //if (cooldownTimer[rando - 4] == 0) {
-	image_xscale = sign(scrGetOtherId().preciseX - preciseX);
+	image_xscale = sign(scrGetOtherId().preciseX - preciseX)
 //}
 	
 if (random(1) < 0.1) {
