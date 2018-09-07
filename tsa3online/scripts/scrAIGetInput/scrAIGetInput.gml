@@ -8,9 +8,9 @@ var rando = irandom(3) + 4;
 durationHeld[rando] = 1;
 heldBefore[rando] = false;
 
-//if (cooldownTimer[rando - 4] == 0) {
-	image_xscale = sign(scrGetOtherId().preciseX - preciseX)
-//}
+if (aState == "n") {
+	image_xscale = scrGetOtherId().preciseX > preciseX ? 1 : -1
+}
 	
 if (random(1) < 0.1) {
 	durationHeld[UP] = 1;

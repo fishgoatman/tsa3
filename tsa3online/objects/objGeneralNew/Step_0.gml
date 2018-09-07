@@ -60,10 +60,10 @@ if (room == rmMainMenu) {
 	if (createMapSelectStuff) {
 		instance_create(0, 0, objMapSelector)
 		createMapSelectStuff = false
+		mapLockedIn = false
 	}
 	
 	if (mapLockedIn) {
-		mapLockedIn = false
 		targetRoom = "game"
 	}
 	
