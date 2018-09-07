@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.27428.2005
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Develop_Automated_Test1", "Develop_Automated_Test1\Develop_Automated_Test1.csproj", "{A60DF35A-E5F4-4937-B307-2A55EEFFBABD}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{A60DF35A-E5F4-4937-B307-2A55EEFFBABD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A60DF35A-E5F4-4937-B307-2A55EEFFBABD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A60DF35A-E5F4-4937-B307-2A55EEFFBABD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A60DF35A-E5F4-4937-B307-2A55EEFFBABD}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {B150C1DA-81FD-4DC3-9C23-800358CB8CF1}
+	EndGlobalSection
+EndGlobal

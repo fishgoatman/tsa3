@@ -1,2 +1,0 @@
-/// @desc dash
-dashing = false;

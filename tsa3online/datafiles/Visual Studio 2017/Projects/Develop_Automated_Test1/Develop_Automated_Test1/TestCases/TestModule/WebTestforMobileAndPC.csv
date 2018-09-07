@@ -1,0 +1,4 @@
+﻿Keyword,Object,Value,IncludeInTestRun,Steps,Expected Result,Title
+EnterText,BingHome_SearchBox,4+5,Yes,Enter the calculation,User should be able to enter the user name,
+PressKey,BingHome_SearchBox,enter,Yes,Click the search button,User should be able to click on the login button,
+verifylabel,Bing_SearchResultBox,9,Yes,Verify Result,,
