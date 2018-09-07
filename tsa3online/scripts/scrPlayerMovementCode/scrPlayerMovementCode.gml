@@ -56,10 +56,12 @@ if (timeSinceGrounded == 0) {
 
 if (timeSinceGrounded < coyoteTime) {
 	if (durationHeld[UP] > 0 && !heldBefore[UP]/*(!heldBefore[UP] || heldBefore[UP] && durationHeld[UP] <= jumpGrace)*/) {
-		jumpMoveMod = instance_create(0, 0, objMoveMod)
-		jumpMoveMod.dy = jumpPower
-		jumpMoveMod.forever = true
-		ds_list_add(moveModList, jumpMoveMod)
+		if (!instance_exists(jumpMoveMod)) {
+			jumpMoveMod = instance_create(0, 0, objMoveMod)
+			jumpMoveMod.dy = jumpPower
+			jumpMoveMod.forever = true
+			ds_list_add(moveModList, jumpMoveMod)
+		}
 		
 		if (instance_exists(gravMoveMod)) {
 			gravMoveMod.dy = 0

@@ -19,5 +19,4 @@ hitSound = sndIceShot
 
 if (!place_meeting(x, y, objPlayer)) {
 	audio_play_sound(sndIceShotMiss, 1, false)
-	show_debug_message("hi")
 }

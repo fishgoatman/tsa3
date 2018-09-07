@@ -6,7 +6,7 @@ var xDisp = 0;
 var hyp = sqrt(dx * dx + dy * dy);
 var tempDx = dx / hyp;
 var tempDy = dy / hyp;
-createdAlready = false;
+createdAlready = false
 
 while (abs(yDisp) < abs(dy) && !place_meeting(tryX, tryY - tempDy, objBlock)) {
     tryY -= tempDy;
