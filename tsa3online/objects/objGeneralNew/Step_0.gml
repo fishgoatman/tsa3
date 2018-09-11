@@ -37,7 +37,7 @@ if (room == rmMainMenu) {
 	if (createSelectStuff) {
 		for (var i = 0; i < numPlayers; i++) {
 			lockedIn[i] = false
-			heroId[i] = instance_create_depth(0, 0, i, objCharacterSelector)
+			heroId[i] = instance_create_depth(objMageSelection.x, objMageSelection.y, i, objCharacterSelector)
 		}
 		
 		createSelectStuff = false;
@@ -58,7 +58,7 @@ if (room == rmMainMenu) {
 	currRoom = "characterSelect"
 } else if (room == rmMapSelectionScreen) {
 	if (createMapSelectStuff) {
-		instance_create(0, 0, objMapSelector)
+		instance_create_depth(objDesertSelection.x, objDesertSelection.y, 0, objMapSelector)
 		createMapSelectStuff = false
 		mapLockedIn = false
 	}

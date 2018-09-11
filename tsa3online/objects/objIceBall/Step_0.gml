@@ -82,8 +82,12 @@ if (fourPressed || hitPlayer || hitCorner) {
 		instance_create_depth(preciseX + triCreateDist * dcos(triAngle), preciseY - triCreateDist * dsin(triAngle), id, createObj)
 	}
 	
-	if (hitPlayer) {
+	if (hitPlayer || hitCorner) {
 		instance_create_depth(preciseX, preciseY, id, objIceBallHitbox)
+	}
+	
+	if (fourPressed) {
+		audio_play_sound(sndIceDetonate, 1, false)
 	}
 	
 	with (visualId) {

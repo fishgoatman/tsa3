@@ -15,4 +15,8 @@ image_yscale = projId.image_yscale;
 image_index = projId.image_index;
 image_speed = 0;
 instance_create_depth(x, y, id, objCrescentPunchVisual);
-hitSound = noone;
+hitSound = sndPunchHit
+
+if (!place_meeting(x, y, objPlayer)) {
+	audio_play_sound(sndPunchMiss, 1, false)
+}

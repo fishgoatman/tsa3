@@ -10,4 +10,8 @@ forever = false;
 time = 1;
 currTime = 0;
 image_angle = projId.image_angle;
-hitSound = noone;
+hitSound = sndKnifeHit
+
+if (!place_meeting(x, y, objPlayer)) {
+	audio_play_sound(sndKnifeMiss, 1, false)
+}

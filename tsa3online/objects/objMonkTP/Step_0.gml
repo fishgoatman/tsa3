@@ -81,7 +81,7 @@ for (var i = 0; i < numAbilities; i++) {
 /// @DnDAction : YoYo Games.Common.Execute_Code
 /// @DnDVersion : 1
 /// @DnDHash : 3771CA6E
-/// @DnDArgument : "code" "///@desc ability function$(13_10)if (instance_exists(fist) && durationHeld[4] > 0 && !heldBefore[4]) {$(13_10)	fist.changedDirection = true;$(13_10)}$(13_10)$(13_10)if (aState == "1") {$(13_10)	if (aPhase == "d") {$(13_10)		if (timeInAPhase >= 0 && firstTime[0]) {$(13_10)			fist = instance_create_depth(preciseX, preciseY, thisNumber, objCrescentPunch);$(13_10)			firstTime[0] = false;$(13_10)		}$(13_10)	$(13_10)		scrResetAir();$(13_10)	}$(13_10)} else if (aState == "2") {$(13_10)	if (aPhase == "u") {$(13_10)		if (timeInAPhase >= 0 && firstTime[1]) {$(13_10)			instance_create_depth(preciseX, preciseY, thisNumber, objFlashKick);$(13_10)			firstTime[1] = false;$(13_10)		}$(13_10)	}$(13_10)	$(13_10)	scrResetAir();$(13_10)} else if (aState == "3") {$(13_10)	if (aPhase == "d") {$(13_10)		if (timeInAPhase >= 0 && firstTime[2]) {$(13_10)			var moveMod = instance_create(0, 0, objMoveMod);$(13_10)			moveMod.dx = image_xscale * dashXSpd;$(13_10)			moveMod.dy = dashYSpd;$(13_10)			moveMod.ddx = image_xscale * dashDXSpd;$(13_10)			moveMod.ddy = dashDYSpd;$(13_10)			moveMod.duration = dashDuration;$(13_10)			ds_list_add(envMoveModList, moveMod);$(13_10)			jumpEnabled = false;$(13_10)			firstTime[2] = false;$(13_10)		}$(13_10)		$(13_10)		if (!grounded && !jumpEnabled) {$(13_10)			jumpEnabed = true;$(13_10)			currAirJumps = -1;$(13_10)		}$(13_10)		$(13_10)		scrResetAir();$(13_10)	}$(13_10)} else if (aState == "4") {$(13_10)	if (aPhase == "d") {$(13_10)		if (timeInAPhase >= 0 && firstTime[3]) {$(13_10)			palmAngle = 90 - image_xscale * 90;$(13_10)			lastPalm = timeInAPhase - palmFreq;$(13_10)			firstTime[3] = false$(13_10)		}$(13_10)		$(13_10)		if (durationHeld[RIGHT] > 0) {$(13_10)			palmAngle -= palmDAngle;$(13_10)		}$(13_10)		$(13_10)		if (durationHeld[LEFT] > 0) {$(13_10)			palmAngle += palmDAngle;$(13_10)		}$(13_10)		$(13_10)		palmAngle %= 360;$(13_10)		$(13_10)		if (timeInAPhase > lastPalm + palmFreq) {$(13_10)			instance_create_depth(preciseX, preciseY, thisNumber, objPalm);$(13_10)			lastPalm = timeInAPhase;$(13_10)		}$(13_10)	}$(13_10)	$(13_10)	scrResetAir();$(13_10)}"
+/// @DnDArgument : "code" "///@desc ability function$(13_10)if (instance_exists(fist) && durationHeld[4] > 0 && !heldBefore[4]) {$(13_10)	fist.changedDirection = true;$(13_10)}$(13_10)$(13_10)if (aState == "1") {$(13_10)	if (aPhase == "d") {$(13_10)		if (timeInAPhase >= 0 && firstTime[0]) {$(13_10)			fist = instance_create_depth(preciseX, preciseY, thisNumber, objCrescentPunch);$(13_10)			audio_play_sound(sndPunch, 1, false)$(13_10)			firstTime[0] = false;$(13_10)		}$(13_10)	$(13_10)		scrResetAir();$(13_10)	}$(13_10)} else if (aState == "2") {$(13_10)	if (aPhase == "u") {$(13_10)		if (timeInAPhase >= 0 && firstTime[1]) {$(13_10)			instance_create_depth(preciseX, preciseY, thisNumber, objFlashKick);$(13_10)			audio_play_sound(sndKick, 1, false)$(13_10)			firstTime[1] = false;$(13_10)		}$(13_10)	}$(13_10)	$(13_10)	scrResetAir();$(13_10)} else if (aState == "3") {$(13_10)	if (aPhase == "d") {$(13_10)		if (timeInAPhase >= 0 && firstTime[2]) {$(13_10)			var moveMod = instance_create(0, 0, objMoveMod);$(13_10)			moveMod.dx = image_xscale * dashXSpd;$(13_10)			moveMod.dy = dashYSpd;$(13_10)			moveMod.ddx = image_xscale * dashDXSpd;$(13_10)			moveMod.ddy = dashDYSpd;$(13_10)			moveMod.duration = dashDuration;$(13_10)			ds_list_add(envMoveModList, moveMod);$(13_10)			jumpEnabled = false;$(13_10)			audio_play_sound(sndMonkDash, 1, false)$(13_10)			firstTime[2] = false;$(13_10)		}$(13_10)		$(13_10)		if (!grounded && !jumpEnabled) {$(13_10)			jumpEnabed = true;$(13_10)			currAirJumps = -1;$(13_10)		}$(13_10)		$(13_10)		scrResetAir();$(13_10)	}$(13_10)} else if (aState == "4") {$(13_10)	if (aPhase == "d") {$(13_10)		if (timeInAPhase >= 0 && firstTime[3]) {$(13_10)			palmAngle = 90 - image_xscale * 90;$(13_10)			lastPalm = timeInAPhase - palmFreq;$(13_10)			firstTime[3] = false$(13_10)		}$(13_10)		$(13_10)		if (durationHeld[RIGHT] > 0) {$(13_10)			palmAngle -= palmDAngle;$(13_10)		}$(13_10)		$(13_10)		if (durationHeld[LEFT] > 0) {$(13_10)			palmAngle += palmDAngle;$(13_10)		}$(13_10)		$(13_10)		palmAngle %= 360;$(13_10)		$(13_10)		if (timeInAPhase > lastPalm + palmFreq) {$(13_10)			instance_create_depth(preciseX, preciseY, thisNumber, objPalm);$(13_10)			lastPalm = timeInAPhase;$(13_10)			audio_play_sound(sndPalm, 1, false)$(13_10)		}$(13_10)	}$(13_10)	$(13_10)	scrResetAir();$(13_10)}"
 ///@desc ability function
 if (instance_exists(fist) && durationHeld[4] > 0 && !heldBefore[4]) {
 	fist.changedDirection = true;
@@ -91,6 +91,7 @@ if (aState == "1") {
 	if (aPhase == "d") {
 		if (timeInAPhase >= 0 && firstTime[0]) {
 			fist = instance_create_depth(preciseX, preciseY, thisNumber, objCrescentPunch);
+			audio_play_sound(sndPunch, 1, false)
 			firstTime[0] = false;
 		}
 	
@@ -100,6 +101,7 @@ if (aState == "1") {
 	if (aPhase == "u") {
 		if (timeInAPhase >= 0 && firstTime[1]) {
 			instance_create_depth(preciseX, preciseY, thisNumber, objFlashKick);
+			audio_play_sound(sndKick, 1, false)
 			firstTime[1] = false;
 		}
 	}
@@ -116,6 +118,7 @@ if (aState == "1") {
 			moveMod.duration = dashDuration;
 			ds_list_add(envMoveModList, moveMod);
 			jumpEnabled = false;
+			audio_play_sound(sndMonkDash, 1, false)
 			firstTime[2] = false;
 		}
 		
@@ -147,6 +150,7 @@ if (aState == "1") {
 		if (timeInAPhase > lastPalm + palmFreq) {
 			instance_create_depth(preciseX, preciseY, thisNumber, objPalm);
 			lastPalm = timeInAPhase;
+			audio_play_sound(sndPalm, 1, false)
 		}
 	}
 	

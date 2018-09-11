@@ -1,5 +1,9 @@
 ///@desc layout and bk
-instance_create(room_width / 2, room_height / 2, objBorder)
+var borderWidth = 5
+instance_create(-borderWidth, -borderWidth, objSideBorder)
+instance_create(room_width, -borderWidth, objSideBorder)
+instance_create(-borderWidth, -borderWidth, objTopBorder)
+instance_create(-borderWidth, room_height, objTopBorder)
 
 with (objBlock) {
 	instance_create(room_width - x, y, object_index)

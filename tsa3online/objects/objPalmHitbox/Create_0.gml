@@ -16,4 +16,8 @@ if (image_angle > 90 && image_angle < 270) {
 	image_yscale = -1;
 }
 
-hitSound = noone;
+hitSound = sndPalmHit
+
+if (!place_meeting(x, y, objPlayer)) {
+	audio_play_sound(sndPalmMiss, 1, false)
+}

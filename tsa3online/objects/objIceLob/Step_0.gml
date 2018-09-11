@@ -67,5 +67,6 @@ if (!createdAlready && myHeroId.durationHeld[TWO] > 0 && !myHeroId.heldBefore[TW
 	}
 	
 	instance_create_depth(tryX, tryY, id, hitbox);
+	audio_play_sound(sndIceDetonate, 1, false)
 	instance_destroy();
 }

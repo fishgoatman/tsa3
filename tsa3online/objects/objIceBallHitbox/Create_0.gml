@@ -14,4 +14,8 @@ slowForever = false;
 time = 1
 currTime = 0;
 image_xscale = projId.image_xscale
-hitSound = noone
+hitSound = sndIceLobHit
+
+if (!place_meeting(x, y, objPlayer)) {
+	audio_play_sound(sndIceBallMiss, 1, false)
+}
