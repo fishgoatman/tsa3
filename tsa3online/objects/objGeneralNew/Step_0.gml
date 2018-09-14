@@ -1,20 +1,6 @@
 ///@desc handle game rooms
-if (createGameStuff) {	
-	numberWithSprite2 = irandom(1)
-	
-	for (var i = 0; i < numPlayers; i++) {
-		playerHandlerObj[i] = instance_create_depth(0, 0, i, objPlayerHandler);
-		lockedIn[i] = false;
-	}
-	
-	createGameStuff = false;
-	bkMusic = bkMusics[irandom(array_length_1d(bkMusics) - 1)]
-	
-	audio_play_sound(bkMusic, 1, true);
-}
-
-if (room == rmMainMenu) {
-	if (keyboard_check_pressed(vk_space)) {
+if (room == rmStartScreen) {
+	if (keyboard_check_pressed(vk_anykey)) {
 		startOffline = true;
 		//startOnline = true;
 	}
@@ -24,16 +10,34 @@ if (room == rmMainMenu) {
 			thisInControl[i] = true;
 		}
 		
-		targetRoom = "characterSelect";
+		targetRoom = "mainMenu";
 		mode = "offline";
 		startOffline = false;
 	} else if (startOnline) {
-		targetRoom = "characterSelect";
+		targetRoom = "mainMenu";
 		mode = "online";
 		instance_create(0, 0, objClient);
 		startOnline = false;
 	}
-} else if (room == rmCharacterSelectionScreen) {
+} else if (room == rmMainMenu) {
+	if (mouse_check_button(mb_left) && targetRoom == "mainMenu") {
+		if (mouse_x < room_width / 2) {
+			targetRoom = "characterSelect"
+		} else {
+			var height = floor(room_height / 3)
+			
+			if (mouse_y < height) {
+				targetRoom = "opCharacterSelect"
+			} else if (mouse_y < height / 2) {
+				targetRoom = "options"
+			} else {
+				targetRoom = "help"
+			}
+		}
+	}
+	
+	currRoom = "mainMenu"
+} else if (room == rmCharacterSelect) {
 	if (createSelectStuff) {
 		for (var i = 0; i < numPlayers; i++) {
 			lockedIn[i] = false
@@ -56,7 +60,7 @@ if (room == rmMainMenu) {
 	}
 	
 	currRoom = "characterSelect"
-} else if (room == rmMapSelectionScreen) {
+} else if (room == rmMapSelect) {
 	if (createMapSelectStuff) {
 		instance_create_depth(objDesertSelection.x, objDesertSelection.y, 0, objMapSelector)
 		createMapSelectStuff = false
@@ -74,6 +78,20 @@ if (room == rmMainMenu) {
 	
 	currRoom = "mapSelect"
 } else if (scrInArena()) {
+	if (createGameStuff) {	
+		numberWithSprite2 = irandom(1)
+	
+		for (var i = 0; i < numPlayers; i++) {
+			playerHandlerObj[i] = instance_create_depth(0, 0, i, objPlayerHandler);
+			lockedIn[i] = false;
+		}
+	
+		createGameStuff = false;
+		bkMusic = bkMusics[irandom(array_length_1d(bkMusics) - 1)]
+	
+		audio_play_sound(bkMusic, 1, true);
+	}
+	
 	var numAlivePlayers = 0;
 	
 	for (var i = 0; i < numPlayers; i++) {
@@ -93,15 +111,33 @@ if (room == rmMainMenu) {
 if (currRoom != targetRoom) {
 	currTime++;
 	
-	if (currTime >= 0.5 * room_speed || currRoom == "main") {
-		if (targetRoom == "game") {
+	var waitTime
+	
+	if (currRoom == "start") {
+		waitTime = 0
+	} else if (currRoom == "game") {
+		waitTime = 1.5 * room_speed
+	} else {
+		waitTime = 0.5 * room_speed
+	}
+	
+	if (currTime >= waitTime) {
+		if (targetRoom == "mainMenu") {
+			room_goto(rmMainMenu)
+		} else if (targetRoom == "game") {
 			room_goto(selectedMap)
 			createGameStuff = true
+		} else if (targetRoom == "opCharacterSelect") {
+			room_goto(rmOPCharacterSelect)
+		} else if (targetRoom == "options") {
+			room_goto(rmOptions)
+		} else if (targetRoom == "help") {
+			room_goto(rmHelp)
 		} else if (targetRoom == "characterSelect") {
-			room_goto(rmCharacterSelectionScreen)
+			room_goto(rmCharacterSelect)
 			createSelectStuff = true
 		} else if (targetRoom == "mapSelect") {
-			room_goto(rmMapSelectionScreen)
+			room_goto(rmMapSelect)
 			createMapSelectStuff = true
 		}
 		

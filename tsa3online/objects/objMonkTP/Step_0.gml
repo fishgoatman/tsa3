@@ -160,110 +160,122 @@ if (aState == "1") {
 /// @DnDAction : YoYo Games.Common.Execute_Code
 /// @DnDVersion : 1
 /// @DnDHash : 78F94C44
-/// @DnDArgument : "code" "///@desc sprite and image$(13_10)if (aState == "n") {$(13_10)	if (durationHeld[RIGHT] > 0) {$(13_10)		image_xscale = 1;$(13_10)	} else if (durationHeld[LEFT] > 0) {$(13_10)		image_xscale = -1;$(13_10)	}$(13_10)} else {$(13_10)	image_xscale = abilityImageXScale;$(13_10)}$(13_10)$(13_10)if (currAirJumps == -1) {$(13_10)	if (!instance_exists(jumpIndicatorId)) {$(13_10)		jumpIndicatorId = instance_create_depth(preciseX, preciseY, thisNumber, objJumpIndicator);$(13_10)	}$(13_10)} else {$(13_10)	if (instance_exists(jumpIndicatorId)) {$(13_10)		with (jumpIndicatorId) {$(13_10)			instance_destroy();$(13_10)		}$(13_10)	}$(13_10)}$(13_10)$(13_10)if (aPhase != "n") {$(13_10)	if (aPhase == "u" && timeInAPhase == 0) {$(13_10)		image_index = 0;$(13_10)	}$(13_10)	$(13_10)	if (aState == "1") {$(13_10)		if (sprite2) {$(13_10)			sprite_index = sprMonkCrescentPunch2$(13_10)		} else {$(13_10)			sprite_index = sprMonkCrescentPunch$(13_10)		}$(13_10)	} else if (aState == "2") {$(13_10)		if (sprite2) {$(13_10)			sprite_index = sprMonkFlashKick2$(13_10)		} else {$(13_10)			sprite_index = sprMonkFlashKick$(13_10)		}$(13_10)	} else if (aState == "3") {$(13_10)		if (sprite2) {$(13_10)			sprite_index = sprMonkDash2$(13_10)		} else {$(13_10)			sprite_index = sprMonkDash$(13_10)		}$(13_10)	} else if (aState == "4") {$(13_10)		if (sprite2) {$(13_10)			sprite_index = sprMonkThousandPalmsPre2$(13_10)		} else {$(13_10)			sprite_index = sprMonkThousandPalmsPre$(13_10)		}$(13_10)		$(13_10)		if (aPhase == "d") {$(13_10)			if (sprite2) {$(13_10)				sprite_index = sprMonkThousandPalmsDuring2$(13_10)			} else {$(13_10)				sprite_index = sprMonkThousandPalmsDuring$(13_10)			}$(13_10)			$(13_10)			if (timeInAPhase == 0) {$(13_10)				image_index = 0;$(13_10)			}$(13_10)			$(13_10)			if (palmAngle < 90 || palmAngle > 270) {$(13_10)				image_xscale = 1;$(13_10)			} else {$(13_10)				image_xscale = -1;$(13_10)			}$(13_10)		}$(13_10)	}$(13_10)	$(13_10)	if (aState != "4" && image_index >= image_number - image_speed) {$(13_10)		image_index = image_number - image_speed;$(13_10)	}$(13_10)} else if (!grounded) {$(13_10)	if (dy >= 0) {$(13_10)		if (sprite2) {$(13_10)			sprite_index = sprMonkGoingUp2$(13_10)		} else {$(13_10)			sprite_index = sprMonkGoingUp$(13_10)		}$(13_10)	} else {$(13_10)		if (sprite2) {$(13_10)			sprite_index = sprMonkGoingDown2$(13_10)		} else {$(13_10)			sprite_index = sprMonkGoingDown$(13_10)		}$(13_10)	}$(13_10)} else if (durationHeld[RIGHT] > 0 || durationHeld[LEFT] > 0) {$(13_10)	if (sprite2) {$(13_10)		sprite_index = sprMonkMove2$(13_10)	} else {$(13_10)		sprite_index = sprMonkMove$(13_10)	}$(13_10)} else {$(13_10)	if (sprite2) {$(13_10)		sprite_index = sprMonkNone2$(13_10)	} else {$(13_10)		sprite_index = sprMonkNone$(13_10)	}$(13_10)}$(13_10)$(13_10)if (hp <= 0) {$(13_10)	sprite_index = sprMine;$(13_10)}"
+/// @DnDArgument : "code" "///@desc sprite and image$(13_10)if (hp <= 0) {$(13_10)	if (sprite_index != sprMonkDeath && sprite_index != sprMonkDeath2) {$(13_10)		image_index = 0$(13_10)		$(13_10)		if (sprite2) {$(13_10)			sprite_index = sprMonkDeath2$(13_10)		} else {$(13_10)			sprite_index = sprMonkDeath$(13_10)		}$(13_10)	}$(13_10)	$(13_10)	if (image_index >= image_number - image_speed) {$(13_10)		image_speed = 0$(13_10)	}$(13_10)} else {$(13_10)	if (aState == "n") {$(13_10)		if (durationHeld[RIGHT] > 0) {$(13_10)			image_xscale = 1;$(13_10)		} else if (durationHeld[LEFT] > 0) {$(13_10)			image_xscale = -1;$(13_10)		}$(13_10)	} else {$(13_10)		image_xscale = abilityImageXScale;$(13_10)	}$(13_10)$(13_10)	if (currAirJumps == -1) {$(13_10)		if (!instance_exists(jumpIndicatorId)) {$(13_10)			jumpIndicatorId = instance_create_depth(preciseX, preciseY, thisNumber, objJumpIndicator);$(13_10)		}$(13_10)	} else {$(13_10)		if (instance_exists(jumpIndicatorId)) {$(13_10)			with (jumpIndicatorId) {$(13_10)				instance_destroy();$(13_10)			}$(13_10)		}$(13_10)	}$(13_10)$(13_10)	if (aPhase != "n") {$(13_10)		if (aPhase == "u" && timeInAPhase == 0) {$(13_10)			image_index = 0;$(13_10)		}$(13_10)	$(13_10)		if (aState == "1") {$(13_10)			if (sprite2) {$(13_10)				sprite_index = sprMonkCrescentPunch2$(13_10)			} else {$(13_10)				sprite_index = sprMonkCrescentPunch$(13_10)			}$(13_10)		} else if (aState == "2") {$(13_10)			if (sprite2) {$(13_10)				sprite_index = sprMonkFlashKick2$(13_10)			} else {$(13_10)				sprite_index = sprMonkFlashKick$(13_10)			}$(13_10)		} else if (aState == "3") {$(13_10)			if (sprite2) {$(13_10)				sprite_index = sprMonkDash2$(13_10)			} else {$(13_10)				sprite_index = sprMonkDash$(13_10)			}$(13_10)		} else if (aState == "4") {$(13_10)			if (sprite2) {$(13_10)				sprite_index = sprMonkThousandPalmsPre2$(13_10)			} else {$(13_10)				sprite_index = sprMonkThousandPalmsPre$(13_10)			}$(13_10)		$(13_10)			if (aPhase == "d") {$(13_10)				if (sprite2) {$(13_10)					sprite_index = sprMonkThousandPalmsDuring2$(13_10)				} else {$(13_10)					sprite_index = sprMonkThousandPalmsDuring$(13_10)				}$(13_10)			$(13_10)				if (timeInAPhase == 0) {$(13_10)					image_index = 0;$(13_10)				}$(13_10)			$(13_10)				if (palmAngle < 90 || palmAngle > 270) {$(13_10)					image_xscale = 1;$(13_10)				} else {$(13_10)					image_xscale = -1;$(13_10)				}$(13_10)			}$(13_10)		}$(13_10)	$(13_10)		if (aState != "4" && image_index >= image_number - image_speed) {$(13_10)			image_index = image_number - image_speed;$(13_10)		}$(13_10)	} else if (!grounded) {$(13_10)		if (dy >= 0) {$(13_10)			if (sprite2) {$(13_10)				sprite_index = sprMonkGoingUp2$(13_10)			} else {$(13_10)				sprite_index = sprMonkGoingUp$(13_10)			}$(13_10)		} else {$(13_10)			if (sprite2) {$(13_10)				sprite_index = sprMonkGoingDown2$(13_10)			} else {$(13_10)				sprite_index = sprMonkGoingDown$(13_10)			}$(13_10)		}$(13_10)	} else if (durationHeld[RIGHT] > 0 || durationHeld[LEFT] > 0) {$(13_10)		if (sprite2) {$(13_10)			sprite_index = sprMonkMove2$(13_10)		} else {$(13_10)			sprite_index = sprMonkMove$(13_10)		}$(13_10)	} else {$(13_10)		if (sprite2) {$(13_10)			sprite_index = sprMonkNone2$(13_10)		} else {$(13_10)			sprite_index = sprMonkNone$(13_10)		}$(13_10)	}$(13_10)}"
 ///@desc sprite and image
-if (aState == "n") {
-	if (durationHeld[RIGHT] > 0) {
-		image_xscale = 1;
-	} else if (durationHeld[LEFT] > 0) {
-		image_xscale = -1;
-	}
-} else {
-	image_xscale = abilityImageXScale;
-}
-
-if (currAirJumps == -1) {
-	if (!instance_exists(jumpIndicatorId)) {
-		jumpIndicatorId = instance_create_depth(preciseX, preciseY, thisNumber, objJumpIndicator);
-	}
-} else {
-	if (instance_exists(jumpIndicatorId)) {
-		with (jumpIndicatorId) {
-			instance_destroy();
-		}
-	}
-}
-
-if (aPhase != "n") {
-	if (aPhase == "u" && timeInAPhase == 0) {
-		image_index = 0;
-	}
-	
-	if (aState == "1") {
-		if (sprite2) {
-			sprite_index = sprMonkCrescentPunch2
-		} else {
-			sprite_index = sprMonkCrescentPunch
-		}
-	} else if (aState == "2") {
-		if (sprite2) {
-			sprite_index = sprMonkFlashKick2
-		} else {
-			sprite_index = sprMonkFlashKick
-		}
-	} else if (aState == "3") {
-		if (sprite2) {
-			sprite_index = sprMonkDash2
-		} else {
-			sprite_index = sprMonkDash
-		}
-	} else if (aState == "4") {
-		if (sprite2) {
-			sprite_index = sprMonkThousandPalmsPre2
-		} else {
-			sprite_index = sprMonkThousandPalmsPre
-		}
-		
-		if (aPhase == "d") {
-			if (sprite2) {
-				sprite_index = sprMonkThousandPalmsDuring2
-			} else {
-				sprite_index = sprMonkThousandPalmsDuring
-			}
-			
-			if (timeInAPhase == 0) {
-				image_index = 0;
-			}
-			
-			if (palmAngle < 90 || palmAngle > 270) {
-				image_xscale = 1;
-			} else {
-				image_xscale = -1;
-			}
-		}
-	}
-	
-	if (aState != "4" && image_index >= image_number - image_speed) {
-		image_index = image_number - image_speed;
-	}
-} else if (!grounded) {
-	if (dy >= 0) {
-		if (sprite2) {
-			sprite_index = sprMonkGoingUp2
-		} else {
-			sprite_index = sprMonkGoingUp
-		}
-	} else {
-		if (sprite2) {
-			sprite_index = sprMonkGoingDown2
-		} else {
-			sprite_index = sprMonkGoingDown
-		}
-	}
-} else if (durationHeld[RIGHT] > 0 || durationHeld[LEFT] > 0) {
-	if (sprite2) {
-		sprite_index = sprMonkMove2
-	} else {
-		sprite_index = sprMonkMove
-	}
-} else {
-	if (sprite2) {
-		sprite_index = sprMonkNone2
-	} else {
-		sprite_index = sprMonkNone
-	}
-}
-
 if (hp <= 0) {
-	sprite_index = sprMine;
+	if (sprite_index != sprMonkDeath && sprite_index != sprMonkDeath2) {
+		image_index = 0
+		
+		if (sprite2) {
+			sprite_index = sprMonkDeath2
+		} else {
+			sprite_index = sprMonkDeath
+		}
+	}
+	
+	if (image_index >= image_number - image_speed) {
+		image_speed = 0
+	}
+} else {
+	if (aState == "n") {
+		if (durationHeld[RIGHT] > 0) {
+			image_xscale = 1;
+		} else if (durationHeld[LEFT] > 0) {
+			image_xscale = -1;
+		}
+	} else {
+		image_xscale = abilityImageXScale;
+	}
+
+	if (currAirJumps == -1) {
+		if (!instance_exists(jumpIndicatorId)) {
+			jumpIndicatorId = instance_create_depth(preciseX, preciseY, thisNumber, objJumpIndicator);
+		}
+	} else {
+		if (instance_exists(jumpIndicatorId)) {
+			with (jumpIndicatorId) {
+				instance_destroy();
+			}
+		}
+	}
+
+	if (aPhase != "n") {
+		if (aPhase == "u" && timeInAPhase == 0) {
+			image_index = 0;
+		}
+	
+		if (aState == "1") {
+			if (sprite2) {
+				sprite_index = sprMonkCrescentPunch2
+			} else {
+				sprite_index = sprMonkCrescentPunch
+			}
+		} else if (aState == "2") {
+			if (sprite2) {
+				sprite_index = sprMonkFlashKick2
+			} else {
+				sprite_index = sprMonkFlashKick
+			}
+		} else if (aState == "3") {
+			if (sprite2) {
+				sprite_index = sprMonkDash2
+			} else {
+				sprite_index = sprMonkDash
+			}
+		} else if (aState == "4") {
+			if (sprite2) {
+				sprite_index = sprMonkThousandPalmsPre2
+			} else {
+				sprite_index = sprMonkThousandPalmsPre
+			}
+		
+			if (aPhase == "d") {
+				if (sprite2) {
+					sprite_index = sprMonkThousandPalmsDuring2
+				} else {
+					sprite_index = sprMonkThousandPalmsDuring
+				}
+			
+				if (timeInAPhase == 0) {
+					image_index = 0;
+				}
+			
+				if (palmAngle < 90 || palmAngle > 270) {
+					image_xscale = 1;
+				} else {
+					image_xscale = -1;
+				}
+			}
+		}
+	
+		if (aState != "4" && image_index >= image_number - image_speed) {
+			image_index = image_number - image_speed;
+		}
+	} else if (!grounded) {
+		if (dy >= 0) {
+			if (sprite2) {
+				sprite_index = sprMonkGoingUp2
+			} else {
+				sprite_index = sprMonkGoingUp
+			}
+		} else {
+			if (sprite2) {
+				sprite_index = sprMonkGoingDown2
+			} else {
+				sprite_index = sprMonkGoingDown
+			}
+		}
+	} else if (durationHeld[RIGHT] > 0 || durationHeld[LEFT] > 0) {
+		if (sprite2) {
+			sprite_index = sprMonkMove2
+		} else {
+			sprite_index = sprMonkMove
+		}
+	} else {
+		if (sprite2) {
+			sprite_index = sprMonkNone2
+		} else {
+			sprite_index = sprMonkNone
+		}
+	}
 }

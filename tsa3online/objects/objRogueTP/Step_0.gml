@@ -157,86 +157,98 @@ if (aState == "1") {
 /// @DnDAction : YoYo Games.Common.Execute_Code
 /// @DnDVersion : 1
 /// @DnDHash : 78F94C44
-/// @DnDArgument : "code" "///@desc sprite and image$(13_10)if (aState == "n") {$(13_10)	if (durationHeld[RIGHT] > 0) {$(13_10)		image_xscale = 1;$(13_10)	} else if (durationHeld[LEFT] > 0) {$(13_10)		image_xscale = -1;$(13_10)	}$(13_10)} else {$(13_10)	image_xscale = abilityImageXScale;$(13_10)}$(13_10)$(13_10)if (aPhase != "n") {$(13_10)	if (aPhase == "u" && timeInAPhase == 0) {$(13_10)		image_index = 0;$(13_10)	}$(13_10)	$(13_10)	if (aState == "1") {$(13_10)		if (sprite2) {$(13_10)			sprite_index = sprRogueAttack2$(13_10)		} else {$(13_10)			sprite_index = sprRogueAttack$(13_10)		}$(13_10)	} else if (aState == "2") {$(13_10)		if (aPhase == "d" && timeInAPhase == 0) {$(13_10)			image_index = 0$(13_10)		}$(13_10)		$(13_10)		if (aPhase == "u") {$(13_10)			if (sprite2) {$(13_10)				sprite_index = sprRoguePreJump2$(13_10)			} else {$(13_10)				sprite_index = sprRoguePreJump$(13_10)			}$(13_10)		} else {$(13_10)			if (sprite2) {$(13_10)				sprite_index = sprRogueDash2$(13_10)			} else {$(13_10)				sprite_index = sprRogueDash$(13_10)			}$(13_10)		}$(13_10)	} else if (aState == "4") {$(13_10)		if (sprite2) {$(13_10)			sprite_index = sprRogueAttack2$(13_10)		} else {$(13_10)			sprite_index = sprRogueAttack$(13_10)		}$(13_10)	}$(13_10)	$(13_10)	if (image_index >= image_number - image_speed) {$(13_10)		image_index = image_number - image_speed;$(13_10)	}$(13_10)} else if (!grounded) {$(13_10)	if (dy >= 0) {$(13_10)		if (sprite2) {$(13_10)			sprite_index = sprRogueGoingUp2$(13_10)		} else {$(13_10)			sprite_index = sprRogueGoingUp$(13_10)		}$(13_10)	} else {$(13_10)		if (sprite2) {$(13_10)			sprite_index = sprRogueGoingDown2$(13_10)		} else {$(13_10)			sprite_index = sprRogueGoingDown$(13_10)		}$(13_10)	}$(13_10)} else if (durationHeld[RIGHT] > 0 || durationHeld[LEFT] > 0) {$(13_10)	if (sprite2) {$(13_10)		sprite_index = sprRogueMove2$(13_10)	} else {$(13_10)		sprite_index = sprRogueMove$(13_10)	}$(13_10)} else {$(13_10)	if (sprite2) {$(13_10)		sprite_index = sprRogueNone2$(13_10)	} else {$(13_10)		sprite_index = sprRogueNone$(13_10)	}$(13_10)}$(13_10)$(13_10)if (hp <= 0) {$(13_10)	sprite_index = sprMine;$(13_10)}"
+/// @DnDArgument : "code" "///@desc sprite and image$(13_10)if (hp <= 0) {$(13_10)	if (sprite_index != sprRogueDeath && sprite_index != sprRogueDeath2) {$(13_10)		image_index = 0$(13_10)		$(13_10)		if (sprite2) {$(13_10)			sprite_index = sprRogueDeath2$(13_10)		} else {$(13_10)			sprite_index = sprRogueDeath$(13_10)		}$(13_10)	}$(13_10)	$(13_10)	if (image_index >= image_number - image_speed) {$(13_10)		image_speed = 0$(13_10)	}$(13_10)} else {$(13_10)	if (aState == "n") {$(13_10)		if (durationHeld[RIGHT] > 0) {$(13_10)			image_xscale = 1;$(13_10)		} else if (durationHeld[LEFT] > 0) {$(13_10)			image_xscale = -1;$(13_10)		}$(13_10)	} else {$(13_10)		image_xscale = abilityImageXScale;$(13_10)	}$(13_10)$(13_10)	if (aPhase != "n") {$(13_10)		if (aPhase == "u" && timeInAPhase == 0) {$(13_10)			image_index = 0;$(13_10)		}$(13_10)	$(13_10)		if (aState == "1") {$(13_10)			if (sprite2) {$(13_10)				sprite_index = sprRogueAttack2$(13_10)			} else {$(13_10)				sprite_index = sprRogueAttack$(13_10)			}$(13_10)		} else if (aState == "2") {$(13_10)			if (aPhase == "d" && timeInAPhase == 0) {$(13_10)				image_index = 0$(13_10)			}$(13_10)		$(13_10)			if (aPhase == "u") {$(13_10)				if (sprite2) {$(13_10)					sprite_index = sprRoguePreJump2$(13_10)				} else {$(13_10)					sprite_index = sprRoguePreJump$(13_10)				}$(13_10)			} else {$(13_10)				if (sprite2) {$(13_10)					sprite_index = sprRogueDash2$(13_10)				} else {$(13_10)					sprite_index = sprRogueDash$(13_10)				}$(13_10)			}$(13_10)		} else if (aState == "4") {$(13_10)			if (sprite2) {$(13_10)				sprite_index = sprRogueAttack2$(13_10)			} else {$(13_10)				sprite_index = sprRogueAttack$(13_10)			}$(13_10)		}$(13_10)	$(13_10)		if (image_index >= image_number - image_speed) {$(13_10)			image_index = image_number - image_speed;$(13_10)		}$(13_10)	} else if (!grounded) {$(13_10)		if (dy >= 0) {$(13_10)			if (sprite2) {$(13_10)				sprite_index = sprRogueGoingUp2$(13_10)			} else {$(13_10)				sprite_index = sprRogueGoingUp$(13_10)			}$(13_10)		} else {$(13_10)			if (sprite2) {$(13_10)				sprite_index = sprRogueGoingDown2$(13_10)			} else {$(13_10)				sprite_index = sprRogueGoingDown$(13_10)			}$(13_10)		}$(13_10)	} else if (durationHeld[RIGHT] > 0 || durationHeld[LEFT] > 0) {$(13_10)		if (sprite2) {$(13_10)			sprite_index = sprRogueMove2$(13_10)		} else {$(13_10)			sprite_index = sprRogueMove$(13_10)		}$(13_10)	} else {$(13_10)		if (sprite2) {$(13_10)			sprite_index = sprRogueNone2$(13_10)		} else {$(13_10)			sprite_index = sprRogueNone$(13_10)		}$(13_10)	}$(13_10)}"
 ///@desc sprite and image
-if (aState == "n") {
-	if (durationHeld[RIGHT] > 0) {
-		image_xscale = 1;
-	} else if (durationHeld[LEFT] > 0) {
-		image_xscale = -1;
-	}
-} else {
-	image_xscale = abilityImageXScale;
-}
-
-if (aPhase != "n") {
-	if (aPhase == "u" && timeInAPhase == 0) {
-		image_index = 0;
-	}
-	
-	if (aState == "1") {
-		if (sprite2) {
-			sprite_index = sprRogueAttack2
-		} else {
-			sprite_index = sprRogueAttack
-		}
-	} else if (aState == "2") {
-		if (aPhase == "d" && timeInAPhase == 0) {
-			image_index = 0
-		}
+if (hp <= 0) {
+	if (sprite_index != sprRogueDeath && sprite_index != sprRogueDeath2) {
+		image_index = 0
 		
-		if (aPhase == "u") {
-			if (sprite2) {
-				sprite_index = sprRoguePreJump2
-			} else {
-				sprite_index = sprRoguePreJump
-			}
-		} else {
-			if (sprite2) {
-				sprite_index = sprRogueDash2
-			} else {
-				sprite_index = sprRogueDash
-			}
-		}
-	} else if (aState == "4") {
 		if (sprite2) {
-			sprite_index = sprRogueAttack2
+			sprite_index = sprRogueDeath2
 		} else {
-			sprite_index = sprRogueAttack
+			sprite_index = sprRogueDeath
 		}
 	}
 	
 	if (image_index >= image_number - image_speed) {
-		image_index = image_number - image_speed;
-	}
-} else if (!grounded) {
-	if (dy >= 0) {
-		if (sprite2) {
-			sprite_index = sprRogueGoingUp2
-		} else {
-			sprite_index = sprRogueGoingUp
-		}
-	} else {
-		if (sprite2) {
-			sprite_index = sprRogueGoingDown2
-		} else {
-			sprite_index = sprRogueGoingDown
-		}
-	}
-} else if (durationHeld[RIGHT] > 0 || durationHeld[LEFT] > 0) {
-	if (sprite2) {
-		sprite_index = sprRogueMove2
-	} else {
-		sprite_index = sprRogueMove
+		image_speed = 0
 	}
 } else {
-	if (sprite2) {
-		sprite_index = sprRogueNone2
+	if (aState == "n") {
+		if (durationHeld[RIGHT] > 0) {
+			image_xscale = 1;
+		} else if (durationHeld[LEFT] > 0) {
+			image_xscale = -1;
+		}
 	} else {
-		sprite_index = sprRogueNone
+		image_xscale = abilityImageXScale;
 	}
-}
 
-if (hp <= 0) {
-	sprite_index = sprMine;
+	if (aPhase != "n") {
+		if (aPhase == "u" && timeInAPhase == 0) {
+			image_index = 0;
+		}
+	
+		if (aState == "1") {
+			if (sprite2) {
+				sprite_index = sprRogueAttack2
+			} else {
+				sprite_index = sprRogueAttack
+			}
+		} else if (aState == "2") {
+			if (aPhase == "d" && timeInAPhase == 0) {
+				image_index = 0
+			}
+		
+			if (aPhase == "u") {
+				if (sprite2) {
+					sprite_index = sprRoguePreJump2
+				} else {
+					sprite_index = sprRoguePreJump
+				}
+			} else {
+				if (sprite2) {
+					sprite_index = sprRogueDash2
+				} else {
+					sprite_index = sprRogueDash
+				}
+			}
+		} else if (aState == "4") {
+			if (sprite2) {
+				sprite_index = sprRogueAttack2
+			} else {
+				sprite_index = sprRogueAttack
+			}
+		}
+	
+		if (image_index >= image_number - image_speed) {
+			image_index = image_number - image_speed;
+		}
+	} else if (!grounded) {
+		if (dy >= 0) {
+			if (sprite2) {
+				sprite_index = sprRogueGoingUp2
+			} else {
+				sprite_index = sprRogueGoingUp
+			}
+		} else {
+			if (sprite2) {
+				sprite_index = sprRogueGoingDown2
+			} else {
+				sprite_index = sprRogueGoingDown
+			}
+		}
+	} else if (durationHeld[RIGHT] > 0 || durationHeld[LEFT] > 0) {
+		if (sprite2) {
+			sprite_index = sprRogueMove2
+		} else {
+			sprite_index = sprRogueMove
+		}
+	} else {
+		if (sprite2) {
+			sprite_index = sprRogueNone2
+		} else {
+			sprite_index = sprRogueNone
+		}
+	}
 }

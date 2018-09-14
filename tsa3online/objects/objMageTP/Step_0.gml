@@ -8,10 +8,10 @@ scrDamageStuff();
 /// @DnDAction : YoYo Games.Common.Execute_Code
 /// @DnDVersion : 1
 /// @DnDHash : 74C028A6
-/// @DnDArgument : "code" "///@desc get input$(13_10)if (hp > 0) {$(13_10)	if (!auto) {$(13_10)		scrAIGetInput();$(13_10)	} else {$(13_10)		scrPlayerGetInput();$(13_10)	}$(13_10)}"
+/// @DnDArgument : "code" "///@desc get input$(13_10)if (hp > 0) {$(13_10)	if (auto) {$(13_10)		scrAIGetInput();$(13_10)	} else {$(13_10)		scrPlayerGetInput();$(13_10)	}$(13_10)}"
 ///@desc get input
 if (hp > 0) {
-	if (!auto) {
+	if (auto) {
 		scrAIGetInput();
 	} else {
 		scrPlayerGetInput();
@@ -193,80 +193,92 @@ if (aState == "1") {
 /// @DnDAction : YoYo Games.Common.Execute_Code
 /// @DnDVersion : 1
 /// @DnDHash : 78F94C44
-/// @DnDArgument : "code" "///@desc sprite and image$(13_10)if (aState == "n") {$(13_10)	if (durationHeld[RIGHT] > 0) {$(13_10)		image_xscale = 1;$(13_10)	} else if (durationHeld[LEFT] > 0) {$(13_10)		image_xscale = -1;$(13_10)	}$(13_10)} else {$(13_10)	image_xscale = abilityImageXScale;$(13_10)}$(13_10)$(13_10)if (aPhase != "n") {$(13_10)	if (aPhase == "u" && timeInAPhase == 0) {$(13_10)		image_index = 0;$(13_10)	}$(13_10)	$(13_10)	if (aState == "1") {$(13_10)		if (sprite2) {$(13_10)			sprite_index = sprMageSlash2$(13_10)		} else {$(13_10)			sprite_index = sprMageSlash$(13_10)		}$(13_10)	} else if (aState == "2") {$(13_10)		if (sprite2) {$(13_10)			sprite_index = sprMageLob2$(13_10)		} else {$(13_10)			sprite_index = sprMageLob$(13_10)		}$(13_10)	} else if (aState == "3") {$(13_10)		if (sprite2) {$(13_10)			sprite_index = sprMageRocket2$(13_10)		} else {$(13_10)			sprite_index = sprMageRocket$(13_10)		}$(13_10)	} else if (aState == "4") {$(13_10)		if (sprite2) {$(13_10)			sprite_index = sprMageBlast2$(13_10)		} else {$(13_10)			sprite_index = sprMageBlast$(13_10)		}$(13_10)	}$(13_10)	$(13_10)	if (image_index >= image_number - image_speed) {$(13_10)		image_index = image_number - image_speed;$(13_10)	}$(13_10)} else if (!grounded) {$(13_10)	if (dy >= 0) {$(13_10)		if (sprite2) {$(13_10)			sprite_index = sprMageGoingUp2$(13_10)		} else {$(13_10)			sprite_index = sprMageGoingUp$(13_10)		}$(13_10)	} else {$(13_10)		if (sprite2) {$(13_10)			sprite_index = sprMageGoingDown2$(13_10)		} else {$(13_10)			sprite_index = sprMageGoingDown$(13_10)		}$(13_10)	}$(13_10)} else if (durationHeld[RIGHT] > 0 || durationHeld[LEFT] > 0) {$(13_10)	if (sprite2) {$(13_10)		sprite_index = sprMageMove2$(13_10)	} else {$(13_10)		sprite_index = sprMageMove$(13_10)	}$(13_10)} else {$(13_10)	if (sprite2) {$(13_10)		sprite_index = sprMageNone2$(13_10)	} else {$(13_10)		sprite_index = sprMageNone$(13_10)	}$(13_10)}$(13_10)$(13_10)if (hp <= 0) {$(13_10)	sprite_index = sprMine;$(13_10)}"
+/// @DnDArgument : "code" "///@desc sprite and image$(13_10)if (hp <= 0) {$(13_10)	if (sprite_index != sprMageDeath && sprite_index != sprMageDeath2) {$(13_10)		image_index = 0$(13_10)		$(13_10)		if (sprite2) {$(13_10)			sprite_index = sprMageDeath2$(13_10)		} else {$(13_10)			sprite_index = sprMageDeath$(13_10)		}$(13_10)	}$(13_10)	$(13_10)	if (image_index >= image_number - image_speed) {$(13_10)		image_speed = 0$(13_10)	}$(13_10)} else {$(13_10)	if (aState == "n") {$(13_10)		if (durationHeld[RIGHT] > 0) {$(13_10)			image_xscale = 1;$(13_10)		} else if (durationHeld[LEFT] > 0) {$(13_10)			image_xscale = -1;$(13_10)		}$(13_10)	} else {$(13_10)		image_xscale = abilityImageXScale;$(13_10)	}$(13_10)$(13_10)	if (aPhase != "n") {$(13_10)		if (aPhase == "u" && timeInAPhase == 0) {$(13_10)			image_index = 0;$(13_10)		}$(13_10)	$(13_10)		if (aState == "1") {$(13_10)			if (sprite2) {$(13_10)				sprite_index = sprMageSlash2$(13_10)			} else {$(13_10)				sprite_index = sprMageSlash$(13_10)			}$(13_10)		} else if (aState == "2") {$(13_10)			if (sprite2) {$(13_10)				sprite_index = sprMageLob2$(13_10)			} else {$(13_10)				sprite_index = sprMageLob$(13_10)			}$(13_10)		} else if (aState == "3") {$(13_10)			if (sprite2) {$(13_10)				sprite_index = sprMageRocket2$(13_10)			} else {$(13_10)				sprite_index = sprMageRocket$(13_10)			}$(13_10)		} else if (aState == "4") {$(13_10)			if (sprite2) {$(13_10)				sprite_index = sprMageBlast2$(13_10)			} else {$(13_10)				sprite_index = sprMageBlast$(13_10)			}$(13_10)		}$(13_10)	$(13_10)		if (image_index >= image_number - image_speed) {$(13_10)			image_index = image_number - image_speed;$(13_10)		}$(13_10)	} else if (!grounded) {$(13_10)		if (dy >= 0) {$(13_10)			if (sprite2) {$(13_10)				sprite_index = sprMageGoingUp2$(13_10)			} else {$(13_10)				sprite_index = sprMageGoingUp$(13_10)			}$(13_10)		} else {$(13_10)			if (sprite2) {$(13_10)				sprite_index = sprMageGoingDown2$(13_10)			} else {$(13_10)				sprite_index = sprMageGoingDown$(13_10)			}$(13_10)		}$(13_10)	} else if (durationHeld[RIGHT] > 0 || durationHeld[LEFT] > 0) {$(13_10)		if (sprite2) {$(13_10)			sprite_index = sprMageMove2$(13_10)		} else {$(13_10)			sprite_index = sprMageMove$(13_10)		}$(13_10)	} else {$(13_10)		if (sprite2) {$(13_10)			sprite_index = sprMageNone2$(13_10)		} else {$(13_10)			sprite_index = sprMageNone$(13_10)		}$(13_10)	}$(13_10)}"
 ///@desc sprite and image
-if (aState == "n") {
-	if (durationHeld[RIGHT] > 0) {
-		image_xscale = 1;
-	} else if (durationHeld[LEFT] > 0) {
-		image_xscale = -1;
-	}
-} else {
-	image_xscale = abilityImageXScale;
-}
-
-if (aPhase != "n") {
-	if (aPhase == "u" && timeInAPhase == 0) {
-		image_index = 0;
-	}
-	
-	if (aState == "1") {
+if (hp <= 0) {
+	if (sprite_index != sprMageDeath && sprite_index != sprMageDeath2) {
+		image_index = 0
+		
 		if (sprite2) {
-			sprite_index = sprMageSlash2
+			sprite_index = sprMageDeath2
 		} else {
-			sprite_index = sprMageSlash
-		}
-	} else if (aState == "2") {
-		if (sprite2) {
-			sprite_index = sprMageLob2
-		} else {
-			sprite_index = sprMageLob
-		}
-	} else if (aState == "3") {
-		if (sprite2) {
-			sprite_index = sprMageRocket2
-		} else {
-			sprite_index = sprMageRocket
-		}
-	} else if (aState == "4") {
-		if (sprite2) {
-			sprite_index = sprMageBlast2
-		} else {
-			sprite_index = sprMageBlast
+			sprite_index = sprMageDeath
 		}
 	}
 	
 	if (image_index >= image_number - image_speed) {
-		image_index = image_number - image_speed;
-	}
-} else if (!grounded) {
-	if (dy >= 0) {
-		if (sprite2) {
-			sprite_index = sprMageGoingUp2
-		} else {
-			sprite_index = sprMageGoingUp
-		}
-	} else {
-		if (sprite2) {
-			sprite_index = sprMageGoingDown2
-		} else {
-			sprite_index = sprMageGoingDown
-		}
-	}
-} else if (durationHeld[RIGHT] > 0 || durationHeld[LEFT] > 0) {
-	if (sprite2) {
-		sprite_index = sprMageMove2
-	} else {
-		sprite_index = sprMageMove
+		image_speed = 0
 	}
 } else {
-	if (sprite2) {
-		sprite_index = sprMageNone2
+	if (aState == "n") {
+		if (durationHeld[RIGHT] > 0) {
+			image_xscale = 1;
+		} else if (durationHeld[LEFT] > 0) {
+			image_xscale = -1;
+		}
 	} else {
-		sprite_index = sprMageNone
+		image_xscale = abilityImageXScale;
 	}
-}
 
-if (hp <= 0) {
-	sprite_index = sprMine;
+	if (aPhase != "n") {
+		if (aPhase == "u" && timeInAPhase == 0) {
+			image_index = 0;
+		}
+	
+		if (aState == "1") {
+			if (sprite2) {
+				sprite_index = sprMageSlash2
+			} else {
+				sprite_index = sprMageSlash
+			}
+		} else if (aState == "2") {
+			if (sprite2) {
+				sprite_index = sprMageLob2
+			} else {
+				sprite_index = sprMageLob
+			}
+		} else if (aState == "3") {
+			if (sprite2) {
+				sprite_index = sprMageRocket2
+			} else {
+				sprite_index = sprMageRocket
+			}
+		} else if (aState == "4") {
+			if (sprite2) {
+				sprite_index = sprMageBlast2
+			} else {
+				sprite_index = sprMageBlast
+			}
+		}
+	
+		if (image_index >= image_number - image_speed) {
+			image_index = image_number - image_speed;
+		}
+	} else if (!grounded) {
+		if (dy >= 0) {
+			if (sprite2) {
+				sprite_index = sprMageGoingUp2
+			} else {
+				sprite_index = sprMageGoingUp
+			}
+		} else {
+			if (sprite2) {
+				sprite_index = sprMageGoingDown2
+			} else {
+				sprite_index = sprMageGoingDown
+			}
+		}
+	} else if (durationHeld[RIGHT] > 0 || durationHeld[LEFT] > 0) {
+		if (sprite2) {
+			sprite_index = sprMageMove2
+		} else {
+			sprite_index = sprMageMove
+		}
+	} else {
+		if (sprite2) {
+			sprite_index = sprMageNone2
+		} else {
+			sprite_index = sprMageNone
+		}
+	}
 }

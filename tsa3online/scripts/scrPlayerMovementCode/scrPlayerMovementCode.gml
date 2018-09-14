@@ -1,15 +1,17 @@
 ///@desc movement
 //left right
-if (durationHeld[RIGHT] > 0) {
-	var moveMod = instance_create(0, 0, objMoveMod);
-	moveMod.dx = moveSpd;
-	ds_list_add(moveModList, moveMod);
-}
+if (hp > 0) {
+	if (durationHeld[RIGHT] > 0) {
+		var moveMod = instance_create(0, 0, objMoveMod);
+		moveMod.dx = moveSpd;
+		ds_list_add(moveModList, moveMod);
+	}
 
-if (durationHeld[LEFT] > 0) {
-	var moveMod = instance_create(0, 0, objMoveMod);
-	moveMod.dx = -moveSpd;
-	ds_list_add(moveModList, moveMod);
+	if (durationHeld[LEFT] > 0) {
+		var moveMod = instance_create(0, 0, objMoveMod);
+		moveMod.dx = -moveSpd;
+		ds_list_add(moveModList, moveMod);
+	}
 }
 
 //gravity
@@ -54,43 +56,45 @@ if (timeSinceGrounded == 0) {
 	}
 }
 
-if (timeSinceGrounded < coyoteTime) {
-	if (durationHeld[UP] > 0 && !heldBefore[UP]/*(!heldBefore[UP] || heldBefore[UP] && durationHeld[UP] <= jumpGrace)*/) {
-		if (!instance_exists(jumpMoveMod)) {
-			jumpMoveMod = instance_create(0, 0, objMoveMod)
-			jumpMoveMod.dy = jumpPower
-			jumpMoveMod.forever = true
-			ds_list_add(moveModList, jumpMoveMod)
-		}
+if (hp > 0) {
+	if (timeSinceGrounded < coyoteTime) {
+		if (durationHeld[UP] > 0 && !heldBefore[UP]/*(!heldBefore[UP] || heldBefore[UP] && durationHeld[UP] <= jumpGrace)*/) {
+			if (!instance_exists(jumpMoveMod)) {
+				jumpMoveMod = instance_create(0, 0, objMoveMod)
+				jumpMoveMod.dy = jumpPower
+				jumpMoveMod.forever = true
+				ds_list_add(moveModList, jumpMoveMod)
+			}
 		
-		if (instance_exists(gravMoveMod)) {
-			gravMoveMod.dy = 0
-		}
+			if (instance_exists(gravMoveMod)) {
+				gravMoveMod.dy = 0
+			}
 		
-		if (timeSinceGrounded == 0) {
-			preciseY += 1
-		}
+			if (timeSinceGrounded == 0) {
+				preciseY += 1
+			}
 		
-		timeSinceGrounded = coyoteTime
+			timeSinceGrounded = coyoteTime
+		}
 	}
-}
 
-if (/*!grounded*/timeSinceGrounded >= coyoteTime && currAirJumps < airJumps) {
-	if (durationHeld[UP] > 0 && !heldBefore[UP]/*(!heldBefore[UP] || heldBefore[UP] && durationHeld[UP] <= jumpGrace)*/) {
-		if (instance_exists(jumpMoveMod)) {
-			jumpMoveMod.dy = jumpPower;
-		} else {
-			jumpMoveMod = instance_create(0, 0, objMoveMod);
-			jumpMoveMod.dy = jumpPower;
-			jumpMoveMod.forever = true;
-			ds_list_add(moveModList, jumpMoveMod);
-		}
+	if (/*!grounded*/timeSinceGrounded >= coyoteTime && currAirJumps < airJumps) {
+		if (durationHeld[UP] > 0 && !heldBefore[UP]/*(!heldBefore[UP] || heldBefore[UP] && durationHeld[UP] <= jumpGrace)*/) {
+			if (instance_exists(jumpMoveMod)) {
+				jumpMoveMod.dy = jumpPower;
+			} else {
+				jumpMoveMod = instance_create(0, 0, objMoveMod);
+				jumpMoveMod.dy = jumpPower;
+				jumpMoveMod.forever = true;
+				ds_list_add(moveModList, jumpMoveMod);
+			}
 		
-		if (instance_exists(gravMoveMod)) {
-			gravMoveMod.dy = 0;
-		}
+			if (instance_exists(gravMoveMod)) {
+				gravMoveMod.dy = 0;
+			}
 		
-		currAirJumps++;
+			currAirJumps++;
+		}
 	}
 }
 

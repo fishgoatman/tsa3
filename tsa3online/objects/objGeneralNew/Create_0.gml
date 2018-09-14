@@ -50,10 +50,10 @@ uiDepth = 1;
 /// @DnDAction : YoYo Games.Common.Execute_Code
 /// @DnDVersion : 1
 /// @DnDHash : 5B11FB31
-/// @DnDArgument : "code" "///@desc necessary vars$(13_10)currRoom = "main";$(13_10)targetRoom = "main";$(13_10)startOffline = false;$(13_10)startOnline = false;$(13_10)createGameStuff = false;$(13_10)createSelectStuff = false;$(13_10)globalvar thisInControl;$(13_10)$(13_10)for (var i = 0; i < numPlayers; i++) {$(13_10)	thisInControl[i] = false;$(13_10)}"
+/// @DnDArgument : "code" "///@desc necessary vars$(13_10)currRoom = "start";$(13_10)targetRoom = "start";$(13_10)startOffline = false;$(13_10)startOnline = false;$(13_10)createGameStuff = false;$(13_10)createSelectStuff = false;$(13_10)globalvar thisInControl;$(13_10)$(13_10)for (var i = 0; i < numPlayers; i++) {$(13_10)	thisInControl[i] = false;$(13_10)}"
 ///@desc necessary vars
-currRoom = "main";
-targetRoom = "main";
+currRoom = "start";
+targetRoom = "start";
 startOffline = false;
 startOnline = false;
 createGameStuff = false;
