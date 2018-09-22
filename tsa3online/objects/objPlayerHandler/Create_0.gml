@@ -1,5 +1,12 @@
 ///@desc creation stuff
 //hero
+if (depth < 0) {
+	ai = true
+	depth += 2
+} else {
+	ai = false
+}
+
 thisNumber = depth;
 depth = 0;
 heroString = selectedHero[thisNumber];
@@ -36,16 +43,28 @@ var createY;
 var margin = 20;
 
 do {
-	if (thisNumber != 1) {
-		createX = random_range(margin, room_width / 3);
-	} else if (thisNumber == 1) {
-		createX = random_range(room_width * 2 / 3, room_width - margin);
+	if (scrInArena()) {
+		if (thisNumber != 1) {
+			createX = random_range(margin, room_width / 3);
+		} else if (thisNumber == 1) {
+			createX = random_range(room_width * 2 / 3, room_width - margin);
+		}
+	} else if (room == rmMainMenu) {
+		createX = random_range(margin, room_width / 2 - margin)
 	}
 	
 	createY = random_range(margin, room_height - margin);
 } until (!place_meeting(createX, createY, objBlock));
 
-var createdId = instance_create_depth(createX, createY, thisNumber, heroObj);
+var createDepth
+
+if (ai) {
+	createDepth = thisNumber - 2
+} else {
+	createDepth = thisNumber
+}
+
+var createdId = instance_create_depth(createX, createY, createDepth, heroObj);
 heroId[thisNumber] = createdId;
 myHeroId = heroId[thisNumber];
 
@@ -109,3 +128,5 @@ if (heroString != "bot" && thisInControl[thisNumber]) {
 		}
 	}
 }
+
+show_debug_message(string(selectedHero[thisNumber]) + " " + string(selectedHero[1 - thisNumber]) + " " + string(thisNumber))

@@ -13,7 +13,6 @@
         "79f10c21-176a-4eee-8ec9-69a2c8a60af6",
         "6fe24ecf-65f6-41f8-adc0-7f7fe4a573a0",
         "df4bf441-9112-41f7-9f1b-3604cd4bb9f3",
-        "f58052cb-04ee-4490-83ff-cfdefe300fc4",
         "233cef7e-2de3-4119-8683-8a71ed18dd2e"
     ],
     "filterType": "GMObject",

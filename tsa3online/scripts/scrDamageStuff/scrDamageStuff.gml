@@ -56,4 +56,6 @@ for (var i = 0; i < ds_list_size(dmgModList); i++) {
 	}
 }
 
-scrThisTakeDamage(hpLost);
+if (scrInArena() && objGeneralNew.numAlivePlayers > 1) {
+	scrThisTakeDamage(hpLost)
+}

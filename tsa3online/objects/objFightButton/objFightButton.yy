@@ -4,20 +4,11 @@
     "mvc": "1.0",
     "name": "objFightButton",
     "eventList": [
-        {
-            "id": "d01a04af-c285-4465-a90a-eb9fae650cb7",
-            "modelName": "GMEvent",
-            "mvc": "1.0",
-            "IsDnD": false,
-            "collisionObjectId": "00000000-0000-0000-0000-000000000000",
-            "enumb": 0,
-            "eventtype": 0,
-            "m_owner": "caf81430-dc6f-4c43-8d95-515fc952d807"
-        }
+        
     ],
     "maskSpriteId": "00000000-0000-0000-0000-000000000000",
     "overriddenProperties": null,
-    "parentObjectId": "00000000-0000-0000-0000-000000000000",
+    "parentObjectId": "b507e77b-20ba-4b70-a6a8-0580104d8601",
     "persistent": false,
     "physicsAngularDamping": 0.1,
     "physicsDensity": 0.5,

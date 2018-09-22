@@ -15,20 +15,41 @@ if (dy <= 0) {
 }
 
 while (abs(yDisp) < abs(dy) && abs(xDisp) < abs(dx) && !place_meeting(tryX + tempDx, tryY - tempDy, collideObj)) {
-	tryY -= tempDy
-	tryX += tempDx
-    yDisp -= tempDy
-    xDisp += tempDx
+	if (abs(yDisp - dy) < tempDy) {
+		tryY -= tempDy
+		yDisp -= tempDy
+	} else {
+		tryY = preciseY - dy
+		yDisp = dy
+	}
+	
+	if (abs(xDisp - dx) < tempDx) {
+		tryX += tempDx
+		xDisp += tempDx
+	} else {
+		tryX = preciseX + dx
+		xDisp = dx
+	}
 }
 
 while (abs(yDisp) < abs(dy) && !place_meeting(tryX, tryY - tempDy, collideObj)) {
-    tryY -= tempDy
-    yDisp -= tempDy
+    if (abs(yDisp - dy) < tempDy) {
+		tryY -= tempDy
+		yDisp -= tempDy
+	} else {
+		tryY = preciseY - dy
+		yDisp = dy
+	}
 }
 
 while (abs(xDisp) < abs(dx) && !place_meeting(tryX + tempDx, tryY, collideObj)) {
-    tryX += tempDx
-    xDisp += tempDx
+    if (abs(xDisp - dx) < tempDx) {
+		tryX += tempDx
+		xDisp += tempDx
+	} else {
+		tryX = preciseX + dx
+		xDisp = dx
+	}
 }
 
 preciseX = tryX

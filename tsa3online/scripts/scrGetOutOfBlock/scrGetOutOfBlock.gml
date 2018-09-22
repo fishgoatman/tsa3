@@ -1,6 +1,8 @@
 ///@desc get out of block
-var startX = x;
-var startY = y;
+var startX = preciseX;
+var startY = preciseY;
+var tryX = startX
+var tryY = startY
 var i = 0;
 var collideObj;
 
@@ -10,23 +12,25 @@ if (dy <= 0) {
 	collideObj = objBlock;
 }
 
-while (place_meeting(x, y, collideObj)) {
+while (place_meeting(tryX, tryY, collideObj)) {
     if (i % 4 == 0) {
-        x = startX + i / 4;
-        y = startY;
+        tryX = startX + i / 4;
+        tryY = startY;
     } else if (i % 4 == 1) {
-        x = startX - i / 4;
-        y = startY;
+        tryX = startX - i / 4;
+        tryY = startY;
     } else if (i % 4 == 2) {
-        x = startX;
-        y = startY + i / 4;
+        tryX = startX;
+        tryY = startY + i / 4;
     } else {
-        x = startX;
-        y = startY - i / 4;
+        tryX = startX;
+        tryY = startY - i / 4;
     }
 
     i++;
 }
 
-preciseX = x;
-preciseY = y;
+preciseX = tryX
+preciseY = tryY
+x = scrRound(preciseX)
+y = scrRound(preciseY)

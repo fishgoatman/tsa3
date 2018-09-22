@@ -18,7 +18,11 @@ if (random(1) < 0.1) {
 }
 	
 if (abs(preciseX - targetX) < 20) {
-	targetX = random(room_width);
+	if (scrInArena()) {
+		targetX = random(room_width)
+	} else if (room == rmMainMenu) {
+		targetX = random(room_width / 2)
+	}
 }
 	
 var dir;

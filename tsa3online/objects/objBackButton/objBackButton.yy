@@ -1,14 +1,14 @@
 {
-    "id": "611c27a2-3278-4628-8345-50795af5a1d4",
+    "id": "e2abdfa1-20f4-4128-b3f8-19b4773182ed",
     "modelName": "GMObject",
     "mvc": "1.0",
-    "name": "objBounceCheckHitbox",
+    "name": "objBackButton",
     "eventList": [
         
     ],
     "maskSpriteId": "00000000-0000-0000-0000-000000000000",
     "overriddenProperties": null,
-    "parentObjectId": "00000000-0000-0000-0000-000000000000",
+    "parentObjectId": "b507e77b-20ba-4b70-a6a8-0580104d8601",
     "persistent": false,
     "physicsAngularDamping": 0.1,
     "physicsDensity": 0.5,
@@ -24,6 +24,6 @@
     "physicsStartAwake": true,
     "properties": null,
     "solid": false,
-    "spriteId": "7665c09d-0adb-4292-822b-278c1fb9a60f",
+    "spriteId": "7485bf63-272d-418f-bdb1-d5d751cbdcc7",
     "visible": true
 }

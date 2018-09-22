@@ -1,2 +1,6 @@
 ///@desc creation stuff
-depth = uiDepth;
+depth = uiDepth
+
+if (!scrInArena()) {
+	visible = false
+}

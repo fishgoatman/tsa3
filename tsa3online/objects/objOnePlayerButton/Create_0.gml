@@ -1,2 +1,3 @@
 ///@desc creation stuff
-depth = -5
+image_speed = 0
+depth = -1

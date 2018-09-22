@@ -43,6 +43,10 @@ if (abs(xDisp) < abs(dx) || abs(yDisp) < abs(dy)) {
 	instance_destroy();
 }
 
+if (x < 0 || x > room_width || y < 0 || y > room_height) {
+	instance_destroy()
+}
+
 preciseX = tryX;
 preciseY = tryY;
 x = scrRound(preciseX);

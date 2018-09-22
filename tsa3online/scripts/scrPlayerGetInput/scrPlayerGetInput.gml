@@ -10,15 +10,28 @@ if (thisInControl[thisNumber]) {
 
 	for (var i = 0; i < numKeys; i++) {
 		if (thisNumber == 0 || rightControlMode == "keyboard" || i >= 4 || room == rmCharacterSelectionScreen) {
-			if (keyboard_check(arrayToUse[i])) {
-				if (durationHeld[i] > 0) {
-					heldBefore[i] = true;
-				}
+			if (playerMode == "two") {
+				if (keyboard_check(arrayToUse[i])) {
+					if (durationHeld[i] > 0) {
+						heldBefore[i] = true;
+					}
 		
-				durationHeld[i]++;
-			} else {
-				durationHeld[i] = 0;
-				heldBefore[i] = false;
+					durationHeld[i]++;
+				} else {
+					durationHeld[i] = 0;
+					heldBefore[i] = false;
+				}
+			} else if (playerMode == "one") {
+				if (keyboard_check(leftKeyOrder[i]) || keyboard_check(rightKeyOrder[i])) {
+					if (durationHeld[i] > 0) {
+						heldBefore[i] = true;
+					}
+		
+					durationHeld[i]++;
+				} else {
+					durationHeld[i] = 0;
+					heldBefore[i] = false;
+				}
 			}
 		} else if (rightControlMode == "mouse") {
 			if (i == 0) {
