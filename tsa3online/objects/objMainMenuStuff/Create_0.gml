@@ -42,7 +42,7 @@ for (var yy = 0; yy < room_height; yy += 50) {
 	}
 }
 
-var borderWidth = 5
+var borderWidth = 50
 instance_create_depth(-borderWidth, -borderWidth, 1, objSideBorder)
 instance_create_depth(-borderWidth, -borderWidth, 1, objTopBorder)
 instance_create_depth(room_width / 2, -borderWidth, 1, objSideBorder)

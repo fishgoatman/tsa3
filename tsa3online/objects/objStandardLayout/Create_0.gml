@@ -1,9 +1,14 @@
 ///@desc layout and bk
-var borderWidth = 5
-instance_create(-borderWidth, -borderWidth, objSideBorder)
-instance_create(room_width, -borderWidth, objSideBorder)
-instance_create(-borderWidth, -borderWidth, objTopBorder)
-instance_create(-borderWidth, room_height, objTopBorder)
+var borderWidth = 50
+
+with (objSideBorder) {
+	instance_destroy()
+}
+
+instance_create_depth(-borderWidth, -borderWidth, 0, objSideBorder)
+instance_create_depth(room_width, -borderWidth, 0, objSideBorder)
+instance_create_depth(-borderWidth, -borderWidth, 0, objTopBorder)
+instance_create_depth(-borderWidth, room_height, 0, objTopBorder)
 
 with (objBlock) {
 	instance_create(room_width - x, y, object_index)

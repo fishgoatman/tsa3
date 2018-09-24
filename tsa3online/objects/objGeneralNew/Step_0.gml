@@ -21,7 +21,57 @@ if (mouse_check_button_pressed(mb_left) && backHover) {
 }
 
 if (room == rmStartScreen) {
-	if (keyboard_check_pressed(vk_anykey)) {
+	if (createStuff) {
+		instance_create_depth(room_width / 2, 350, 0, objClickToEnter)
+		
+		var createObjs
+		createObjs[0] = objDesertBk
+		createObjs[1] = objMountainBk
+		createObjs[2] = objForestBk
+		createObjs[3] = objTundraBk
+		
+		var createXAvg
+		createXAvg[0] = 125
+		createXAvg[1] = 305
+		createXAvg[2] = 440
+		createXAvg[3] = 635
+		
+		var bkWidth = 50
+		
+		for (var xx = 0; xx < room_width; xx += bkWidth) {
+			var centerX = xx + bkWidth / 2
+			var props
+			props[0] = 0
+			
+			for (var i = 0; i < 4; i++) {
+				var prop = room_width / power(abs(centerX - createXAvg[i]), 2)
+				
+				if (i == 0) {
+					props[i] = prop
+				} else {
+					props[i] = props[i - 1] + prop
+				}
+			}
+			
+			for (var yy = 0; yy < room_height; yy += bkWidth) {
+				var rand = random(props[array_length_1d(props) - 1])
+				var createObj
+			
+				for (var i = 0; i < 4; i++) {
+					if (rand < props[i]) {
+						createObj = createObjs[i]
+						break
+					}
+				}
+				
+				instance_create_depth(xx, yy, 0, createObj)
+			}
+		}
+		
+		createStuff = false
+	}
+	
+	if (mouse_check_button_pressed(mb_left)) {
 		startOffline = true;
 		//startOnline = true;
 	}
@@ -41,6 +91,10 @@ if (room == rmStartScreen) {
 		startOnline = false;
 	}
 } else if (room == rmMainMenu) {
+	if (createStuff) {
+		createStuff = false
+	}
+	
 	if (mouse_check_button_pressed(mb_left) && targetRoom == "mainMenu") {
 		if (mouse_x < room_width / 2) {
 			targetRoom = "characterSelect"
@@ -123,6 +177,43 @@ if (room == rmStartScreen) {
 	}
 	
 	currRoom = "opCharacterSelect"
+} else if (room == rmOptions) {
+	if (backPressed) {
+		targetRoom = "mainMenu"
+	} else {
+		if (createStuff) {
+			instance_create_depth(backButtonOffset, backButtonOffset, 0, objBackButton)
+			createStuff = false
+		}
+	}
+	
+	currRoom = "options"
+} else if (room == rmHelp) {
+	if (backPressed) {
+		targetRoom = "mainMenu"
+	} else {
+		if (createStuff) {
+			instance_create_depth(backButtonOffset, backButtonOffset, 0, objBackButton)
+			createStuff = false
+		}
+	}
+	
+	if (keyboard_check_pressed(ord("1"))) {
+		targetRoom = "mageHelp"
+	}
+	
+	currRoom = "help"
+} else if (room == rmMageHelp) {
+	if (backPressed) {
+		targetRoom = "help"
+	} else {
+		if (createStuff) {
+			instance_create_depth(backButtonOffset, backButtonOffset, 0, objBackButton)
+			createStuff = false
+		}
+	}
+	
+	currRoom = "mageHelp"
 } else if (room == rmMapSelect) {
 	if (backPressed) {
 		if (playerMode == "one") {
@@ -217,23 +308,22 @@ if (currRoom != targetRoom) {
 			room_goto(rmMainMenu)
 		} else if (targetRoom == "game") {
 			room_goto(selectedMap)
-			createStuff = true
+		} else if (targetRoom == "characterSelect") {
+			room_goto(rmCharacterSelect)
 		} else if (targetRoom == "opCharacterSelect") {
 			room_goto(rmOPCharacterSelect)
-			createStuff = true
 		} else if (targetRoom == "options") {
 			room_goto(rmOptions)
 		} else if (targetRoom == "help") {
 			room_goto(rmHelp)
-		} else if (targetRoom == "characterSelect") {
-			room_goto(rmCharacterSelect)
-			createStuff = true
+		} else if (targetRoom == "mageHelp") {
+			room_goto(rmMageHelp)
 		} else if (targetRoom == "mapSelect") {
 			room_goto(rmMapSelect)
-			createStuff = true
 		}
 		
-		currTime = 0;
+		createStuff = true
+		currTime = 0
 	}
 } else {
 	currTime = 0;

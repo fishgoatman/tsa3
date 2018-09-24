@@ -2,7 +2,7 @@
 {
     "name": "rmDesert",
     "id": "69d0828b-eec7-4bd3-8267-35e87af90abf",
-    "creationCodeFile": "",
+    "creationCodeFile": "RoomCreationCode.gml",
     "inheritCode": false,
     "inheritCreationOrder": false,
     "inheritLayers": false,

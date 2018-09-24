@@ -183,7 +183,6 @@ for (var i = 0; i < ds_list_size(envMoveModList); i++) {
 	}
 }
 
-show_debug_message(string(thisNumber) + " " + string(dx))
 scrMove();
 scrGetOutOfBlock();
 

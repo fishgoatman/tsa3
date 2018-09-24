@@ -49,11 +49,15 @@ do {
 		} else if (thisNumber == 1) {
 			createX = random_range(room_width * 2 / 3, room_width - margin);
 		}
+		
+		createY = random_range(margin, room_height - margin)
 	} else if (room == rmMainMenu) {
 		createX = random_range(margin, room_width / 2 - margin)
+		createY = random_range(margin, room_height - margin)
+	} else if (room == rmMageHelp) {
+		createX = x
+		createY = y
 	}
-	
-	createY = random_range(margin, room_height - margin);
 } until (!place_meeting(createX, createY, objBlock));
 
 var createDepth
@@ -128,5 +132,3 @@ if (heroString != "bot" && thisInControl[thisNumber]) {
 		}
 	}
 }
-
-show_debug_message(string(selectedHero[thisNumber]) + " " + string(selectedHero[1 - thisNumber]) + " " + string(thisNumber))
