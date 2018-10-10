@@ -190,3 +190,10 @@ scrGetOutOfBlock();
 if (durationHeld[LEFT] || durationHeld[RIGHT]) {
 	moveState = "move";
 }
+
+/*if (thisNumber == 1) {
+	preciseX = room_width - heroId[0].preciseX
+	preciseY = heroId[0].preciseY
+	x = room_width - heroId[0].x
+	y = heroId[0].y
+}*/

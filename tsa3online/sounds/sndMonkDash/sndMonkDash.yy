@@ -3,7 +3,7 @@
     "modelName": "GMSound",
     "mvc": "1.0",
     "name": "sndMonkDash",
-    "audioGroupGuid": "7b2c4976-1e09-44e5-8256-c527145e03bb",
+    "audioGroupGuid": "98f242f8-b079-4eb9-bda3-f2ea807d8f7f",
     "bitDepth": 1,
     "bitRate": 128,
     "kind": 0,

@@ -18,26 +18,25 @@ objGeneralNew.selectHighlightId = instance_create_depth(0, 0, 0, objSelectHighli
 
 ///left half
 var hero
+var color = colors[0]
+var createObj
+		
+if (color == 0) {
+	createObj = objDesertBk
+	hero = "mage"
+} else if (color == 1) {
+	createObj = objTundraBk
+	hero = "caster"
+} else if (color == 2) {
+	createObj = objMountainBk
+	hero = "rogue"
+} else if (color == 3) {
+	createObj = objForestBk
+	hero = "monk"
+}
 
 for (var yy = 0; yy < room_height; yy += 50) {
 	for (var xx = 0; xx < room_width / 2; xx += 50) {
-		var color = colors[0]
-		var createObj
-		
-		if (color == 0) {
-			createObj = objDesertBk
-			hero = "mage"
-		} else if (color == 1) {
-			createObj = objTundraBk
-			hero = "caster"
-		} else if (color == 2) {
-			createObj = objMountainBk
-			hero = "rogue"
-		} else if (color == 3) {
-			createObj = objForestBk
-			hero = "monk"
-		}
-		
 		instance_create_depth(xx, yy, 0, createObj)
 	}
 }

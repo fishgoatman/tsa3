@@ -18,12 +18,12 @@ if (x < room_width / 2) {
 	}
 }
 
-resets[0] = 1 * room_speed
-resets[1] = 1.5 * room_speed
-resets[2] = 0.8 * room_speed
-resets[3] = 2 * room_speed
+resets[0] = 0.6 * room_speed
+resets[1] = 0.8 * room_speed
+resets[2] = 0.9 * room_speed
+resets[3] = 1.1 * room_speed
 reset = resets[ability]
-time = 0
+time = 0.8 * room_speed
 selectedHero[ability] = "mage"
 
 for (var i = 0; i < 4; i++) {
@@ -31,3 +31,5 @@ for (var i = 0; i < 4; i++) {
 }
 
 handlerId = instance_create_depth(x, y, ability, objPlayerHandler)
+currAbility = -1
+prevAbility = currAbility

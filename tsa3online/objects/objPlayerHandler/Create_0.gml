@@ -54,7 +54,7 @@ do {
 	} else if (room == rmMainMenu) {
 		createX = random_range(margin, room_width / 2 - margin)
 		createY = random_range(margin, room_height - margin)
-	} else if (room == rmMageHelp) {
+	} else if (room == rmMageHelp || room == rmCasterHelp || room == rmRogueHelp || room == rmMonkHelp) {
 		createX = x
 		createY = y
 	}

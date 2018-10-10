@@ -8,10 +8,11 @@ scrDamageStuff();
 /// @DnDAction : YoYo Games.Common.Execute_Code
 /// @DnDVersion : 1
 /// @DnDHash : 74C028A6
-/// @DnDArgument : "code" "///@desc get input$(13_10)if (hp > 0) {$(13_10)	if (auto || ai) {$(13_10)		scrAIGetInput();$(13_10)	} else {$(13_10)		scrPlayerGetInput();$(13_10)	}$(13_10)}"
+/// @DnDArgument : "code" "///@desc get input$(13_10)if (hp > 0) {$(13_10)	if (room == rmMonkHelp) {$(13_10)	} else if (auto || ai) {$(13_10)		scrAIGetInput();$(13_10)	} else {$(13_10)		scrPlayerGetInput();$(13_10)	}$(13_10)}"
 ///@desc get input
 if (hp > 0) {
-	if (auto || ai) {
+	if (room == rmMonkHelp) {
+	} else if (auto || ai) {
 		scrAIGetInput();
 	} else {
 		scrPlayerGetInput();

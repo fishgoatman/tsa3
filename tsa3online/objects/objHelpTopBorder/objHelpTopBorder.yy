@@ -4,7 +4,16 @@
     "mvc": "1.0",
     "name": "objHelpTopBorder",
     "eventList": [
-        
+        {
+            "id": "5d8741be-7b6e-421f-8731-7e718c2dd85d",
+            "modelName": "GMEvent",
+            "mvc": "1.0",
+            "IsDnD": false,
+            "collisionObjectId": "00000000-0000-0000-0000-000000000000",
+            "enumb": 0,
+            "eventtype": 0,
+            "m_owner": "25e34024-ea24-47f8-8a18-738917fb820a"
+        }
     ],
     "maskSpriteId": "00000000-0000-0000-0000-000000000000",
     "overriddenProperties": null,
@@ -24,6 +33,6 @@
     "physicsStartAwake": true,
     "properties": null,
     "solid": false,
-    "spriteId": "1258701f-05de-40bd-8ba6-c5fcdf4c0220",
+    "spriteId": "c20fa9d6-e76e-41c5-ac52-9f700c241608",
     "visible": true
 }

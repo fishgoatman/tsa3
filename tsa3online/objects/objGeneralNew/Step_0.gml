@@ -1,4 +1,8 @@
 ///@desc handle game rooms
+if (keyboard_check_pressed(ord("8"))) {
+	//urf = !urf
+}
+
 if (mouse_x < backButtonOffset + 60 && mouse_y < backButtonOffset + 35) {
 	backHover = true
 	
@@ -182,9 +186,51 @@ if (room == rmStartScreen) {
 		targetRoom = "mainMenu"
 	} else {
 		if (createStuff) {
+			optionsColor = irandom(3)
 			instance_create_depth(backButtonOffset, backButtonOffset, 0, objBackButton)
+			instance_create_depth(room_width / 2, 70, 0, objSoundLabel)
+			instance_create_depth(room_width / 2, 170, 0, objSlidingBar)
+			instance_create_depth(room_width / 2, 300, 0, objMusic)
+			instance_create_depth(room_width / 2, 400, 1, objSlidingBar)
+			var createObj
+		
+			if (optionsColor == 0) {
+				createObj = objDesertBk
+				
+				with (objSlider) {
+					sprite_index = sprDesertSlider
+				}
+			} else if (optionsColor == 1) {
+				createObj = objTundraBk
+				
+				with (objSlider) {
+					sprite_index = sprTundraSlider
+				}
+			} else if (optionsColor == 2) {
+				createObj = objMountainBk
+				
+				with (objSlider) {
+					sprite_index = sprMountainSlider
+				}
+			} else if (optionsColor == 3) {
+				createObj = objForestBk
+				
+				with (objSlider) {
+					sprite_index = sprForestSlider
+				}
+			}
+			
+			for (var yy = 0; yy < room_height; yy += 50) {
+				for (var xx = 0; xx < room_width; xx += 50) {
+					instance_create_depth(xx, yy, 5, createObj)
+				}
+			}
+			
 			createStuff = false
 		}
+		
+		audio_group_set_gain(soundEffects, soundVolume, 0)
+		audio_group_set_gain(backgroundMusic, musicVolume, 0)
 	}
 	
 	currRoom = "options"
@@ -193,13 +239,38 @@ if (room == rmStartScreen) {
 		targetRoom = "mainMenu"
 	} else {
 		if (createStuff) {
-			instance_create_depth(backButtonOffset, backButtonOffset, 0, objBackButton)
+			instance_create_depth(backButtonOffset, backButtonOffset, -1, objBackButton)
+			helpHighlightId = instance_create_depth(0, 0, -1, objHelpSelectHighlight)
 			createStuff = false
+		}
+		
+		if (mouse_y < room_height / 4) {
+			helpHighlightId.y = 0
+		} else if (mouse_y < room_height / 2) {
+			helpHighlightId.y = room_height / 4
+		} else if (mouse_y < room_height * 3 / 4) {
+			helpHighlightId.y = room_height / 2
+		} else {
+			helpHighlightId.y = room_height * 3 / 4
+		}
+		
+		if (mouse_check_button_pressed(mb_left)) {
+			if (mouse_y < room_height / 4) {
+				targetRoom = "mageHelp"
+			} else if (mouse_y < room_height / 2) {
+				targetRoom = "casterHelp"
+			} else if (mouse_y < room_height * 3 / 4) {
+				targetRoom = "rogueHelp"
+			} else {
+				targetRoom = "monkHelp"
+			}
 		}
 	}
 	
-	if (keyboard_check_pressed(ord("1"))) {
-		targetRoom = "mageHelp"
+	if (backHover) {
+		helpHighlightId.visible = false
+	} else {
+		helpHighlightId.visible = true
 	}
 	
 	currRoom = "help"
@@ -209,11 +280,80 @@ if (room == rmStartScreen) {
 	} else {
 		if (createStuff) {
 			instance_create_depth(backButtonOffset, backButtonOffset, 0, objBackButton)
+			
+			var size = 50
+
+			for (var yy = 0; yy < room_width; yy += size) {
+				for (var xx = 0; xx < room_width; xx += size) {
+					instance_create_depth(xx, yy, 5, objDesertBk)
+				}
+			}
+			
 			createStuff = false
 		}
 	}
 	
 	currRoom = "mageHelp"
+} else if (room == rmCasterHelp) {
+	if (backPressed) {
+		targetRoom = "help"
+	} else {
+		if (createStuff) {
+			instance_create_depth(backButtonOffset, backButtonOffset, 0, objBackButton)
+			
+			var size = 50
+
+			for (var yy = 0; yy < room_width; yy += size) {
+				for (var xx = 0; xx < room_width; xx += size) {
+					instance_create_depth(xx, yy, 5, objTundraBk)
+				}
+			}
+			
+			createStuff = false
+		}
+	}
+	
+	currRoom = "casterHelp"
+} else if (room == rmRogueHelp) {
+	if (backPressed) {
+		targetRoom = "help"
+	} else {
+		if (createStuff) {
+			instance_create_depth(backButtonOffset, backButtonOffset, 0, objBackButton)
+			
+			var size = 50
+
+			for (var yy = 0; yy < room_width; yy += size) {
+				for (var xx = 0; xx < room_width; xx += size) {
+					instance_create_depth(xx, yy, 5, objMountainBk)
+				}
+			}
+			
+			createStuff = false
+		}
+	}
+	
+	currRoom = "rogueHelp"
+} else if (room == rmMonkHelp) {
+	if (backPressed) {
+		targetRoom = "help"
+	} else {
+		if (createStuff) {
+			instance_create_depth(backButtonOffset, backButtonOffset, 0, objBackButton)
+			
+			var size = 50
+
+			for (var yy = 0; yy < room_width; yy += size) {
+				for (var xx = 0; xx < room_width; xx += size) {
+					instance_create_depth(xx, yy, 5, objForestBk)
+				}
+			}
+			
+			createStuff = false
+		}
+	}
+	
+	currRoom = "monkHelp"
 } else if (room == rmMapSelect) {
 	if (backPressed) {
 		if (playerMode == "one") {
@@ -263,7 +403,13 @@ if (room == rmStartScreen) {
 			}
 	
 			instance_create_depth(backButtonOffset, backButtonOffset, 0, objBackButton)
-			bkMusic = bkMusics[irandom(array_length_1d(bkMusics) - 1)]
+			
+			if (room == rmForest || room == rmTundra) {
+				bkMusic = sndGymno1
+			} else if (room == rmDesert || room == rmMountain) {
+				bkMusic = sndGnoss1
+			}
+			
 			audio_play_sound(bkMusic, 1, true)
 			createStuff = false
 		}
@@ -295,7 +441,7 @@ if (currRoom != targetRoom) {
 	
 	var waitTime
 	
-	if (currRoom == "start" || currRoom == "mainMenu" || backPressed) {
+	if (currRoom == "start" || currRoom == "mainMenu" || currRoom == "help" || backPressed) {
 		waitTime = 0
 	} else if (currRoom == "game") {
 		waitTime = 1.5 * room_speed
@@ -318,6 +464,12 @@ if (currRoom != targetRoom) {
 			room_goto(rmHelp)
 		} else if (targetRoom == "mageHelp") {
 			room_goto(rmMageHelp)
+		} else if (targetRoom == "casterHelp") {
+			room_goto(rmCasterHelp)
+		} else if (targetRoom == "rogueHelp") {
+			room_goto(rmRogueHelp)
+		} else if (targetRoom == "monkHelp") {
+			room_goto(rmMonkHelp)
 		} else if (targetRoom == "mapSelect") {
 			room_goto(rmMapSelect)
 		}
