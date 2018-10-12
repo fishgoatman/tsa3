@@ -443,7 +443,8 @@ if (currRoom != targetRoom) {
 	}
 	
 	if (scrInArena()) {
-		audio_stop_all()
+		audio_stop_sound(bkMusic)
+		audio_stop_sound(lobbyMusic)
 		audio_play_sound(lobbyMusic, 1, true)
 	}
 	
