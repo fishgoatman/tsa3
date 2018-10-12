@@ -2243,6 +2243,25 @@
             }
         },
         {
+            "Key": "2d89c7ba-9390-43ba-8982-638eb1977415",
+            "Value": {
+                "id": "e8fddfa1-fb56-4798-87d8-f0a5df499d82",
+                "modelName": "GMResourceInfo",
+                "mvc": "1.0",
+                "configDeltaFiles": [
+                    
+                ],
+                "configDeltas": [
+                    
+                ],
+                "resourceCreationConfigs": [
+                    "default"
+                ],
+                "resourcePath": "sounds\/sndEnergy\/sndEnergy.yy",
+                "resourceType": "GMSound"
+            }
+        },
+        {
             "Key": "2e366962-3502-4657-9fe1-af55af072610",
             "Value": {
                 "id": "8c622df8-b13e-4c9e-9a6d-a8818a4e6bcd",
@@ -3284,6 +3303,25 @@
                     "default"
                 ],
                 "resourcePath": "sprites\/sprRogueGoingUp2\/sprRogueGoingUp2.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
+            "Key": "45e40e44-0ee8-4343-8b5b-c9f579231956",
+            "Value": {
+                "id": "f38c59e2-6f4e-4b1e-9107-a4af5445f8af",
+                "modelName": "GMResourceInfo",
+                "mvc": "1.0",
+                "configDeltaFiles": [
+                    
+                ],
+                "configDeltas": [
+                    
+                ],
+                "resourceCreationConfigs": [
+                    "default"
+                ],
+                "resourcePath": "sprites\/sprIconSmall\/sprIconSmall.yy",
                 "resourceType": "GMSprite"
             }
         },
@@ -8722,6 +8760,25 @@
             }
         },
         {
+            "Key": "a9385b42-43e2-4eab-9de7-4f0ccaf5728c",
+            "Value": {
+                "id": "f78c2ed9-9ef4-4b93-bb4f-e6308d946b60",
+                "modelName": "GMResourceInfo",
+                "mvc": "1.0",
+                "configDeltaFiles": [
+                    
+                ],
+                "configDeltas": [
+                    
+                ],
+                "resourceCreationConfigs": [
+                    "default"
+                ],
+                "resourcePath": "sprites\/sprEnterToEnter\/sprEnterToEnter.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
             "Key": "a94bc7db-422e-44de-a801-34b5ebe062c7",
             "Value": {
                 "id": "e1bace1b-501d-46d9-a0ec-fa67324a3ad4",
@@ -11268,6 +11325,25 @@
             }
         },
         {
+            "Key": "d95601c2-aef7-47a5-ad0b-55b49fd0d8e0",
+            "Value": {
+                "id": "894c01e5-e765-4e57-95d7-bba185d14269",
+                "modelName": "GMResourceInfo",
+                "mvc": "1.0",
+                "configDeltaFiles": [
+                    
+                ],
+                "configDeltas": [
+                    
+                ],
+                "resourceCreationConfigs": [
+                    "default"
+                ],
+                "resourcePath": "sprites\/sprSplashScreen\/sprSplashScreen.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
             "Key": "d98bd822-8ce2-4008-ae4f-9b3e6979dd86",
             "Value": {
                 "id": "9cc5f769-14d5-4746-bc65-2154c40a2857",
@@ -12538,6 +12614,25 @@
                 ],
                 "resourcePath": "sounds\/sndIceLobHit\/sndIceLobHit.yy",
                 "resourceType": "GMSound"
+            }
+        },
+        {
+            "Key": "f5fcf492-8cfd-4215-89e5-53145aac85e2",
+            "Value": {
+                "id": "1f675bd4-34e6-46f6-940a-b36e6a0e4aa6",
+                "modelName": "GMResourceInfo",
+                "mvc": "1.0",
+                "configDeltaFiles": [
+                    
+                ],
+                "configDeltas": [
+                    
+                ],
+                "resourceCreationConfigs": [
+                    "default"
+                ],
+                "resourcePath": "sprites\/sprIcon\/sprIcon.yy",
+                "resourceType": "GMSprite"
             }
         },
         {

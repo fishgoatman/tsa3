@@ -9,7 +9,7 @@ if (thisInControl[thisNumber]) {
 	}
 
 	for (var i = 0; i < numKeys; i++) {
-		if (thisNumber == 0 || rightControlMode == "keyboard" || i >= 4 || room == rmCharacterSelectionScreen) {
+		if (thisNumber == 0 || rightControlMode == "keyboard" || i >= 4 || room == rmCharacterSelect) {
 			if (false) {
 				if (thisNumber == 0) {
 					if (keyboard_check(leftKeyOrder[i]) || keyboard_check(rightKeyOrder[i])) {
@@ -51,6 +51,7 @@ if (thisInControl[thisNumber]) {
 					}
 		
 					durationHeld[i]++;
+					show_debug_message("a")
 				} else {
 					durationHeld[i] = 0;
 					heldBefore[i] = false;

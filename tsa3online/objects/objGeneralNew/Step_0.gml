@@ -19,7 +19,6 @@ if (mouse_x < backButtonOffset + 60 && mouse_y < backButtonOffset + 35) {
 
 if (mouse_check_button_pressed(mb_left) && backHover) {
 	backPressed = true
-	audio_stop_all()
 } else {
 	backPressed = false
 }
@@ -72,6 +71,7 @@ if (room == rmStartScreen) {
 			}
 		}
 		
+		audio_play_sound(lobbyMusic, 1, true)
 		createStuff = false
 	}
 	
@@ -403,13 +403,8 @@ if (room == rmStartScreen) {
 			}
 	
 			instance_create_depth(backButtonOffset, backButtonOffset, 0, objBackButton)
-			
-			if (room == rmForest || room == rmTundra) {
-				bkMusic = sndGymno1
-			} else if (room == rmDesert || room == rmMountain) {
-				bkMusic = sndGnoss1
-			}
-			
+			bkMusic = sndEnergy
+			audio_stop_all()
 			audio_play_sound(bkMusic, 1, true)
 			createStuff = false
 		}
@@ -428,8 +423,6 @@ if (room == rmStartScreen) {
 			} else if (playerMode == "one") {
 				targetRoom = "opCharacterSelect"
 			}
-		
-			audio_stop_sound(bkMusic);
 		}
 	}
 	
@@ -447,6 +440,11 @@ if (currRoom != targetRoom) {
 		waitTime = 1.5 * room_speed
 	} else {
 		waitTime = 0.5 * room_speed
+	}
+	
+	if (scrInArena()) {
+		audio_stop_all()
+		audio_play_sound(lobbyMusic, 1, true)
 	}
 	
 	if (currTime >= waitTime) {

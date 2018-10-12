@@ -61,7 +61,7 @@ if (!udpConnected) {
 				currTimeSinceLast++;
 			}
 			
-			if (room == rmCharacterSelectionScreen) {
+			if (room == rmCharacterSelect) {
 				//locked in
 				buffer_seek(bufferToSend, buffer_seek_start, 0);
 				buffer_write(bufferToSend, buffer_u8, LOCKED_IN);

@@ -8,7 +8,8 @@
         "6bce5c5b-ddc6-4f97-9602-b8debda9b029",
         "08f9ab6e-ee90-4059-b6f3-311575fdc100",
         "fc1c63b3-1034-4be0-83ea-1ad66e64184d",
-        "2057784f-debf-4d4b-993e-a9c49ffdbdb9"
+        "2057784f-debf-4d4b-993e-a9c49ffdbdb9",
+        "2d89c7ba-9390-43ba-8982-638eb1977415"
     ],
     "filterType": "GMSound",
     "folderName": "bk",
