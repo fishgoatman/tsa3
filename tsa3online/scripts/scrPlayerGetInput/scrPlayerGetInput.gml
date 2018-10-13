@@ -51,7 +51,6 @@ if (thisInControl[thisNumber]) {
 					}
 		
 					durationHeld[i]++;
-					show_debug_message("a")
 				} else {
 					durationHeld[i] = 0;
 					heldBefore[i] = false;

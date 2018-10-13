@@ -15,7 +15,7 @@ if (dy <= 0) {
 }
 
 while (abs(yDisp) < abs(dy) && abs(xDisp) < abs(dx) && !place_meeting(tryX + tempDx, tryY - tempDy, collideObj)) {
-	if (abs(yDisp - dy) >= tempDy) {
+	if (abs(yDisp - dy) >= abs(tempDy)) {
 		tryY -= tempDy
 		yDisp -= tempDy
 	} else {
@@ -23,7 +23,7 @@ while (abs(yDisp) < abs(dy) && abs(xDisp) < abs(dx) && !place_meeting(tryX + tem
 		yDisp = dy
 	}
 	
-	if (abs(xDisp - dx) >= tempDx) {
+	if (abs(xDisp - dx) >= abs(tempDx)) {
 		tryX += tempDx
 		xDisp += tempDx
 	} else {
@@ -33,7 +33,7 @@ while (abs(yDisp) < abs(dy) && abs(xDisp) < abs(dx) && !place_meeting(tryX + tem
 }
 
 while (abs(yDisp) < abs(dy) && !place_meeting(tryX, tryY - tempDy, collideObj)) {
-    if (abs(yDisp - dy) >= tempDy) {
+    if (abs(yDisp - dy) >= abs(tempDy)) {
 		tryY -= tempDy
 		yDisp -= tempDy
 	} else {
@@ -43,7 +43,7 @@ while (abs(yDisp) < abs(dy) && !place_meeting(tryX, tryY - tempDy, collideObj)) 
 }
 
 while (abs(xDisp) < abs(dx) && !place_meeting(tryX + tempDx, tryY, collideObj)) {
-    if (abs(xDisp - dx) >= tempDx) {
+    if (abs(xDisp - dx) >= abs(tempDx)) {
 		tryX += tempDx
 		xDisp += tempDx
 	} else {

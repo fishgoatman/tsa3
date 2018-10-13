@@ -1,14 +1,14 @@
 {
-    "id": "7c491f2a-5db4-4603-97f0-2e5246a86e99",
+    "id": "8ca79c4a-7b9f-4a95-9569-19fa3efb6dac",
     "modelName": "GMObject",
     "mvc": "1.0",
-    "name": "objRightControls",
+    "name": "objExitButton",
     "eventList": [
         
     ],
     "maskSpriteId": "00000000-0000-0000-0000-000000000000",
     "overriddenProperties": null,
-    "parentObjectId": "c3db8197-55b5-4d9b-80fd-770bc70bcbe3",
+    "parentObjectId": "b507e77b-20ba-4b70-a6a8-0580104d8601",
     "persistent": false,
     "physicsAngularDamping": 0.1,
     "physicsDensity": 0.5,
@@ -24,6 +24,6 @@
     "physicsStartAwake": true,
     "properties": null,
     "solid": false,
-    "spriteId": "0e664969-f247-4c39-bd3a-9d82c0349422",
+    "spriteId": "cb2352b5-1dbb-442f-a855-5da43c79bbe4",
     "visible": true
 }

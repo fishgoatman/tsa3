@@ -26,7 +26,7 @@
     "option_mac_team_id": "JPY43WAU3K",
     "option_mac_texture_page": "2048x2048",
     "option_mac_version": {
-        "build": 0,
+        "build": 1,
         "major": 1,
         "minor": 0,
         "revision": 0
