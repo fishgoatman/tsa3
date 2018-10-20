@@ -104,6 +104,19 @@ if (ceilinged) {
 	}
 }
 
+//downing
+if (!grounded) {
+	if (durationHeld[DOWN] > 0 && !heldBefore[DOWN]) {
+		if (instance_exists(jumpMoveMod)) {
+			jumpMoveMod.duration = 0
+			
+			if (instance_exists(gravMoveMod)) {
+				gravMoveMod.dy = 0
+			}
+		}
+	}
+}
+
 //slow from abilities
 for (var i = 0; i < numAbilities; i++) {
 	if (aState == abilityKey[i]) {

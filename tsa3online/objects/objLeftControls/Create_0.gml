@@ -1,5 +1,21 @@
 ///@desc creation stuff
 time = 0
-
+waitTime = 5 * room_speed
+keys[0] = ord("R")
+keys[1] = ord("D")
+keys[2] = ord("F")
+keys[3] = ord("G")
+keys[4] = ord("1")
+keys[5] = ord("2")
+keys[6] = ord("3")
+keys[7] = ord("4")
+keys2[0] = vk_up
+keys2[1] = vk_left
+keys2[2] = vk_down
+keys2[3] = vk_right
+keys2[4] = ord("M")
+keys2[5] = 188
+keys2[6] = 190
+keys2[7] = 191
 image_speed = 0
 image_index = 0

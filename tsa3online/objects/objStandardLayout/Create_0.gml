@@ -26,12 +26,16 @@ if (room == rmForest) {
 	bkObj = objTundraBk
 } else if (room == rmDesert) {
 	bkObj = objDesertBk
+} else if (room == rmBlack) {
+	bkObj = noone
 }
 
 var size = 50
 
 for (var yy = 0; yy < room_width; yy += size) {
 	for (var xx = 0; xx < room_width; xx += size) {
-		instance_create_depth(xx, yy, 5, bkObj)
+		if (bkObj != noone) {
+			instance_create_depth(xx, yy, 5, bkObj)
+		}
 	}
 }

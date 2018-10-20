@@ -55,7 +55,7 @@ uiDepth = 2
 /// @DnDAction : YoYo Games.Common.Execute_Code
 /// @DnDVersion : 1
 /// @DnDHash : 5B11FB31
-/// @DnDArgument : "code" "///@desc necessary vars$(13_10)currRoom = "start";$(13_10)targetRoom = "start";$(13_10)currTime = 0$(13_10)startOffline = false;$(13_10)startOnline = false;$(13_10)createStuff = true$(13_10)soundVolume = 1$(13_10)musicVolume = 1$(13_10)globalvar thisInControl, playerMode$(13_10)$(13_10)for (var i = 0; i < numPlayers; i++) {$(13_10)	thisInControl[i] = false;$(13_10)}"
+/// @DnDArgument : "code" "///@desc necessary vars$(13_10)currRoom = "start";$(13_10)targetRoom = "start";$(13_10)currTime = 0$(13_10)startOffline = false;$(13_10)startOnline = false;$(13_10)createStuff = true$(13_10)soundVolume = 1$(13_10)musicVolume = 1$(13_10)lobbyMusic = sndGymno1$(13_10)bkMusic = sndEnergy$(13_10)globalvar thisInControl, playerMode$(13_10)$(13_10)for (var i = 0; i < numPlayers; i++) {$(13_10)	thisInControl[i] = false;$(13_10)}"
 ///@desc necessary vars
 currRoom = "start";
 targetRoom = "start";
@@ -65,6 +65,8 @@ startOnline = false;
 createStuff = true
 soundVolume = 1
 musicVolume = 1
+lobbyMusic = sndGymno1
+bkMusic = sndEnergy
 globalvar thisInControl, playerMode
 
 for (var i = 0; i < numPlayers; i++) {

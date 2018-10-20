@@ -4,11 +4,30 @@
     "mvc": "1.0",
     "name": "objRightControls",
     "eventList": [
-        
+        {
+            "id": "953276f0-fa6c-4899-8c56-2a5c31c631a4",
+            "modelName": "GMEvent",
+            "mvc": "1.0",
+            "IsDnD": false,
+            "collisionObjectId": "00000000-0000-0000-0000-000000000000",
+            "enumb": 0,
+            "eventtype": 0,
+            "m_owner": "7c491f2a-5db4-4603-97f0-2e5246a86e99"
+        },
+        {
+            "id": "0ee1b2b3-0419-47fc-8a49-da267ce3bd91",
+            "modelName": "GMEvent",
+            "mvc": "1.0",
+            "IsDnD": false,
+            "collisionObjectId": "00000000-0000-0000-0000-000000000000",
+            "enumb": 0,
+            "eventtype": 3,
+            "m_owner": "7c491f2a-5db4-4603-97f0-2e5246a86e99"
+        }
     ],
     "maskSpriteId": "00000000-0000-0000-0000-000000000000",
     "overriddenProperties": null,
-    "parentObjectId": "c3db8197-55b5-4d9b-80fd-770bc70bcbe3",
+    "parentObjectId": "00000000-0000-0000-0000-000000000000",
     "persistent": false,
     "physicsAngularDamping": 0.1,
     "physicsDensity": 0.5,

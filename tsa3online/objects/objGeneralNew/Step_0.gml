@@ -37,7 +37,7 @@ if (mouse_x > room_width - (exitButtonOffset + 50) && mouse_y < exitButtonOffset
 	}
 }
 
-if (mouse_check_button_pressed(mb_left) && exitHover) {
+if (mouse_check_button_pressed(mb_left) && exitHover && room != rmStartScreen) {
 	game_end()
 } else {
 	if (room == rmStartScreen) {
@@ -400,6 +400,11 @@ if (mouse_check_button_pressed(mb_left) && exitHover) {
 				instance_create_depth(room_width - (exitButtonOffset + 40), exitButtonOffset, 0, objExitButton)
 				mapLockedIn = false
 				createStuff = false
+			}
+			
+			if (keyboard_check_pressed(ord("5"))) {
+				mapLockedIn = true
+				selectedMap = rmBlack
 			}
 	
 			if (mapLockedIn) {
