@@ -16,15 +16,24 @@ if (preciseX < otherHeroId.preciseX - buffer) {
 	dir = RIGHT
 } else if (preciseX > otherHeroId.preciseX + buffer) {
 	dir = LEFT
+} else {
+	dir = -1
 }
 	
-durationHeld[dir] = 1
-heldBefore[dir] = false
+if (dir != -1) {
+	durationHeld[dir] = 1
+	heldBefore[dir] = false
+}
 
 if (otherHeroId.preciseY < preciseY) {
 	if (random(100) < 10) {
 		durationHeld[UP] = 1
 		heldBefore[UP] = false
+	}
+	
+	if (aiTime % 2 == 0) {
+		durationHeld[THREE] = 1
+		heldBefore[THREE] = false
 	}
 } else {
 	if (random(100) < 2) {
