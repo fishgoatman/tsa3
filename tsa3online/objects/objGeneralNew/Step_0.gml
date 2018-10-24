@@ -258,9 +258,25 @@ if (mouse_check_button_pressed(mb_left) && exitHover && room != rmStartScreen) {
 		
 			audio_group_set_gain(soundEffects, soundVolume, 0)
 			audio_group_set_gain(backgroundMusic, musicVolume, 0)
+			
+			if (keyboard_check_pressed(ord("5"))) {
+				targetRoom = "controls"
+			}
 		}
 	
 		currRoom = "options"
+	} else if (room == rmControls) {
+		if (backPressed) {
+			targetRoom = "options"
+		} else {
+			if (createStuff) {
+				instance_create_depth(backButtonOffset, backButtonOffset, 0, objBackButton)
+				instance_create_depth(room_width - (exitButtonOffset + 40), exitButtonOffset, 0, objExitButton)
+				createStuff = false
+			}
+		}
+		
+		currRoom = "controls"
 	} else if (room == rmHelp) {
 		if (backPressed) {
 			targetRoom = "mainMenu"
@@ -435,7 +451,7 @@ if (mouse_check_button_pressed(mb_left) && exitHover && room != rmStartScreen) {
 						lockedIn[i] = false
 					}
 				} else {
-					selectedHero[1] = "mage"
+					selectedHero[1] = "monk"
 					playerHandlerObj[1] = instance_create_depth(0, 0, -1, objPlayerHandler)
 					playerHandlerObj[0] = instance_create_depth(0, 0, 0, objPlayerHandler)
 				}
@@ -498,6 +514,8 @@ if (mouse_check_button_pressed(mb_left) && exitHover && room != rmStartScreen) {
 				room_goto(rmOPCharacterSelect)
 			} else if (targetRoom == "options") {
 				room_goto(rmOptions)
+			} else if (targetRoom == "controls") {
+				room_goto(rmControls)
 			} else if (targetRoom == "help") {
 				room_goto(rmHelp)
 			} else if (targetRoom == "mageHelp") {

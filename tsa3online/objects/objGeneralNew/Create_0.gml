@@ -55,7 +55,7 @@ uiDepth = 2
 /// @DnDAction : YoYo Games.Common.Execute_Code
 /// @DnDVersion : 1
 /// @DnDHash : 5B11FB31
-/// @DnDArgument : "code" "///@desc necessary vars$(13_10)currRoom = "start";$(13_10)targetRoom = "start";$(13_10)currTime = 0$(13_10)startOffline = false;$(13_10)startOnline = false;$(13_10)createStuff = true$(13_10)soundVolume = 1$(13_10)musicVolume = 1$(13_10)lobbyMusic = sndGymno1$(13_10)bkMusic = sndEnergy$(13_10)globalvar thisInControl, playerMode$(13_10)$(13_10)for (var i = 0; i < numPlayers; i++) {$(13_10)	thisInControl[i] = false;$(13_10)}"
+/// @DnDArgument : "code" "///@desc necessary vars$(13_10)currRoom = "start";$(13_10)targetRoom = "start";$(13_10)currTime = 0$(13_10)startOffline = false;$(13_10)startOnline = false;$(13_10)createStuff = true$(13_10)soundVolume = 1$(13_10)musicVolume = 1$(13_10)lobbyMusic = sndGymno1$(13_10)bkMusic = sndEnergy$(13_10)globalvar thisInControl, playerMode, leftControls, rightControls, numKeys;$(13_10)$(13_10)leftControls[0] = ord("R")$(13_10)leftControls[1] = ord("D")$(13_10)leftControls[2] = ord("F")$(13_10)leftControls[3] = ord("G")$(13_10)leftControls[4] = ord("1")$(13_10)leftControls[5] = ord("2")$(13_10)leftControls[6] = ord("3")$(13_10)leftControls[7] = ord("4")$(13_10)rightControls[0] = vk_up$(13_10)rightControls[1] = vk_left$(13_10)rightControls[2] = vk_down$(13_10)rightControls[3] = vk_right$(13_10)rightControls[4] = ord("M")$(13_10)rightControls[5] = 188$(13_10)rightControls[6] = 190$(13_10)rightControls[7] = 191$(13_10)numKeys = 8$(13_10)$(13_10)for (var i = 0; i < numPlayers; i++) {$(13_10)	thisInControl[i] = false;$(13_10)}"
 ///@desc necessary vars
 currRoom = "start";
 targetRoom = "start";
@@ -67,7 +67,25 @@ soundVolume = 1
 musicVolume = 1
 lobbyMusic = sndGymno1
 bkMusic = sndEnergy
-globalvar thisInControl, playerMode
+globalvar thisInControl, playerMode, leftControls, rightControls, numKeys;
+
+leftControls[0] = ord("R")
+leftControls[1] = ord("D")
+leftControls[2] = ord("F")
+leftControls[3] = ord("G")
+leftControls[4] = ord("1")
+leftControls[5] = ord("2")
+leftControls[6] = ord("3")
+leftControls[7] = ord("4")
+rightControls[0] = vk_up
+rightControls[1] = vk_left
+rightControls[2] = vk_down
+rightControls[3] = vk_right
+rightControls[4] = ord("M")
+rightControls[5] = 188
+rightControls[6] = 190
+rightControls[7] = 191
+numKeys = 8
 
 for (var i = 0; i < numPlayers; i++) {
 	thisInControl[i] = false;

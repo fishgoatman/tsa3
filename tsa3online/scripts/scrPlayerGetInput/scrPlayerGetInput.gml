@@ -3,16 +3,16 @@ if (thisInControl[thisNumber]) {
 	var arrayToUse;
 
 	if (thisNumber == 0) {
-		arrayToUse = leftKeyOrder;
+		arrayToUse = leftControls;
 	} else if (thisNumber == 1) {
-		arrayToUse = rightKeyOrder;
+		arrayToUse = rightControls;
 	}
 
 	for (var i = 0; i < numKeys; i++) {
 		if (thisNumber == 0 || rightControlMode == "keyboard" || i >= 4 || room == rmCharacterSelect) {
 			if (false) {
 				if (thisNumber == 0) {
-					if (keyboard_check(leftKeyOrder[i]) || keyboard_check(rightKeyOrder[i])) {
+					if (keyboard_check(leftControls[i]) || keyboard_check(rightControls[i])) {
 						if (durationHeld[i] > 0) {
 							heldBefore[i] = true;
 						}
@@ -33,7 +33,7 @@ if (thisInControl[thisNumber]) {
 						tempI = i
 					}
 					
-					if (keyboard_check(leftKeyOrder[i]) || keyboard_check(rightKeyOrder[i])) {
+					if (keyboard_check(leftControls[i]) || keyboard_check(rightControls[i])) {
 						if (durationHeld[tempI] > 0) {
 							heldBefore[tempI] = true;
 						}
@@ -56,7 +56,7 @@ if (thisInControl[thisNumber]) {
 					heldBefore[i] = false;
 				}
 			} else if (playerMode == "one") {
-				if (keyboard_check(leftKeyOrder[i]) || keyboard_check(rightKeyOrder[i])) {
+				if (keyboard_check(leftControls[i]) || keyboard_check(rightControls[i])) {
 					if (durationHeld[i] > 0) {
 						heldBefore[i] = true;
 					}
