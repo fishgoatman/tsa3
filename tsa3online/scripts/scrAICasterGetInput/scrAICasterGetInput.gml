@@ -10,11 +10,11 @@ for (var i = 0; i < numKeys; i++) {
 	heldBefore[i] = false;
 }
 
-if (abs(preciseX - otherHeroId.preciseX) < 50 && abs(preciseY - otherHeroId.preciseY) < 80 && cooldownTimer[2] == 0 && aState != "3") {
+/*if (abs(preciseX - otherHeroId.preciseX) < 50 && abs(preciseY - otherHeroId.preciseY) < 80 && cooldownTimer[2] == 0 && aState != "3") {
 	image_xscale = -image_xscale
 	durationHeld[THREE] = 1
 	heldBefore[THREE] = false
-} else {
+} else {*/
 	if (otherHeroId.preciseY < preciseY) {
 		if (random(100) < 8) {
 			durationHeld[UP] = 1
@@ -26,20 +26,43 @@ if (abs(preciseX - otherHeroId.preciseX) < 50 && abs(preciseY - otherHeroId.prec
 			heldBefore[UP] = false
 		}
 	}
-
-	if (abs(preciseY - otherHeroId.preciseY) < 30 && random(1) < 0.3) {
-		durationHeld[ONE] = 1
-		heldBefore[ONE] = false
+	
+	if (cooldownTimer[0] == 0 && abs(preciseY - otherHeroId.preciseY) < 30) {
+		if (aiTime % 2 == 0) {
+			durationHeld[ONE] = 1
+			heldBefore[ONE] = false
+		}
 	}
-
-	if (random(100) < 5) {
-		durationHeld[TWO] = 1
-		heldBefore[TWO] = false
+	
+	if (instance_exists(lobId)) {
+		if (abs(lobId.preciseX - otherHeroId.preciseX) < 40 && (otherHeroId.preciseY - lobId.preciseY > 40 || lobId.preciseY > otherHeroId.preciseY)) {
+			if (aiTime % 2 == 0) {
+				durationHeld[TWO] = 1
+				heldBefore[TWO] = false
+			}
+		}
+	} else if (cooldownTimer[1] == 0 && aState != "2") {
+		if (aiTime % 2 == 0) {
+			durationHeld[TWO] = 1
+			heldBefore[TWO] = false
+		}
 	}
-
-	if (random(100) < 5) {
-		durationHeld[FOUR] = 1
-		heldBefore[FOUR] = false
+	
+	if (instance_exists(ballId)) {
+		var distance = point_distance(ballId.preciseX, ballId.preciseY, otherHeroId.preciseX, otherHeroId.preciseY)
+		var explodeDist = 100
+		
+		if (distance < explodeDist || distance > explodeDist && abs(ballId.preciseX - otherHeroId.preciseX) < 80) {
+			if (aiTime % 2 == 0) {
+				durationHeld[FOUR] = 1
+				heldBefore[FOUR] = false
+			}
+		}
+	} else if (cooldownTimer[3] == 0 && aState != "4") {
+		if (aiTime % 2 == 0) {
+			durationHeld[FOUR] = 1
+			heldBefore[FOUR] = false
+		}
 	}
 	
 	if (abs(preciseX - targetX) < 20) {
@@ -60,4 +83,10 @@ if (abs(preciseX - otherHeroId.preciseX) < 50 && abs(preciseY - otherHeroId.prec
 	
 	durationHeld[dir] = 1;
 	heldBefore[dir] = false;
+//}
+
+aiTime++
+
+if (aiTime > 100000) {
+	aiTime = 0
 }

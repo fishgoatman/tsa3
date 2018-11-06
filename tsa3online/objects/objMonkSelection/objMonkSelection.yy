@@ -4,7 +4,16 @@
     "mvc": "1.0",
     "name": "objMonkSelection",
     "eventList": [
-        
+        {
+            "id": "eecc2929-b251-490c-8594-a1d4b1c38dcf",
+            "modelName": "GMEvent",
+            "mvc": "1.0",
+            "IsDnD": false,
+            "collisionObjectId": "00000000-0000-0000-0000-000000000000",
+            "enumb": 0,
+            "eventtype": 0,
+            "m_owner": "648a817b-7c2e-42bd-913c-6c00fd05776b"
+        }
     ],
     "maskSpriteId": "00000000-0000-0000-0000-000000000000",
     "overriddenProperties": null,

@@ -202,11 +202,62 @@ if (mouse_check_button_pressed(mb_left) && exitHover && room != rmStartScreen) {
 			}
 	
 			if (lockedIn[0]) {
-				targetRoom = "mapSelect"
+				targetRoom = "aiCharacterSelect"
 			}
 		}
 	
 		currRoom = "opCharacterSelect"
+	} else if (room == rmAICharacterSelect) {
+		if (backPressed) {
+			targetRoom = "opCharacterSelect"
+		} else {
+			if (createStuff) {
+				instance_create_depth(objMageSelection.x, objMageSelection.y, 1, objCharacterSelector)
+				instance_create_depth(backButtonOffset, backButtonOffset, 0, objBackButton)
+				instance_create_depth(room_width - (exitButtonOffset + 40), exitButtonOffset, 0, objExitButton)
+				lockedIn[1] = false
+				playerMode = "one"
+				createStuff = false
+			}
+	
+			if (lockedIn[1]) {
+				targetRoom = "mapSelect"
+			}
+		}
+	
+		currRoom = "aiCharacterSelect"
+	} else if (room == rmMapSelect) {
+		if (backPressed) {
+			if (playerMode == "one") {
+				targetRoom = "aiCharacterSelect"
+			} else if (playerMode == "two") {
+				targetRoom = "characterSelect"
+			}
+		} else {
+			if (createStuff) {
+				instance_create_depth(objDesertSelection.x, objDesertSelection.y, 0, objMapSelector)
+				instance_create_depth(backButtonOffset, backButtonOffset, 0, objBackButton)
+				instance_create_depth(room_width - (exitButtonOffset + 40), exitButtonOffset, 0, objExitButton)
+				mapLockedIn = false
+				createStuff = false
+			}
+			
+			if (keyboard_check_pressed(ord("5"))) {
+				mapLockedIn = true
+				selectedMap = rmBlack
+			}
+	
+			if (mapLockedIn) {
+				targetRoom = "game"
+			}
+	
+			if (auto) {
+				selectedMap = scrRandomArena()
+				targetRoom = "game"
+			}
+		}
+	
+		currRoom = "mapSelect"
 	} else if (room == rmOptions) {
 		if (backPressed) {
 			targetRoom = "mainMenu"
@@ -260,7 +311,7 @@ if (mouse_check_button_pressed(mb_left) && exitHover && room != rmStartScreen) {
 			audio_group_set_gain(backgroundMusic, musicVolume, 0)
 			
 			if (keyboard_check_pressed(ord("5"))) {
-				targetRoom = "controls"
+				//targetRoom = "controls"
 			}
 		}
 	
@@ -402,38 +453,6 @@ if (mouse_check_button_pressed(mb_left) && exitHover && room != rmStartScreen) {
 		}
 	
 		currRoom = "monkHelp"
-	} else if (room == rmMapSelect) {
-		if (backPressed) {
-			if (playerMode == "one") {
-				targetRoom = "opCharacterSelect"
-			} else if (playerMode == "two") {
-				targetRoom = "characterSelect"
-			}
-		} else {
-			if (createStuff) {
-				instance_create_depth(objDesertSelection.x, objDesertSelection.y, 0, objMapSelector)
-				instance_create_depth(backButtonOffset, backButtonOffset, 0, objBackButton)
-				instance_create_depth(room_width - (exitButtonOffset + 40), exitButtonOffset, 0, objExitButton)
-				mapLockedIn = false
-				createStuff = false
-			}
-			
-			if (keyboard_check_pressed(ord("5"))) {
-				mapLockedIn = true
-				selectedMap = rmBlack
-			}
-	
-			if (mapLockedIn) {
-				targetRoom = "game"
-			}
-	
-			if (auto) {
-				selectedMap = scrRandomArena()
-				targetRoom = "game"
-			}
-		}
-	
-		currRoom = "mapSelect"
 	} else if (scrInArena()) {
 		if (backPressed) {
 			if (playerMode == "one") {
@@ -451,7 +470,6 @@ if (mouse_check_button_pressed(mb_left) && exitHover && room != rmStartScreen) {
 						lockedIn[i] = false
 					}
 				} else {
-					selectedHero[1] = "monk"
 					playerHandlerObj[1] = instance_create_depth(0, 0, -1, objPlayerHandler)
 					playerHandlerObj[0] = instance_create_depth(0, 0, 0, objPlayerHandler)
 				}
@@ -510,6 +528,8 @@ if (mouse_check_button_pressed(mb_left) && exitHover && room != rmStartScreen) {
 				room_goto(selectedMap)
 			} else if (targetRoom == "characterSelect") {
 				room_goto(rmCharacterSelect)
+			} else if (targetRoom == "aiCharacterSelect") {
+				room_goto(rmAICharacterSelect)
 			} else if (targetRoom == "opCharacterSelect") {
 				room_goto(rmOPCharacterSelect)
 			} else if (targetRoom == "options") {
