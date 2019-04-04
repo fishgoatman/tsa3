@@ -14,3 +14,5 @@ image_index = image_number - 1;
 image_speed = 0;
 instance_create_depth(x, y, id, objFlashKickVisual);
 hitSound = sndKickHit
+lastTime = current_time
+iTime = current_time

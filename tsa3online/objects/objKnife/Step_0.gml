@@ -1,4 +1,4 @@
 ///@desc move
-scrDestructiveProjectileMove()
+scrDestructiveProjectileMoveOld()
 currTime++
 scrDestroyIfOOB()

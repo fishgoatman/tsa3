@@ -14,3 +14,6 @@ preciseY = y;
 if (image_angle > 90 && image_angle < 270) {
 	image_yscale = -1;
 }
+
+lastTime = current_time
+iTime = current_time

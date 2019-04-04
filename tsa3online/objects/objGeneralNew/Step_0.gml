@@ -1,4 +1,15 @@
 ///@desc handle game rooms
+/*currEpochSec = floor(date_second_span(date_create_datetime(1970,1,1,0,0,0),date_current_datetime()))
+
+if (currEpochSec != lastEpochSec) {
+	secStartMill = current_time
+}
+
+currEpochMill = currEpochSec * 1000 + current_time - secStartMill
+
+show_debug_message(currEpochMill)
+lastEpochSec = currEpochSec*/
+
 if (keyboard_check_pressed(ord("8"))) {
 	//urf = !urf
 }
@@ -130,7 +141,7 @@ if (mouse_check_button_pressed(mb_left) && exitHover && room != rmStartScreen) {
 				var height = floor(room_height / 3)
 			
 				if (mouse_y < height) {
-					targetRoom = "opCharacterSelect"
+					targetRoom = "onePlayerMenu"
 				} else if (mouse_y < height * 2) {
 					targetRoom = "options"
 				} else {
@@ -188,9 +199,29 @@ if (mouse_check_button_pressed(mb_left) && exitHover && room != rmStartScreen) {
 		}
 	
 		currRoom = "characterSelect"
-	} else if (room == rmOPCharacterSelect) {
+	} else if (room == rmOnePlayerMenu) {
+		if (createStuff) {
+			createStuff = false
+		}
+		
 		if (backPressed) {
 			targetRoom = "mainMenu"
+		} else {
+			if (mouse_check_button_pressed(mb_left)) {
+				if (mouse_y < room_height / 2) {
+					onePlayerRoom = "aiCharacterSelect"
+				} else {
+					onePlayerRoom = "challengerCharacterSelect"
+				}
+				
+				targetRoom = "opCharacterSelect"
+			}
+		}
+		
+		currRoom = "onePlayerMenu"
+	} else if (room == rmOPCharacterSelect) {
+		if (backPressed) {
+			targetRoom = "onePlayerMenu"
 		} else {
 			if (createStuff) {
 				instance_create_depth(objMageSelection.x, objMageSelection.y, 0, objCharacterSelector)
@@ -200,9 +231,14 @@ if (mouse_check_button_pressed(mb_left) && exitHover && room != rmStartScreen) {
 				playerMode = "one"
 				createStuff = false
 			}
+			
+			if (keyboard_check_pressed(ord("5"))) {
+				lockedIn[0] = true
+				selectedHero[0] = "monkMage"
+			}
 	
 			if (lockedIn[0]) {
-				targetRoom = "aiCharacterSelect"
+				targetRoom = onePlayerRoom
 			}
 		}
 	
@@ -216,16 +252,53 @@ if (mouse_check_button_pressed(mb_left) && exitHover && room != rmStartScreen) {
 				instance_create_depth(backButtonOffset, backButtonOffset, 0, objBackButton)
 				instance_create_depth(room_width - (exitButtonOffset + 40), exitButtonOffset, 0, objExitButton)
 				lockedIn[1] = false
-				playerMode = "one"
+				aiHalfCooldown = false
 				createStuff = false
 			}
-	
+			
+			if (keyboard_check_pressed(ord("5"))) {
+				lockedIn[1] = true
+				selectedHero[1] = "monkMage"
+			}
+			
+			if (keyboard_check_pressed(ord("6"))) {
+				aiHalfCooldown = true
+			}
+			
 			if (lockedIn[1]) {
 				targetRoom = "mapSelect"
 			}
 		}
 	
 		currRoom = "aiCharacterSelect"
+	} else if (room == rmChallengerCharacterSelect) {
+		if (backPressed) {
+			targetRoom = "opCharacterSelect"
+		} else {
+			if (createStuff) {
+				instance_create_depth(objMageSelection.x, objMageSelection.y, 1, objCharacterSelector)
+				instance_create_depth(backButtonOffset, backButtonOffset, 0, objBackButton)
+				instance_create_depth(room_width - (exitButtonOffset + 40), exitButtonOffset, 0, objExitButton)
+				lockedIn[1] = false
+				aiHalfCooldown = false
+				createStuff = false
+			}
+			
+			if (keyboard_check_pressed(ord("5"))) {
+				lockedIn[1] = true
+				selectedHero[1] = "monkMage"
+			}
+			
+			if (keyboard_check_pressed(ord("6"))) {
+				aiHalfCooldown = true
+			}
+			
+			if (lockedIn[1]) {
+				targetRoom = "mapSelect"
+			}
+		}
+	
+		currRoom = "challengerCharacterSelect"
 	} else if (room == rmMapSelect) {
 		if (backPressed) {
 			if (playerMode == "one") {
@@ -528,10 +601,14 @@ if (mouse_check_button_pressed(mb_left) && exitHover && room != rmStartScreen) {
 				room_goto(selectedMap)
 			} else if (targetRoom == "characterSelect") {
 				room_goto(rmCharacterSelect)
-			} else if (targetRoom == "aiCharacterSelect") {
-				room_goto(rmAICharacterSelect)
+			} else if (targetRoom == "onePlayerMenu") {
+				room_goto(rmOnePlayerMenu)
 			} else if (targetRoom == "opCharacterSelect") {
 				room_goto(rmOPCharacterSelect)
+			} else if (targetRoom == "aiCharacterSelect") {
+				room_goto(rmAICharacterSelect)
+			} else if (targetRoom == "challengerCharacterSelect") {
+				room_goto(rmChallengerCharacterSelect)
 			} else if (targetRoom == "options") {
 				room_goto(rmOptions)
 			} else if (targetRoom == "controls") {

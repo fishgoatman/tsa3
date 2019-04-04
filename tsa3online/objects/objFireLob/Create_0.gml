@@ -12,4 +12,6 @@ dy = diffY / hyp * myHeroId.lobSpd;
 grav = myHeroId.lobGrav;
 preciseX = x;
 preciseY = y;
-hitbox = objFireLobHitbox;
+hitbox = objFireLobHitbox
+lastTime = current_time
+iTime = current_time

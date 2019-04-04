@@ -24,10 +24,12 @@ if (thisInControl[thisNumber]) {
 		heroObj = objCasterTP;
 	} else if (heroString == "rogue") {
 		heroObj = objRogueTP;
-	} else if (heroString == "warlord") {
-		heroObj = objWarlordTP;
 	} else if (heroString == "monk") {
 		heroObj = objMonkTP;
+	} else if (heroString = "monkMage") {
+		heroObj = objMonkMage
+	} else if (heroString == "warlord") {
+		heroObj = objWarlordTP;
 	} else if (heroString == "bot") {
 		heroObj = objBot;
 	}
@@ -109,10 +111,12 @@ if (heroString != "bot" && thisInControl[thisNumber]) {
 		cooldownObj = objCasterCooldown;
 	} else if (heroString == "rogue") {
 		cooldownObj = objRogueCooldown;
-	} else if (heroString == "warlord") {
-		cooldownObj = objWarlordCooldown;
 	} else if (heroString == "monk") {
 		cooldownObj = objMonkCooldown;
+	} else if (heroString == "monkMage") {
+		cooldownObj = objShamanCooldown
+	} else if (heroString == "warlord") {
+		cooldownObj = objWarlordCooldown;
 	}
 
 	for (var i = 0; i < cooldownNum; i++) {

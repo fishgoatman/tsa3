@@ -9,4 +9,6 @@ preciseX = x;
 preciseY = y;
 hitbox = objFireShotHitbox;
 currTime = 0;
-time = myHeroId.blastTime;
+time = myHeroId.blastTime
+lastTime = current_time
+iTime = current_time

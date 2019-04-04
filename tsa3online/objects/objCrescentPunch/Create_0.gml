@@ -21,4 +21,6 @@ currTime = 0;
 visualTime = 0;
 createdAlready = false;
 changedDirection = false;
-visualFreq = 5;
+visualFreq = 5
+lastTime = current_time
+iTime = current_time
