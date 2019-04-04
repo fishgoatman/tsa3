@@ -1,72 +1,48 @@
 ///@desc move
-dy -= grav;
-/// @description scrMove
-var tryX = preciseX;
-var tryY = preciseY;
-var yDisp = 0;
-var xDisp = 0;
-var hyp = sqrt(dx * dx + dy * dy);
-var tempDx = dx / hyp;
-var tempDy = dy / hyp;
-var createdAlready = false;
-var hitBlock = false;
+scrDestructiveProjectileMove()
+/*var tInterval = 1
+var hit = false
+var groundHit = false
+var tryX
+var tryY
+targetTime = current_time
 
-while (abs(yDisp) < abs(dy) && !place_meeting(tryX, tryY - tempDy, objBlock)) {
-    tryY -= tempDy;
-    yDisp -= tempDy;
-	var collidingId = instance_place(tryX, tryY, objPlayer);
+for (var t = lastTime; t < targetTime; t += tInterval) {
+	var seconds = (t - iTime) / 1000
+	tryX = ix + dx * seconds + ddx * power(seconds, 2)
+	tryY = iy - dy * seconds - ddy * power(seconds, 2)
 	
-	if (collidingId != noone && !createdAlready && collidingId.thisNumber != thisNumber) {
-		instance_create_depth(tryX, tryY, id, hitbox);
-		createdAlready = true;
-		break;
-	}
-}
-
-while (abs(xDisp) < abs(dx) && !place_meeting(tryX + tempDx, tryY, objBlock)) {
-    tryX += tempDx;
-    xDisp += tempDx;
-	var collidingId = instance_place(tryX, tryY, objPlayer);
-	
-	if (collidingId != noone && !createdAlready && collidingId.thisNumber != thisNumber) {
-		instance_create_depth(tryX, tryY, id, hitbox);
-		createdAlready = true;
-		break;
-	}
-}
-
-if (abs(xDisp) < abs(dx) || abs(yDisp) < abs(dy)) {
-	if (!createdAlready) {
-		instance_create_depth(tryX, tryY, id, hitbox);
-		createdAlready = true;
-		hitBlock = true;
-	}
-}
-
-preciseX = tryX;
-preciseY = tryY;
-x = scrRound(preciseX);
-y = scrRound(preciseY);
-
-if (createdAlready) {
-	if (hitBlock) {
-		for (i = 0; i < smallLobNumber; i++) {
-			instance_create_depth(preciseX, preciseY, id, objSmallIceLob)
-			audio_play_sound(sndIceLobMiss, 1, false)
+	if (place_meeting(tryX, tryY, objPlayer)) {
+		var collidingId = instance_place(tryX, tryY, objPlayer)
+		
+		if (collidingId.thisNumber != thisNumber) {
+			hit = true
+			break
 		}
+	} else if (place_meeting(tryX, tryY, objBlock)) {
+		hit = true
+		groundHit = true
+		break
 	}
-	
-	instance_destroy();
 }
 
-var TWO = myHeroId.TWO;
+preciseX = tryX
+preciseY = tryY
+x = scrRound(preciseX)
+y = scrRound(preciseY)*/
 
-if (!createdAlready && myHeroId.durationHeld[TWO] > 0 && !myHeroId.heldBefore[TWO]) {
+var TWO = myHeroId.TWO
+var twoPressed = instance_exists(myHeroId) && myHeroId.durationHeld[TWO] > 0 && !myHeroId.heldBefore[TWO]
+
+if (groundHit || twoPressed) {
 	for (i = 0; i < smallLobNumber; i++) {
-		instance_create_depth(preciseX, preciseY, id, objSmallIceLob);
+		instance_create_depth(preciseX, preciseY, id, objSmallIceLob)
+		audio_play_sound(sndIceLobMiss, 1, false)
 	}
 	
-	instance_create_depth(tryX, tryY, id, hitbox);
-	audio_play_sound(sndIceDetonate, 1, false)
-	instance_destroy();
+	if (twoPressed) {
+		instance_create_depth(preciseX, preciseY, id, hitbox)
+	}
+	
+	instance_destroy()
 }

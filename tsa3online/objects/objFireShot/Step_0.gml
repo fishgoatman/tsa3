@@ -1,5 +1,5 @@
 ///@description move
-scrDestructiveProjectileMove();
+scrDestructiveProjectileMoveOld()
 var offset = 5;
 
 for (var i = 0; i < random_range(-1, 0.7); i++) {

@@ -1,28 +1,28 @@
 {
-    "id": "0c43e073-4649-44f7-9762-500f88fdfc19",
+    "id": "1878b0f0-e618-4282-999c-d8cf79710bd3",
     "modelName": "GMObject",
     "mvc": "1.0",
     "name": "objBallInertTriangle",
     "eventList": [
         {
-            "id": "54d38d3e-3d73-49e9-aaf9-83e2911ca0e3",
+            "id": "89758a34-eebf-4673-b854-83e5b212bea0",
             "modelName": "GMEvent",
             "mvc": "1.0",
             "IsDnD": false,
             "collisionObjectId": "00000000-0000-0000-0000-000000000000",
             "enumb": 0,
             "eventtype": 3,
-            "m_owner": "0c43e073-4649-44f7-9762-500f88fdfc19"
+            "m_owner": "1878b0f0-e618-4282-999c-d8cf79710bd3"
         },
         {
-            "id": "b3f9ba38-16c2-4071-ace0-6cb65df3c316",
+            "id": "917a056c-739b-470c-be25-0d18cb8454a5",
             "modelName": "GMEvent",
             "mvc": "1.0",
             "IsDnD": false,
             "collisionObjectId": "00000000-0000-0000-0000-000000000000",
             "enumb": 0,
             "eventtype": 0,
-            "m_owner": "0c43e073-4649-44f7-9762-500f88fdfc19"
+            "m_owner": "1878b0f0-e618-4282-999c-d8cf79710bd3"
         }
     ],
     "maskSpriteId": "00000000-0000-0000-0000-000000000000",

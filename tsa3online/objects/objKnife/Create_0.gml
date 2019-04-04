@@ -8,4 +8,6 @@ image_angle = myHeroId.fanCurrAngle;
 hitbox = objKnifeHitbox;
 preciseX = x;
 preciseY = y;
-currTime = 0;
+currTime = 0
+lastTime = current_time
+iTime = current_time

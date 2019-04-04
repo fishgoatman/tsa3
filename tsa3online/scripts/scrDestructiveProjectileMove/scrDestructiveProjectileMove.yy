@@ -1,5 +1,5 @@
 {
-    "id": "2bf2796b-5ba0-495f-b4ee-e0eb32c833d6",
+    "id": "88f6c3cb-cebc-402c-90c6-4d8b8570ad5c",
     "modelName": "GMScript",
     "mvc": "1.0",
     "name": "scrDestructiveProjectileMove",

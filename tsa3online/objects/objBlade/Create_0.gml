@@ -12,4 +12,6 @@ createdAlready = false;
 preciseX = x;
 preciseY = y;
 currTime = 0;
-currDmgTime = 0;
+currDmgTime = 0
+lastTime = current_time
+iTime = current_time

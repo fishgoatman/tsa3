@@ -1,7 +1,7 @@
 /// @DnDAction : YoYo Games.Common.Execute_Code
 /// @DnDVersion : 1
 /// @DnDHash : 5820CA38
-/// @DnDArgument : "code" "///@desc stats$(13_10)if (depth < 0) {$(13_10)	ai = true$(13_10)	depth += 2$(13_10)} else {$(13_10)	ai = false$(13_10)}$(13_10)$(13_10)thisNumber = depth;$(13_10)depth = 0;$(13_10)maxHp = 84;$(13_10)$(13_10)if (thisNumber == 1) {$(13_10)	maxHp *= 1;$(13_10)}$(13_10)$(13_10)moveSpd = 125 / room_speed;$(13_10)jumpPower = 360 / room_speed;$(13_10)grav = 900 / (room_speed * room_speed);$(13_10)currAirJumps = 0;$(13_10)airJumps = 0;$(13_10)bounciness = 0.2;$(13_10)$(13_10)//crescent punch$(13_10)windUp[0] = 0.15 * room_speed;$(13_10)duration[0] = 0.1 * room_speed;$(13_10)windDown[0] = 0.15 * room_speed;$(13_10)slowWindUp[0] = 0.3;$(13_10)slowDuring[0] = 1;$(13_10)slowWindDown[0] = 0.3;$(13_10)cooldown[0] = 2.4 * room_speed;$(13_10)$(13_10)crescentPunchDmg = 9;$(13_10)$(13_10)crescentPunchSpd = 550 / room_speed;$(13_10)crescentPunchTurnTime = 0.2 * room_speed;$(13_10)crescentPunchPostTurnTime = 999;$(13_10)visualTime = 0.3 * room_speed;$(13_10)$(13_10)//flash kick$(13_10)windUp[1] = 0.05 * room_speed;$(13_10)duration[1] = 0.12 * room_speed;$(13_10)windDown[1] = 0.08 * room_speed;$(13_10)slowWindUp[1] = 0.3;$(13_10)slowDuring[1] = 0.3;$(13_10)slowWindDown[1] = 0.3;$(13_10)cooldown[1] = 1.5 * room_speed;$(13_10)$(13_10)flashKickDmg = 11;$(13_10)$(13_10)kickExtendedDuration = duration[1];$(13_10)$(13_10)//dash$(13_10)windUp[2] = 0.05 * room_speed;$(13_10)duration[2] = 0.2 * room_speed;$(13_10)windDown[2] = 0 * room_speed;$(13_10)slowWindUp[2] = 0.5;$(13_10)slowDuring[2] = 0;$(13_10)slowWindDown[2] = 0.5;$(13_10)cooldown[2] = 2.8 * room_speed;$(13_10)$(13_10)var yFactor = 3;$(13_10)dashXSpd = 1150 / room_speed;$(13_10)dashYSpd = dashXSpd / yFactor;$(13_10)dashDXSpd = -100 / room_speed;$(13_10)dashDYSpd = dashDXSpd / yFactor;$(13_10)dashDuration = duration[2];$(13_10)$(13_10)//thousand palms$(13_10)windUp[3] = 0.32 * room_speed;$(13_10)duration[3] = 0.9 * room_speed;$(13_10)windDown[3] = 0.3 * room_speed;$(13_10)slowWindUp[3] = 0;$(13_10)slowDuring[3] = 0;$(13_10)slowWindDown[3] = 0;$(13_10)cooldown[3] = 5.5 * room_speed;$(13_10)$(13_10)palmDmg = 6;$(13_10)$(13_10)palmSpd = 400 / room_speed;$(13_10)palmDuration = 0.35 * room_speed;$(13_10)palmFreq = 0.12 * room_speed;$(13_10)palmDAngle = 140 / room_speed;$(13_10)palmAngleDiff = 6;$(13_10)palmVisualTime = 0.1 * room_speed;$(13_10)$(13_10)if (room == rmMonkHelp) {$(13_10)	for (var i = 0; i < 4; i++) {$(13_10)		cooldown[i] = 1$(13_10)	}$(13_10)	$(13_10)	cooldown[0] = 0.4 * room_speed$(13_10)} else {$(13_10)	if (urf) {$(13_10)		for (var i = 0; i < 4; i++) {$(13_10)			cooldown[i] = 1$(13_10)		}$(13_10)	}$(13_10)}"
+/// @DnDArgument : "code" "///@desc stats$(13_10)if (depth < 0) {$(13_10)	ai = true$(13_10)	depth += 2$(13_10)} else {$(13_10)	ai = false$(13_10)}$(13_10)$(13_10)thisNumber = depth;$(13_10)depth = 0;$(13_10)maxHp = 84;$(13_10)$(13_10)if (thisNumber == 1) {$(13_10)	maxHp *= 1;$(13_10)}$(13_10)$(13_10)moveSpd = 125 / room_speed;$(13_10)jumpPower = 360 / room_speed;$(13_10)grav = 900 / (room_speed * room_speed);$(13_10)currAirJumps = 0;$(13_10)airJumps = 0;$(13_10)bounciness = 0.2;$(13_10)$(13_10)//crescent punch$(13_10)windUp[0] = 0.15 * room_speed;$(13_10)duration[0] = 0.1 * room_speed;$(13_10)windDown[0] = 0.15 * room_speed;$(13_10)slowWindUp[0] = 0.3;$(13_10)slowDuring[0] = 1;$(13_10)slowWindDown[0] = 0.3;$(13_10)cooldown[0] = 2.4 * room_speed;$(13_10)$(13_10)crescentPunchDmg = 9;$(13_10)$(13_10)crescentPunchSpd = 550 / room_speed;$(13_10)crescentPunchTurnTime = 0.2 * room_speed;$(13_10)crescentPunchPostTurnTime = 999;$(13_10)visualTime = 0.3 * room_speed;$(13_10)$(13_10)//flash kick$(13_10)windUp[1] = 0.05 * room_speed;$(13_10)duration[1] = 0.12 * room_speed;$(13_10)windDown[1] = 0.08 * room_speed;$(13_10)slowWindUp[1] = 0.3;$(13_10)slowDuring[1] = 0.3;$(13_10)slowWindDown[1] = 0.3;$(13_10)cooldown[1] = 1.5 * room_speed;$(13_10)$(13_10)flashKickDmg = 11;$(13_10)$(13_10)kickExtendedDuration = duration[1];$(13_10)$(13_10)//dash$(13_10)windUp[2] = 0.05 * room_speed;$(13_10)duration[2] = 0.2 * room_speed;$(13_10)windDown[2] = 0 * room_speed;$(13_10)slowWindUp[2] = 0.5;$(13_10)slowDuring[2] = 0;$(13_10)slowWindDown[2] = 0.5;$(13_10)cooldown[2] = 2.8 * room_speed;$(13_10)$(13_10)var yFactor = 3;$(13_10)dashXSpd = 1150 / room_speed;$(13_10)dashYSpd = dashXSpd / yFactor;$(13_10)dashDXSpd = -100 / room_speed;$(13_10)dashDYSpd = dashDXSpd / yFactor;$(13_10)dashDuration = duration[2];$(13_10)$(13_10)//thousand palms$(13_10)windUp[3] = 0.18 * room_speed //0.32$(13_10)duration[3] = 0.4 * room_speed //0.9$(13_10)windDown[3] = 0.3 * room_speed;$(13_10)slowWindUp[3] = 0;$(13_10)slowDuring[3] = 0;$(13_10)slowWindDown[3] = 0;$(13_10)cooldown[3] = 5.5 * room_speed;$(13_10)$(13_10)palmDmg = 5; //6$(13_10)$(13_10)palmSpd = 400 / room_speed;$(13_10)palmDuration = 0.35 * room_speed;$(13_10)palmFreq = 0.09 * room_speed; //0.12$(13_10)palmDAngle = 160 / room_speed //140$(13_10)palmAngleDiff = 6;$(13_10)palmVisualTime = 0.1 * room_speed;$(13_10)$(13_10)if (room == rmMonkHelp) {$(13_10)	for (var i = 0; i < 4; i++) {$(13_10)		cooldown[i] = 1$(13_10)	}$(13_10)	$(13_10)	cooldown[0] = 0.4 * room_speed$(13_10)} else {$(13_10)	if (urf) {$(13_10)		for (var i = 0; i < 4; i++) {$(13_10)			cooldown[i] = 1$(13_10)		}$(13_10)	}$(13_10)}$(13_10)$(13_10)if (ai && aiHalfCooldown) {$(13_10)	for (var i = 0; i < 4; i++) {$(13_10)		cooldown[i] *= 1 / 2$(13_10)	}$(13_10)}"
 ///@desc stats
 if (depth < 0) {
 	ai = true
@@ -71,20 +71,20 @@ dashDYSpd = dashDXSpd / yFactor;
 dashDuration = duration[2];
 
 //thousand palms
-windUp[3] = 0.32 * room_speed;
-duration[3] = 0.9 * room_speed;
+windUp[3] = 0.18 * room_speed //0.32
+duration[3] = 0.4 * room_speed //0.9
 windDown[3] = 0.3 * room_speed;
 slowWindUp[3] = 0;
 slowDuring[3] = 0;
 slowWindDown[3] = 0;
 cooldown[3] = 5.5 * room_speed;
 
-palmDmg = 6;
+palmDmg = 5; //6
 
 palmSpd = 400 / room_speed;
 palmDuration = 0.35 * room_speed;
-palmFreq = 0.12 * room_speed;
-palmDAngle = 140 / room_speed;
+palmFreq = 0.09 * room_speed; //0.12
+palmDAngle = 160 / room_speed //140
 palmAngleDiff = 6;
 palmVisualTime = 0.1 * room_speed;
 
@@ -99,6 +99,12 @@ if (room == rmMonkHelp) {
 		for (var i = 0; i < 4; i++) {
 			cooldown[i] = 1
 		}
+	}
+}
+
+if (ai && aiHalfCooldown) {
+	for (var i = 0; i < 4; i++) {
+		cooldown[i] *= 1 / 2
 	}
 }
 

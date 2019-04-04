@@ -29,7 +29,6 @@ if (mouse_check_button(mb_left)) {
 			objGeneralNew.soundVolume = newPos
 		} else if (option == 1) {
 			objGeneralNew.musicVolume = newPos
-			show_debug_message(newPos)
 		}
 	}
 } else {

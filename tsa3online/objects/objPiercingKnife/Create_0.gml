@@ -8,4 +8,6 @@ dy = 0;
 hitbox = objPiercingKnifeHitbox;
 preciseX = x;
 preciseY = y;
-createdAlready = false;
+createdAlready = false
+lastTime = current_time
+iTime = current_time

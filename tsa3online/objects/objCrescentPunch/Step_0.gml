@@ -1,5 +1,5 @@
 ///@desc movement
-scrDestructiveProjectileMove();
+scrDestructiveProjectileMoveOld();
 
 if (!createdAlready && visualTime % visualFreq == 0) {
 	instance_create_depth(preciseX, preciseY, id, objCrescentPunchVisual);

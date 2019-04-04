@@ -13,6 +13,5 @@ slowDuration = myHeroId.smallLobSlowDuration;
 slowForever = false;
 time = myHeroId.lobHitboxDuration;
 currTime = 0;
-image_xscale = myHeroId.image_xscale;
-instance_create_depth(x, y, id, objSmallIceLobVisual);
-hitSound = noone;
+instance_create_depth(x, y, id, objSmallIceLobVisual)
+hitSound = sndIceShot

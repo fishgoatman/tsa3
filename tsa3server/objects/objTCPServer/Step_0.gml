@@ -2,7 +2,6 @@
 ///matchmaking
 if (ds_list_size(inQueuePlayerNums) >= 2) {
 	var currGameDataId = instance_create_depth(0, 0, 0, objGameData);
-	
 	var firstNum = ds_list_find_value(inQueuePlayerNums, 0);
 	var secondNum = ds_list_find_value(inQueuePlayerNums, 1);
 	currGameDataId.playerNums[0] = firstNum;
