@@ -16,4 +16,4 @@ currTime = 0;
 image_xscale = projId.image_xscale
 image_angle = projId.image_angle
 instance_create_depth(x, y, id, objSmallIceLobVisual)
-hitSound = noone
+hitSound = sndIceShot

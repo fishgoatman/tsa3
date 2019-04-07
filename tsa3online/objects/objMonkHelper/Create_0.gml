@@ -6,30 +6,30 @@ preciseY = y
 
 if (x < room_width / 2) {
 	if (y < room_height / 2) {
-		ability = 0
+		abilityNum = 0
 	} else {
-		ability = 2
+		abilityNum = 2
 	}
 } else {
 	if (y < room_height / 2) {
-		ability = 1
+		abilityNum = 1
 	} else {
-		ability = 3
+		abilityNum = 3
 	}
 }
 
 resets[0] = 1 * room_speed
 resets[1] = 0.8 * room_speed
 resets[2] = 1.2 * room_speed
-resets[3] = 2.2 * room_speed
-reset = resets[ability]
+resets[3] = 1.7 * room_speed
+reset = resets[abilityNum]
 time = 0.8 * room_speed
-selectedHero[ability] = "monk"
+selectedHero[abilityNum] = "monk"
 
 for (var i = 0; i < 4; i++) {
 	thisInControl[i] = true
 }
 
-handlerId = instance_create_depth(x, y, ability, objPlayerHandler)
+heroId[abilityNum] = instance_create_depth(x, y, abilityNum, objMonkTP)
 currAbility = -1
 prevAbility = currAbility

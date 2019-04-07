@@ -29,55 +29,39 @@ scrPlayerMovementCode();
 /// @DnDAction : YoYo Games.Common.Execute_Code
 /// @DnDVersion : 1
 /// @DnDHash : 1B235E9C
-/// @DnDArgument : "code" "///@desc abilities$(13_10)//ability input$(13_10)for (var i = 0; i < numAbilities; i++) {$(13_10)	if (cooldownTimer[i] >= 1) {$(13_10)		cooldownTimer[i]--;$(13_10)		continue;$(13_10)	} else {$(13_10)		cooldownTimer[i] = 0;$(13_10)	}$(13_10)	$(13_10)	var index = i + 4;$(13_10)	$(13_10)	if (durationHeld[index] > 0 && !heldBefore[index]) {$(13_10)		if (aState != abilityKey[i] && aPhase == "n") {$(13_10)			if (aPhase == "w") {$(13_10)				cooldownTimer[i] = cooldown[i];$(13_10)			}$(13_10)			$(13_10)			aState = abilityKey[i];$(13_10)			aPhase = "u";$(13_10)			timeInAPhase = 0;$(13_10)			abilityImageXScale = image_xscale;$(13_10)		}$(13_10)	} else if (aState == abilityKey[i]) {$(13_10)		if (aPhase != "n") {$(13_10)			timeInAPhase++;$(13_10)		}$(13_10)			$(13_10)		if (aPhase == "u" && timeInAPhase >= windUp[i]) {$(13_10)			aPhase = "d";$(13_10)			timeInAPhase = 0;$(13_10)		}$(13_10)			$(13_10)		if (aPhase == "d" && timeInAPhase >= duration[i]) {$(13_10)			aPhase = "w";$(13_10)			timeInAPhase = 0;$(13_10)		}$(13_10)			$(13_10)		if (aPhase == "w" && timeInAPhase >= windDown[i]) {$(13_10)			aPhase = "n";$(13_10)			timeInAPhase = 0;$(13_10)			aState = "n";$(13_10)			cooldownTimer[i] = cooldown[i];$(13_10)		}$(13_10)	}$(13_10)	$(13_10)	if (aState != abilityKey[i]) {$(13_10)		firstTime[i] = true;$(13_10)	}$(13_10)}"
+/// @DnDArgument : "code" "///@desc abilities$(13_10)//ability input$(13_10)for (var i = 0; i < numAbilities; i++) {$(13_10)	if (current_time < cooldownTime[i]) {$(13_10)		continue$(13_10)	}$(13_10)	$(13_10)	var index = i + 4$(13_10)	$(13_10)	if (aPhase == "n" && durationHeld[index] > 0 && !heldBefore[index]) {$(13_10)		aState = abilityKey[i]$(13_10)		aPhase = "u"$(13_10)		aPhaseChangeTime = current_time + windUp[i]$(13_10)		abilityImageXScale = image_xscale$(13_10)		firstTime[i] = true$(13_10)		resetImageIndex = true$(13_10)	} else if (aState == abilityKey[i]) {$(13_10)		if (aPhase == "u" && current_time >= aPhaseChangeTime) {$(13_10)			aPhase = "d"$(13_10)			aPhaseChangeTime = current_time + duration[i]$(13_10)		}$(13_10)			$(13_10)		if (aPhase == "d" && current_time >= aPhaseChangeTime) {$(13_10)			aPhase = "w"$(13_10)			aPhaseChangeTime = current_time + windDown[i]$(13_10)		}$(13_10)			$(13_10)		if (aPhase == "w" && current_time >= aPhaseChangeTime) {$(13_10)			aPhase = "n"$(13_10)			aState = "n"$(13_10)			cooldownTime[i] = current_time + cooldown[i]$(13_10)		}$(13_10)	}$(13_10)}"
 ///@desc abilities
 //ability input
 for (var i = 0; i < numAbilities; i++) {
-	if (cooldownTimer[i] >= 1) {
-		cooldownTimer[i]--;
-		continue;
-	} else {
-		cooldownTimer[i] = 0;
+	if (current_time < cooldownTime[i]) {
+		continue
 	}
 	
-	var index = i + 4;
+	var index = i + 4
 	
-	if (durationHeld[index] > 0 && !heldBefore[index]) {
-		if (aState != abilityKey[i] && aPhase == "n") {
-			if (aPhase == "w") {
-				cooldownTimer[i] = cooldown[i];
-			}
-			
-			aState = abilityKey[i];
-			aPhase = "u";
-			timeInAPhase = 0;
-			abilityImageXScale = image_xscale;
-		}
+	if (aPhase == "n" && durationHeld[index] > 0 && !heldBefore[index]) {
+		aState = abilityKey[i]
+		aPhase = "u"
+		aPhaseChangeTime = current_time + windUp[i]
+		abilityImageXScale = image_xscale
+		firstTime[i] = true
+		resetImageIndex = true
 	} else if (aState == abilityKey[i]) {
-		if (aPhase != "n") {
-			timeInAPhase++;
+		if (aPhase == "u" && current_time >= aPhaseChangeTime) {
+			aPhase = "d"
+			aPhaseChangeTime = current_time + duration[i]
 		}
 			
-		if (aPhase == "u" && timeInAPhase >= windUp[i]) {
-			aPhase = "d";
-			timeInAPhase = 0;
+		if (aPhase == "d" && current_time >= aPhaseChangeTime) {
+			aPhase = "w"
+			aPhaseChangeTime = current_time + windDown[i]
 		}
 			
-		if (aPhase == "d" && timeInAPhase >= duration[i]) {
-			aPhase = "w";
-			timeInAPhase = 0;
+		if (aPhase == "w" && current_time >= aPhaseChangeTime) {
+			aPhase = "n"
+			aState = "n"
+			cooldownTime[i] = current_time + cooldown[i]
 		}
-			
-		if (aPhase == "w" && timeInAPhase >= windDown[i]) {
-			aPhase = "n";
-			timeInAPhase = 0;
-			aState = "n";
-			cooldownTimer[i] = cooldown[i];
-		}
-	}
-	
-	if (aState != abilityKey[i]) {
-		firstTime[i] = true;
 	}
 }
 
@@ -175,7 +159,7 @@ if (aState == "1") {
 /// @DnDAction : YoYo Games.Common.Execute_Code
 /// @DnDVersion : 1
 /// @DnDHash : 78F94C44
-/// @DnDArgument : "code" "///@desc sprite and image$(13_10)if (hp <= 0) {$(13_10)	if (sprite_index != sprCasterDeath && sprite_index != sprCasterDeath2) {$(13_10)		image_index = 0$(13_10)		$(13_10)		if (sprite2) {$(13_10)			sprite_index = sprCasterDeath2$(13_10)		} else {$(13_10)			sprite_index = sprCasterDeath$(13_10)		}$(13_10)	}$(13_10)	$(13_10)	if (image_index >= image_number - image_speed) {$(13_10)		image_speed = 0$(13_10)	}$(13_10)} else {$(13_10)	if (aState == "n") {$(13_10)		if (durationHeld[RIGHT] > 0) {$(13_10)			image_xscale = 1;$(13_10)		} else if (durationHeld[LEFT] > 0) {$(13_10)			image_xscale = -1;$(13_10)		}$(13_10)	} else {$(13_10)		image_xscale = abilityImageXScale;$(13_10)	}$(13_10)$(13_10)	if (aPhase != "n") {$(13_10)		if (aPhase == "u" && timeInAPhase == 0) {$(13_10)			image_index = 0;$(13_10)		}$(13_10)	$(13_10)		if (aState == "1") {$(13_10)			if (sprite2) {$(13_10)				sprite_index = sprCasterShoot2$(13_10)			} else {$(13_10)				sprite_index = sprCasterShoot$(13_10)			}$(13_10)		} else if (aState == "2") {$(13_10)			if (sprite2) {$(13_10)				sprite_index = sprCasterLob2$(13_10)			} else {$(13_10)				sprite_index = sprCasterLob$(13_10)			}$(13_10)		} else if (aState == "4") {$(13_10)			if (sprite2) {$(13_10)				sprite_index = sprCasterBlizzard2$(13_10)			} else {$(13_10)				sprite_index = sprCasterBlizzard$(13_10)			}$(13_10)		}$(13_10)	$(13_10)		if (image_index >= image_number - image_speed) {$(13_10)			image_index = image_number - image_speed;$(13_10)		}$(13_10)	} else if (!grounded) {$(13_10)		if (dy >= 0) {$(13_10)			if (sprite2) {$(13_10)				sprite_index = sprCasterGoingUp2$(13_10)			} else {$(13_10)				sprite_index = sprCasterGoingUp$(13_10)			}$(13_10)		} else {$(13_10)			if (sprite2) {$(13_10)				sprite_index = sprCasterGoingDown2$(13_10)			} else {$(13_10)				sprite_index = sprCasterGoingDown$(13_10)			}$(13_10)		}$(13_10)	} else if (durationHeld[RIGHT] > 0 || durationHeld[LEFT] > 0) {$(13_10)		if (sprite2) {$(13_10)			sprite_index = sprCasterMove2$(13_10)		} else {$(13_10)			sprite_index = sprCasterMove$(13_10)		}$(13_10)	} else {$(13_10)		if (sprite2) {$(13_10)			sprite_index = sprCasterNone2$(13_10)		} else {$(13_10)			sprite_index = sprCasterNone$(13_10)		}$(13_10)	}$(13_10)}"
+/// @DnDArgument : "code" "///@desc sprite and image$(13_10)if (hp <= 0) {$(13_10)	if (sprite_index != sprCasterDeath && sprite_index != sprCasterDeath2) {$(13_10)		image_index = 0$(13_10)		$(13_10)		if (sprite2) {$(13_10)			sprite_index = sprCasterDeath2$(13_10)		} else {$(13_10)			sprite_index = sprCasterDeath$(13_10)		}$(13_10)	}$(13_10)	$(13_10)	if (image_index >= image_number - image_speed) {$(13_10)		image_speed = 0$(13_10)	}$(13_10)} else {$(13_10)	if (aState == "n") {$(13_10)		if (durationHeld[RIGHT] > 0) {$(13_10)			image_xscale = 1;$(13_10)		} else if (durationHeld[LEFT] > 0) {$(13_10)			image_xscale = -1;$(13_10)		}$(13_10)	} else {$(13_10)		image_xscale = abilityImageXScale;$(13_10)	}$(13_10)$(13_10)	if (aPhase != "n") {$(13_10)		if (resetImageIndex) {$(13_10)			image_index = 0$(13_10)			resetImageIndex = false$(13_10)		}$(13_10)	$(13_10)		if (aState == "1") {$(13_10)			if (sprite2) {$(13_10)				sprite_index = sprCasterShoot2$(13_10)			} else {$(13_10)				sprite_index = sprCasterShoot$(13_10)			}$(13_10)		} else if (aState == "2") {$(13_10)			if (sprite2) {$(13_10)				sprite_index = sprCasterLob2$(13_10)			} else {$(13_10)				sprite_index = sprCasterLob$(13_10)			}$(13_10)		} else if (aState == "4") {$(13_10)			if (sprite2) {$(13_10)				sprite_index = sprCasterBlizzard2$(13_10)			} else {$(13_10)				sprite_index = sprCasterBlizzard$(13_10)			}$(13_10)		}$(13_10)	$(13_10)		if (image_index >= image_number - image_speed) {$(13_10)			image_index = image_number - image_speed;$(13_10)		}$(13_10)	} else if (!grounded) {$(13_10)		if (dy >= 0) {$(13_10)			if (sprite2) {$(13_10)				sprite_index = sprCasterGoingUp2$(13_10)			} else {$(13_10)				sprite_index = sprCasterGoingUp$(13_10)			}$(13_10)		} else {$(13_10)			if (sprite2) {$(13_10)				sprite_index = sprCasterGoingDown2$(13_10)			} else {$(13_10)				sprite_index = sprCasterGoingDown$(13_10)			}$(13_10)		}$(13_10)	} else if (durationHeld[RIGHT] > 0 || durationHeld[LEFT] > 0) {$(13_10)		if (sprite2) {$(13_10)			sprite_index = sprCasterMove2$(13_10)		} else {$(13_10)			sprite_index = sprCasterMove$(13_10)		}$(13_10)	} else {$(13_10)		if (sprite2) {$(13_10)			sprite_index = sprCasterNone2$(13_10)		} else {$(13_10)			sprite_index = sprCasterNone$(13_10)		}$(13_10)	}$(13_10)}"
 ///@desc sprite and image
 if (hp <= 0) {
 	if (sprite_index != sprCasterDeath && sprite_index != sprCasterDeath2) {
@@ -203,8 +187,9 @@ if (hp <= 0) {
 	}
 
 	if (aPhase != "n") {
-		if (aPhase == "u" && timeInAPhase == 0) {
-			image_index = 0;
+		if (resetImageIndex) {
+			image_index = 0
+			resetImageIndex = false
 		}
 	
 		if (aState == "1") {

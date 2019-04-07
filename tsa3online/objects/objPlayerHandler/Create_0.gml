@@ -28,10 +28,6 @@ if (thisInControl[thisNumber]) {
 		heroObj = objMonkTP;
 	} else if (heroString = "monkMage") {
 		heroObj = objMonkMage
-	} else if (heroString == "warlord") {
-		heroObj = objWarlordTP;
-	} else if (heroString == "bot") {
-		heroObj = objBot;
 	}
 } else {
 	if (heroString == "mage") {
@@ -45,21 +41,13 @@ var createY;
 var margin = 20;
 
 do {
-	if (scrInArena()) {
-		if (thisNumber != 1) {
-			createX = random_range(margin, room_width / 3);
-		} else if (thisNumber == 1) {
-			createX = random_range(room_width * 2 / 3, room_width - margin);
-		}
-		
-		createY = random_range(margin, room_height - margin)
-	} else if (room == rmMainMenu) {
-		createX = random_range(margin, room_width / 2 - margin)
-		createY = random_range(margin, room_height - margin)
-	} else if (room == rmMageHelp || room == rmCasterHelp || room == rmRogueHelp || room == rmMonkHelp) {
-		createX = x
-		createY = y
+	if (thisNumber != 1) {
+		createX = random_range(margin, room_width / 3);
+	} else if (thisNumber == 1) {
+		createX = random_range(room_width * 2 / 3, room_width - margin);
 	}
+	
+	createY = random_range(margin, room_height - margin)
 } until (!place_meeting(createX, createY, objBlock));
 
 var createDepth
@@ -70,9 +58,9 @@ if (ai) {
 	createDepth = thisNumber
 }
 
-var createdId = instance_create_depth(createX, createY, createDepth, heroObj);
-heroId[thisNumber] = createdId;
-myHeroId = heroId[thisNumber];
+var createdId = instance_create_depth(createX, createY, createDepth, heroObj)
+heroId[thisNumber] = createdId
+myHeroId = heroId[thisNumber]
 
 //hp bar
 var hpPerGap = hpPerLine * hpBarWidth / myHeroId.maxHp;
@@ -97,13 +85,12 @@ for (var i = 0; i < hpBarWidth; i++) {
 
 lastPodLost = array_length_2d(hpBar, thisNumber);
 	
-if (heroString != "bot" && thisInControl[thisNumber]) {
+if (thisInControl[thisNumber]) {
 	//cooldowns
 	cooldownNum = 4;
-	cooldownFrames = 30;
 	var cooldownWidth = 32;
 	var cooldownGap = (hpBarWidth - cooldownWidth * cooldownNum) / (cooldownNum - 1);
-	var cooldownObj;
+	var cooldownObj
 
 	if (heroString == "mage") {
 		cooldownObj = objMageCooldown;
@@ -129,10 +116,7 @@ if (heroString != "bot" && thisInControl[thisNumber]) {
 		var createY = hpBarOffset + hpBarHeight + cooldownOffset;
 		var cd = instance_create(createX, createY, cooldownObj);
 		cd.image_speed = 0;
-		cooldownBar[thisNumber, i] = cd;
-		
-		if (heroString == "shaman" && i == 3) {
-			//instance_create_depth(createX, createY, thisNumber, objTotemCharges);
-		}
+		cooldownBar[thisNumber, i] = cd
+		cooldownFrames = cooldownBar[thisNumber, i].image_number
 	}
 }

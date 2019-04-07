@@ -49,11 +49,11 @@ instance_create_depth(-borderWidth, room_height, 1, objTopBorder)
 selectedHero[0] = hero
 selectedHero[1] = hero
 numberWithSprite2 = irandom(1)
-playerHandlerObj[0] = instance_create_depth(0, 0, -1, objPlayerHandler)
-playerHandlerObj[1] = instance_create_depth(0, 0, -2, objPlayerHandler)
+playerHandlerObj[0] = instance_create_depth(0, 0, -1, objMMPlayerHandler)
+playerHandlerObj[1] = instance_create_depth(0, 0, -2, objMMPlayerHandler)
 
 ///right half
-var height = floor(room_height / 3)
+var height = ceil(room_height / 3)
 
 for (var i = 0; i < 3; i++) {
 	var color = colors[i + 1]
@@ -69,5 +69,5 @@ for (var i = 0; i < 3; i++) {
 		createObj = objForestButton
 	}
 		
-	instance_create_depth(room_width / 2, 167 * i, 0, createObj)
+	instance_create_depth(room_width / 2, height * i, 0, createObj)
 }

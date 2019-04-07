@@ -16,11 +16,32 @@ if (portNum == tcpPortNum) {
 		var playerNum = buffer_read(receivedBuffer, buffer_u16);
 		thisInControl[thisNumber] = true;
 		playerNums[thisNumber] = playerNum;
-	} else if (bufferType == DELAY_TEST) {
-		var receivedTestNum = buffer_read(receivedBuffer, buffer_u8);
-		serverTimes[receivedTestNum] = buffer_read(receivedBuffer, buffer_f32);
-		receivedTimes[receivedTestNum] = current_time;
-		numReceivedTests++;
+	} else if (bufferType == PING_TEST) {
+		ds_list_add(receivedTimes, current_time)
+		var serverTime = buffer_read(receivedBuffer, buffer_f32)
+		ds_list_add(serverTimes, serverTime)
+		
+		if (ds_list_size(receivedTimes) > pingKeepNum) {
+			ds_list_delete(receivedTimes, 0)
+		}
+		
+		if (ds_list_size(serverTimes) > pingKeepNum) {
+			ds_list_delete(serverTimes, 0)
+		}
+		
+		var pingTot = 0
+		var delayTot = 0
+		var sentTimesSize = ds_list_size(sentTimes)
+		
+		for (var i = 0; i < sentTimesSize; i++) {
+			pingTot += dslfv(receivedTimes, i) - dslfv(sentTimes, i)
+			delayTot += (dslfv(receivedTimes, i) + dslfv(sentTimes, i)) / 2 - dslfv(serverTimes, i)
+		}
+		
+		ping = pingTot / sentTimesSize
+		delay = delayTot / sentTimesSize
+		
+		show_debug_message(string(ping) + " " + string(delay))
 	}
 } else {
 	if (!udpConnected) {

@@ -8532,6 +8532,25 @@
             }
         },
         {
+            "Key": "a04467a9-2149-44cb-ad44-5a28a90b879f",
+            "Value": {
+                "id": "cfde46cb-28d5-4994-a7fa-8bb8337c09ac",
+                "modelName": "GMResourceInfo",
+                "mvc": "1.0",
+                "configDeltaFiles": [
+                    
+                ],
+                "configDeltas": [
+                    
+                ],
+                "resourceCreationConfigs": [
+                    "default"
+                ],
+                "resourcePath": "objects\/objMMPlayerHandler\/objMMPlayerHandler.yy",
+                "resourceType": "GMObject"
+            }
+        },
+        {
             "Key": "a0a09821-1e15-4fd3-94e8-091e5bb4d119",
             "Value": {
                 "id": "4b862067-9a6f-4ed5-bada-a109d5986ada",
@@ -10258,6 +10277,25 @@
                 ],
                 "resourcePath": "sprites\/sprMageGoingUp\/sprMageGoingUp.yy",
                 "resourceType": "GMSprite"
+            }
+        },
+        {
+            "Key": "be342b6f-72a0-4e83-876c-5cb55d1ac95b",
+            "Value": {
+                "id": "1e07fcc8-72d8-4dce-b317-a9b4045ca62d",
+                "modelName": "GMResourceInfo",
+                "mvc": "1.0",
+                "configDeltaFiles": [
+                    
+                ],
+                "configDeltas": [
+                    
+                ],
+                "resourceCreationConfigs": [
+                    "default"
+                ],
+                "resourcePath": "scripts\/dslfv\/dslfv.yy",
+                "resourceType": "GMScript"
             }
         },
         {
@@ -13869,7 +13907,8 @@
         "a0d13ee5-bbdd-4256-9c00-acb41405dcf0",
         "95f61b1d-eb38-4e01-879b-52e56255f80e",
         "6c3f2159-2f3b-4f49-a971-49af60305a27",
-        "26435a8c-a176-4aa5-8956-a6c837c25733"
+        "26435a8c-a176-4aa5-8956-a6c837c25733",
+        "be342b6f-72a0-4e83-876c-5cb55d1ac95b"
     ],
     "tutorial": ""
 }

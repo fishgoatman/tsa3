@@ -1,7 +1,7 @@
 /// @DnDAction : YoYo Games.Common.Execute_Code
 /// @DnDVersion : 1
 /// @DnDHash : 5820CA38
-/// @DnDArgument : "code" "///@desc stats$(13_10)if (depth < 0) {$(13_10)	ai = true$(13_10)	depth += 2$(13_10)} else {$(13_10)	ai = false$(13_10)}$(13_10)$(13_10)thisNumber = depth;$(13_10)depth = 0;$(13_10)maxHp = 100;$(13_10)$(13_10)if (thisNumber == 1) {$(13_10)	maxHp *= 1;$(13_10)}$(13_10)$(13_10)moveSpd = 120 / room_speed;$(13_10)jumpPower = 330 / room_speed;$(13_10)grav = 850 / (room_speed * room_speed);$(13_10)airJumps = 0;$(13_10)currAirJumps = 0;$(13_10)bounciness = 0.3;$(13_10)$(13_10)//slash$(13_10)windUp[0] = 0.04 * room_speed;$(13_10)duration[0] = 0.06 * room_speed;$(13_10)windDown[0] = 0.05 * room_speed;$(13_10)slowWindUp[0] = 0.3;$(13_10)slowDuring[0] = 1;$(13_10)slowWindDown[0] = 0.3;$(13_10)cooldown[0] = 1.9 * room_speed;$(13_10)$(13_10)slashDmg = 9;$(13_10)$(13_10)slashBlastAmount = 10;$(13_10)slashBlastSpread = 55;$(13_10)slashBlastCentralAngle = -45;$(13_10)slashBlastAheadDist = 40;$(13_10)slashHitboxDuration = 0.2 * room_speed;$(13_10)$(13_10)//lob$(13_10)windUp[1] = 0.3 * room_speed;$(13_10)duration[1] = 1;$(13_10)windDown[1] = 0.02 * room_speed;$(13_10)slowWindUp[1] = 0.3;$(13_10)slowDuring[1] = 0.7;$(13_10)slowWindDown[1] = 0.3;$(13_10)cooldown[1] = 2.0 * room_speed;$(13_10)$(13_10)lobDmg = 7;$(13_10)$(13_10)maxLobs = 5;$(13_10)lobAngleBetween = 16;$(13_10)lobDist = 16;$(13_10)lobBaseAngle = 37;$(13_10)timePerLobCharge = 0.28 * room_speed;$(13_10)lobSpd = 520 / room_speed;$(13_10)lobHitboxDuration = 0.05 * room_speed;$(13_10)lobGrav = 800 / (room_speed * room_speed);$(13_10)$(13_10)//rocket$(13_10)windUp[2] = 0 * room_speed;$(13_10)duration[2] = 0.35 * room_speed;$(13_10)windDown[2] = 0 * room_speed;$(13_10)slowWindUp[2] = 0.3;$(13_10)slowDuring[2] = 3;$(13_10)slowWindDown[2] = 0;$(13_10)cooldown[2] = 4.1 * room_speed;$(13_10)$(13_10)rocketSpd = 600 / room_speed;$(13_10)rocketDec = rocketSpd / duration[2] / room_speed;$(13_10)particleOffset = 10;$(13_10)$(13_10)//blast$(13_10)windUp[3] = 0.4 * room_speed;$(13_10)duration[3] = 0.2 * room_speed;$(13_10)windDown[3] = 0.35 * room_speed;$(13_10)slowWindUp[3] = 0;$(13_10)slowDuring[3] = 0;$(13_10)slowWindDown[3] = 0;$(13_10)cooldown[3] = 4.3 * room_speed;$(13_10)$(13_10)blastDmgIncrease = 1.6 / room_speed;$(13_10)blastBaseDmg = 1.2;$(13_10)$(13_10)blastAmount = 25;$(13_10)blastSpread = 60;$(13_10)blastSpd = 210 / room_speed;$(13_10)blastTime = 999 * room_speed;$(13_10)blastRecoilSpd = -270 / room_speed;$(13_10)blastRecoilDSpd = 15 / room_speed;$(13_10)blastRecoilDuration = 0.3 * room_speed;$(13_10)blastHitboxDuration = 0.05 * room_speed;$(13_10)$(13_10)if (room == rmMageHelp) {$(13_10)	for (var i = 0; i < 4; i++) {$(13_10)		cooldown[i] = 1$(13_10)	}$(13_10)} else {$(13_10)	if (urf) {$(13_10)		for (var i = 0; i < 4; i++) {$(13_10)			cooldown[i] = 1$(13_10)		}$(13_10)	}$(13_10)}$(13_10)$(13_10)if (ai && aiHalfCooldown) {$(13_10)	for (var i = 0; i < 4; i++) {$(13_10)		cooldown[i] *= 1 / 2$(13_10)	}$(13_10)}"
+/// @DnDArgument : "code" "///@desc stats$(13_10)if (depth < 0) {$(13_10)	ai = true$(13_10)	depth += 2$(13_10)} else {$(13_10)	ai = false$(13_10)}$(13_10)$(13_10)thisNumber = depth;$(13_10)depth = 0;$(13_10)maxHp = 100;$(13_10)$(13_10)if (thisNumber == 1) {$(13_10)	maxHp *= 1;$(13_10)}$(13_10)$(13_10)moveSpd = 120 / room_speed;$(13_10)jumpPower = 330 / room_speed;$(13_10)grav = 850 / (room_speed * room_speed);$(13_10)airJumps = 0;$(13_10)currAirJumps = 0;$(13_10)bounciness = 0.3;$(13_10)$(13_10)//slash$(13_10)windUp[0] = 0.06 * room_speed;$(13_10)duration[0] = 0.06 * room_speed;$(13_10)windDown[0] = 0.05 * room_speed;$(13_10)slowWindUp[0] = 0.3;$(13_10)slowDuring[0] = 1;$(13_10)slowWindDown[0] = 0.3;$(13_10)cooldown[0] = 2.3 * room_speed;$(13_10)$(13_10)slashDmg = 9;$(13_10)$(13_10)slashBlastAmount = 10;$(13_10)slashBlastSpread = 55;$(13_10)slashBlastCentralAngle = -45;$(13_10)slashBlastAheadDist = 40;$(13_10)slashHitboxDuration = 0.2 * room_speed;$(13_10)$(13_10)//lob$(13_10)windUp[1] = 0.3 * room_speed;$(13_10)duration[1] = 1;$(13_10)windDown[1] = 0.02 * room_speed;$(13_10)slowWindUp[1] = 0.3;$(13_10)slowDuring[1] = 0.7;$(13_10)slowWindDown[1] = 0.3;$(13_10)cooldown[1] = 2.3 * room_speed;$(13_10)$(13_10)lobDmg = 6;$(13_10)$(13_10)maxLobs = 5;$(13_10)lobAngleBetween = 16;$(13_10)lobDist = 16;$(13_10)lobBaseAngle = 37;$(13_10)timePerLobCharge = 0.28 * room_speed;$(13_10)lobSpd = 520 / room_speed;$(13_10)lobHitboxDuration = 0.05 * room_speed;$(13_10)lobGrav = 800 / (room_speed * room_speed);$(13_10)$(13_10)//rocket$(13_10)windUp[2] = 0 * room_speed;$(13_10)duration[2] = 0.35 * room_speed;$(13_10)windDown[2] = 0 * room_speed;$(13_10)slowWindUp[2] = 0.3;$(13_10)slowDuring[2] = 3;$(13_10)slowWindDown[2] = 0;$(13_10)cooldown[2] = 4.1 * room_speed;$(13_10)$(13_10)rocketSpd = 600 / room_speed;$(13_10)rocketDec = rocketSpd / duration[2] / room_speed;$(13_10)particleOffset = 10;$(13_10)$(13_10)//blast$(13_10)windUp[3] = 0.4 * room_speed;$(13_10)duration[3] = 0.2 * room_speed;$(13_10)windDown[3] = 0.35 * room_speed;$(13_10)slowWindUp[3] = 0;$(13_10)slowDuring[3] = 0;$(13_10)slowWindDown[3] = 0;$(13_10)cooldown[3] = 4.3 * room_speed;$(13_10)$(13_10)blastDmgIncrease = 1.6 / room_speed;$(13_10)blastBaseDmg = 1.2;$(13_10)$(13_10)blastAmount = 25;$(13_10)blastSpread = 60;$(13_10)blastSpd = 210 / room_speed;$(13_10)blastTime = 999 * room_speed;$(13_10)blastRecoilSpd = -270 / room_speed;$(13_10)blastRecoilDSpd = 15 / room_speed;$(13_10)blastRecoilDuration = 0.3 * room_speed;$(13_10)blastHitboxDuration = 0.05 * room_speed;$(13_10)$(13_10)if (room == rmMageHelp) {$(13_10)	for (var i = 0; i < 4; i++) {$(13_10)		cooldown[i] = 1$(13_10)	}$(13_10)} else {$(13_10)	if (urf) {$(13_10)		for (var i = 0; i < 4; i++) {$(13_10)			cooldown[i] = 1$(13_10)		}$(13_10)	}$(13_10)}$(13_10)$(13_10)if (ai && aiHalfCooldown) {$(13_10)	for (var i = 0; i < 4; i++) {$(13_10)		cooldown[i] *= 1 / 2$(13_10)	}$(13_10)}"
 ///@desc stats
 if (depth < 0) {
 	ai = true
@@ -26,13 +26,13 @@ currAirJumps = 0;
 bounciness = 0.3;
 
 //slash
-windUp[0] = 0.04 * room_speed;
+windUp[0] = 0.06 * room_speed;
 duration[0] = 0.06 * room_speed;
 windDown[0] = 0.05 * room_speed;
 slowWindUp[0] = 0.3;
 slowDuring[0] = 1;
 slowWindDown[0] = 0.3;
-cooldown[0] = 1.9 * room_speed;
+cooldown[0] = 2.3 * room_speed;
 
 slashDmg = 9;
 
@@ -49,9 +49,9 @@ windDown[1] = 0.02 * room_speed;
 slowWindUp[1] = 0.3;
 slowDuring[1] = 0.7;
 slowWindDown[1] = 0.3;
-cooldown[1] = 2.0 * room_speed;
+cooldown[1] = 2.3 * room_speed;
 
-lobDmg = 7;
+lobDmg = 6;
 
 maxLobs = 5;
 lobAngleBetween = 16;

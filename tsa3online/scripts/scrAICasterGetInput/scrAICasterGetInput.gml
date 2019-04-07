@@ -27,7 +27,7 @@ for (var i = 0; i < numKeys; i++) {
 		}
 	}
 	
-	if (cooldownTimer[0] == 0 && abs(preciseY - otherHeroId.preciseY) < 30) {
+	if (current_time >= cooldownTime[0] && abs(preciseY - otherHeroId.preciseY) < 30) {
 		if (aiTime % 2 == 0) {
 			durationHeld[ONE] = 1
 			heldBefore[ONE] = false
@@ -41,7 +41,7 @@ for (var i = 0; i < numKeys; i++) {
 				heldBefore[TWO] = false
 			}
 		}
-	} else if (cooldownTimer[1] == 0 && aState != "2") {
+	} else if (current_time >= cooldownTime[1] && aState != "2") {
 		if (aiTime % 2 == 0) {
 			durationHeld[TWO] = 1
 			heldBefore[TWO] = false
@@ -58,7 +58,7 @@ for (var i = 0; i < numKeys; i++) {
 				heldBefore[FOUR] = false
 			}
 		}
-	} else if (cooldownTimer[3] == 0 && aState != "4") {
+	} else if (current_time >= cooldownTime[3] && aState != "4") {
 		if (aiTime % 2 == 0) {
 			durationHeld[FOUR] = 1
 			heldBefore[FOUR] = false

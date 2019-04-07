@@ -1,6 +1,12 @@
 ///@desc handle cooldowns
-if (instance_exists(myHeroId) && heroString != "bot" && thisInControl[thisNumber]) {
+if (instance_exists(myHeroId) && thisInControl[thisNumber]) {
 	for (var i = 0; i < cooldownNum; i++) {
-		cooldownBar[thisNumber, i].image_index = (myHeroId.cooldown[i] - myHeroId.cooldownTimer[i]) * cooldownFrames / myHeroId.cooldown[i];
+		if (myHeroId.object_index == objCasterTP) {
+			if (current_time >= myHeroId.cooldownTime[i]) {
+				cooldownBar[thisNumber, i].image_index = cooldownFrames - 1
+			} else {
+				cooldownBar[thisNumber, i].image_index = cooldownFrames - 1 - (myHeroId.cooldownTime[i] - current_time) * cooldownFrames / myHeroId.cooldown[i]
+			}
+		}
 	}
 }

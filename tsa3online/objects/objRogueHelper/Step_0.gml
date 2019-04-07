@@ -13,36 +13,36 @@ if (mouse_x < room_width / 2) {
 	}
 }
 
-if (prevAbility != currAbility && currAbility == ability) {
+if (prevAbility != currAbility && currAbility == abilityNum) {
 	time = reset
 }
 	
 if (abs(time - reset) < 1) {
-	heroId[ability].preciseX = startX
-	heroId[ability].preciseY = startY
+	heroId[abilityNum].preciseX = startX
+	heroId[abilityNum].preciseY = startY
 	
-	if (ability == 1) {
-		heroId[ability].image_index = -1
+	if (abilityNum == 1) {
+		heroId[abilityNum].image_index = -1
 	} else {
-		heroId[ability].image_index = 1
+		heroId[abilityNum].image_index = 1
 	}
 	
-	if (currAbility == ability) {
-		if (ability == 2) {
-			heroId[ability].durationHeld[0] = 1
-			heroId[ability].heldBefore[0] = false
+	if (currAbility == abilityNum) {
+		if (abilityNum == 2) {
+			heroId[abilityNum].durationHeld[0] = 1
+			heroId[abilityNum].heldBefore[0] = false
 		} else {
-			heroId[ability].durationHeld[ability + 4] = 1
-			heroId[ability].heldBefore[ability + 4] = false
+			heroId[abilityNum].durationHeld[abilityNum + 4] = 1
+			heroId[abilityNum].heldBefore[abilityNum + 4] = false
 		}
 	
-		if (ability == 0) {
+		if (abilityNum == 0) {
 			objOne.image_index = 1
-		} else if (ability == 1) {
+		} else if (abilityNum == 1) {
 			objTwo.image_index = 1
-		} else if (ability == 2) {
+		} else if (abilityNum == 2) {
 			objUp.image_index = 1
-		} else if (ability == 3) {
+		} else if (abilityNum == 3) {
 			objFour.image_index = 1
 		}
 	}
@@ -52,14 +52,14 @@ if (abs(time - reset) < 1) {
 	time++
 	
 	for (var i = 0; i < 8; i++) {
-		heroId[ability].durationHeld[i] = 0
+		heroId[abilityNum].durationHeld[i] = 0
 	}
 	
-	if (currAbility == ability) {
-		if (ability == 2) {
+	if (currAbility == abilityNum) {
+		if (abilityNum == 2) {
 			if (abs(time - 0.4 * room_speed) < 1) {
-				heroId[ability].durationHeld[6] = 1
-				heroId[ability].heldBefore[6] = false
+				heroId[abilityNum].durationHeld[6] = 1
+				heroId[abilityNum].heldBefore[6] = false
 				objThree.image_index = 1
 			}
 		}
