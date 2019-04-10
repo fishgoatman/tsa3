@@ -37,21 +37,33 @@ if (!udpConnected) {
 		var myHeroId = heroId[i];
 		
 		if (thisInControl[i]) {
-			//basics
-			if (currTimeSinceLast >= maxTimeSinceLast) {
-				buffer_seek(bufferToSend, buffer_seek_start, 0);
-				buffer_write(bufferToSend, buffer_u8, BASIC_STATE);
-				buffer_write(bufferToSend, buffer_u16, playerNums[i]);
-				buffer_write(bufferToSend, buffer_u16, myHeroId.x);
-				buffer_write(bufferToSend, buffer_u16, myHeroId.y);
-				buffer_write(bufferToSend, buffer_s16, myHeroId.sprite_index);
-				buffer_write(bufferToSend, buffer_s8, myHeroId.image_xscale);
-				buffer_write(bufferToSend, buffer_u8, myHeroId.hp); //if max hp goes above 255 this will cause problems
-				network_send_udp(udp, ipNum, udpPortNum, bufferToSend, buffer_tell(bufferToSend));
+			if (scrInArena()) {
+				//basics
+				if (currTimeSinceLast >= maxTimeSinceLast) {
+					buffer_seek(bufferToSend, buffer_seek_start, 0);
+					buffer_write(bufferToSend, buffer_u8, BASIC_STATE);
+					buffer_write(bufferToSend, buffer_u16, playerNums[i]);
+					buffer_write(bufferToSend, buffer_u16, myHeroId.x);
+					buffer_write(bufferToSend, buffer_u16, myHeroId.y);
+					buffer_write(bufferToSend, buffer_s16, myHeroId.sprite_index);
+					buffer_write(bufferToSend, buffer_s8, myHeroId.image_xscale);
+					buffer_write(bufferToSend, buffer_u8, myHeroId.hp); //if max hp goes above 255 this will cause problems
+					network_send_udp(udp, ipNum, udpPortNum, bufferToSend, buffer_tell(bufferToSend));
 				
-				currTimeSinceLast = 0;
-			} else {
-				currTimeSinceLast++;
+					currTimeSinceLast = 0;
+				} else {
+					currTimeSinceLast++;
+				}
+				
+				//ability
+				if (myHeroId.aState != "n") {
+					buffer_seek(bufferToSend, buffer_seek_start, 0);
+					buffer_write(bufferToSend, buffer_u8, ABILITY);
+					buffer_write(bufferToSend, buffer_u16, playerNums[i]);
+					buffer_write(bufferToSend, buffer_string, myHeroId.clientAState);
+					buffer_write(bufferToSend, buffer_f32, myHeroId.timeToActivate - delay);
+					network_send_udp(udp, ipNum, udpPortNum, bufferToSend, buffer_tell(bufferToSend));
+				}
 			}
 			
 			if (room == rmCharacterSelect) {
@@ -62,16 +74,6 @@ if (!udpConnected) {
 				buffer_write(bufferToSend, buffer_bool, lockedIn[i]);
 				buffer_write(bufferToSend, buffer_string, selectedHero[i]);
 				network_send_udp(udp, ipNum, udpPortNum, bufferToSend, buffer_tell(bufferToSend));
-			} else {
-				//ability
-				if (myHeroId.aState != "n") {
-					buffer_seek(bufferToSend, buffer_seek_start, 0);
-					buffer_write(bufferToSend, buffer_u8, ABILITY);
-					buffer_write(bufferToSend, buffer_u16, playerNums[i]);
-					buffer_write(bufferToSend, buffer_string, myHeroId.clientAState);
-					buffer_write(bufferToSend, buffer_f32, myHeroId.timeToActivate - clientServerDelay);
-					network_send_udp(udp, ipNum, udpPortNum, bufferToSend, buffer_tell(bufferToSend));
-				}
 			}
 		}
 	}

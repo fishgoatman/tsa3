@@ -34,6 +34,8 @@ if (portNum == tcpPortNum) {
 		var sentTimesSize = ds_list_size(sentTimes)
 		
 		for (var i = 0; i < sentTimesSize; i++) {
+			show_debug_message(dslfv(receivedTimes, i))
+			show_debug_message(dslfv(sentTimes, i))
 			pingTot += dslfv(receivedTimes, i) - dslfv(sentTimes, i)
 			delayTot += (dslfv(receivedTimes, i) + dslfv(sentTimes, i)) / 2 - dslfv(serverTimes, i)
 		}
@@ -71,7 +73,7 @@ if (portNum == tcpPortNum) {
 			
 			if (instance_exists(myHeroId)) {
 				myHeroId.aState = buffer_read(receivedBuffer, buffer_string);
-				myHeroId.timeToActivate = buffer_read(receivedBuffer, buffer_f32) + clientServerDelay;
+				myHeroId.timeToActivate = buffer_read(receivedBuffer, buffer_f32) + delay;
 			}
 		}
 	}
