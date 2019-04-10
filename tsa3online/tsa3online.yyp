@@ -5340,6 +5340,25 @@
             }
         },
         {
+            "Key": "6e9be4d5-5422-4c4c-9594-a619a0a2f233",
+            "Value": {
+                "id": "ded968c1-3843-4129-af94-91f69074fc45",
+                "modelName": "GMResourceInfo",
+                "mvc": "1.0",
+                "configDeltaFiles": [
+                    
+                ],
+                "configDeltas": [
+                    
+                ],
+                "resourceCreationConfigs": [
+                    "default"
+                ],
+                "resourcePath": "datafiles_yy\/casterStats.ini.yy",
+                "resourceType": "GMIncludedFile"
+            }
+        },
+        {
             "Key": "6f242e05-7441-4d82-8c76-d670e0d2dc28",
             "Value": {
                 "id": "9983398c-9f1e-4568-95ba-c6bdee324977",
