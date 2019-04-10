@@ -9,9 +9,9 @@ for (var g = 0; g < ds_list_size(currGameDataIds); g++) {
 		var clientPortNum = clientDataId.udpPortNum;
 		
 		if (clientPortNum != -1) {
-			for (var p = 0; p < array_length_1d(currGameDataId.playerNums); p++) {
-				var playerNum = currGameDataId.playerNums[p];
-				var playerDataId = ds_map_find_value(playerDataIds, playerNum);
+			for (var p = 0; p < array_length_1d(currGameDataId.playerServerNums); p++) {
+				var playerServerNum = currGameDataId.playerServerNums[p];
+				var playerDataId = ds_map_find_value(playerDataIds, playerServerNum);
 				var playerClientId = playerDataId.clientId;
 			
 				if (clientId != playerClientId) {
@@ -48,9 +48,9 @@ for (var g = 0; g < ds_list_size(currGameDataIds); g++) {
 		}
 	}
 	
-	for (var p = 0; p < array_length_1d(currGameDataId.playerNums); p++) {
-		var playerNum = currGameDataId.playerNums[p];
-		var playerDataId = ds_map_find_value(playerDataIds, playerNum);
+	for (var p = 0; p < array_length_1d(currGameDataId.playerServerNums); p++) {
+		var playerServerNum = currGameDataId.playerServerNums[p];
+		var playerDataId = ds_map_find_value(playerDataIds, playerServerNum);
 		playerDataId.sendLockedIn = false;
 	}
 }

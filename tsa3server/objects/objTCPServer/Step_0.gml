@@ -31,14 +31,14 @@ if (ds_list_size(inQueuePlayerServerNums) >= 2) {
 		var currClientId = currGameDataId.clientIds[c];
 		
 		for (var p = 0; p < array_length_1d(currGameDataId.playerServerNums); p++) {
-			var thisPlayerNum = currGameDataId.playerServerNums[p];
-			var playerClientId = ds_map_find_value(playerDataIds, thisPlayerNum).clientId;
+			var thisPlayerServerNum = currGameDataId.playerServerNums[p];
+			var playerClientId = ds_map_find_value(playerDataIds, thisPlayerServerNum).clientId;
 			
 			if (!currGameDataId.sentThisNumber[p] && currClientId == playerClientId) {
 				buffer_seek(bufferToSend, buffer_seek_start, 0);
 				buffer_write(bufferToSend, buffer_u8, THIS_NUMBER);
 				buffer_write(bufferToSend, buffer_u8, p);
-				buffer_write(bufferToSend, buffer_u16, thisPlayerNum);
+				buffer_write(bufferToSend, buffer_u16, thisPlayerServerNum);
 				network_send_packet(currClientId, bufferToSend, buffer_tell(bufferToSend));
 				currGameDataId.sentThisNumber[p] = true;
 			}

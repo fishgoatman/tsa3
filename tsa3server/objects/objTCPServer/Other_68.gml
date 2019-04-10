@@ -49,7 +49,7 @@ if (portNum == tcpPortNum) {
 				numConnected++;
 				var playerDataId = instance_create_depth(0, 0, 0, objPlayerData);
 				playerDataId.clientId = clientId;
-				ds_list_add(clientDataId.playerNums, playerServerNum);
+				ds_list_add(clientDataId.playerServerNums, playerServerNum);
 				ds_map_add(playerDataIds, playerServerNum, playerDataId);
 				ds_list_add(inQueuePlayerServerNums, playerServerNum);
 			}
