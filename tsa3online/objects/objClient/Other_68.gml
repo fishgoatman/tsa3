@@ -13,9 +13,12 @@ if (portNum == tcpPortNum) {
 		show_debug_message("currTime = " + string(current_time));
 	} else if (bufferType == THIS_NUMBER) {
 		var thisNumber = buffer_read(receivedBuffer, buffer_u8);
-		var playerNum = buffer_read(receivedBuffer, buffer_u16);
-		thisInControl[thisNumber] = true;
-		playerNums[thisNumber] = playerNum;
+		var playerServerNum = buffer_read(receivedBuffer, buffer_u16);
+		thisInControl[thisNumber] = true
+		playerServerNums[thisNumber] = playerServerNum
+		
+		//game start stuff
+		ds_list_clear(executedAbilitySentNums)
 	} else if (bufferType == PING_TEST) {
 		ds_list_add(receivedTimes, current_time)
 		var serverTime = buffer_read(receivedBuffer, buffer_f32)
@@ -34,8 +37,8 @@ if (portNum == tcpPortNum) {
 		var sentTimesSize = ds_list_size(sentTimes)
 		
 		for (var i = 0; i < sentTimesSize; i++) {
-			show_debug_message(dslfv(receivedTimes, i))
-			show_debug_message(dslfv(sentTimes, i))
+			show_debug_message("receivedTimes " + string(dslfv(receivedTimes, i)))
+			show_debug_message("sentTimes " + string(dslfv(sentTimes, i)))
 			pingTot += dslfv(receivedTimes, i) - dslfv(sentTimes, i)
 			delayTot += (dslfv(receivedTimes, i) + dslfv(sentTimes, i)) / 2 - dslfv(serverTimes, i)
 		}
@@ -43,7 +46,7 @@ if (portNum == tcpPortNum) {
 		ping = pingTot / sentTimesSize
 		delay = delayTot / sentTimesSize
 		
-		show_debug_message(string(ping) + " " + string(delay))
+		show_debug_message("ping " + string(ping) + " delay " + string(delay))
 	}
 } else {
 	if (!udpConnected) {
@@ -68,12 +71,14 @@ if (portNum == tcpPortNum) {
 			lockedIn[thisNumber] = buffer_read(receivedBuffer, buffer_bool);
 			selectedHero[thisNumber] = buffer_read(receivedBuffer, buffer_string);
 		} else if (bufferType == ABILITY) {
-			var thisNumber = buffer_read(receivedBuffer, buffer_u8);
+			var thisNumber = buffer_read(receivedBuffer, buffer_u8)
+			var abilitySentNum = buffer_read(receivedBuffer, buffer_u16)
 			myHeroId = heroId[thisNumber];
 			
-			if (instance_exists(myHeroId)) {
-				myHeroId.aState = buffer_read(receivedBuffer, buffer_string);
-				myHeroId.timeToActivate = buffer_read(receivedBuffer, buffer_f32) + delay;
+			if (instance_exists(myHeroId) && ds_list_find_index(executedAbilitySentNums, abilitySentNum) == -1) {
+				myHeroId.aState = buffer_read(receivedBuffer, buffer_string)
+				myHeroId.timeToActivate = buffer_read(receivedBuffer, buffer_f32) + delay
+				ds_list_add(executedAbilitySentNums, abilitySentNum)
 			}
 		}
 	}

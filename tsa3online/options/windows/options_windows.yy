@@ -20,7 +20,7 @@
     "option_windows_license": "${options_dir}\\windows\\installer\\license.txt",
     "option_windows_nsis_file": "${options_dir}\\windows\\installer\\runnerinstaller.nsi",
     "option_windows_product_info": "",
-    "option_windows_resize_window": false,
+    "option_windows_resize_window": true,
     "option_windows_save_location": 0,
     "option_windows_scale": 0,
     "option_windows_sleep_margin": 1,

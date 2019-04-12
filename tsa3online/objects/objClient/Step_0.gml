@@ -26,7 +26,7 @@ if (!udpConnected) {
 		if (thisInControl[i]) {
 			buffer_seek(bufferToSend, buffer_seek_start, 0);
 			buffer_write(bufferToSend, buffer_u8, UDP_CONNECTION);
-			buffer_write(bufferToSend, buffer_u16, playerNums[i]);
+			buffer_write(bufferToSend, buffer_u16, playerServerNums[i]);
 			network_send_udp(udp, ipNum, udpPortNum, bufferToSend, buffer_tell(bufferToSend));
 			break;
 		}
@@ -42,7 +42,7 @@ if (!udpConnected) {
 				if (currTimeSinceLast >= maxTimeSinceLast) {
 					buffer_seek(bufferToSend, buffer_seek_start, 0);
 					buffer_write(bufferToSend, buffer_u8, BASIC_STATE);
-					buffer_write(bufferToSend, buffer_u16, playerNums[i]);
+					buffer_write(bufferToSend, buffer_u16, playerServerNums[i]);
 					buffer_write(bufferToSend, buffer_u16, myHeroId.x);
 					buffer_write(bufferToSend, buffer_u16, myHeroId.y);
 					buffer_write(bufferToSend, buffer_s16, myHeroId.sprite_index);
@@ -51,17 +51,18 @@ if (!udpConnected) {
 					network_send_udp(udp, ipNum, udpPortNum, bufferToSend, buffer_tell(bufferToSend));
 				
 					currTimeSinceLast = 0;
-				} else {
-					currTimeSinceLast++;
 				}
+				
+				currTimeSinceLast++
 				
 				//ability
 				if (myHeroId.aState != "n") {
 					buffer_seek(bufferToSend, buffer_seek_start, 0);
 					buffer_write(bufferToSend, buffer_u8, ABILITY);
-					buffer_write(bufferToSend, buffer_u16, playerNums[i]);
+					buffer_write(bufferToSend, buffer_u16, playerServerNums[i]);
+					buffer_write(bufferToSend, buffer_u16, myHeroId.abilitySentNum)
 					buffer_write(bufferToSend, buffer_string, myHeroId.clientAState);
-					buffer_write(bufferToSend, buffer_f32, myHeroId.timeToActivate - delay);
+					buffer_write(bufferToSend, buffer_f32, myHeroId.timeToActivate - delay) //initialDelay so that the sent time never changes. index i cuz the code checks both players
 					network_send_udp(udp, ipNum, udpPortNum, bufferToSend, buffer_tell(bufferToSend));
 				}
 			}
@@ -70,7 +71,7 @@ if (!udpConnected) {
 				//locked in
 				buffer_seek(bufferToSend, buffer_seek_start, 0);
 				buffer_write(bufferToSend, buffer_u8, LOCKED_IN);
-				buffer_write(bufferToSend, buffer_u16, playerNums[i]);
+				buffer_write(bufferToSend, buffer_u16, playerServerNums[i]);
 				buffer_write(bufferToSend, buffer_bool, lockedIn[i]);
 				buffer_write(bufferToSend, buffer_string, selectedHero[i]);
 				network_send_udp(udp, ipNum, udpPortNum, bufferToSend, buffer_tell(bufferToSend));

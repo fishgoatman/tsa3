@@ -34,11 +34,12 @@ for (var t = lastTime; t < targetTime; t += tInterval) {
 	}
 }
 
-x = scrRound(preciseX)
-y = scrRound(preciseY)
-lastTime = current_time
-
 if (!playerHit && !groundHit) {
 	xChange = preciseX - iPreciseX
 	yChange = preciseY - iPreciseY
+	tChange = targetTime - lastTime
 }
+
+x = scrRound(preciseX)
+y = scrRound(preciseY)
+lastTime = current_time
