@@ -8,5 +8,6 @@ imageAngle = 0;
 imageXScale = 0;
 hp = 120;
 sendLockedIn = false;
+abilitySentNum = 0
 aState = "n";
 timeToActivate = 0;

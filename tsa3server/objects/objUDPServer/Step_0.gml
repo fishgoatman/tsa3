@@ -30,6 +30,7 @@ for (var g = 0; g < ds_list_size(currGameDataIds); g++) {
 					buffer_seek(bufferToSend, buffer_seek_start, 0);
 					buffer_write(bufferToSend, buffer_u8, ABILITY);
 					buffer_write(bufferToSend, buffer_u8, p);
+					buffer_write(bufferToSend, buffer_u16, playerDataId.abilitySentNum)
 					buffer_write(bufferToSend, buffer_string, playerDataId.aState);
 					buffer_write(bufferToSend, buffer_f32, playerDataId.timeToActivate);
 					network_send_udp(udp, clientIp, clientPortNum, bufferToSend, buffer_tell(bufferToSend));
