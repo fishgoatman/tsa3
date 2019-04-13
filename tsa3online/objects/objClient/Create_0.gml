@@ -2,7 +2,7 @@
 //settings
 tcpPortNum = 8125
 udpPortNum = 8126
-//ipNum = "98.210.161.45"
+//ipNum = "73.189.41.182"
 ipNum = "10.0.1.43"
 maxTimeSinceLast = 1
 

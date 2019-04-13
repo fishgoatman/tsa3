@@ -20,3 +20,4 @@ iTime = current_time
 lastTime = current_time
 xChange = 0
 yChange = 0
+tChange = 0

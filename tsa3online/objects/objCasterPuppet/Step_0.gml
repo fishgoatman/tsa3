@@ -4,13 +4,18 @@ preciseX = x;
 preciseY = y;
 
 if (aState == "1") {
-	if (current_time >= timeToActivate) {
-		instance_create_depth(x, y, thisNumber, objFireSlashHitbox);
-		timeSinceSlashBlast = 0;
-			
-		for (var i = 0; i < slashBlastAmount; i++) {
-			blastAngle = 90 - image_xscale * 90 + slashBlastCentralAngle * image_xscale + slashBlastSpread * i / (slashBlastAmount - 1) - slashBlastSpread / 2;
-			instance_create_depth(x + slashBlastAheadDist * dcos(blastAngle), y - slashBlastAheadDist * dsin(blastAngle), thisNumber, objFireShot);
+	if (current_time >= timeToActivate && firstTime) {
+		for (var i = 0; i < shotAmount; i++) {
+			var xDist
+				
+			if (i == 1) {
+				xDist = shotXMax
+			} else {
+				xDist = shotXMin
+			}
+				
+			instance_create_depth(preciseX + xDist * image_xscale, preciseY - (shotAmount - 1) * shotDist / 2 + i * shotDist, thisNumber, objIceTriShot)
+			firstTime = false
 		}
 	}
 } else if (aState == "2") {

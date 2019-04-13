@@ -32,6 +32,8 @@ if (thisInControl[thisNumber]) {
 } else {
 	if (heroString == "mage") {
 		heroObj = objMagePuppet;
+	} else if (heroString == "caster") {
+		heroObj = objCasterPuppet
 	}
 }
 

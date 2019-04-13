@@ -78,6 +78,7 @@ if (portNum == tcpPortNum) {
 			if (instance_exists(myHeroId) && ds_list_find_index(executedAbilitySentNums, abilitySentNum) == -1) {
 				myHeroId.aState = buffer_read(receivedBuffer, buffer_string)
 				myHeroId.timeToActivate = buffer_read(receivedBuffer, buffer_f32) + delay
+				myHeroId.firstTime = true
 				ds_list_add(executedAbilitySentNums, abilitySentNum)
 			}
 		}

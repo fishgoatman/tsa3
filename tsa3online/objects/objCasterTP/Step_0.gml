@@ -29,7 +29,7 @@ scrPlayerMovementCode();
 /// @DnDAction : YoYo Games.Common.Execute_Code
 /// @DnDVersion : 1
 /// @DnDHash : 1B235E9C
-/// @DnDArgument : "code" "///@desc abilities$(13_10)//ability input$(13_10)for (var i = 0; i < numAbilities; i++) {$(13_10)	if (current_time < cooldownTime[i]) {$(13_10)		continue$(13_10)	}$(13_10)	$(13_10)	var index = i + 4$(13_10)	$(13_10)	if (aPhase == "n" && durationHeld[index] > 0 && !heldBefore[index]) {$(13_10)		aState = abilityKey[i]$(13_10)		aPhase = "u"$(13_10)		aPhaseChangeTime = current_time + windUp[i]$(13_10)		abilityImageXScale = image_xscale$(13_10)		firstTime[i] = true$(13_10)		resetImageIndex = true$(13_10)	} else if (aState == abilityKey[i]) {$(13_10)		if (aPhase == "u" && current_time >= aPhaseChangeTime) {$(13_10)			aPhase = "d"$(13_10)			aPhaseChangeTime = current_time + duration[i]$(13_10)		}$(13_10)			$(13_10)		if (aPhase == "d" && current_time >= aPhaseChangeTime) {$(13_10)			aPhase = "w"$(13_10)			aPhaseChangeTime = current_time + windDown[i]$(13_10)		}$(13_10)			$(13_10)		if (aPhase == "w" && current_time >= aPhaseChangeTime) {$(13_10)			aPhase = "n"$(13_10)			aState = "n"$(13_10)			cooldownTime[i] = current_time + cooldown[i]$(13_10)		}$(13_10)	}$(13_10)}"
+/// @DnDArgument : "code" "///@desc abilities$(13_10)//ability input$(13_10)for (var i = 0; i < numAbilities; i++) {$(13_10)	if (current_time < cooldownTime[i]) {$(13_10)		continue$(13_10)	}$(13_10)	$(13_10)	var index = i + 4$(13_10)	$(13_10)	if (aPhase == "n" && durationHeld[index] > 0 && !heldBefore[index]) {$(13_10)		aState = abilityKey[i]$(13_10)		aPhase = "u"$(13_10)		aPhaseChangeTime = current_time + windUp[i]$(13_10)		abilityImageXScale = image_xscale$(13_10)		firstTime[i] = true$(13_10)		resetImageIndex = true$(13_10)		$(13_10)		//online stuff$(13_10)		clientAState = aState$(13_10)		timeToActivate = aPhaseChangeTime$(13_10)		abilitySentNum++$(13_10)	} else if (aState == abilityKey[i]) {$(13_10)		if (aPhase == "u" && current_time >= aPhaseChangeTime) {$(13_10)			aPhase = "d"$(13_10)			aPhaseChangeTime = current_time + duration[i]$(13_10)		}$(13_10)			$(13_10)		if (aPhase == "d" && current_time >= aPhaseChangeTime) {$(13_10)			aPhase = "w"$(13_10)			aPhaseChangeTime = current_time + windDown[i]$(13_10)		}$(13_10)			$(13_10)		if (aPhase == "w" && current_time >= aPhaseChangeTime) {$(13_10)			aPhase = "n"$(13_10)			aState = "n"$(13_10)			cooldownTime[i] = current_time + cooldown[i]$(13_10)		}$(13_10)	}$(13_10)}"
 ///@desc abilities
 //ability input
 for (var i = 0; i < numAbilities; i++) {
@@ -46,6 +46,11 @@ for (var i = 0; i < numAbilities; i++) {
 		abilityImageXScale = image_xscale
 		firstTime[i] = true
 		resetImageIndex = true
+		
+		//online stuff
+		clientAState = aState
+		timeToActivate = aPhaseChangeTime
+		abilitySentNum++
 	} else if (aState == abilityKey[i]) {
 		if (aPhase == "u" && current_time >= aPhaseChangeTime) {
 			aPhase = "d"
