@@ -34,7 +34,7 @@ if (!udpConnected) {
 } else {
 	//data
 	for (var i = 0; i < numPlayers; i++) {
-		var myHeroId = heroId[i];
+		var myHeroId = heroId[i]
 		
 		if (thisInControl[i]) {
 			if (scrInArena()) {
@@ -61,7 +61,10 @@ if (!udpConnected) {
 					buffer_write(bufferToSend, buffer_u8, ABILITY);
 					buffer_write(bufferToSend, buffer_u16, playerServerNums[i]);
 					buffer_write(bufferToSend, buffer_u16, myHeroId.abilitySentNum)
-					buffer_write(bufferToSend, buffer_string, myHeroId.clientAState);
+					buffer_write(bufferToSend, buffer_f32, myHeroId.abilityPreciseX)
+					buffer_write(bufferToSend, buffer_f32, myHeroId.abilityPreciseY)
+					buffer_write(bufferToSend, buffer_bool, myHeroId.abilityImageXScale == 1 ? true : false)
+					buffer_write(bufferToSend, buffer_string, myHeroId.clientAState)
 					buffer_write(bufferToSend, buffer_f32, myHeroId.timeToActivate - delay) //initialDelay so that the sent time never changes. index i cuz the code checks both players
 					network_send_udp(udp, ipNum, udpPortNum, bufferToSend, buffer_tell(bufferToSend));
 				}
@@ -74,7 +77,7 @@ if (!udpConnected) {
 				buffer_write(bufferToSend, buffer_u16, playerServerNums[i]);
 				buffer_write(bufferToSend, buffer_bool, lockedIn[i]);
 				buffer_write(bufferToSend, buffer_string, selectedHero[i]);
-				network_send_udp(udp, ipNum, udpPortNum, bufferToSend, buffer_tell(bufferToSend));
+				network_send_udp(udp, ipNum, udpPortNum, bufferToSend, buffer_tell(bufferToSend))
 			}
 		}
 	}

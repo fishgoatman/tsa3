@@ -57,8 +57,14 @@ visualId.x = x
 visualId.y = y
 visualId.image_angle += da
 
-var FOUR = myHeroId.FOUR
-var fourPressed = instance_exists(myHeroId) && myHeroId.durationHeld[FOUR] > 0 && !myHeroId.heldBefore[FOUR]
+var fourPressed
+
+if (thisInControl[thisNumber]) {
+	var FOUR = myHeroId.FOUR
+	var fourPressed = instance_exists(myHeroId) && myHeroId.durationHeld[FOUR] > 0 && !myHeroId.heldBefore[FOUR]
+} else {
+	fourPressed = detonate
+}
 
 if (fourPressed || hitPlayer || hitCorner) {
 	for (var i = 0; i < triNum; i++) {

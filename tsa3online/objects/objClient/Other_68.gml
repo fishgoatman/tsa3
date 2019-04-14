@@ -37,16 +37,12 @@ if (portNum == tcpPortNum) {
 		var sentTimesSize = ds_list_size(sentTimes)
 		
 		for (var i = 0; i < sentTimesSize; i++) {
-			show_debug_message("receivedTimes " + string(dslfv(receivedTimes, i)))
-			show_debug_message("sentTimes " + string(dslfv(sentTimes, i)))
 			pingTot += dslfv(receivedTimes, i) - dslfv(sentTimes, i)
 			delayTot += (dslfv(receivedTimes, i) + dslfv(sentTimes, i)) / 2 - dslfv(serverTimes, i)
 		}
 		
 		ping = pingTot / sentTimesSize
 		delay = delayTot / sentTimesSize
-		
-		show_debug_message("ping " + string(ping) + " delay " + string(delay))
 	}
 } else {
 	if (!udpConnected) {
@@ -67,15 +63,18 @@ if (portNum == tcpPortNum) {
 				myHeroId.clientGivenHp = buffer_read(receivedBuffer, buffer_u8);
 			}
 		} else if (bufferType == LOCKED_IN) {
-			var thisNumber = buffer_read(receivedBuffer, buffer_u8);
-			lockedIn[thisNumber] = buffer_read(receivedBuffer, buffer_bool);
-			selectedHero[thisNumber] = buffer_read(receivedBuffer, buffer_string);
+			var thisNumber = buffer_read(receivedBuffer, buffer_u8)
+			lockedIn[thisNumber] = buffer_read(receivedBuffer, buffer_bool)
+			selectedHero[thisNumber] = buffer_read(receivedBuffer, buffer_string)
 		} else if (bufferType == ABILITY) {
 			var thisNumber = buffer_read(receivedBuffer, buffer_u8)
 			var abilitySentNum = buffer_read(receivedBuffer, buffer_u16)
 			myHeroId = heroId[thisNumber];
 			
 			if (instance_exists(myHeroId) && ds_list_find_index(executedAbilitySentNums, abilitySentNum) == -1) {
+				myHeroId.abilityPreciseX = buffer_read(receivedBuffer, buffer_f32)
+				myHeroId.abilityPreciseY = buffer_read(receivedBuffer, buffer_f32)
+				myHeroId.abilityImageXScale = buffer_read(receivedBuffer, buffer_bool) ? 1 : -1
 				myHeroId.aState = buffer_read(receivedBuffer, buffer_string)
 				myHeroId.timeToActivate = buffer_read(receivedBuffer, buffer_f32) + delay
 				myHeroId.firstTime = true

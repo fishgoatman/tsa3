@@ -18,3 +18,4 @@ visualId = instance_create_depth(x, y, 0, objIceBallVisual)
 lastTime = current_time
 lastXStoppedTime = current_time
 lastYStoppedTime = current_time
+detonate = false

@@ -88,7 +88,7 @@ for (var i = 0; i < numAbilities; i++) {
 /// @DnDAction : YoYo Games.Common.Execute_Code
 /// @DnDVersion : 1
 /// @DnDHash : 3771CA6E
-/// @DnDArgument : "code" "///@desc ability function$(13_10)//show_debug_message(string(aState) + " " + string(aPhase));$(13_10)if (aState == "1") {$(13_10)	if (aPhase == "d") {$(13_10)		if (timeInAPhase >= 0 && firstTime[0]) {$(13_10)			instance_create_depth(preciseX, preciseY, thisNumber, objFireSlashHitbox);$(13_10)			timeSinceSlashBlast = 0;$(13_10)			$(13_10)			for (var i = 0; i < slashBlastAmount; i++) {$(13_10)				blastAngle = 90 - image_xscale * 90 + slashBlastCentralAngle * image_xscale + slashBlastSpread * i / (slashBlastAmount - 1) - slashBlastSpread / 2;$(13_10)				instance_create_depth(preciseX + slashBlastAheadDist * dcos(blastAngle), preciseY - slashBlastAheadDist * dsin(blastAngle), thisNumber, objFireShot);$(13_10)			}$(13_10)			$(13_10)			audio_play_sound(sndFireSlash, 1, false)$(13_10)			firstTime[0] = false;$(13_10)		}$(13_10)	}$(13_10)	$(13_10)	scrResetAir();$(13_10)} else if (aState == "2") {$(13_10)	if (aPhase == "u") {$(13_10)		lobChargeTime = 0;$(13_10)		numLobs = 0;$(13_10)	}$(13_10)	$(13_10)	if (aPhase == "d") {$(13_10)		if (timeInAPhase >= 0 && firstTime[1]) {$(13_10)			for (var i = 0; i < maxLobs; i++) {$(13_10)				var angleDir = i % 2 == 0 ? -1 : 1;$(13_10)				var angle = lobBaseAngle + angleDir * lobAngleBetween * floor((i + 1) / 2);$(13_10)				diffX = lobDist * dcos(angle);$(13_10)				diffY = lobDist * dsin(angle);$(13_10)				instance_create_depth(preciseX + diffX * image_xscale, preciseY - diffY, thisNumber, objFireLob);$(13_10)			}$(13_10)			$(13_10)			audio_play_sound(sndFireLob, 1, false)$(13_10)			firstTime[1] = false$(13_10)		}$(13_10)		/*if (numLobs == 0) {$(13_10)			var angle = lobBaseAngle;$(13_10)			diffX = lobDist * dcos(angle);$(13_10)			diffY = lobDist * dsin(angle);$(13_10)			instance_create_depth(preciseX + diffX * image_xscale, preciseY - diffY, thisNumber, objFireLobCharge);$(13_10)			numLobs++;$(13_10)		}$(13_10)		$(13_10)		if (lobChargeTime / timePerLobCharge > numLobs && numLobs < maxLobs) {$(13_10)			var angleDir = numLobs % 2 == 0 ? -1 : 1;$(13_10)			var angle = lobBaseAngle + angleDir * lobAngleBetween * floor((numLobs + 1) / 2);$(13_10)			diffX = lobDist * dcos(angle);$(13_10)			diffY = lobDist * dsin(angle);$(13_10)			instance_create_depth(preciseX + diffX * image_xscale, preciseY - diffY, thisNumber, objFireLobCharge);$(13_10)			numLobs++;$(13_10)		}$(13_10)		$(13_10)		lobChargeTime++;*/$(13_10)	}$(13_10)} else if (aState == "3") {$(13_10)	if (aPhase == "d") {$(13_10)		if (timeInAPhase >= 0 && firstTime[2]) {$(13_10)			var moveMod = instance_create(0, 0, objMoveMod);$(13_10)			moveMod.dy = rocketSpd;$(13_10)			moveMod.ddy = -rocketDec;$(13_10)			moveMod.duration = duration[2];$(13_10)			ds_list_add(envMoveModList, moveMod);$(13_10)			audio_play_sound(sndRocket, 1, false);$(13_10)			firstTime[2] = false;$(13_10)		}$(13_10)		$(13_10)		scrResetAir();$(13_10)		$(13_10)		for (var i = 0; i < 12; i++) {$(13_10)			instance_create(preciseX + random_range(-particleOffset, particleOffset), preciseY - random_range(-particleOffset, 0), objFireScrap);$(13_10)		}$(13_10)		$(13_10)	} else if (aPhase == "w") {$(13_10)		if (timeInAPhase >= windDown[2] - 1) {$(13_10)			gravMoveMod.dy = dy;$(13_10)		}$(13_10)	}$(13_10)} else if (aState == "4") {$(13_10)	if (aPhase == "d") {$(13_10)		if (timeInAPhase >= 0 && firstTime[3]) {$(13_10)			timeSinceBlast = 0;$(13_10)			$(13_10)			for (var i = 0; i < blastAmount; i++) {$(13_10)				blastAngle = 90 - image_xscale * 90 + blastSpread * i / (blastAmount - 1) - blastSpread / 2;$(13_10)				instance_create_depth(preciseX, preciseY, thisNumber, objFireShot);$(13_10)			}$(13_10)			$(13_10)			var moveMod = instance_create(0, 0, objMoveMod);$(13_10)			moveMod.dx = blastRecoilSpd * image_xscale;$(13_10)			moveMod.ddx = blastRecoilDSpd * image_xscale;$(13_10)			moveMod.duration = blastRecoilDuration;$(13_10)			ds_list_add(envMoveModList, moveMod)$(13_10)			audio_play_sound(sndBlast, 1, false)$(13_10)			firstTime[3] = false$(13_10)		}$(13_10)	}$(13_10)	$(13_10)	timeSinceBlast++;$(13_10)	scrResetAir();$(13_10)}"
+/// @DnDArgument : "code" "///@desc ability function$(13_10)//show_debug_message(string(aState) + " " + string(aPhase));$(13_10)if (aState == "1") {$(13_10)	if (aPhase == "d") {$(13_10)		if (timeInAPhase >= 0 && firstTime[0]) {$(13_10)			instance_create_depth(preciseX, preciseY, thisNumber, objFireSlashHitbox);$(13_10)			timeSinceSlashBlast = 0;$(13_10)			$(13_10)			for (var i = 0; i < slashBlastAmount; i++) {$(13_10)				blastAngle = 90 - image_xscale * 90 + slashBlastCentralAngle * image_xscale + slashBlastSpread * i / (slashBlastAmount - 1) - slashBlastSpread / 2;$(13_10)				instance_create_depth(preciseX + slashBlastAheadDist * dcos(blastAngle), preciseY - slashBlastAheadDist * dsin(blastAngle), thisNumber, objFireShot);$(13_10)			}$(13_10)			$(13_10)			audio_play_sound(sndFireSlash, 1, false)$(13_10)			firstTime[0] = false$(13_10)		}$(13_10)		$(13_10)		scrResetAir()$(13_10)	}$(13_10)} else if (aState == "2") {$(13_10)	if (aPhase == "d") {$(13_10)		if (timeInAPhase >= 0 && firstTime[1]) {$(13_10)			for (var i = 0; i < maxLobs; i++) {$(13_10)				var angleDir = i % 2 == 0 ? -1 : 1;$(13_10)				var angle = lobBaseAngle + angleDir * lobAngleBetween * floor((i + 1) / 2);$(13_10)				diffX = lobDist * dcos(angle);$(13_10)				diffY = lobDist * dsin(angle);$(13_10)				instance_create_depth(preciseX + diffX * image_xscale, preciseY - diffY, thisNumber, objFireLob);$(13_10)			}$(13_10)			$(13_10)			audio_play_sound(sndFireLob, 1, false)$(13_10)			firstTime[1] = false$(13_10)		}$(13_10)		$(13_10)		scrResetAir()$(13_10)	}$(13_10)} else if (aState == "3") {$(13_10)	if (aPhase == "d") {$(13_10)		if (timeInAPhase >= 0 && firstTime[2]) {$(13_10)			var moveMod = instance_create(0, 0, objMoveMod);$(13_10)			moveMod.dy = rocketSpd;$(13_10)			moveMod.ddy = -rocketDec;$(13_10)			moveMod.duration = duration[2];$(13_10)			ds_list_add(envMoveModList, moveMod);$(13_10)			audio_play_sound(sndRocket, 1, false);$(13_10)			firstTime[2] = false;$(13_10)		}$(13_10)		$(13_10)		scrResetAir()$(13_10)		$(13_10)		for (var i = 0; i < 12; i++) {$(13_10)			instance_create(preciseX + random_range(-particleOffset, particleOffset), preciseY - random_range(-particleOffset, 0), objFireScrap);$(13_10)		}$(13_10)		$(13_10)	} else if (aPhase == "w") {$(13_10)		if (timeInAPhase >= windDown[2] - 1) {$(13_10)			gravMoveMod.dy = dy;$(13_10)		}$(13_10)	}$(13_10)} else if (aState == "4") {$(13_10)	if (aPhase == "d") {$(13_10)		if (timeInAPhase >= 0 && firstTime[3]) {$(13_10)			timeSinceBlast = 0;$(13_10)			$(13_10)			for (var i = 0; i < blastAmount; i++) {$(13_10)				blastAngle = 90 - image_xscale * 90 + blastSpread * i / (blastAmount - 1) - blastSpread / 2;$(13_10)				instance_create_depth(preciseX, preciseY, thisNumber, objFireShot);$(13_10)			}$(13_10)			$(13_10)			var moveMod = instance_create(0, 0, objMoveMod);$(13_10)			moveMod.dx = blastRecoilSpd * image_xscale;$(13_10)			moveMod.ddx = blastRecoilDSpd * image_xscale;$(13_10)			moveMod.duration = blastRecoilDuration;$(13_10)			ds_list_add(envMoveModList, moveMod)$(13_10)			audio_play_sound(sndBlast, 1, false)$(13_10)			firstTime[3] = false$(13_10)		}$(13_10)	}$(13_10)	$(13_10)	scrResetAir()$(13_10)	timeSinceBlast++$(13_10)}"
 ///@desc ability function
 //show_debug_message(string(aState) + " " + string(aPhase));
 if (aState == "1") {
@@ -103,17 +103,12 @@ if (aState == "1") {
 			}
 			
 			audio_play_sound(sndFireSlash, 1, false)
-			firstTime[0] = false;
+			firstTime[0] = false
 		}
+		
+		scrResetAir()
 	}
-	
-	scrResetAir();
 } else if (aState == "2") {
-	if (aPhase == "u") {
-		lobChargeTime = 0;
-		numLobs = 0;
-	}
-	
 	if (aPhase == "d") {
 		if (timeInAPhase >= 0 && firstTime[1]) {
 			for (var i = 0; i < maxLobs; i++) {
@@ -127,24 +122,8 @@ if (aState == "1") {
 			audio_play_sound(sndFireLob, 1, false)
 			firstTime[1] = false
 		}
-		/*if (numLobs == 0) {
-			var angle = lobBaseAngle;
-			diffX = lobDist * dcos(angle);
-			diffY = lobDist * dsin(angle);
-			instance_create_depth(preciseX + diffX * image_xscale, preciseY - diffY, thisNumber, objFireLobCharge);
-			numLobs++;
-		}
 		
-		if (lobChargeTime / timePerLobCharge > numLobs && numLobs < maxLobs) {
-			var angleDir = numLobs % 2 == 0 ? -1 : 1;
-			var angle = lobBaseAngle + angleDir * lobAngleBetween * floor((numLobs + 1) / 2);
-			diffX = lobDist * dcos(angle);
-			diffY = lobDist * dsin(angle);
-			instance_create_depth(preciseX + diffX * image_xscale, preciseY - diffY, thisNumber, objFireLobCharge);
-			numLobs++;
-		}
-		
-		lobChargeTime++;*/
+		scrResetAir()
 	}
 } else if (aState == "3") {
 	if (aPhase == "d") {
@@ -158,7 +137,7 @@ if (aState == "1") {
 			firstTime[2] = false;
 		}
 		
-		scrResetAir();
+		scrResetAir()
 		
 		for (var i = 0; i < 12; i++) {
 			instance_create(preciseX + random_range(-particleOffset, particleOffset), preciseY - random_range(-particleOffset, 0), objFireScrap);
@@ -189,9 +168,9 @@ if (aState == "1") {
 		}
 	}
 	
-	timeSinceBlast++;
-	scrResetAir();
-}/**/
+	scrResetAir()
+	timeSinceBlast++
+}
 
 /// @DnDAction : YoYo Games.Common.Execute_Code
 /// @DnDVersion : 1

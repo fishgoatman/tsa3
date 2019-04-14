@@ -31,18 +31,20 @@ preciseY = tryY
 x = scrRound(preciseX)
 y = scrRound(preciseY)*/
 
-var TWO = myHeroId.TWO
-var twoPressed = instance_exists(myHeroId) && myHeroId.durationHeld[TWO] > 0 && !myHeroId.heldBefore[TWO]
+if (thisInControl[thisNumber]) {
+	var TWO = myHeroId.TWO
+	var twoPressed = instance_exists(myHeroId) && myHeroId.durationHeld[TWO] > 0 && !myHeroId.heldBefore[TWO]
 
-if (!playerHit && (groundHit || twoPressed)) {
-	for (i = 0; i < smallLobNumber; i++) {
-		instance_create_depth(preciseX, preciseY, id, objSmallIceLob)
-		audio_play_sound(sndIceLobMiss, 1, false)
-	}
+	if (!playerHit && (groundHit || twoPressed)) {
+		for (i = 0; i < smallLobNumber; i++) {
+			instance_create_depth(preciseX, preciseY, id, objSmallIceLob)
+			audio_play_sound(sndIceLobMiss, 1, false)
+		}
 	
-	if (twoPressed) {
-		instance_create_depth(preciseX, preciseY, id, hitbox)
-	}
+		if (twoPressed) {
+			instance_create_depth(preciseX, preciseY, id, hitbox)
+		}
 	
-	instance_destroy()
+		instance_destroy()
+	}
 }

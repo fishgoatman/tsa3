@@ -123,7 +123,8 @@ for (var i = 0; i < numAbilities; i++) {
 		var slowMod = instance_create(0, 0, objSlowMod);
 		
 		if (aPhase == "u") {
-			slowMod.slowTo = slowWindUp[i];
+			//slowMod.slowTo = slowWindUp[i]
+			slowMod.slowTo = 0
 		} else if (aPhase == "d") {
 			slowMod.slowTo = slowDuring[i];
 		} else if (aPhase == "w") {
