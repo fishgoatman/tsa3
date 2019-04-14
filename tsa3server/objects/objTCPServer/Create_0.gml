@@ -3,9 +3,9 @@
 globalvar tcpPortNum;
 tcpPortNum = 8125;
 globalvar udpPortNum;
-udpPortNum = 8125;
+udpPortNum = 8126;
 maxClients = 32;
-room_speed = 30;
+room_speed = 60;
 
 //necessary vars
 tcp = network_create_server(network_socket_tcp, tcpPortNum, maxClients);

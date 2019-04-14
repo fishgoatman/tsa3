@@ -30,9 +30,12 @@ if (portNum != udpPortNum && portNum != tcpPortNum) {
 		playerDataId.sendLockedIn = true;
 	} else if (bufferType == ABILITY) {
 		var playerServerNum = buffer_read(receivedBuffer, buffer_u16)
-		var playerDataId = ds_map_find_value(playerDataIds, playerServerNum);
+		var playerDataId = ds_map_find_value(playerDataIds, playerServerNum)
 		playerDataId.abilitySentNum = buffer_read(receivedBuffer, buffer_u16)
-		playerDataId.aState = buffer_read(receivedBuffer, buffer_string);
-		playerDataId.timeToActivate = buffer_read(receivedBuffer, buffer_f32);
+		playerDataId.abilityPreciseX = buffer_read(receivedBuffer, buffer_f32)
+		playerDataId.abilityPreciseY = buffer_read(receivedBuffer, buffer_f32)
+		playerDataId.abilityXScaleBool = buffer_read(receivedBuffer, buffer_bool)
+		playerDataId.aState = buffer_read(receivedBuffer, buffer_string)
+		playerDataId.timeToActivate = buffer_read(receivedBuffer, buffer_f32)
 	}
 }

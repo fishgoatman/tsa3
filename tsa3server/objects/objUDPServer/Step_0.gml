@@ -31,6 +31,9 @@ for (var g = 0; g < ds_list_size(currGameDataIds); g++) {
 					buffer_write(bufferToSend, buffer_u8, ABILITY);
 					buffer_write(bufferToSend, buffer_u8, p);
 					buffer_write(bufferToSend, buffer_u16, playerDataId.abilitySentNum)
+					buffer_write(bufferToSend, buffer_f32, playerDataId.abilityPreciseX)
+					buffer_write(bufferToSend, buffer_f32, playerDataId.abilityPreciseY)
+					buffer_write(bufferToSend, buffer_bool, playerDataId.abilityXScaleBool)
 					buffer_write(bufferToSend, buffer_string, playerDataId.aState);
 					buffer_write(bufferToSend, buffer_f32, playerDataId.timeToActivate);
 					network_send_udp(udp, clientIp, clientPortNum, bufferToSend, buffer_tell(bufferToSend));
