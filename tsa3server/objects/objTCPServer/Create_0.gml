@@ -3,7 +3,7 @@
 globalvar tcpPortNum;
 tcpPortNum = 8125;
 globalvar udpPortNum;
-udpPortNum = 8126;
+udpPortNum = 8126
 maxClients = 32;
 room_speed = 60;
 
