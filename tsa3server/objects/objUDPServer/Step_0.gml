@@ -27,16 +27,38 @@ for (var g = 0; g < ds_list_size(currGameDataIds); g++) {
 					network_send_udp(udp, clientIp, clientPortNum, bufferToSend, buffer_tell(bufferToSend));
 					
 					//ability
-					buffer_seek(bufferToSend, buffer_seek_start, 0);
-					buffer_write(bufferToSend, buffer_u8, ABILITY);
-					buffer_write(bufferToSend, buffer_u8, p);
-					buffer_write(bufferToSend, buffer_u16, playerDataId.abilitySentNum)
-					buffer_write(bufferToSend, buffer_f32, playerDataId.abilityPreciseX)
-					buffer_write(bufferToSend, buffer_f32, playerDataId.abilityPreciseY)
-					buffer_write(bufferToSend, buffer_bool, playerDataId.abilityXScaleBool)
-					buffer_write(bufferToSend, buffer_string, playerDataId.aState);
-					buffer_write(bufferToSend, buffer_f32, playerDataId.timeToActivate);
-					network_send_udp(udp, clientIp, clientPortNum, bufferToSend, buffer_tell(bufferToSend));
+					if (playerDataId.justReceivedAbility) {
+						buffer_seek(bufferToSend, buffer_seek_start, 0);
+						buffer_write(bufferToSend, buffer_u8, ABILITY);
+						buffer_write(bufferToSend, buffer_u8, p);
+						buffer_write(bufferToSend, buffer_u16, playerDataId.abilitySentNum)
+						buffer_write(bufferToSend, buffer_f32, playerDataId.abilityPreciseX)
+						buffer_write(bufferToSend, buffer_f32, playerDataId.abilityPreciseY)
+						buffer_write(bufferToSend, buffer_bool, playerDataId.abilityXScaleBool)
+						buffer_write(bufferToSend, buffer_string, playerDataId.aState);
+						buffer_write(bufferToSend, buffer_f32, playerDataId.timeToActivate);
+						network_send_udp(udp, clientIp, clientPortNum, bufferToSend, buffer_tell(bufferToSend))
+						playerDataId.justReceivedAbility = false
+					}
+					
+					//caster
+					if (playerDataId.justReceivedLob) {
+						buffer_seek(bufferToSend, buffer_seek_start, 0)
+						buffer_write(bufferToSend, buffer_u8, LOB)
+						buffer_write(bufferToSend, buffer_u8, p)
+						buffer_write(bufferToSend, buffer_f32, playerDataId.lobDetonateTime)
+						network_send_udp(udp, clientIp, clientPortNum, bufferToSend, buffer_tell(bufferToSend))
+						playerDataId.justReceivedLob = false
+					}
+						
+					if (playerDataId.justReceivedBall) {
+						buffer_seek(bufferToSend, buffer_seek_start, 0)
+						buffer_write(bufferToSend, buffer_u8, BALL)
+						buffer_write(bufferToSend, buffer_u8, p)
+						buffer_write(bufferToSend, buffer_f32, playerDataId.ballDetonateTime)
+						network_send_udp(udp, clientIp, clientPortNum, bufferToSend, buffer_tell(bufferToSend))
+						playerDataId.justReceivedBall = false
+					}
 					
 					if (playerDataId.sendLockedIn) {
 						//locked in

@@ -37,5 +37,27 @@ if (portNum != udpPortNum && portNum != tcpPortNum) {
 		playerDataId.abilityXScaleBool = buffer_read(receivedBuffer, buffer_bool)
 		playerDataId.aState = buffer_read(receivedBuffer, buffer_string)
 		playerDataId.timeToActivate = buffer_read(receivedBuffer, buffer_f32)
+		
+		playerDataId.justReceivedAbility = true
+	} else if (bufferType == LOB) {
+		var playerServerNum = buffer_read(receivedBuffer, buffer_u16)
+		var playerDataId = ds_map_find_value(playerDataIds, playerServerNum)
+		var detonateTime = buffer_read(receivedBuffer, buffer_f32)
+		
+		if (playerDataId.selectedHero == "caster") {
+			playerDataId.lobDetonateTime = detonateTime
+		}
+		
+		playerDataId.justReceivedLob = true
+	} else if (bufferType == BALL) {
+		var playerServerNum = buffer_read(receivedBuffer, buffer_u16)
+		var playerDataId = ds_map_find_value(playerDataIds, playerServerNum)
+		var detonateTime = buffer_read(receivedBuffer, buffer_f32)
+		
+		if (playerDataId.selectedHero == "caster") {
+			playerDataId.ballDetonateTime = detonateTime
+		}
+		
+		playerDataId.justReceivedBall = true
 	}
 }

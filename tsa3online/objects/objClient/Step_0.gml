@@ -36,7 +36,7 @@ if (!udpConnected) {
 	for (var i = 0; i < numPlayers; i++) {
 		var myHeroId = heroId[i]
 		
-		if (thisInControl[i]) {
+		if (thisInControl[i] && instance_exists(myHeroId)) {
 			if (scrInArena()) {
 				//basics
 				if (currTimeSinceLast >= maxTimeSinceLast) {
@@ -67,6 +67,25 @@ if (!udpConnected) {
 					buffer_write(bufferToSend, buffer_string, myHeroId.clientAState)
 					buffer_write(bufferToSend, buffer_f32, myHeroId.timeToActivate - delay) //initialDelay so that the sent time never changes. index i cuz the code checks both players
 					network_send_udp(udp, ipNum, udpPortNum, bufferToSend, buffer_tell(bufferToSend));
+				}
+				
+				//caster
+				if (instance_exists(myHeroId.lobId) && myHeroId.lobId.detonateTime != -1) {
+					buffer_seek(bufferToSend, buffer_seek_start, 0)
+					buffer_write(bufferToSend, buffer_u8, LOB)
+					buffer_write(bufferToSend, buffer_u16, playerServerNums[i])
+					//buffer_write(bufferToSend, buffer_u16, myHeroId.lobId - 100000)
+					buffer_write(bufferToSend, buffer_f32, myHeroId.lobId.detonateTime - delay)
+					network_send_udp(udp, ipNum, udpPortNum, bufferToSend, buffer_tell(bufferToSend))
+				}
+				
+				if (instance_exists(myHeroId.ballId) && myHeroId.ballId.detonateTime != -1) {
+					buffer_seek(bufferToSend, buffer_seek_start, 0)
+					buffer_write(bufferToSend, buffer_u8, BALL)
+					buffer_write(bufferToSend, buffer_u16, playerServerNums[i])
+					//buffer_write(bufferToSend, buffer_u16, myHeroId.ballId - 100000)
+					buffer_write(bufferToSend, buffer_f32, myHeroId.ballId.detonateTime - delay)
+					network_send_udp(udp, ipNum, udpPortNum, bufferToSend, buffer_tell(bufferToSend))
 				}
 			}
 			

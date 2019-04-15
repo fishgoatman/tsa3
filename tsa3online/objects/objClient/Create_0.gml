@@ -2,8 +2,8 @@
 //settings
 tcpPortNum = 8125
 udpPortNum = 8126
-//ipNum = "73.189.41.182"
-ipNum = "10.0.1.43"
+ipNum = "73.189.41.182"
+//ipNum = "10.0.1.43"
 maxTimeSinceLast = 1
 
 //necessary vars
@@ -35,3 +35,5 @@ UDP_CONNECTION = 4
 BASIC_STATE = 5
 LOCKED_IN = 6
 ABILITY = 7
+LOB = 8
+BALL = 9

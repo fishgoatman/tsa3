@@ -7,9 +7,11 @@ if (udp < 0) {
 	show_debug_message("server successfully created");
 }
 
-bufferToSend = scrCreateBuffer();
+bufferToSend = scrCreateBuffer()
 
-UDP_CONNECTION = 4;
-BASIC_STATE = 5;
-LOCKED_IN = 6;
-ABILITY = 7;
+UDP_CONNECTION = 4
+BASIC_STATE = 5
+LOCKED_IN = 6
+ABILITY = 7
+LOB = 8
+BALL = 9

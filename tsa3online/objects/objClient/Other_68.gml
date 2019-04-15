@@ -68,8 +68,8 @@ if (portNum == tcpPortNum) {
 			selectedHero[thisNumber] = buffer_read(receivedBuffer, buffer_string)
 		} else if (bufferType == ABILITY) {
 			var thisNumber = buffer_read(receivedBuffer, buffer_u8)
+			myHeroId = heroId[thisNumber]
 			var abilitySentNum = buffer_read(receivedBuffer, buffer_u16)
-			myHeroId = heroId[thisNumber];
 			
 			if (instance_exists(myHeroId) && ds_list_find_index(executedAbilitySentNums, abilitySentNum) == -1) {
 				myHeroId.abilityPreciseX = buffer_read(receivedBuffer, buffer_f32)
@@ -79,6 +79,22 @@ if (portNum == tcpPortNum) {
 				myHeroId.timeToActivate = buffer_read(receivedBuffer, buffer_f32) + delay
 				myHeroId.firstTime = true
 				ds_list_add(executedAbilitySentNums, abilitySentNum)
+			}
+		} else if (bufferType == LOB) {
+			var thisNumber = buffer_read(receivedBuffer, buffer_u8)
+			myHeroId = heroId[thisNumber]
+			var detonateTime = buffer_read(receivedBuffer, buffer_f32) + delay
+			
+			if (instance_exists(myHeroId) && instance_exists(myHeroId.lobId) && myHeroId.lobId.detonateTime == -1) {
+				myHeroId.lobId.detonateTime = detonateTime
+			}
+		} else if (bufferType == BALL) {
+			var thisNumber = buffer_read(receivedBuffer, buffer_u8)
+			myHeroId = heroId[thisNumber]
+			var detonateTime = buffer_read(receivedBuffer, buffer_f32) + delay
+			
+			if (instance_exists(myHeroId) && instance_exists(myHeroId.ballId) && myHeroId.ballId.detonateTime == -1) {
+				myHeroId.ballId.detonateTime = detonateTime
 			}
 		}
 	}

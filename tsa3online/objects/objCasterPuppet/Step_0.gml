@@ -20,7 +20,7 @@ if (aState == "1") {
 	}
 } else if (aState == "2") {
 	if (current_time >= timeToActivate && firstTime) {
-		instance_create_depth(abilityPreciseX, abilityPreciseY, thisNumber, objIceLob)
+		lobId = instance_create_depth(abilityPreciseX, abilityPreciseY, thisNumber, objIceLob)
 		audio_play_sound(sndIceLob, 1, false)
 		firstTime = false
 	}
@@ -31,7 +31,7 @@ if (aState == "1") {
 	}
 } else if (aState == "4") {
 	if (current_time >= timeToActivate && firstTime) {
-		instance_create_depth(abilityPreciseX, abilityPreciseY, thisNumber, objIceBall)
+		ballId = instance_create_depth(abilityPreciseX, abilityPreciseY, thisNumber, objIceBall)
 		firstTime = false
 	}
 }

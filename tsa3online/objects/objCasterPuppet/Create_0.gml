@@ -52,6 +52,7 @@ lobSlowDuration = 0.8 * room_speed
 smallLobDmg = 3
 smallLobSlowTo = 0.7
 smallLobSlowDuration = 0.5 * room_speed
+detonateDelay = 60
 
 lobSpd = 850.595
 lobAngle = 40.857

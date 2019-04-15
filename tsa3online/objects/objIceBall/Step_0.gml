@@ -57,16 +57,21 @@ visualId.x = x
 visualId.y = y
 visualId.image_angle += da
 
-var fourPressed
-
 if (thisInControl[thisNumber]) {
 	var FOUR = myHeroId.FOUR
 	var fourPressed = instance_exists(myHeroId) && myHeroId.durationHeld[FOUR] > 0 && !myHeroId.heldBefore[FOUR]
-} else {
-	fourPressed = detonate
+	
+	if (fourPressed && detonateTime == -1) {
+		detonateTime = current_time + detonateDelay
+		image_index = 1
+	}
 }
 
-if (fourPressed || hitPlayer || hitCorner) {
+if (detonateTime != -1 && current_time >= detonateTime) {
+	detonate = true
+}
+
+if (detonate || hitPlayer || hitCorner) {
 	for (var i = 0; i < triNum; i++) {
 		triAngle = i * 360 / triNum
 		var createObj
@@ -84,7 +89,7 @@ if (fourPressed || hitPlayer || hitCorner) {
 		instance_create_depth(preciseX, preciseY, id, objIceBallHitbox)
 	}
 	
-	if (fourPressed) {
+	if (detonate) {
 		audio_play_sound(sndIceDetonate, 1, false)
 	}
 	

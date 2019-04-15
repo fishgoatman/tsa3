@@ -19,3 +19,6 @@ lastTime = current_time
 lastXStoppedTime = current_time
 lastYStoppedTime = current_time
 detonate = false
+detonateTime = -1
+detonateDelay = myHeroId.detonateDelay
+image_speed = 0
